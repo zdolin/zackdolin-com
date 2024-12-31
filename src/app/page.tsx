@@ -1,27 +1,12 @@
-import { Avatar } from '@/components/avatar';
-import { Badge } from '@/components/badge';
-import { Divider } from '@/components/divider';
-import { Heading, Subheading } from '@/components/heading';
-import { Select } from '@/components/select';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/table';
-import { getRecentOrders } from '@/data';
+import { Avatar } from '@/components/avatar'
+import { Badge } from '@/components/badge'
+import { Divider } from '@/components/divider'
+import { Heading, Subheading } from '@/components/heading'
+import { Select } from '@/components/select'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/table'
+import { getRecentOrders } from '@/data'
 
-export function Stat({
-  title,
-  value,
-  change,
-}: {
-  title: string;
-  value: string;
-  change: string;
-}) {
+export function Stat({ title, value, change }: { title: string; value: string; change: string }) {
   return (
     <div>
       <Divider />
@@ -32,15 +17,15 @@ export function Stat({
         <span className="text-zinc-500">from last week</span>
       </div>
     </div>
-  );
+  )
 }
 
 export default async function Home() {
-  let orders = await getRecentOrders();
+  let orders = await getRecentOrders()
 
   return (
     <>
-      <Heading>Good afternoon, Erica</Heading>
+      <Heading>Good afternoon, Lena</Heading>
       <div className="mt-8 flex items-end justify-between">
         <Subheading>Overview</Subheading>
         <div>
@@ -71,11 +56,7 @@ export default async function Home() {
         </TableHead>
         <TableBody>
           {orders.map((order) => (
-            <TableRow
-              key={order.id}
-              href={order.url}
-              title={`Order #${order.id}`}
-            >
+            <TableRow key={order.id} href={order.url} title={`Order #${order.id}`}>
               <TableCell>{order.id}</TableCell>
               <TableCell className="text-zinc-500">{order.date}</TableCell>
               <TableCell>{order.customer.name}</TableCell>
@@ -91,5 +72,5 @@ export default async function Home() {
         </TableBody>
       </Table>
     </>
-  );
+  )
 }
