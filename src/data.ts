@@ -718,9 +718,7 @@ export async function getEvent(id: string) {
 }
 
 export async function getEventOrders(id: string) {
-  return (await getOrders()).filter(
-    (order) => order.event.id.toString() === id,
-  );
+  return (await getOrders()).filter((order) => order.event.id.toString() === id);
 }
 
 export async function getEvents() {

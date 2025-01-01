@@ -1,10 +1,10 @@
-import { getEvents } from '@/data'
-import '@/styles/tailwind.css'
-import clsx from 'clsx'
-import type { Metadata } from 'next'
-import localFont from 'next/font/local'
-import type React from 'react'
-import { ApplicationLayout } from './application-layout'
+import { getEvents } from '@/data';
+import '@/styles/tailwind.css';
+import clsx from 'clsx';
+import type { Metadata } from 'next';
+import localFont from 'next/font/local';
+import type React from 'react';
+import { ApplicationLayout } from './application-layout';
 
 export const metadata: Metadata = {
   title: {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     default: 'Catalyst',
   },
   description: '',
-}
+};
 
 const GeneralSans = localFont({
   src: [
@@ -33,10 +33,10 @@ const GeneralSans = localFont({
     },
   ],
   variable: '--font-general-sans',
-})
+});
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  let events = await getEvents()
+  let events = await getEvents();
 
   return (
     <html
@@ -50,5 +50,5 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <ApplicationLayout events={events}>{children}</ApplicationLayout>
       </body>
     </html>
-  )
+  );
 }
