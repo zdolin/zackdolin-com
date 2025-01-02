@@ -1,5 +1,5 @@
-import { Divider } from '@/components/atoms/divider';
-import { Badge } from '@/components/molecules/badge';
+import { Divider } from '@/components/atoms/Divider';
+import { Badge } from '@/components/molecules/Badge';
 
 export function Stat({ title, value, change }: { title: string; value: string; change: string }) {
   return (
