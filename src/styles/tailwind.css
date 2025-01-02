@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .surface-primary {
+    @apply bg-white dark:bg-black;
+  }
+
+  .surface-secondary {
+    @apply bg-sky-100 dark:bg-blue-950;
+  }
+
+  .surface-tertiary {
+    @apply bg-blue-50 dark:bg-zinc-900;
+  }
+
+  .surface-accent {
+    @apply bg-yellow-50 dark:bg-yellow-950;
+  }
+}
