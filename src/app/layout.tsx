@@ -7,8 +7,8 @@ import type React from 'react';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Catalyst',
-    default: 'Catalyst',
+    template: '%s - Zack Dolin',
+    default: 'Zack Dolin',
   },
   description: '',
 };
