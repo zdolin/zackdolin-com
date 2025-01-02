@@ -1,7 +1,7 @@
+import { Text } from '@/components/atoms/text';
 import * as Headless from '@headlessui/react';
 import clsx from 'clsx';
 import type React from 'react';
-import { Text } from './text';
 
 const sizes = {
   xs: 'sm:max-w-xs',

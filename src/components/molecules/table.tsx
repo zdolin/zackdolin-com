@@ -1,9 +1,9 @@
 'use client';
 
+import { Link } from '@/components/atoms/link';
 import clsx from 'clsx';
 import type React from 'react';
 import { createContext, useContext, useState } from 'react';
-import { Link } from './link';
 
 const TableContext = createContext<{
   bleed: boolean;

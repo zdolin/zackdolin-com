@@ -1,6 +1,5 @@
-import { Badge } from '@/components/badge';
-import { Divider } from '@/components/divider';
-import { getRecentOrders } from '@/data';
+import { Divider } from '@/components/atoms/divider';
+import { Badge } from '@/components/molecules/badge';
 
 export function Stat({ title, value, change }: { title: string; value: string; change: string }) {
   return (
@@ -17,7 +16,5 @@ export function Stat({ title, value, change }: { title: string; value: string; c
 }
 
 export default async function Home() {
-  let orders = await getRecentOrders();
-
   return <>Testing</>;
 }
