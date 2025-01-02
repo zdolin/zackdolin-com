@@ -36,24 +36,16 @@ const GeneralSans = localFont({
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={clsx(
-        'text-zinc-950 antialiased lg:bg-zinc-100 dark:bg-zinc-900 dark:text-white dark:lg:bg-zinc-950',
-        GeneralSans.variable
-      )}
-    >
+    <html lang="en" className={clsx('antialiased', GeneralSans.variable)}>
       <body className="flex min-h-screen flex-col">
         {/* Header */}
         <Header />
-
-        <div className="flex w-full flex-1 lg:flex-row lg:bg-zinc-100 dark:bg-zinc-900 dark:lg:bg-zinc-950">
+        <div className="flex w-full flex-1 lg:flex-row">
           {/* Sidebar on desktop only */}
-          <div className="hidden w-64 bg-[#f9f9f9] p-10 lg:block dark:bg-zinc-900">Sidebar Content Desktop</div>
-
+          <div className="bg-surface-primary hidden w-1/3 max-w-[43.75rem] p-10 lg:block">Sidebar Content Desktop</div>
           {/* Content */}
           <main className="flex flex-1 flex-col lg:min-w-0">
-            <div className="grow p-6 lg:bg-[#DDECF5] lg:p-10 dark:lg:bg-zinc-900">
+            <div className="surface-secondary grow p-6 lg:p-10">
               <div className="mx-auto max-w-6xl">{children}</div>
             </div>
           </main>
