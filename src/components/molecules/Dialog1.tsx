@@ -1,4 +1,4 @@
-import { Text } from '@/components/atoms/text';
+import { Text } from '@/components/atoms/Text1';
 import * as Headless from '@headlessui/react';
 import clsx from 'clsx';
 import type React from 'react';

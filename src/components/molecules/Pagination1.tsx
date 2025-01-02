@@ -1,4 +1,4 @@
-import { Button } from '@/components/atoms/button';
+import { Button } from '@/components/atoms/Button1';
 import clsx from 'clsx';
 import type React from 'react';
 

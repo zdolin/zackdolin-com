@@ -1,7 +1,7 @@
 'use client';
 
-import { TouchTarget } from '@/components/atoms/button';
-import { Link } from '@/components/atoms/link';
+import { TouchTarget } from '@/components/atoms/Button1';
+import { Link } from '@/components/atoms/Link1';
 import * as Headless from '@headlessui/react';
 import clsx from 'clsx';
 import { LayoutGroup, motion } from 'framer-motion';

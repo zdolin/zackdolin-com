@@ -1,6 +1,6 @@
 'use client';
 
-import { Link } from '@/components/atoms/link';
+import { Link } from '@/components/atoms/Link1';
 import clsx from 'clsx';
 import type React from 'react';
 import { createContext, useContext, useState } from 'react';

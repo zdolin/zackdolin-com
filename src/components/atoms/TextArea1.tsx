@@ -2,7 +2,7 @@ import * as Headless from '@headlessui/react';
 import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 
-export const Textarea = forwardRef(function Textarea(
+export const TextArea = forwardRef(function Textarea(
   {
     className,
     resizable = true,

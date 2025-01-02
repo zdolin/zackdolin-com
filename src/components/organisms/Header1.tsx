@@ -2,6 +2,7 @@
 
 import { Dialog, DialogPanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import clsx from 'clsx';
 import { useState } from 'react';
 
 interface NavigationItem {
@@ -16,11 +17,15 @@ const navigation: NavigationItem[] = [
   { name: 'Company', href: '#' },
 ];
 
-export default function Header() {
+type HeaderProps = {
+  className?: string;
+};
+
+export default function Header({ className = '' }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 
   return (
-    <header className="bg-white">
+    <header className={clsx('bg-white', className)}>
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-6 lg:px-8">
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
