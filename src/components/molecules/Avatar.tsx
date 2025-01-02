@@ -1,5 +1,5 @@
-import { TouchTarget } from '@/components/atoms/Button1';
-import { Link } from '@/components/atoms/Link1';
+import { TouchTarget } from '@/components/atoms/Button';
+import { Link } from '@/components/atoms/Link';
 import * as Headless from '@headlessui/react';
 import clsx from 'clsx';
 import React, { forwardRef } from 'react';

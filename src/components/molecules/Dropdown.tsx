@@ -1,7 +1,7 @@
 'use client';
 
-import { Button } from '@/components/atoms/Button1';
-import { Link } from '@/components/atoms/Link1';
+import { Button } from '@/components/atoms/Button';
+import { Link } from '@/components/atoms/Link';
 import * as Headless from '@headlessui/react';
 import clsx from 'clsx';
 import type React from 'react';
