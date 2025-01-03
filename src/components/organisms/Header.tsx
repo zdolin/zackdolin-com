@@ -1,5 +1,6 @@
 'use client';
 
+import Button from '@/components/atoms/Button';
 import { Dialog, DialogPanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
@@ -11,10 +12,11 @@ interface NavigationItem {
 }
 
 const navigation: NavigationItem[] = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'Home', href: '#' },
+  { name: 'Skills', href: '#' },
+  { name: 'Resume', href: '#' },
+  { name: 'Portfolio', href: '#' },
+  { name: 'Testimonials', href: '#' },
 ];
 
 type HeaderProps = {
@@ -25,8 +27,8 @@ export default function Header({ className = '' }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 
   return (
-    <header className={clsx('bg-surface-primary shadow-[0_9px_14px_rgba(0,0,0,0.03)]', className)}>
-      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-6 lg:px-8">
+    <header className={clsx('surface-primary shadow-[0_9px_14px_rgba(0,0,0,0.03)]', className)}>
+      <nav aria-label="Global" className="mx-auto flex items-center justify-between gap-x-6 p-6 xl:container lg:px-8">
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
@@ -37,25 +39,17 @@ export default function Header({ className = '' }: HeaderProps) {
             />
           </a>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden gap-x-6 md:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a key={item.name} href={item.href} className="text-sm/6 font-normal text-gray-900">
+            <a key={item.name} href={item.href} className="text-sm font-normal text-black dark:text-white lg:text-lg">
               {item.name}
             </a>
           ))}
         </div>
         <div className="flex flex-1 items-center justify-end gap-x-6">
-          <a href="#" className="hidden text-sm/6 font-normal text-gray-900 lg:block">
-            Log in
-          </a>
-          <a
-            href="#"
-            className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-normal text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
-            Sign up
-          </a>
+          <Button>Contact me</Button>
         </div>
-        <div className="flex lg:hidden">
+        <div className="flex md:hidden">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
@@ -66,24 +60,11 @@ export default function Header({ className = '' }: HeaderProps) {
           </button>
         </div>
       </nav>
-      <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
+      <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="md:hidden">
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center gap-x-6">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img
-                alt=""
-                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-                className="h-8 w-auto"
-              />
-            </a>
-            <a
-              href="#"
-              className="ml-auto rounded-md bg-indigo-600 px-3 py-2 text-sm font-normal text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
-              Sign up
-            </a>
+            <Button>Contact me</Button>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
