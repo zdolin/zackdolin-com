@@ -29,6 +29,6 @@ export const Default: Story = {
   args: {
     type: 'home',
 
-    className: 'h-3 w-3 lg:h-4 lg:w-4 fill-blue-500',
+    className: 'h-5 w-5 lg:h-6 lg:w-6 fill-blue-500',
   },
 };
