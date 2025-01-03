@@ -29,7 +29,7 @@ export default function Header({ className = '' }: HeaderProps) {
   return (
     <header className={clsx('surface-primary shadow-[0_9px_14px_rgba(0,0,0,0.03)]', className)}>
       <nav aria-label="Global" className="mx-auto flex items-center justify-between gap-x-6 p-6 xl:container lg:px-8">
-        <div className="flex lg:flex-1">
+        <div className="flex md:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <img
