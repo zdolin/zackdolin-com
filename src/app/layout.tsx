@@ -39,7 +39,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="en" className={clsx('antialiased', GeneralSans.variable)}>
       <body className="flex min-h-screen flex-col">
         {/* Header */}
-        <Header className="z-20" />
+        <Header />
         <div className="after:surface-secondary absolute inset-0 -z-10 after:absolute after:inset-y-0 after:right-0 after:w-1/2" />
         <div className="z-10 mx-auto flex w-full flex-1 xl:container lg:flex-row">
           {/* Sidebar on desktop only */}
