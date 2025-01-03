@@ -17,16 +17,24 @@ const plopConfig = (plop) => {
           { name: 'Atom', value: 'atoms' },
           { name: 'Molecule', value: 'molecules' },
           { name: 'Organism', value: 'organisms' },
-          { name: 'Template', value: 'templates' },
-          { name: 'Layout', value: 'layouts' },
         ],
       },
     ],
     actions: [
       {
         type: 'add',
-        path: './src/components/{{type}}/{{name}}.tsx',
+        path: './src/components/{{type}}/{{name}}/index.ts',
+        templateFile: 'plop-templates/index.ts.hbs',
+      },
+      {
+        type: 'add',
+        path: './src/components/{{type}}/{{name}}/{{name}}.tsx',
         templateFile: 'plop-templates/component.tsx.hbs',
+      },
+      {
+        type: 'add',
+        path: './src/components/{{type}}/{{name}}/{{name}}.stories.tsx',
+        templateFile: 'plop-templates/component.stories.tsx.hbs',
       },
     ],
   });

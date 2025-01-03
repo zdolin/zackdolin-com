@@ -1,6 +1,6 @@
 'use client';
 
-import Button from '@/components/atoms/Button';
+import Button from '@/components/atoms/Button/Button';
 import { Dialog, DialogPanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';

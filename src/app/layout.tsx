@@ -16,17 +16,17 @@ export const metadata: Metadata = {
 const GeneralSans = localFont({
   src: [
     {
-      path: './assets/fonts/GeneralSans-Regular.woff2',
+      path: '../assets/fonts/GeneralSans-Regular.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: './assets/fonts/GeneralSans-Medium.woff2',
+      path: '../assets/fonts/GeneralSans-Medium.woff2',
       weight: '500',
       style: 'normal',
     },
     {
-      path: './assets/fonts/GeneralSans-Semibold.woff2',
+      path: '../assets/fonts/GeneralSans-Semibold.woff2',
       weight: '600',
       style: 'normal',
     },

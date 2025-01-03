@@ -7,10 +7,19 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@chromatic-com/storybook',
     '@storybook/addon-interactions',
+    '@storybook/addon-themes',
+    '@storybook/addon-backgrounds',
   ],
   framework: {
     name: '@storybook/nextjs',
     options: {},
   },
+  staticDirs: [
+    {
+      from: '../src/assets/fonts',
+      to: './assets/fonts',
+    },
+  ],
 };
+
 export default config;
