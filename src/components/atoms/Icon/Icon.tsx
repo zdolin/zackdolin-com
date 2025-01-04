@@ -1,11 +1,21 @@
-import { HomeIcon } from '@heroicons/react/24/solid';
+import { ArrowRightCircleIcon } from '@heroicons/react/24/solid';
 import React from 'react';
 
-import Resume from '@/assets/icons/resume.svg';
+import ContactIcon from '@/assets/icons/contact.svg';
+import HomeIcon from '@/assets/icons/home.svg';
+import PortfolioIcon from '@/assets/icons/portfolio.svg';
+import ResumeIcon from '@/assets/icons/resume.svg';
+import SkillsIcon from '@/assets/icons/skills.svg';
+import TestimonialsIcon from '@/assets/icons/testimonial.svg';
 
 export const iconMapper = {
+  arrowRight: ArrowRightCircleIcon,
   home: HomeIcon,
-  resume: Resume,
+  resume: ResumeIcon,
+  skills: SkillsIcon,
+  portfolio: PortfolioIcon,
+  testimonials: TestimonialsIcon,
+  contact: ContactIcon,
 };
 
 interface IconProps {
