@@ -24,5 +24,6 @@ export const Default: Story = {
     iconType: tempData.sections.introduction.categoryIcon as keyof typeof iconMapper,
     category: tempData.sections.introduction.category,
     heading: tempData.sections.introduction.heading,
+    body: tempData.sections.introduction.body,
   },
 };
