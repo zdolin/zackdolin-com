@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "introduction": {
+      "id": "introduction",
+      "category": "Introduction",
+      "categoryIcon": "home",
+      "heading": "Hi from Zack Dolin, Web Experience Engineer",
+      "body": "A digital experience engineer transforming ideas into intuitive and impactful web solutions."
+    }
+  }
+}
