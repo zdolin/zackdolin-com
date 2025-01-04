@@ -1,11 +1,22 @@
 {
   "sections": {
     "introduction": {
-      "id": "introduction",
       "category": "Introduction",
       "categoryIcon": "home",
       "heading": "Hi from Zack Dolin, Web Experience Engineer",
       "body": "A digital experience engineer transforming ideas into intuitive and impactful web solutions."
+    },
+    "skills": {
+      "category": "Skills",
+      "categoryIcon": "skills",
+      "heading": "Explore my skills",
+      "body": "Crafting scalable solutions, fostering collaboration, and delivering seamless digital experiences."
+    },
+    "resume": {
+      "category": "Resume",
+      "categoryIcon": "resume",
+      "heading": "Work experience",
+      "body": "A passionate software engineer turning ideas into seamless digital experiences."
     }
   }
 }
