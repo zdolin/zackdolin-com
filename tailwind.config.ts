@@ -37,6 +37,9 @@ const config: Config = {
   				'var(--font-general-sans), sans-serif'
   			]
   		},
+			fontSize: {
+				'5xl': '2.625rem',
+			},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
