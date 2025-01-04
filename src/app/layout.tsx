@@ -37,13 +37,13 @@ const GeneralSans = localFont({
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={clsx('antialiased', GeneralSans.variable)}>
-      <body className="surface-primary flex min-h-screen flex-col">
+      <body className="surface-primary relative flex min-h-screen flex-col">
         {/* Header */}
         <Header />
-        <div className="after:surface-secondary absolute inset-0 -z-10 after:absolute after:inset-y-0 after:right-0 after:w-1/2" />
+        <div className="after:surface-secondary absolute inset-0 -z-10 flex grow after:absolute after:inset-y-0 after:right-0 after:w-1/2" />
         <div className="z-10 mx-auto flex w-full flex-1 xl:container lg:flex-row">
           {/* Sidebar on desktop only */}
-          <div className="surface-primary hidden w-2/5 max-w-[43.75rem] p-10 md:block lg:w-1/3">
+          <div className="surface-primary hidden w-2/5 max-w-[43.75rem] p-10 md:block md:w-1/3">
             Sidebar Content Desktop
           </div>
           {/* Content */}
