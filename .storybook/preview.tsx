@@ -1,6 +1,5 @@
 import { withThemeByClassName } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react';
-import clsx from 'clsx';
 import '../src/styles/tailwind.css';
 import './font-face.css';
 
@@ -12,6 +11,7 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    layout: 'fullscreen',
   },
 
   decorators: [
@@ -23,7 +23,7 @@ const preview: Preview = {
       defaultTheme: 'light',
     }),
     (Story) => (
-      <div className={clsx('antialiased', 'font-sans')}>
+      <div className="surface-primary min-h-screen p-6 font-sans antialiased">
         <Story />
       </div>
     ),
