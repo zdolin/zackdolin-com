@@ -19,5 +19,6 @@ type Story = StoryObj<typeof SectionCategoryIndicator>;
 export const Default: Story = {
   args: {
     iconType: 'home',
+    category: 'Introduction',
   },
 };
