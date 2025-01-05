@@ -1,10 +1,10 @@
 import CircleIcon from '@/components/atoms/CircleIcon';
-import { iconMapper } from '@/components/atoms/Icon';
+import { iconMap } from '@/components/atoms/Icon';
 import Label from '@/components/atoms/Label';
 import clsx from 'clsx';
 
 export interface SectionCategoryIndicatorProps {
-  iconType: keyof typeof iconMapper;
+  iconType: keyof typeof iconMap;
   category: string;
   className?: string;
 }

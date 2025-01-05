@@ -1,1 +1,1 @@
-export { default, iconMapper } from './Icon';
+export { default, iconMap } from './Icon';
