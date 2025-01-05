@@ -1,31 +1,47 @@
 import tempData from '@/app/data/temp-data.json';
-import { iconMapper } from '@/components/atoms/Icon';
+import { iconMap } from '@/components/atoms/Icon';
 import SectionWrapper from '@/components/molecules/SectionWrapper';
+import IntroSection from '@/components/organisms/IntroSection';
 
 export default async function Home() {
-  const { introduction, skills, resume } = tempData.sections;
+  const { introduction, skills, resume, portfolio, testimonials, contact } = tempData.sections;
   return (
     <>
+      <IntroSection data={introduction} />
       <SectionWrapper
-        className="mb-5"
-        iconType={introduction.categoryIcon as keyof typeof iconMapper}
-        category={introduction.category}
-        heading={introduction.heading}
-        body={introduction.body}
-      />
-      <SectionWrapper
-        className="mb-5"
-        iconType={skills.categoryIcon as keyof typeof iconMapper}
+        className="mb-6"
+        iconType={skills.categoryIcon as keyof typeof iconMap}
         category={skills.category}
         heading={skills.heading}
-        body={introduction.body}
+        body={skills.body}
       />
       <SectionWrapper
-        className="mb-5"
-        iconType={resume.categoryIcon as keyof typeof iconMapper}
+        className="mb-6"
+        iconType={resume.categoryIcon as keyof typeof iconMap}
         category={resume.category}
         heading={resume.heading}
-        body={introduction.body}
+        body={resume.body}
+      />
+      <SectionWrapper
+        className="mb-6"
+        iconType={portfolio.categoryIcon as keyof typeof iconMap}
+        category={portfolio.category}
+        heading={portfolio.heading}
+        body={portfolio.body}
+      />
+      <SectionWrapper
+        className="mb-6"
+        iconType={testimonials.categoryIcon as keyof typeof iconMap}
+        category={testimonials.category}
+        heading={testimonials.heading}
+        body={testimonials.body}
+      />
+      <SectionWrapper
+        className="mb-6"
+        iconType={contact.categoryIcon as keyof typeof iconMap}
+        category={contact.category}
+        heading={contact.heading}
+        body={contact.body}
       />
     </>
   );
