@@ -17,6 +17,24 @@
       "categoryIcon": "resume",
       "heading": "Work experience",
       "body": "A passionate software engineer turning ideas into seamless digital experiences."
+    },
+    "portfolio": {
+      "category": "Portfolio",
+      "categoryIcon": "portfolio",
+      "heading": "Featured projects",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt."
+    },
+    "testimonials": {
+      "category": "Testimonials",
+      "categoryIcon": "testimonials",
+      "heading": "What they say!",
+      "body": "Here's what my clients and collaborators have to say about my work, skills, and dedication."
+    },
+    "contact": {
+      "category": "Contact",
+      "categoryIcon": "contact",
+      "heading": "Get in touch",
+      "body": "Have a project in mind or just want to connect? Let's work together to bring your vision to life."
     }
   }
 }
