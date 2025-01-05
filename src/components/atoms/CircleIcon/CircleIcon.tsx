@@ -1,8 +1,8 @@
-import Icon, { iconMapper } from '@/components/atoms/Icon';
+import Icon, { iconMap } from '@/components/atoms/Icon';
 import clsx from 'clsx';
 
 export interface CircleIconProps {
-  type: keyof typeof iconMapper;
+  type: keyof typeof iconMap;
   className?: string;
   iconClassName?: string;
   fillClass?: string;
@@ -11,7 +11,7 @@ export interface CircleIconProps {
 
 const CircleIcon = ({
   type,
-  className = 'w-6 h-6 lg:w-[1.875rem] lg:h-[1.875rem] p-1 lg:p-[0.313rem]',
+  className = 'w-6 h-6 lg:w-[1.875rem] lg:h-[1.875rem] p-1 lg:p-[0.438rem]',
   iconClassName = '',
   fillClass = 'bg-sky-600',
   iconFillClass = 'fill-white',

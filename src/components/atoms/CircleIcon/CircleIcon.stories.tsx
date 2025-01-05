@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import iconMapper from '../Icon';
+import iconMap from '../Icon';
 import CircleIcon from './CircleIcon';
 
 const meta: Meta<typeof CircleIcon> = {
@@ -10,7 +10,7 @@ const meta: Meta<typeof CircleIcon> = {
     type: {
       control: {
         type: 'select',
-        options: Object.keys(iconMapper),
+        options: Object.keys(iconMap),
       },
     },
     className: {
