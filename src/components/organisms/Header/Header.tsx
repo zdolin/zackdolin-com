@@ -27,7 +27,12 @@ export default function Header({ className = '' }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 
   return (
-    <header className={clsx('surface-primary shadow-[0_9px_14px_rgba(0,0,0,0.03)]', className)}>
+    <header
+      className={clsx(
+        'surface-primary shadow-[0_9px_14px_rgba(0,0,0,0.03)]',
+        className
+      )}
+    >
       <nav
         aria-label="Global"
         className="mx-auto flex items-center justify-between gap-x-6 p-6 xl:container lg:px-8"
@@ -67,7 +72,11 @@ export default function Header({ className = '' }: HeaderProps) {
           </button>
         </div>
       </nav>
-      <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="md:hidden">
+      <Dialog
+        open={mobileMenuOpen}
+        onClose={setMobileMenuOpen}
+        className="md:hidden"
+      >
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center gap-x-6">

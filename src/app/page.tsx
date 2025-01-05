@@ -4,7 +4,8 @@ import SectionWrapper from '@/components/molecules/SectionWrapper';
 import IntroSection from '@/components/organisms/IntroSection';
 
 export default async function Home() {
-  const { introduction, skills, resume, portfolio, testimonials, contact } = tempData.sections;
+  const { introduction, skills, resume, portfolio, testimonials, contact } =
+    tempData.sections;
   return (
     <>
       <IntroSection data={introduction} />

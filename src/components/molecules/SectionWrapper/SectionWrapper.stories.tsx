@@ -21,7 +21,8 @@ type Story = StoryObj<typeof SectionWrapper>;
 
 export const Default: Story = {
   args: {
-    iconType: tempData.sections.introduction.categoryIcon as keyof typeof iconMap,
+    iconType: tempData.sections.introduction
+      .categoryIcon as keyof typeof iconMap,
     category: tempData.sections.introduction.category,
     heading: tempData.sections.introduction.heading,
     body: tempData.sections.introduction.body,

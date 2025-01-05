@@ -34,7 +34,11 @@ const GeneralSans = localFont({
   variable: '--font-general-sans',
 });
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={clsx('antialiased', GeneralSans.variable)}>
       <body className="surface-primary relative flex min-h-screen flex-col">
