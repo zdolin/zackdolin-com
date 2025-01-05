@@ -28,7 +28,10 @@ export default function Header({ className = '' }: HeaderProps) {
 
   return (
     <header className={clsx('surface-primary shadow-[0_9px_14px_rgba(0,0,0,0.03)]', className)}>
-      <nav aria-label="Global" className="mx-auto flex items-center justify-between gap-x-6 p-6 xl:container lg:px-8">
+      <nav
+        aria-label="Global"
+        className="mx-auto flex items-center justify-between gap-x-6 p-6 xl:container lg:px-8"
+      >
         <div className="flex md:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
@@ -41,7 +44,11 @@ export default function Header({ className = '' }: HeaderProps) {
         </div>
         <div className="hidden gap-x-6 md:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a key={item.name} href={item.href} className="text-sm font-normal text-black dark:text-white lg:text-lg">
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-sm font-normal text-black dark:text-white lg:text-lg"
+            >
               {item.name}
             </a>
           ))}
