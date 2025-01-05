@@ -27,7 +27,8 @@ const config: Config = {
   				'500': '#6C6C6C'
   			},
   			gray: {
-  				'800': '#1f1f1f'
+  				'500': '#aeaeae',
+					'800': '#1f1f1f'
   			},
   			zinc: {
   				'900': '#1f1f1f'
