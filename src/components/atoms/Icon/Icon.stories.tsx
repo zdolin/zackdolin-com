@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Icon, { iconMapper } from './Icon';
+import Icon, { iconMap } from './Icon';
 
 const meta: Meta<typeof Icon> = {
   title: 'atoms/Icon',
@@ -9,7 +9,7 @@ const meta: Meta<typeof Icon> = {
     type: {
       control: {
         type: 'select',
-        options: Object.keys(iconMapper),
+        options: Object.keys(iconMap),
       },
     },
     className: {
