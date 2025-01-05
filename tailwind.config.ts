@@ -17,10 +17,11 @@ const config: Config = {
   			sky: {
   				'50': '#f0f7fc',
   				'100': '#dfeef7',
-					'600': '#007bc7',
+					'600': '#007bc7', // button color
   			},
   			yellow: {
   				'50': '#fffcf0',
+					'400': '#FFC901', // button arrow
   				'950': '#0f0c00'
   			},
   			neutral: {
