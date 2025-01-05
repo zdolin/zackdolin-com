@@ -4,7 +4,17 @@
       "category": "Introduction",
       "categoryIcon": "home",
       "heading": "Hi from Zack Dolin, Web Experience Engineer",
-      "body": "A digital experience engineer transforming ideas into intuitive and impactful web solutions."
+      "body": "A digital experience engineer transforming ideas into intuitive and impactful web solutions.",
+      "checklist": [
+        {
+          "icon": "checkmark",
+          "text": "Based in Frederick, MD"
+        },
+        {
+          "icon": "checkmark",
+          "text": "Full-time job"
+        }
+      ]
     },
     "skills": {
       "category": "Skills",
