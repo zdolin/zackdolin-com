@@ -16,7 +16,7 @@ const CircleIcon = ({
   fillClass = 'bg-sky-600',
   iconFillClass = 'fill-white',
 }: CircleIconProps) => (
-  <div className={clsx(className, 'flex items-center justify-center rounded-full', fillClass)}>
+  <div className={clsx('flex items-center justify-center rounded-full', className, fillClass)}>
     <Icon type={type} className={clsx(iconClassName, iconFillClass)} />
   </div>
 );
