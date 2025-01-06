@@ -24,7 +24,7 @@ const SectionWrapper = ({
 }: SectionWrapperProps) => (
   <section
     id={category.toLowerCase()}
-    className={clsx('surface-primary w-full rounded-3xl p-8', className)}
+    className={clsx('surface-primary w-full rounded-3xl px-8 py-10', className)}
   >
     <div className="flex w-full flex-col items-center md:items-start">
       <SectionCategoryIndicator iconType={iconType} category={category} />
