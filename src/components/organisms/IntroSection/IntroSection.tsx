@@ -1,13 +1,20 @@
+import Button from '@/components/atoms/Button';
 import CircleIcon from '@/components/atoms/CircleIcon';
 import { iconMap } from '@/components/atoms/Icon';
 import SectionWrapper from '@/components/molecules/SectionWrapper';
+import clsx from 'clsx';
 
 export interface IntroSectionProps {
   data: any;
 }
 
 interface ChecklistItemType {
-  icon: string;
+  icon: keyof typeof iconMap;
+  text: string;
+}
+
+interface StatslistItemType {
+  quantity: string;
   text: string;
 }
 
@@ -20,9 +27,9 @@ const IntroSection = ({ data }: IntroSectionProps) => (
     body={data.body}
     isVertical={true}
   >
-    <div className="flex w-full">
+    <ul className="mb-8 flex w-full space-x-8">
       {data.checklist.map((item: ChecklistItemType, index: number) => (
-        <div key={index} className="flex last:ml-5">
+        <li key={index} className="flex">
           <span aria-hidden="true">
             <CircleIcon
               className="h-6 w-6 p-1"
@@ -30,12 +37,31 @@ const IntroSection = ({ data }: IntroSectionProps) => (
               aria-hidden="true"
             />
           </span>
-          <span className="md:text-md ml-3 text-lg text-black dark:text-white lg:text-lg">
-            {item.text}
-          </span>
-        </div>
+          <span className="md:text-md text-primary ml-3 text-lg lg:text-lg">{item.text}</span>
+        </li>
       ))}
-    </div>
+    </ul>
+    <Button>Hire me</Button>
+    <ul className="mt-8 flex flex-wrap justify-center gap-6 text-center lg:gap-8">
+      {data.statslist.map((stat: StatslistItemType, index: number) => (
+        <li
+          key={index}
+          className={clsx(
+            'flex flex-col items-start lg:flex-row',
+            index < data.statslist.length - 1
+              ? 'border-r border-neutral-500 border-opacity-25 lg:pr-6'
+              : ''
+          )}
+        >
+          <span className="text-primary text-left text-4xl font-medium md:text-[2.625rem] xl:text-6xl">
+            {stat.quantity}
+          </span>
+          <span className="mt-2 max-w-24 text-left text-base text-neutral-500 lg:ml-4 lg:mt-0 xl:text-lg">
+            {stat.text}
+          </span>
+        </li>
+      ))}
+    </ul>
   </SectionWrapper>
 );
 

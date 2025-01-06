@@ -14,6 +14,20 @@
           "icon": "checkmark",
           "text": "Full-time job"
         }
+      ],
+      "statslist": [
+        {
+          "quantity": "96",
+          "text": "Completed projects"
+        },
+        {
+          "quantity": "18+",
+          "text": "Years of experience"
+        },
+        {
+          "quantity": "10+",
+          "text": "Awards won"
+        }
       ]
     },
     "skills": {
