@@ -7,13 +7,12 @@ const buttonVariants = cva(
   {
     variants: {
       intent: {
-        primary:
-          'bg-sky-600 text-white hover:bg-sky-500 active:bg-sky-700 focus:ring-sky-500',
+        primary: 'bg-sky-600 text-white hover:bg-sky-500 active:bg-sky-700 focus:ring-sky-500',
         secondary:
           'bg-gray-100 text-gray-800 hover:bg-gray-200 active:bg-gray-300 focus:ring-gray-400',
       },
       size: {
-        default: 'py-2 px-6 lg:py-3 lg:px-8 text-sm lg:text-base',
+        default: 'py-2 px-7 lg:py-3 lg:px-8 text-sm lg:text-base',
       },
     },
     defaultVariants: {
@@ -29,21 +28,11 @@ export interface ButtonProps
   asChild?: boolean; // Allows rendering as a different element if needed
 }
 
-const Button: React.FC<ButtonProps> = ({
-  children,
-  intent,
-  size,
-  asChild = false,
-  ...props
-}) => {
+const Button: React.FC<ButtonProps> = ({ children, intent, size, asChild = false, ...props }) => {
   const Component = asChild ? 'span' : 'button';
 
   return (
-    <HeadlessButton
-      as={Component}
-      className={buttonVariants({ intent, size })}
-      {...props}
-    >
+    <HeadlessButton as={Component} className={buttonVariants({ intent, size })} {...props}>
       {children}
     </HeadlessButton>
   );
