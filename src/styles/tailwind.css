@@ -18,6 +18,10 @@
   .surface-accent {
     @apply bg-yellow-50 dark:bg-yellow-950;
   }
+
+  .text-primary {
+    @apply text-black dark:text-white;
+  }
 }
 
 @layer base {
