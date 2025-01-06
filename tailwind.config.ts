@@ -21,7 +21,7 @@ const config: Config = {
         },
         yellow: {
           '50': '#fffcf0',
-          '400': '#FFC901', // button arrow
+          '400': '#FFC901', // circle color
           '950': '#0f0c00',
         },
         neutral: {
