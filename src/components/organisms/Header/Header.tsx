@@ -1,5 +1,6 @@
 'use client';
 
+import ZLogo from '@/assets/images/z-logo.svg';
 import Button from '@/components/atoms/Button/Button';
 import { Dialog, DialogPanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
@@ -27,19 +28,20 @@ export default function Header({ className = '' }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 
   return (
-    <header className={clsx('surface-primary shadow-[0_9px_14px_rgba(0,0,0,0.03)]', className)}>
+    <header
+      className={clsx(
+        'surface-primary shadow-[0_9px_14px_rgba(0,0,0,0.03)]',
+        className
+      )}
+    >
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-screen-2xl items-center justify-between gap-x-6 p-6 lg:px-8"
       >
         <div className="flex md:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <img
-              alt=""
-              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-              className="h-8 w-auto"
-            />
+            <span className="sr-only">Zack Dolin</span>
+            <ZLogo className="absolute top-0 m-3 h-[3.75rem] w-auto" alt="" />
           </a>
         </div>
         <div className="hidden gap-x-6 md:flex lg:gap-x-12">
@@ -67,7 +69,11 @@ export default function Header({ className = '' }: HeaderProps) {
           </button>
         </div>
       </nav>
-      <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="md:hidden">
+      <Dialog
+        open={mobileMenuOpen}
+        onClose={setMobileMenuOpen}
+        className="md:hidden"
+      >
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center gap-x-6">
