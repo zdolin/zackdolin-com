@@ -2,6 +2,7 @@ import tempData from '@/app/data/temp-data.json';
 import { iconMap } from '@/components/atoms/Icon';
 import SectionWrapper from '@/components/molecules/SectionWrapper';
 import IntroSection from '@/components/organisms/IntroSection';
+import SkillsSection from '@/components/organisms/SkillsSection';
 
 export default async function Home() {
   const { introduction, skills, resume, portfolio, testimonials, contact } =
@@ -9,13 +10,7 @@ export default async function Home() {
   return (
     <>
       <IntroSection data={introduction} />
-      <SectionWrapper
-        className="mb-6"
-        iconType={skills.categoryIcon as keyof typeof iconMap}
-        category={skills.category}
-        heading={skills.heading}
-        body={skills.body}
-      />
+      <SkillsSection data={skills} />
       <SectionWrapper
         className="mb-6"
         iconType={resume.categoryIcon as keyof typeof iconMap}

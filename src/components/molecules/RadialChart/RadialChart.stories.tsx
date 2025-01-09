@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import RadialChart from './RadialChart';
 
 const meta: Meta<typeof RadialChart> = {
-  title: 'organisms/RadialChart',
+  title: 'molecules/RadialChart',
   component: RadialChart,
   tags: ['autodocs'],
   parameters: {

@@ -34,7 +34,29 @@
       "category": "Skills",
       "categoryIcon": "skills",
       "heading": "Explore my skills",
-      "body": "Crafting scalable solutions, fostering collaboration, and delivering seamless digital experiences."
+      "body": "Crafting scalable solutions, fostering collaboration, and delivering seamless digital experiences.",
+      "skillslist": [
+        {
+          "percentage": 96,
+          "label": "React.js"
+        },
+        {
+          "percentage": 89,
+          "label": "Next.js"
+        },
+        {
+          "percentage": 88,
+          "label": "TypeScript"
+        },
+        {
+          "percentage": 75,
+          "label": "TailwindCSS"
+        },
+        {
+          "percentage": 62,
+          "label": "Node.js"
+        }
+      ]
     },
     "resume": {
       "category": "Resume",
