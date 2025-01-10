@@ -63,53 +63,50 @@
       "categoryIcon": "resume",
       "heading": "Work experience",
       "body": "A passionate software engineer turning ideas into seamless digital experiences.",
-      "experienceList:": {
-        "experience": [
-          {
-            "title": "Associate Technical Director",
-            "company": "AKQA",
-            "location": "Washington, DC",
-            "date": "2023 - Present",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt."
-          },
-          {
-            "title": "Principal Technologist",
-            "company": "AKQA",
-            "location": "Washington, DC",
-            "date": "2018 - 2023",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt."
-          },
-          {
-            "title": "Senior Creative Developer",
-            "company": "AKQA",
-            "location": "Washington, DC",
-            "date": "2008 - 2018",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt."
-          },
-          {
-            "title": "Lead Flash Developer ",
-            "company": "HZDG",
-            "location": "Washington, DC Metro Area",
-            "date": "2005 - 2008",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt."
-          },
-          {
-            "title": "Internship",
-            "company": "Juxt Interactive",
-            "location": "Newport Beach, California",
-            "date": "2004 - 2005",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt."
-          },
-          {
-            "title": "Web Designer & Developer",
-            "company": "Cherryone",
-            "location": "Chicago, Illinois",
-            "date": "2004",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt."
-          }
-        ]
-      }
-
+      "experienceList": [
+        {
+          "title": "Associate Technical Director",
+          "company": "AKQA",
+          "location": "Washington, DC",
+          "date": "2023 - Present",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt."
+        },
+        {
+          "title": "Principal Technologist",
+          "company": "AKQA",
+          "location": "Washington, DC",
+          "date": "2018 - 2023",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt."
+        },
+        {
+          "title": "Senior Creative Developer",
+          "company": "AKQA",
+          "location": "Washington, DC",
+          "date": "2008 - 2018",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt."
+        },
+        {
+          "title": "Lead Flash Developer ",
+          "company": "HZDG",
+          "location": "Washington, DC Metro Area",
+          "date": "2005 - 2008",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt."
+        },
+        {
+          "title": "Internship",
+          "company": "Juxt Interactive",
+          "location": "Newport Beach, California",
+          "date": "2004 - 2005",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt."
+        },
+        {
+          "title": "Web Designer & Developer",
+          "company": "Cherryone",
+          "location": "Chicago, Illinois",
+          "date": "2004",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt."
+        }
+      ]
     },
     "portfolio": {
       "category": "Portfolio",
