@@ -22,6 +22,10 @@
   .text-primary {
     @apply text-black dark:text-white;
   }
+
+  .text-secondary {
+    @apply text-neutral-500 dark:text-gray-500;
+  }
 }
 
 @layer base {

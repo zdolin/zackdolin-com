@@ -37,7 +37,9 @@ const IntroSection = ({ data }: IntroSectionProps) => (
               aria-hidden="true"
             />
           </span>
-          <span className="md:text-md text-primary ml-3 text-lg lg:text-lg">{item.text}</span>
+          <span className="md:text-md text-primary ml-3 text-lg lg:text-lg">
+            {item.text}
+          </span>
         </li>
       ))}
     </ul>
@@ -56,7 +58,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
           <span className="text-primary text-left text-4xl font-medium md:text-[2.625rem] xl:text-6xl">
             {stat.quantity}
           </span>
-          <span className="mt-2 max-w-24 text-left text-base text-neutral-500 lg:ml-4 lg:mt-0 xl:text-lg">
+          <span className="text-secondary mt-2 max-w-24 text-left text-base lg:ml-4 lg:mt-0 xl:text-lg">
             {stat.text}
           </span>
         </li>
