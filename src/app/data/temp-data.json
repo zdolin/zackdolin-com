@@ -134,7 +134,30 @@
       "category": "Testimonials",
       "categoryIcon": "testimonials",
       "heading": "What they say!",
-      "body": "Here's what my clients and collaborators have to say about my work, skills, and dedication."
+      "body": "Here's what my clients and collaborators have to say about my work, skills, and dedication.",
+      "testimonialList": [
+        {
+          "quote": "Zack transformed our outdated website into a modern, responsive platform that has significantly increased our user engagement. His attention to detail and problem-solving skills are unmatched!",
+          "author": "Leeroy Jenkins",
+          "authorTitle": "CEO, Tech Innovators",
+          "date": "2025-01-09T14:00:00Z",
+          "avatarSrc": "/images/testimonials/avatar-temp.jpg"
+        },
+        {
+          "quote": "Zack transformed our outdated website into a modern, responsive platform that has significantly increased our user engagement. His attention to detail and problem-solving skills are unmatched!",
+          "author": "Billy Jenkins",
+          "authorTitle": "CEO, Tech Innovators",
+          "date": "2024-12-27T14:00:00Z",
+          "avatarSrc": "/images/testimonials/avatar-temp.jpg"
+        },
+        {
+          "quote": "Zack transformed our outdated website into a modern, responsive platform that has significantly increased our user engagement. His attention to detail and problem-solving skills are unmatched!",
+          "author": "Jimmy Jenkins",
+          "authorTitle": "CEO, Tech Innovators",
+          "date": "2024-12-15T14:00:00Z",
+          "avatarSrc": "/images/testimonials/avatar-temp.jpg"
+        }
+      ]
     },
     "contact": {
       "category": "Contact",

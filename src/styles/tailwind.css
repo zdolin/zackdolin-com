@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer utilities {
+  .card-base {
+    @apply flex items-center justify-between rounded-2xl;
+  }
+
   .surface-primary {
     @apply bg-white dark:bg-black;
   }

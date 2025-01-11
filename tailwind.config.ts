@@ -31,6 +31,7 @@ const config: Config = {
           '300': '#dcdcdc',
           '500': '#aeaeae',
           '800': '#1f1f1f',
+          '900': '#0f0f0f',
         },
         zinc: {
           '900': '#1f1f1f',

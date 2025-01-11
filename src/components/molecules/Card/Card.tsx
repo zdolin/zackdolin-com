@@ -21,7 +21,7 @@ const Card = ({
   <div
     className={clsx(
       index && index % 2 === 1 ? 'surface-accent' : 'surface-tertiary',
-      'flex flex-col-reverse items-center justify-between rounded-2xl p-4 md:flex-row md:p-6',
+      'card-base flex-col-reverse p-4 md:flex-row md:p-6',
       className
     )}
   >
