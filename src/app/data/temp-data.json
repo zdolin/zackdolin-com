@@ -62,7 +62,9 @@
       "category": "Resume",
       "categoryIcon": "resume",
       "heading": "Work experience",
+      "heading2": "Education",
       "body": "A passionate software engineer turning ideas into seamless digital experiences.",
+      "body2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.",
       "experienceList": [
         {
           "title": "Associate Technical Director",
@@ -88,23 +90,37 @@
         {
           "title": "Lead Flash Developer ",
           "company": "HZDG",
-          "location": "Washington, DC Metro Area",
+          "location": "DC Metro Area",
           "date": "2005 - 2008",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt."
         },
         {
           "title": "Internship",
           "company": "Juxt Interactive",
-          "location": "Newport Beach, California",
+          "location": "Newport Beach, CA",
           "date": "2004 - 2005",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt."
         },
         {
           "title": "Web Designer & Developer",
           "company": "Cherryone",
-          "location": "Chicago, Illinois",
+          "location": "Chicago, IL",
           "date": "2004",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt."
+        }
+      ],
+      "educationList": [
+        {
+          "title": "Certification in Interactive Media",
+          "location": "Vancouver, BC",
+          "date": "2003",
+          "description": "Vancouver Film School"
+        },
+        {
+          "title": "Bachelor of Arts · English Language and Literature",
+          "location": "Ann Arbor, MI",
+          "date": "1998 - 2002",
+          "description": "University of Michigan"
         }
       ]
     },
