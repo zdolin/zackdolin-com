@@ -14,6 +14,7 @@ const config: StorybookConfig = {
     name: '@storybook/nextjs',
     options: {},
   },
+  staticDirs: ['../public'],
   webpackFinal: async (config) => {
     if (config?.module?.rules) {
       // Remove existing SVG rules to ensure type safety
