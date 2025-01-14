@@ -1,19 +1,30 @@
+import { cva } from 'class-variance-authority';
 import clsx from 'clsx';
 
 type HeadingProps = {
   level?: 1 | 2 | 3 | 4 | 5 | 6;
-} & React.ComponentPropsWithoutRef<'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'>;
+} & React.HTMLAttributes<HTMLHeadingElement>;
+
+const headingStyles = cva('text-primary font-semibold', {
+  variants: {
+    level: {
+      1: 'text-3xl md:text-2xl lg:text-5xl lg:!leading-[3.2rem]',
+      2: 'text-lg',
+    },
+  },
+  defaultVariants: {
+    level: 1,
+  },
+});
 
 export function Heading({ className, level = 1, ...props }: HeadingProps) {
-  let Element: `h${typeof level}` = `h${level}`;
+  const safeLevel = (level >= 1 && level <= 6 ? level : 1) as 1 | 2; // Default to level 1 for unsupported levels
+  const Element = `h${safeLevel}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
   return (
     <Element
       {...props}
-      className={clsx(
-        'text-primary text-3xl font-semibold md:text-2xl lg:text-5xl lg:!leading-[3.2rem]',
-        className
-      )}
+      className={clsx(headingStyles({ level: safeLevel }), className)}
     />
   );
 }
