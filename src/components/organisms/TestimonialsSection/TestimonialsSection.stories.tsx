@@ -1,3 +1,4 @@
+import tempData from '@/app/data/temp-data.json';
 import type { Meta, StoryObj } from '@storybook/react';
 import TestimonialsSection from './TestimonialsSection';
 
@@ -17,5 +18,5 @@ export default meta;
 type Story = StoryObj<typeof TestimonialsSection>;
 
 export const Default: Story = {
-  args: {},
+  args: { data: tempData.sections.testimonials },
 };
