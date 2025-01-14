@@ -163,7 +163,24 @@
       "category": "Contact",
       "categoryIcon": "contact",
       "heading": "Get in touch",
-      "body": "Have a project in mind or just want to connect? Let's work together to bring your vision to life."
+      "body": "Have a project in mind or just want to connect? Let's work together to bring your vision to life.",
+      "infoList": [
+        {
+          "icon": "phone",
+          "heading": "Phone",
+          "text": "(301) 910-2345"
+        },
+        {
+          "icon": "email",
+          "heading": "Email",
+          "text": "zack@zackdolin.com"
+        },
+        {
+          "icon": "address",
+          "heading": "Location",
+          "text": "Frederick, MD"
+        }
+      ]
     }
   }
 }

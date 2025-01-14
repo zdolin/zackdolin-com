@@ -5,10 +5,10 @@ import { iconMap } from '@/components/atoms/Icon';
 export interface InfoItemProps {
   iconType: keyof typeof iconMap;
   heading: string;
-  copy: string;
+  text: string;
 }
 
-const InfoItem = ({ iconType, heading, copy }: InfoItemProps) => (
+const InfoItem = ({ iconType, heading, text }: InfoItemProps) => (
   <div className="flex flex-row gap-4 md:flex-col md:items-center lg:flex-row lg:items-start">
     <CircleIcon
       className="h-[2.625rem] w-[2.625rem] p-3 md:h-12 md:w-12 md:p-[0.813rem]"
@@ -19,7 +19,7 @@ const InfoItem = ({ iconType, heading, copy }: InfoItemProps) => (
         {heading}
       </Heading>
       <p className="text-secondary text-base md:text-center md:text-sm lg:text-left lg:text-lg">
-        {copy}
+        {text}
       </p>
     </div>
   </div>

@@ -29,6 +29,6 @@ export const Default: Story = {
   args: {
     iconType: 'phone',
     heading: 'Phone',
-    copy: '+1 (123) 456-7890',
+    text: '(123) 456-7890',
   },
 };
