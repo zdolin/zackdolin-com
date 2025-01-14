@@ -4,6 +4,7 @@ import SectionWrapper from '@/components/molecules/SectionWrapper';
 import IntroSection from '@/components/organisms/IntroSection';
 import ResumeSection from '@/components/organisms/ResumeSection';
 import SkillsSection from '@/components/organisms/SkillsSection';
+import TestimonialsSection from '@/components/organisms/TestimonialsSection';
 
 export default async function Home() {
   const { introduction, skills, resume, portfolio, testimonials, contact } =
@@ -20,13 +21,7 @@ export default async function Home() {
         heading={portfolio.heading}
         body={portfolio.body}
       />
-      <SectionWrapper
-        className="mb-6"
-        iconType={testimonials.categoryIcon as keyof typeof iconMap}
-        category={testimonials.category}
-        heading={testimonials.heading}
-        body={testimonials.body}
-      />
+      <TestimonialsSection data={testimonials} />
       <SectionWrapper
         className="mb-6"
         iconType={contact.categoryIcon as keyof typeof iconMap}
