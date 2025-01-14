@@ -30,9 +30,9 @@ const CardTestimonial = ({
       <RatingSVG alt="5 star rating" />
       <p className="text-primary py-6 text-sm lg:text-lg">{`“${quote}”`}</p>
       <div className="flex w-full flex-row items-center justify-between">
-        <div className="flex">
+        <div className="flex gap-5">
           <Image
-            className="mr-5 mt-1 h-12 w-12 rounded-full"
+            className="mt-1 h-12 w-12 rounded-full"
             src={avatarSrc}
             alt={author}
             width={48}
