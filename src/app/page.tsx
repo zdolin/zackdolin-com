@@ -1,6 +1,7 @@
 import tempData from '@/app/data/temp-data.json';
 import { iconMap } from '@/components/atoms/Icon';
 import SectionWrapper from '@/components/molecules/SectionWrapper';
+import ContactSection from '@/components/organisms/ContactSection';
 import IntroSection from '@/components/organisms/IntroSection';
 import ResumeSection from '@/components/organisms/ResumeSection';
 import SkillsSection from '@/components/organisms/SkillsSection';
@@ -22,13 +23,7 @@ export default async function Home() {
         body={portfolio.body}
       />
       <TestimonialsSection data={testimonials} />
-      <SectionWrapper
-        className="mb-6"
-        iconType={contact.categoryIcon as keyof typeof iconMap}
-        category={contact.category}
-        heading={contact.heading}
-        body={contact.body}
-      />
+      <ContactSection data={contact} />
     </>
   );
 }
