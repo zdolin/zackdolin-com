@@ -31,6 +31,7 @@ const ContactSection = ({ data }: ContactSectionProps) => (
         />
       ))}
     </div>
+    <div className="rounded-2xl border border-gray-300 p-8 dark:border-gray-800"></div>
   </SectionWrapper>
 );
 
