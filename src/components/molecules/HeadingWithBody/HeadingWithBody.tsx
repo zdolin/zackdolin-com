@@ -27,7 +27,7 @@ const HeadingWithBody = ({
     <p
       className={clsx(
         'text-secondary w-full text-center text-sm md:w-3/5 md:text-left lg:text-lg',
-        isVertical ? 'mt-5' : ''
+        isVertical ? 'mt-5' : 'mt-5 md:mt-0'
       )}
     >
       {body}
