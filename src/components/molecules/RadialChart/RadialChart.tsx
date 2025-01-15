@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { animate, motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import resolveConfig from 'tailwindcss/resolveConfig';
@@ -12,15 +13,17 @@ type RadialChartProps = {
   strokeWidth?: number;
   duration?: number;
   delay?: number;
+  className?: string;
 };
 
 const RadialChart = ({
   percentage,
   label,
-  size = 120,
+  size = 110,
   strokeWidth = 4,
   duration = 1.2,
   delay = 0,
+  className = '',
 }: RadialChartProps) => {
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
@@ -46,7 +49,7 @@ const RadialChart = ({
   }, [percentage, circumference, duration, controls, delay]);
 
   return (
-    <div className="flex w-full flex-col items-center">
+    <div className={clsx('flex w-full flex-col items-center', className)}>
       <div
         className="relative flex items-center justify-center"
         style={{
