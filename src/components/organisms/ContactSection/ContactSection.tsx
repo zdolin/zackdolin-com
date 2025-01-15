@@ -19,8 +19,9 @@ const ContactSection = ({ data }: ContactSectionProps) => (
       {data.infoList.map((item: any, index: number) => (
         <InfoItem
           className={clsx(
-            '[&:not(:last-child)]:border-b md:[&:not(:last-child)]:border-b-0 lg:[&:not(:last-child)]:border-b',
-            '&:not(:last-child)]:dark:border-gray-800 [&:not(:last-child)]:border-gray-300',
+            '[&:not(:last-child)]:border-b',
+            'md:[&:not(:last-child)]:border-b-0 lg:[&:not(:last-child)]:border-b',
+            '[&:not(:last-child)]:border-gray-300 [&:not(:last-child)]:dark:border-gray-800',
             'py-6 md:px-6 md:py-0 lg:px-0 lg:py-6'
           )}
           key={index}
