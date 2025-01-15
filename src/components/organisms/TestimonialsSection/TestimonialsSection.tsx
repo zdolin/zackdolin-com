@@ -71,7 +71,7 @@ const TestimonialsSection = ({ data }: TestimonialsSectionProps) => {
         <button
           className={clsx(
             'absolute bottom-0 left-0 z-10',
-            'rounded-full bg-white p-2 shadow-lg dark:bg-gray-800',
+            'rounded-full bg-white p-2 shadow-lg dark:bg-gray-700',
             'disabled:cursor-not-allowed disabled:opacity-50'
           )}
           onClick={scrollPrev}
@@ -83,7 +83,7 @@ const TestimonialsSection = ({ data }: TestimonialsSectionProps) => {
         <button
           className={clsx(
             'absolute bottom-0 right-0 z-10',
-            'rounded-full bg-white p-2 shadow-lg dark:bg-gray-800',
+            'rounded-full bg-white p-2 shadow-lg dark:bg-gray-700',
             'disabled:cursor-not-allowed disabled:opacity-50'
           )}
           onClick={scrollNext}

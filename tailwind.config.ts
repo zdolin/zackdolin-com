@@ -30,7 +30,8 @@ const config: Config = {
         gray: {
           '300': '#dcdcdc',
           '500': '#aeaeae',
-          '800': '#1f1f1f',
+          '700': '#1f1f1f',
+          '800': '#2b2b2b',
           '900': '#0f0f0f',
         },
         zinc: {
