@@ -15,7 +15,7 @@ const TestimonialsSection = ({ data }: TestimonialsSectionProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: 'center',
-    inViewThreshold: 0.1, // Adjusts how much of the side is visible
+    inViewThreshold: 0.1,
   });
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
@@ -99,7 +99,7 @@ const TestimonialsSection = ({ data }: TestimonialsSectionProps) => {
             <button
               key={index}
               className={clsx(
-                'mx-1 h-3 w-3 rounded-full',
+                'mx-2 h-1 w-12 rounded-full md:mx-3 md:h-2 md:w-16',
                 emblaApi?.selectedScrollSnap() === index
                   ? 'bg-blue-500'
                   : 'bg-gray-400 dark:bg-gray-600'
