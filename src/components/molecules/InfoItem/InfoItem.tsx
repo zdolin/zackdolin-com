@@ -13,7 +13,7 @@ export interface InfoItemProps {
 const InfoItem = ({ iconType, heading, text, className }: InfoItemProps) => (
   <div
     className={clsx(
-      'flex flex-row gap-4 md:flex-col md:items-center lg:flex-row lg:items-start',
+      'flex flex-row gap-4 md:flex-col md:items-center xl:flex-row xl:items-start',
       className
     )}
   >
@@ -22,10 +22,10 @@ const InfoItem = ({ iconType, heading, text, className }: InfoItemProps) => (
       type={iconType}
     />
     <div className="flex flex-col">
-      <Heading className="md:text-center lg:text-left" level={2}>
+      <Heading className="md:text-center xl:text-left" level={2}>
         {heading}
       </Heading>
-      <p className="text-secondary text-base md:text-center md:text-sm lg:text-left lg:text-lg">
+      <p className="text-secondary text-base md:text-center md:text-sm xl:text-left xl:text-xl">
         {text}
       </p>
     </div>
