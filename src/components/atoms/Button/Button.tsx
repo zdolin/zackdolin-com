@@ -1,5 +1,6 @@
 import { Button as HeadlessButton } from '@headlessui/react';
 import { cva, VariantProps } from 'class-variance-authority';
+import clsx from 'clsx';
 import React from 'react';
 
 const buttonVariants = cva(
@@ -27,6 +28,7 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean; // Allows rendering as a different element if needed
+  className?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -34,6 +36,7 @@ const Button: React.FC<ButtonProps> = ({
   intent,
   size,
   asChild = false,
+  className = '',
   ...props
 }) => {
   const Component = asChild ? 'span' : 'button';
@@ -41,7 +44,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <HeadlessButton
       as={Component}
-      className={buttonVariants({ intent, size })}
+      className={clsx(buttonVariants({ intent, size }), className)}
       {...props}
     >
       {children}
