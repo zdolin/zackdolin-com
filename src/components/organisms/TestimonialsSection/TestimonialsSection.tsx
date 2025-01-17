@@ -87,6 +87,7 @@ const TestimonialsSection = ({ data }: TestimonialsSectionProps) => {
           onClick={scrollPrev}
           disabled={!prevBtnEnabled}
           aria-label="Previous"
+          hideArrow
         >
           <Icon type="chevronLeft" />
         </Button>
@@ -99,6 +100,7 @@ const TestimonialsSection = ({ data }: TestimonialsSectionProps) => {
           onClick={scrollNext}
           disabled={!nextBtnEnabled}
           aria-label="Next"
+          hideArrow
         >
           <Icon type="chevronRight" />
         </Button>
