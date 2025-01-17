@@ -99,7 +99,7 @@ const TestimonialsSection = ({ data }: TestimonialsSectionProps) => {
             <button
               key={index}
               className={clsx(
-                'mx-2 h-1 w-12 rounded-full md:mx-3 md:h-2 md:w-16',
+                'mx-2 h-1 w-12 rounded-full md:mx-3 md:h-2 md:w-20',
                 emblaApi?.selectedScrollSnap() === index
                   ? 'bg-blue-500'
                   : 'bg-gray-400 dark:bg-gray-600'
