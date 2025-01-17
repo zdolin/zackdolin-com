@@ -1,6 +1,7 @@
 'use client';
 
-import { iconMap } from '@/components/atoms/Icon';
+import Button from '@/components/atoms/Button';
+import Icon, { iconMap } from '@/components/atoms/Icon';
 import CardTestimonial from '@/components/molecules/CardTestimonial';
 import SectionWrapper from '@/components/molecules/SectionWrapper';
 import clsx from 'clsx';
@@ -17,8 +18,9 @@ const TestimonialsSection = ({ data }: TestimonialsSectionProps) => {
     align: 'center',
     inViewThreshold: 0.1,
   });
-  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
-  const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
+  const [prevBtnEnabled, setPrevBtnEnabled] = useState<boolean>(false);
+  const [nextBtnEnabled, setNextBtnEnabled] = useState<boolean>(false);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -32,8 +34,16 @@ const TestimonialsSection = ({ data }: TestimonialsSectionProps) => {
     onSelect();
   }, [emblaApi, onSelect]);
 
-  const scrollPrev = () => emblaApi?.scrollPrev();
-  const scrollNext = () => emblaApi?.scrollNext();
+  const scrollPrev = () => {
+    emblaApi?.scrollPrev();
+    setCurrentSlideIndex(emblaApi?.selectedScrollSnap() ?? 0);
+  };
+  const scrollNext = () => {
+    emblaApi?.scrollNext();
+    setCurrentSlideIndex(emblaApi?.selectedScrollSnap() ?? 0);
+  };
+
+  console.log(emblaApi?.selectedScrollSnap());
 
   return (
     <SectionWrapper
@@ -68,43 +78,46 @@ const TestimonialsSection = ({ data }: TestimonialsSectionProps) => {
         </div>
 
         {/* Navigation Arrows */}
-        <button
+        <Button
           className={clsx(
-            'absolute bottom-0 left-0 z-10',
-            'rounded-full bg-white p-2 shadow-lg dark:bg-gray-700',
-            'disabled:cursor-not-allowed disabled:opacity-50'
+            'absolute bottom-0 left-0 z-10 -mb-6 rounded-full !p-3',
+            'disabled:cursor-not-allowed disabled:opacity-50',
+            'scale-75 transform lg:scale-90'
           )}
           onClick={scrollPrev}
           disabled={!prevBtnEnabled}
           aria-label="Previous"
         >
-          <span className="material-icons">chevron_left</span>
-        </button>
-        <button
+          <Icon type="chevronLeft" />
+        </Button>
+        <Button
           className={clsx(
-            'absolute bottom-0 right-0 z-10',
-            'rounded-full bg-white p-2 shadow-lg dark:bg-gray-700',
-            'disabled:cursor-not-allowed disabled:opacity-50'
+            'absolute bottom-0 right-0 z-10 -mb-6 rounded-full !p-3',
+            'disabled:cursor-not-allowed disabled:opacity-50',
+            'scale-75 transform lg:scale-90'
           )}
           onClick={scrollNext}
           disabled={!nextBtnEnabled}
           aria-label="Next"
         >
-          <span className="material-icons">chevron_right</span>
-        </button>
+          <Icon type="chevronRight" />
+        </Button>
 
         {/* Dots Navigation */}
-        <div className="mt-6 flex justify-center">
+        <div className="mt-8 flex justify-center">
           {data.testimonialList.map((_: any, index: number) => (
             <button
               key={index}
               className={clsx(
-                'mx-2 h-1 w-12 rounded-full md:mx-3 md:h-2 md:w-20',
-                emblaApi?.selectedScrollSnap() === index
+                'mx-2 h-1 w-12 rounded-full md:h-1.5 md:w-6 lg:mx-3 lg:w-[3.75rem]',
+                currentSlideIndex === index
                   ? 'bg-blue-500'
                   : 'bg-gray-400 dark:bg-gray-600'
               )}
-              onClick={() => emblaApi?.scrollTo(index)}
+              onClick={() => {
+                emblaApi?.scrollTo(index);
+                setCurrentSlideIndex(emblaApi?.selectedScrollSnap() ?? 0);
+              }}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
