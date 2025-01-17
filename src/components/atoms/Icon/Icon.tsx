@@ -1,4 +1,4 @@
-import { ArrowRightCircleIcon } from '@heroicons/react/24/solid';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import React from 'react';
 
 import AddressIcon from '@/assets/icons/address.svg';
@@ -14,7 +14,8 @@ import TestimonialsIcon from '@/assets/icons/testimonial.svg';
 
 export const iconMap = {
   address: AddressIcon,
-  arrowRight: ArrowRightCircleIcon,
+  chevronLeft: ChevronLeftIcon,
+  chevronRight: ChevronRightIcon,
   checkmark: CheckmarkIcon,
   contact: ContactIcon,
   email: EmailIcon,
