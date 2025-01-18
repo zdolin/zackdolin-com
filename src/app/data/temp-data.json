@@ -128,7 +128,33 @@
       "category": "Portfolio",
       "categoryIcon": "portfolio",
       "heading": "Featured projects",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt."
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.",
+      "projectsList": [
+        {
+          "imageSrc": "/images/temp/portfolio-thumb-temp.jpg",
+          "imageAlt": "Project 1",
+          "heading": "Project 1",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+          "imageSrc": "/images/temp/portfolio-thumb-temp.jpg",
+          "imageAlt": "Project 2",
+          "heading": "Project 2",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+          "imageSrc": "/images/temp/portfolio-thumb-temp.jpg",
+          "imageAlt": "Project 3",
+          "heading": "Project 3",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        }, 
+        {
+          "imageSrc": "/images/temp/portfolio-thumb-temp.jpg",
+          "imageAlt": "Project 4",
+          "heading": "Project 4",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        }
+      ]
     },
     "testimonials": {
       "category": "Testimonials",
@@ -141,21 +167,21 @@
           "author": "Leeroy Jenkins",
           "authorTitle": "CEO, Tech Innovators",
           "date": "2025-01-09T14:00:00Z",
-          "avatarSrc": "/images/testimonials/avatar-temp.jpg"
+          "avatarSrc": "/images/temp/avatar-temp.jpg"
         },
         {
           "quote": "Zack transformed our outdated website into a modern, responsive platform that has significantly increased our user engagement. His attention to detail and problem-solving skills are unmatched!",
           "author": "Billy Jenkins",
           "authorTitle": "CEO, Tech Innovators",
           "date": "2024-12-27T14:00:00Z",
-          "avatarSrc": "/images/testimonials/avatar-temp.jpg"
+          "avatarSrc": "/images/temp/avatar-temp.jpg"
         },
         {
           "quote": "Zack transformed our outdated website into a modern, responsive platform that has significantly increased our user engagement. His attention to detail and problem-solving skills are unmatched!",
           "author": "Jimmy Jenkins",
           "authorTitle": "CEO, Tech Innovators",
           "date": "2024-12-15T14:00:00Z",
-          "avatarSrc": "/images/testimonials/avatar-temp.jpg"
+          "avatarSrc": "/images/temp/avatar-temp.jpg"
         }
       ]
     },
