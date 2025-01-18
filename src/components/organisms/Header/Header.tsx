@@ -28,12 +28,7 @@ export default function Header({ className = '' }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 
   return (
-    <header
-      className={clsx(
-        'surface-primary shadow-[0_9px_14px_rgba(0,0,0,0.03)]',
-        className
-      )}
-    >
+    <header className={clsx('surface-primary shadow-custom', className)}>
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-screen-2xl items-center justify-between gap-x-6 p-6 lg:px-8"
