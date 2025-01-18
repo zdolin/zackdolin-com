@@ -32,7 +32,7 @@ const config: Config = {
           '500': '#aeaeae',
           '700': '#1f1f1f',
           '800': '#2b2b2b',
-          '900': '#0f0f0f',
+          '900': '#101010',
         },
         zinc: {
           '900': '#1f1f1f',
@@ -51,6 +51,7 @@ const config: Config = {
       },
       boxShadow: {
         custom: '0 9px 14px rgba(0, 0, 0, 0.03)',
+        "custom-2": '0 0 16px 8px rgba(0, 0, 0, 0.03)',
       }
     },
   },
