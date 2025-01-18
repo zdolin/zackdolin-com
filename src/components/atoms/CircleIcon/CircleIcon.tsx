@@ -11,7 +11,7 @@ export interface CircleIconProps {
 
 const CircleIcon = ({
   type,
-  className = 'w-6 h-6 lg:w-[1.875rem] lg:h-[1.875rem] p-1 lg:p-[0.438rem]',
+  className = 'w-6 h-6 lg:w-[1.875rem] lg:h-[1.875rem] p-1.5 lg:p-[0.438rem]',
   iconClassName = '',
   fillClass = 'bg-sky-600',
   iconFillClass = 'fill-white',
