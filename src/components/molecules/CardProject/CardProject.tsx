@@ -1,4 +1,5 @@
 import Heading from '@/components/atoms/Heading';
+import clsx from 'clsx';
 import Image from 'next/image';
 
 export interface ProjectCardProps {
@@ -14,7 +15,12 @@ const CardProject = ({
   heading,
   description,
 }: ProjectCardProps) => (
-  <div className="shadow-custom flex flex-col items-center rounded-2xl p-6 md:p-8">
+  <div
+    className={clsx(
+      'bg-white p-6 dark:bg-gray-900',
+      'shadow-custom-2 flex flex-col items-center rounded-2xl md:p-8'
+    )}
+  >
     <Image
       className="h-auto w-full rounded-2xl"
       src={imageSrc}
@@ -29,7 +35,7 @@ const CardProject = ({
     >
       {heading}
     </Heading>
-    <p className="text-secondary text-sm md:text-xs lg:text-lg">
+    <p className="text-secondary text-center text-sm md:text-xs lg:text-lg">
       {description}
     </p>
   </div>
