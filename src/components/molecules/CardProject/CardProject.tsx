@@ -18,7 +18,7 @@ const CardProject = ({
   <div
     className={clsx(
       'bg-white p-6 dark:bg-gray-900',
-      'shadow-custom-2 flex flex-col items-center rounded-2xl md:p-8'
+      'flex flex-col items-center rounded-2xl shadow-custom-2 md:p-8'
     )}
   >
     <Image
@@ -30,7 +30,7 @@ const CardProject = ({
       height={2}
     />
     <Heading
-      className="text-primary pb-3 pt-6 text-2xl md:pb-2 md:text-base lg:pb-4 lg:pt-8 lg:text-2xl"
+      className="text-primary pb-3 pt-6 !text-2xl md:pb-2 md:text-base lg:pb-4 lg:pt-8 lg:text-2xl"
       level={2}
     >
       {heading}
