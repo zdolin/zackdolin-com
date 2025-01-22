@@ -1,7 +1,9 @@
 {
   "sidebar": {
     "imageSrc": "/images/temp/zack-portrait-temp.png",
-    "imageAlt": "Zack Dolin"
+    "imageAlt": "Zack Dolin",
+    "name": "Zack Dolin.",
+    "description": "I'm a passionate developer with a knack for turning complex ideas into seamless digital experiences. I specialize in building efficient, scalable, and user-friendly solutions."
   },
   "sections": {
     "introduction": {
