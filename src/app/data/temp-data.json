@@ -1,4 +1,8 @@
 {
+  "sidebar": {
+    "imageSrc": "/images/temp/zack-portrait-temp.png",
+    "imageAlt": "Zack Dolin"
+  },
   "sections": {
     "introduction": {
       "category": "Introduction",

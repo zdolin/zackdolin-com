@@ -1,4 +1,6 @@
+import tempData from '@/app/data/temp-data.json';
 import Header from '@/components/organisms/Header';
+import Sidebar from '@/components/organisms/Sidebar';
 import '@/styles/tailwind.css';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
@@ -47,8 +49,8 @@ export default async function RootLayout({
         <div className="after:surface-secondary absolute inset-0 -z-10 flex grow after:absolute after:inset-y-0 after:right-0 after:w-1/2" />
         <div className="z-10 mx-auto flex w-full max-w-screen-2xl flex-1 lg:flex-row">
           {/* Sidebar on desktop only */}
-          <div className="surface-primary hidden w-2/5 max-w-[43.75rem] p-10 md:block md:w-1/3">
-            Sidebar Content Desktop
+          <div className="hidden w-2/5 max-w-[43.75rem] md:block md:w-1/3">
+            <Sidebar {...tempData.sidebar} />
           </div>
           {/* Content */}
           <main className="flex flex-1 flex-col overflow-x-hidden lg:min-w-0">
