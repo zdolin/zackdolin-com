@@ -49,7 +49,7 @@ export default async function RootLayout({
         <div className="after:surface-secondary absolute inset-0 -z-10 flex grow after:absolute after:inset-y-0 after:right-0 after:w-1/2" />
         <div className="z-10 mx-auto flex w-full max-w-screen-2xl flex-1 lg:flex-row">
           {/* Sidebar on desktop only */}
-          <div className="hidden md:block md:w-1/3">
+          <div className="hidden md:block md:w-1/3 xl:p-12">
             <div className="sticky left-0 top-0 w-full max-w-[43.75rem]">
               <Sidebar {...tempData.sidebar} />
             </div>

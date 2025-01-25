@@ -17,6 +17,28 @@
         "label": "Location",
         "text": "Frederick, MD"
       }
+    ],
+    "navigationList": [
+      {
+        "icon": "home",
+        "text": "Home"
+      },
+      {
+        "icon": "skills",
+        "text": "Skills"
+      },
+      {
+        "icon": "resume",
+        "text": "Resume"
+      },
+      {
+        "icon": "portfolio",
+        "text": "Portfolio"
+      },
+      {
+        "icon": "testimonials",
+        "text": "Testimonials"
+      }
     ]
   },
   "sections": {

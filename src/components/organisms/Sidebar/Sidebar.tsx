@@ -1,7 +1,12 @@
+'use client';
+
 import Button from '@/components/atoms/Button';
+import CircleIcon from '@/components/atoms/CircleIcon';
 import Heading from '@/components/atoms/Heading';
+import { iconMap } from '@/components/atoms/Icon';
 import SidebarAvatar from '@/components/molecules/SidebarAvatar';
 import clsx from 'clsx';
+//import CircleIcon from './CircleIcon';
 
 export interface SidebarProps {
   imageSrc: string;
@@ -9,11 +14,18 @@ export interface SidebarProps {
   name: string;
   description: string;
   detailsList: DetailListItem[];
+  navigationList: NavigationListItem[];
   className?: string;
+  hideNavigation?: boolean;
 }
 
 type DetailListItem = {
   label: string;
+  text: string;
+};
+
+type NavigationListItem = {
+  icon: keyof typeof iconMap;
   text: string;
 };
 
@@ -23,11 +35,13 @@ const Sidebar = ({
   name,
   description,
   detailsList,
+  navigationList,
   className,
+  hideNavigation = false,
 }: SidebarProps) => (
   <div
     className={clsx(
-      'surface-primary flex flex-col items-center p-10',
+      'surface-primary flex flex-col items-center p-10 xl:rounded-2xl xl:shadow-custom',
       className
     )}
   >
@@ -57,6 +71,19 @@ const Sidebar = ({
       ))}
     </ul>
     <Button className="w-full">Send Message</Button>
+    <div>
+      {!hideNavigation && (
+        <nav className="mt-8 flex w-full list-none space-x-4 rounded-full p-4 shadow-custom">
+          {navigationList.map((item) => (
+            <li key={item.text}>
+              <button className="group" onClick={() => {}}>
+                <CircleIcon className="h-12 w-12 p-3" type={item.icon} />
+              </button>
+            </li>
+          ))}
+        </nav>
+      )}
+    </div>
   </div>
 );
 
