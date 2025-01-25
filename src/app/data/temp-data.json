@@ -3,7 +3,21 @@
     "imageSrc": "/images/temp/zack-portrait-temp.png",
     "imageAlt": "Zack Dolin",
     "name": "Zack Dolin.",
-    "description": "I'm a passionate developer with a knack for turning complex ideas into seamless digital experiences. I specialize in building efficient, scalable, and user-friendly solutions."
+    "description": "I'm a passionate developer with a knack for turning complex ideas into seamless digital experiences. I specialize in building efficient, scalable, and user-friendly solutions.",
+    "detailsList": [
+      {
+        "label": "Position",
+        "text": "Associate Tech Director"
+      },
+      {
+        "label": "Date of birth",
+        "text": "27 July 1980"
+      },
+      {
+        "label": "Location",
+        "text": "Frederick, MD"
+      }
+    ]
   },
   "sections": {
     "introduction": {
