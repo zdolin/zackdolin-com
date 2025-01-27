@@ -2,6 +2,7 @@ import {
   ArrowRightCircleIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  HomeIcon,
 } from '@heroicons/react/24/solid';
 import clsx from 'clsx';
 import React from 'react';
@@ -10,7 +11,6 @@ import AddressIcon from '@/assets/icons/address.svg';
 import CheckmarkIcon from '@/assets/icons/checkmark.svg';
 import ContactIcon from '@/assets/icons/contact.svg';
 import EmailIcon from '@/assets/icons/email.svg';
-import HomeIcon from '@/assets/icons/home.svg';
 import PhoneIcon from '@/assets/icons/phone.svg';
 import PortfolioIcon from '@/assets/icons/portfolio.svg';
 import ResumeIcon from '@/assets/icons/resume.svg';
