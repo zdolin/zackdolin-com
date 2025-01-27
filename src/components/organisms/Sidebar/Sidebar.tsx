@@ -85,13 +85,13 @@ const Sidebar = ({
                     className="h-12 w-12 p-3"
                     bgClass={
                       currentNavigationListItem === item
-                        ? 'bg-blue-50'
-                        : undefined
+                        ? undefined
+                        : 'bg-blue-50'
                     }
                     iconFillClass={
                       currentNavigationListItem === item
-                        ? 'fill-sky-600'
-                        : undefined
+                        ? undefined
+                        : 'fill-sky-600'
                     }
                     type={item.icon}
                   />
