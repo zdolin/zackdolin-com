@@ -3,6 +3,7 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
 } from '@heroicons/react/24/solid';
+import clsx from 'clsx';
 import React from 'react';
 
 import AddressIcon from '@/assets/icons/address.svg';
@@ -37,7 +38,7 @@ interface IconProps {
   className?: string;
 }
 
-const Icon: React.FC<IconProps> = ({ type, className = 'w-6 h-6' }) => {
+const Icon: React.FC<IconProps> = ({ type, className = '' }) => {
   const IconComponent = iconMap[type];
 
   if (!IconComponent) {
@@ -45,7 +46,14 @@ const Icon: React.FC<IconProps> = ({ type, className = 'w-6 h-6' }) => {
     return null;
   }
 
-  return <IconComponent className={className} />;
+  return (
+    <IconComponent
+      className={clsx(
+        'h-6 w-6 transition-colors duration-200 ease-out',
+        className
+      )}
+    />
+  );
 };
 
 export default Icon;
