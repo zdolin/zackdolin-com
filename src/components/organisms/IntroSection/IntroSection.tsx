@@ -26,8 +26,9 @@ const IntroSection = ({ data }: IntroSectionProps) => (
     heading={data.heading}
     body={data.body}
     isVertical={true}
+    heroImage={data.heroImage}
   >
-    <ul className="mb-8 flex w-full space-x-8">
+    <ul className="mb-8 mt-8 flex w-full space-x-8 md:mt-0">
       {data.checklist.map((item: ChecklistItemType, index: number) => (
         <li key={index} className="flex">
           <span aria-hidden="true">
@@ -43,7 +44,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
         </li>
       ))}
     </ul>
-    <Button>Hire me</Button>
+    <Button className="w-full md:w-auto">Hire me</Button>
     <ul className="mt-8 flex flex-wrap justify-center gap-6 text-center lg:gap-8">
       {data.statslist.map((stat: StatslistItemType, index: number) => (
         <li

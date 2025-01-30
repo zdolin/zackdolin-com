@@ -1,7 +1,9 @@
 import { iconMap } from '@/components/atoms/Icon';
+import HeadingWithBody from '@/components/molecules/HeadingWithBody';
+import HeroAvatar from '@/components/molecules/HeroAvatar';
 import SectionCategoryIndicator from '@/components/molecules/SectionCategoryIndicator';
 import clsx from 'clsx';
-import HeadingWithBody from '../HeadingWithBody';
+import { ImageProps } from 'next/image';
 
 export interface SectionWrapperProps {
   iconType: keyof typeof iconMap;
@@ -11,6 +13,7 @@ export interface SectionWrapperProps {
   className?: string;
   isVertical?: boolean;
   children?: React.ReactNode;
+  heroImage?: ImageProps;
 }
 
 const SectionWrapper = ({
@@ -20,6 +23,7 @@ const SectionWrapper = ({
   body,
   className = '',
   isVertical = false,
+  heroImage,
   children,
 }: SectionWrapperProps) => (
   <section
@@ -27,9 +31,33 @@ const SectionWrapper = ({
     className={clsx('surface-primary w-full rounded-3xl px-8 py-10', className)}
   >
     <div className="flex w-full flex-col items-center md:items-start">
-      <SectionCategoryIndicator iconType={iconType} category={category} />
-      <HeadingWithBody heading={heading} body={body} isVertical={isVertical} />
+      <SectionCategoryIndicator
+        className={clsx(heroImage && 'hidden md:flex')}
+        iconType={iconType}
+        category={category}
+      />
+      <div className="flex flex-col-reverse items-center space-x-6 md:flex-row">
+        <HeadingWithBody
+          heading={heading}
+          body={body}
+          isVertical={isVertical}
+        />
+        {heroImage && (
+          <>
+            <HeroAvatar
+              className="mb-4 mt-6 md:mb-0 md:mt-0"
+              image={heroImage}
+            />{' '}
+            <SectionCategoryIndicator
+              className="md:hidden"
+              iconType={iconType}
+              category={category}
+            />
+          </>
+        )}
+      </div>
     </div>
+
     {children && <div className="mt-4">{children}</div>}
   </section>
 );

@@ -4,13 +4,13 @@ import Button from '@/components/atoms/Button';
 import CircleIcon from '@/components/atoms/CircleIcon';
 import Heading from '@/components/atoms/Heading';
 import { iconMap } from '@/components/atoms/Icon';
-import SidebarAvatar from '@/components/molecules/SidebarAvatar';
+import HeroAvatar from '@/components/molecules/HeroAvatar';
 import clsx from 'clsx';
+import { ImageProps } from 'next/image';
 import { useState } from 'react';
 
 export interface SidebarProps {
-  imageSrc: string;
-  imageAlt: string;
+  image: ImageProps;
   name: string;
   description: string;
   detailsList: DetailListItem[];
@@ -30,8 +30,7 @@ type NavigationListItem = {
 };
 
 const Sidebar = ({
-  imageSrc,
-  imageAlt,
+  image,
   name,
   description,
   detailsList,
@@ -49,7 +48,7 @@ const Sidebar = ({
         className
       )}
     >
-      <SidebarAvatar imageSrc={imageSrc} imageAlt={imageAlt} />
+      <HeroAvatar image={image} />
       <Heading
         className="text-primary pb-3 pt-6 !text-2xl md:pb-2 lg:pb-4 lg:pt-8 lg:text-3xl"
         level={2}

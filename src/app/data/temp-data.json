@@ -1,7 +1,9 @@
 {
   "sidebar": {
-    "imageSrc": "/images/temp/zack-portrait-temp.png",
-    "imageAlt": "Zack Dolin",
+    "image": {
+      "src": "/images/temp/zack-portrait-temp.png",
+      "alt": "Zack Dolin"
+    },
     "name": "Zack Dolin.",
     "description": "I'm a passionate developer with a knack for turning complex ideas into seamless digital experiences. I specialize in building efficient, scalable, and user-friendly solutions.",
     "detailsList": [
@@ -47,6 +49,10 @@
       "categoryIcon": "home",
       "heading": "Hi from Zack Dolin, Web Experience Engineer",
       "body": "A digital experience engineer transforming ideas into intuitive and impactful web solutions.",
+      "heroImage": {
+        "src": "/images/temp/zack-portrait-temp.png",
+        "alt": "Zack Dolin"
+      },
       "checklist": [
         {
           "icon": "checkmark",
