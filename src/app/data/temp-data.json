@@ -22,22 +22,27 @@
     ],
     "navigationList": [
       {
+        "id": "home",
         "icon": "home",
         "text": "Home"
       },
       {
+        "id": "skills",
         "icon": "skills",
         "text": "Skills"
       },
       {
+        "id": "resume",
         "icon": "resume",
         "text": "Resume"
       },
       {
+        "id": "resume",
         "icon": "portfolio",
         "text": "Portfolio"
       },
       {
+        "id": "testimonials",
         "icon": "testimonials",
         "text": "Testimonials"
       }
