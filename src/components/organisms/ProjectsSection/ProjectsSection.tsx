@@ -1,14 +1,14 @@
 import { iconMap } from '@/components/atoms/Icon';
 import CardProject from '@/components/molecules/CardProject';
 import SectionWrapper from '@/components/molecules/SectionWrapper';
+import { ImageProps } from 'next/image';
 
 export interface ProjectsSectionProps {
   data: any;
 }
 
 interface PortfolioCardType {
-  imageSrc: string;
-  imageAlt: string;
+  image: ImageProps;
   heading: string;
   description: string;
 }

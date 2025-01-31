@@ -179,26 +179,34 @@
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.",
       "projectsList": [
         {
-          "imageSrc": "/images/temp/portfolio-thumb-temp.jpg",
-          "imageAlt": "Project 1",
+          "image": {
+            "src": "/images/temp/portfolio-thumb-temp.jpg",
+            "alt": "Project 1"
+          },
           "heading": "Project 1",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         },
         {
-          "imageSrc": "/images/temp/portfolio-thumb-temp.jpg",
-          "imageAlt": "Project 2",
+          "image": {
+            "src": "/images/temp/portfolio-thumb-temp.jpg",
+            "alt": "Project 2"
+          },
           "heading": "Project 2",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         },
         {
-          "imageSrc": "/images/temp/portfolio-thumb-temp.jpg",
-          "imageAlt": "Project 3",
+          "image": {
+            "src": "/images/temp/portfolio-thumb-temp.jpg",
+            "alt": "Project 3"
+          },
           "heading": "Project 3",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         }, 
         {
-          "imageSrc": "/images/temp/portfolio-thumb-temp.jpg",
-          "imageAlt": "Project 4",
+          "image": {
+            "src": "/images/temp/portfolio-thumb-temp.jpg",
+            "alt": "Project 4"
+          },
           "heading": "Project 4",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         }

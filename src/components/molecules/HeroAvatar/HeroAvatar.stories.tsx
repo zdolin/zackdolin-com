@@ -1,6 +1,6 @@
 import tempData from '@/app/data/temp-data.json';
+import HeroAvatar from '@/components/molecules/HeroAvatar/HeroAvatar';
 import type { Meta, StoryObj } from '@storybook/react';
-import HeroAvatar from './HeroAvatar';
 
 const meta: Meta<typeof HeroAvatar> = {
   title: 'molecules/HeroAvatar',
@@ -19,7 +19,6 @@ type Story = StoryObj<typeof HeroAvatar>;
 
 export const Default: Story = {
   args: {
-    imageSrc: tempData.sidebar.imageSrc,
-    imageAlt: tempData.sidebar.imageAlt,
+    image: tempData.sidebar.image,
   },
 };

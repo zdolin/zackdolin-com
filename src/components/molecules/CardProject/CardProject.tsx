@@ -1,20 +1,14 @@
 import Heading from '@/components/atoms/Heading';
 import clsx from 'clsx';
-import Image from 'next/image';
+import Image, { ImageProps } from 'next/image';
 
 export interface ProjectCardProps {
-  imageSrc: string;
-  imageAlt: string;
+  image: ImageProps;
   heading: string;
   description: string;
 }
 
-const CardProject = ({
-  imageSrc,
-  imageAlt,
-  heading,
-  description,
-}: ProjectCardProps) => (
+const CardProject = ({ image, heading, description }: ProjectCardProps) => (
   <div
     className={clsx(
       'bg-white p-6 dark:bg-gray-900',
@@ -23,8 +17,8 @@ const CardProject = ({
   >
     <Image
       className="h-auto w-full rounded-2xl"
-      src={imageSrc}
-      alt={imageAlt}
+      src={image.src}
+      alt={image.alt}
       layout="responsive"
       width={3}
       height={2}
