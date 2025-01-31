@@ -115,8 +115,8 @@
       "category": "Resume",
       "categoryIcon": "resume",
       "heading": "Work experience",
-      "heading2": "Education",
       "body": "A passionate software engineer turning ideas into seamless digital experiences.",
+      "heading2": "Education",
       "body2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.",
       "experienceList": [
         {
@@ -141,7 +141,7 @@
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt."
         },
         {
-          "title": "Lead Flash Developer ",
+          "title": "Lead Flash Developer",
           "company": "HZDG",
           "location": "DC Metro Area",
           "date": "2005 - 2008",
