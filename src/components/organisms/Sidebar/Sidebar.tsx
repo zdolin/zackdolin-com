@@ -1,15 +1,12 @@
-'use client';
-
 import Button from '@/components/atoms/Button';
-import CircleIcon from '@/components/atoms/CircleIcon';
 import Heading from '@/components/atoms/Heading';
-import { iconMap } from '@/components/atoms/Icon';
 import HeroAvatar from '@/components/molecules/HeroAvatar';
+import MiniNav from '@/components/molecules/MiniNav';
+import { NavigationListItem } from '@/types/component';
 import clsx from 'clsx';
 import { ImageProps } from 'next/image';
-import { useState } from 'react';
 
-export interface SidebarProps {
+export type SidebarProps = {
   image: ImageProps;
   name: string;
   description: string;
@@ -17,19 +14,14 @@ export interface SidebarProps {
   navigationList: NavigationListItem[];
   className?: string;
   hideNavigation?: boolean;
-}
+};
 
 type DetailListItem = {
   label: string;
   text: string;
 };
 
-type NavigationListItem = {
-  icon: keyof typeof iconMap;
-  text: string;
-};
-
-const Sidebar = ({
+const Sidebar = async ({
   image,
   name,
   description,
@@ -38,8 +30,11 @@ const Sidebar = ({
   className,
   hideNavigation = false,
 }: SidebarProps) => {
-  const [currentNavigationListItem, setCurrentNavigationListItem] =
-    useState<NavigationListItem>(navigationList[0]);
+  /*const res = await client.getEntries({
+    content_type: 'sidebar',
+  });
+
+  console.log('response', res);*/
 
   return (
     <div
@@ -75,30 +70,7 @@ const Sidebar = ({
       </ul>
       <Button className="w-full">Send Message</Button>
       <div>
-        {!hideNavigation && (
-          <nav className="mt-8 flex w-full list-none space-x-4 rounded-full p-4 shadow-custom">
-            {navigationList.map((item) => (
-              <li key={item.text}>
-                <button onClick={() => setCurrentNavigationListItem(item)}>
-                  <CircleIcon
-                    className="h-12 w-12 p-3"
-                    bgClass={
-                      currentNavigationListItem === item
-                        ? undefined
-                        : 'bg-blue-50'
-                    }
-                    iconFillClass={
-                      currentNavigationListItem === item
-                        ? undefined
-                        : 'fill-sky-600'
-                    }
-                    type={item.icon}
-                  />
-                </button>
-              </li>
-            ))}
-          </nav>
-        )}
+        {!hideNavigation && <MiniNav navigationList={navigationList} />}
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import tempData from '@/app/data/temp-data.json';
 import Header from '@/components/organisms/Header';
-import Sidebar from '@/components/organisms/Sidebar';
+import Sidebar, { SidebarProps } from '@/components/organisms/Sidebar';
 import '@/styles/tailwind.css';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
@@ -51,7 +51,7 @@ export default async function RootLayout({
           {/* Sidebar on desktop only */}
           <div className="hidden md:block md:w-1/3 xl:p-12">
             <div className="sticky left-0 top-0 w-full max-w-[43.75rem]">
-              <Sidebar {...tempData.sidebar} />
+              <Sidebar {...(tempData.sidebar as SidebarProps)} />
             </div>
           </div>
 
@@ -59,7 +59,10 @@ export default async function RootLayout({
           <main className="flex flex-1 flex-col overflow-x-hidden lg:min-w-0">
             <div className="surface-secondary grow">
               <div className="mx-auto max-w-6xl">
-                <Sidebar className="md:hidden" {...tempData.sidebar} />
+                <Sidebar
+                  className="md:hidden"
+                  {...(tempData.sidebar as SidebarProps)}
+                />
                 <div className="p-6">{children}</div>
               </div>
             </div>
