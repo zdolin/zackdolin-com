@@ -1,5 +1,3 @@
-'use client';
-
 import Button from '@/components/atoms/Button';
 import { iconMap } from '@/components/atoms/Icon';
 import RadialChart from '@/components/molecules/RadialChart';
