@@ -43,8 +43,6 @@ const TestimonialsSection = ({ data }: TestimonialsSectionProps) => {
     setCurrentSlideIndex(emblaApi?.selectedScrollSnap() ?? 0);
   };
 
-  console.log(emblaApi?.selectedScrollSnap());
-
   return (
     <SectionWrapper
       className="mb-6"
