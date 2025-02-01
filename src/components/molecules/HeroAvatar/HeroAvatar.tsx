@@ -29,7 +29,6 @@ const HeroAvatar = ({
         className={clsx('h-auto w-full', imageClass)}
         src={image.src}
         alt={image.alt}
-        layout="responsive"
         width={image.width ?? 600}
         height={image.height ?? 750}
       />

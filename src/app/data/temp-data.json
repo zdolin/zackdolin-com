@@ -9,7 +9,7 @@
         "src": "/images/temp/zack-portrait-temp.png",
         "alt": "Zack Dolin"
       },
-      "checklist": [
+      "checkList": [
         {
           "icon": "checkmark",
           "text": "Based in Frederick, MD"
@@ -19,7 +19,7 @@
           "text": "Full-time job"
         }
       ],
-      "statslist": [
+      "statsList": [
         {
           "quantity": "96",
           "text": "Completed projects"
@@ -157,7 +157,7 @@
           },
           "heading": "Project 3",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        }, 
+        },
         {
           "image": {
             "src": "/images/temp/portfolio-thumb-temp.jpg",

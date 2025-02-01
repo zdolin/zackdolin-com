@@ -1,2 +1,1 @@
-export { default } from './Input';
-export { InputGroup } from './Input';
+export { InputGroup, default } from './Input';

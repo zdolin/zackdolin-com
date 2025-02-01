@@ -1,4 +1,4 @@
-export const timeAgo = (isoDate: string): string =>{
+export const timeAgo = (isoDate: string): string => {
   const now = new Date();
   const past = new Date(isoDate);
   const diffMs = now.getTime() - past.getTime();
@@ -7,10 +7,10 @@ export const timeAgo = (isoDate: string): string =>{
   const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
 
   if (diffDays < 1) {
-      return "today";
+    return 'today';
   } else if (diffDays === 1) {
-      return "1 day ago";
+    return '1 day ago';
   } else {
-      return `${diffDays} days ago`;
+    return `${diffDays} days ago`;
   }
-}
+};

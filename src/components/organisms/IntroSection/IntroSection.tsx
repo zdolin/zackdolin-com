@@ -2,20 +2,12 @@ import Button from '@/components/atoms/Button';
 import CircleIcon from '@/components/atoms/CircleIcon';
 import { iconMap } from '@/components/atoms/Icon';
 import SectionWrapper from '@/components/molecules/SectionWrapper';
+import { ChecklistItemType, StatslistItemType } from '@/types/component';
+import { IntroSectionDataType } from '@/types/data';
 import clsx from 'clsx';
 
 export interface IntroSectionProps {
-  data: any;
-}
-
-interface ChecklistItemType {
-  icon: keyof typeof iconMap;
-  text: string;
-}
-
-interface StatslistItemType {
-  quantity: string;
-  text: string;
+  data: IntroSectionDataType;
 }
 
 const IntroSection = ({ data }: IntroSectionProps) => (
@@ -29,7 +21,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
     heroImage={data.heroImage}
   >
     <ul className="mb-8 mt-8 flex w-full space-x-8 md:mt-0">
-      {data.checklist.map((item: ChecklistItemType, index: number) => (
+      {data.checkList.map((item: ChecklistItemType, index: number) => (
         <li key={index} className="flex">
           <span aria-hidden="true">
             <CircleIcon
@@ -46,12 +38,12 @@ const IntroSection = ({ data }: IntroSectionProps) => (
     </ul>
     <Button className="w-full md:w-auto">Hire me</Button>
     <ul className="mt-8 flex flex-wrap justify-center gap-6 text-center lg:gap-8">
-      {data.statslist.map((stat: StatslistItemType, index: number) => (
+      {data.statsList.map((stat: StatslistItemType, index: number) => (
         <li
           key={index}
           className={clsx(
             'flex flex-col items-start lg:flex-row',
-            index < data.statslist.length - 1
+            index < data.statsList.length - 1
               ? 'border-r border-neutral-500 border-opacity-25 lg:pr-6'
               : ''
           )}

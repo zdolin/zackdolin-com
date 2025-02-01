@@ -54,8 +54,8 @@ const config: Config = {
       },
       boxShadow: {
         custom: '0 9px 14px rgba(0, 0, 0, 0.03)',
-        "custom-2": '0 0 16px 8px rgba(0, 0, 0, 0.03)',
-      }
+        'custom-2': '0 0 16px 8px rgba(0, 0, 0, 0.03)',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],

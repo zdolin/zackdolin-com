@@ -28,3 +28,39 @@ export const SIDEBAR_QUERY = `
     }
   }
 `;
+
+const sectionWrapper = `{
+  category
+  categoryIcon {
+    type
+  }
+  heading
+  body
+}`;
+
+export const PAGE_QUERY = `query {
+  introSection: introSectionCollection(limit: 1) {
+    items {
+      title
+      sectionWrapper ${sectionWrapper}
+      heroImage {
+        url
+        title
+      }
+      checkListCollection {
+        items {
+          icon {
+            type
+          }
+          text
+        }
+      }
+      statsListCollection {
+        items {
+            quantity
+            text
+          }
+        }
+      }
+    }
+  }`;
