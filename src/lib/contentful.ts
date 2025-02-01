@@ -1,12 +1,16 @@
-import { createClient, ContentfulClientApi } from 'contentful';
+import { GraphQLClient } from 'graphql-request';
 
 if (!process.env.CONTENTFUL_SPACE_ID || !process.env.CONTENTFUL_ACCESS_TOKEN) {
   throw new Error('Missing environment variables for Contentful');
 }
 
-const client: ContentfulClientApi<any> = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-});
+const gqlClient = new GraphQLClient(
+  `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
+  {
+    headers: {
+      Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+    },
+  }
+);
 
-export default client;
+export default gqlClient;

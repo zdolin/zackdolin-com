@@ -2,7 +2,8 @@ import Button from '@/components/atoms/Button';
 import Heading from '@/components/atoms/Heading';
 import HeroAvatar from '@/components/molecules/HeroAvatar';
 import MiniNav from '@/components/molecules/MiniNav';
-import client from '@/lib/contentful';
+import gqlClient from '@/lib/contentful';
+import { SIDEBAR_QUERY } from '@/lib/queries';
 import { transformSidebarData } from '@/lib/transformers';
 import { SidebarDataType } from '@/types/data';
 import clsx from 'clsx';
@@ -14,11 +15,8 @@ export type SidebarProps = {
 };
 
 const getSidebarData = cache(async (): Promise<SidebarDataType> => {
-  const data = await client.getEntries({
-    content_type: 'sidebar',
-    include: 2,
-  });
-  console.log(JSON.stringify(data.items[0].fields.miniNavList, null, 2));
+  const data = await gqlClient.request(SIDEBAR_QUERY);
+  console.log(data);
   return transformSidebarData(data);
 });
 
