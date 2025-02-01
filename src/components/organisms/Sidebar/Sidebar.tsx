@@ -2,39 +2,29 @@ import Button from '@/components/atoms/Button';
 import Heading from '@/components/atoms/Heading';
 import HeroAvatar from '@/components/molecules/HeroAvatar';
 import MiniNav from '@/components/molecules/MiniNav';
-import { NavigationListItem } from '@/types/component';
+import client from '@/lib/contentful';
+import { transformSidebarData } from '@/lib/transformers';
+import { SidebarDataType } from '@/types/data';
 import clsx from 'clsx';
-import { ImageProps } from 'next/image';
+import { cache } from 'react';
 
 export type SidebarProps = {
-  image: ImageProps;
-  name: string;
-  description: string;
-  detailsList: DetailListItem[];
-  navigationList: NavigationListItem[];
   className?: string;
   hideNavigation?: boolean;
 };
 
-type DetailListItem = {
-  label: string;
-  text: string;
-};
-
-const Sidebar = async ({
-  image,
-  name,
-  description,
-  detailsList,
-  navigationList,
-  className,
-  hideNavigation = false,
-}: SidebarProps) => {
-  /*const res = await client.getEntries({
+const getSidebarData = cache(async (): Promise<SidebarDataType> => {
+  const data = await client.getEntries({
     content_type: 'sidebar',
+    include: 2,
   });
+  console.log(JSON.stringify(data.items[0].fields.miniNavList, null, 2));
+  return transformSidebarData(data);
+});
 
-  console.log('response', res);*/
+const Sidebar = async ({ className, hideNavigation = false }: SidebarProps) => {
+  const { image, name, description, detailsList, navigationList } =
+    await getSidebarData();
 
   return (
     <div
