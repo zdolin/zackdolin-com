@@ -1,4 +1,4 @@
-import tempData from '@/app/data/temp-data.json';
+import tempData from '@/app/data/mock-data.json';
 import HeroAvatar from '@/components/molecules/HeroAvatar/HeroAvatar';
 import type { Meta, StoryObj } from '@storybook/react';
 

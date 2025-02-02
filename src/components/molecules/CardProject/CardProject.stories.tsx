@@ -1,4 +1,4 @@
-import tempData from '@/app/data/temp-data.json';
+import tempData from '@/app/data/mock-data.json';
 import type { Meta, StoryObj } from '@storybook/react';
 import CardProject from './CardProject';
 
