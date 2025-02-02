@@ -3,10 +3,6 @@
 import clsx from 'clsx';
 import { animate, motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import resolveConfig from 'tailwindcss/resolveConfig';
-import tailwindConfig from '../../../../tailwind.config';
-
-const fullConfig = resolveConfig(tailwindConfig);
 
 type RadialChartProps = {
   percentage: number;
@@ -65,16 +61,15 @@ const RadialChart = ({
             cy={size / 2}
             r={radius}
             fill="none"
-            stroke={fullConfig.theme.colors.gray['300']}
+            className="stroke-gray-300 dark:stroke-gray-800"
             strokeWidth={strokeWidth}
           />
           <motion.circle
-            className="origin-center -rotate-90"
+            className="origin-center -rotate-90 stroke-sky-600"
             cx={size / 2}
             cy={size / 2}
             r={radius}
             fill="none"
-            stroke={fullConfig.theme.colors.sky['600']}
             strokeWidth={strokeWidth}
             strokeLinecap="round"
             strokeDasharray={circumference}
