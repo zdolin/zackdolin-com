@@ -73,4 +73,28 @@ export const PAGE_QUERY = `query {
       }
     }
   }
+  resumeSection: sectionResumeCollection(limit: 1) {
+    items {
+      sectionWrapper ${sectionWrapper}
+      heading2
+      body2
+      experienceListCollection {
+        items {
+          title
+          company
+          location
+          date
+          description
+        }
+      }
+      educationListCollection {
+        items {
+          title
+          location
+          date
+          description
+        }
+      }
+    }
+  }
 }`;

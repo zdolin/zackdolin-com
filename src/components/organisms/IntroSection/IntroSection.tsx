@@ -2,7 +2,7 @@ import Button from '@/components/atoms/Button';
 import CircleIcon from '@/components/atoms/CircleIcon';
 import { iconMap } from '@/components/atoms/Icon';
 import SectionWrapper from '@/components/molecules/SectionWrapper';
-import { ChecklistItemType, StatslistItemType } from '@/types/component';
+import { ChecklistItemType, StatsItemType } from '@/types/component';
 import { IntroSectionDataType } from '@/types/data';
 import clsx from 'clsx';
 
@@ -21,7 +21,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
     heroImage={data.heroImage}
   >
     <ul className="mb-8 mt-8 flex w-full space-x-8 md:mt-0">
-      {data.checkList.map((item: ChecklistItemType, index: number) => (
+      {data.checklist.map((item: ChecklistItemType, index: number) => (
         <li key={index} className="flex">
           <span aria-hidden="true">
             <CircleIcon
@@ -38,7 +38,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
     </ul>
     <Button className="w-full md:w-auto">Hire me</Button>
     <ul className="mt-8 flex flex-wrap justify-center gap-6 text-center lg:gap-8">
-      {data.statsList.map((stat: StatslistItemType, index: number) => (
+      {data.statsList.map((stat: StatsItemType, index: number) => (
         <li
           key={index}
           className={clsx(

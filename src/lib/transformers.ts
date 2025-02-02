@@ -1,4 +1,10 @@
-import { IntroSectionDataType, SkillsSectionDataType, PageDataType, SidebarDataType } from '@/types/data';
+import {
+  IntroSectionDataType,
+  PageDataType,
+  ResumeSectionDataType,
+  SidebarDataType,
+  SkillsSectionDataType,
+} from '@/types/data';
 
 export const transformSidebarData = (graphqlData: any): SidebarDataType => {
   if (!graphqlData?.sidebarCollection?.items?.length) {
@@ -48,16 +54,18 @@ const transformIntroSectionData = (introSection: any): IntroSectionDataType => {
         text: item.text,
       })
     ),
-    checkList: (introSection.checkListCollection?.items || []).map(
+    checklist: (introSection.checklistCollection?.items || []).map(
       (item: any) => ({
         text: item.text,
         icon: item.icon?.type || '',
       })
     ),
-  }
-}
+  };
+};
 
-const transformSkillsSectionData = (skillsSection: any): SkillsSectionDataType => {
+const transformSkillsSectionData = (
+  skillsSection: any
+): SkillsSectionDataType => {
   return {
     ...{
       category: skillsSection.sectionWrapper?.category || '',
@@ -72,12 +80,44 @@ const transformSkillsSectionData = (skillsSection: any): SkillsSectionDataType =
       })
     ),
   };
-}
+};
 
+const transformResumeSectionData = (
+  resumeSection: any
+): ResumeSectionDataType => {
+  return {
+    ...{
+      category: resumeSection.sectionWrapper?.category || '',
+      heading: resumeSection.sectionWrapper?.heading || '',
+      body: resumeSection.sectionWrapper?.body || '',
+      categoryIcon: resumeSection.sectionWrapper?.categoryIcon?.type || '',
+    },
+    heading2: resumeSection.heading2,
+    body2: resumeSection.body2,
+    experienceList: (resumeSection.experienceListCollection?.items || []).map(
+      (item: any) => ({
+        title: item.title,
+        company: item.company,
+        location: item.location,
+        date: item.date,
+        description: item.description,
+      })
+    ),
+    educationList: (resumeSection.educationListCollection?.items || []).map(
+      (item: any) => ({
+        title: item.title,
+        location: item.location,
+        date: item.date,
+        description: item.description,
+      })
+    ),
+  };
+};
 
 export const transformPageData = (graphqlData: any): PageDataType => {
-  return { 
-    introduction: transformIntroSectionData(graphqlData.introSection.items[0]), 
-    skills: transformSkillsSectionData(graphqlData.skillsSection.items[0]), 
+  return {
+    introduction: transformIntroSectionData(graphqlData.introSection.items[0]),
+    skills: transformSkillsSectionData(graphqlData.skillsSection.items[0]),
+    resume: transformResumeSectionData(graphqlData.resumeSection.items[0]),
   };
 };

@@ -8,7 +8,7 @@ export interface SkillsSectionProps {
   data: any;
 }
 
-interface SkillsListItemType {
+interface SkillItemType {
   percentage: number;
   label: string;
 }
@@ -22,7 +22,7 @@ const SkillsSection = ({ data }: SkillsSectionProps) => (
     body={data.body}
   >
     <div className="mt-6 grid grid-cols-12 justify-center gap-4 lg:grid-cols-5">
-      {data.skillsList.map((item: SkillsListItemType, index: number) => (
+      {data.skillsList.map((item: SkillItemType, index: number) => (
         <RadialChart
           key={`radial-chart-${index}`}
           className={clsx(

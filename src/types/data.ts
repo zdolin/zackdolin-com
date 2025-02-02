@@ -1,9 +1,11 @@
 import { ImageProps } from 'next/image';
 import {
   ChecklistItemType,
-  NavigationListItem,
-  StatslistItemType,
-  SkillsListItemType
+  EducationItemType,
+  ExperienceItemType,
+  NavigationItemType,
+  SkillItemType,
+  StatsItemType,
 } from './component';
 
 type SectionWrapperType = {
@@ -21,20 +23,28 @@ export type SidebarDataType = {
     label: string;
     text: string;
   }[];
-  navigationList: NavigationListItem[];
+  navigationList: NavigationItemType[];
 };
 
 export type IntroSectionDataType = {
   heroImage: ImageProps;
-  statsList: StatslistItemType[];
-  checkList: ChecklistItemType[];
+  statsList: StatsItemType[];
+  checklist: ChecklistItemType[];
 } & SectionWrapperType;
 
 export type SkillsSectionDataType = {
-  skillsList: SkillsListItemType[];
+  skillsList: SkillItemType[];
+} & SectionWrapperType;
+
+export type ResumeSectionDataType = {
+  heading2: string;
+  body2: string;
+  experienceList: ExperienceItemType[];
+  educationList: EducationItemType[];
 } & SectionWrapperType;
 
 export type PageDataType = {
   introduction: IntroSectionDataType;
   skills: SkillsSectionDataType;
+  resume: ResumeSectionDataType;
 };

@@ -58,7 +58,7 @@
         "src": "/images/temp/zack-portrait-temp.png",
         "alt": "Zack Dolin"
       },
-      "checkList": [
+      "checklist": [
         {
           "icon": "checkmark",
           "text": "Based in Frederick, MD"
@@ -206,7 +206,7 @@
           },
           "heading": "Project 3",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        }, 
+        },
         {
           "image": {
             "src": "/images/temp/portfolio-thumb-temp.jpg",
