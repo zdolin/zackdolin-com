@@ -3,6 +3,7 @@ import {
   ChecklistItemType,
   NavigationListItem,
   StatslistItemType,
+  SkillsListItemType
 } from './component';
 
 type SectionWrapperType = {
@@ -24,12 +25,16 @@ export type SidebarDataType = {
 };
 
 export type IntroSectionDataType = {
-  title: string;
   heroImage: ImageProps;
   statsList: StatslistItemType[];
   checkList: ChecklistItemType[];
 } & SectionWrapperType;
 
+export type SkillsSectionDataType = {
+  skillsList: SkillsListItemType[];
+} & SectionWrapperType;
+
 export type PageDataType = {
   introduction: IntroSectionDataType;
+  skills: SkillsSectionDataType;
 };

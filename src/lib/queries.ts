@@ -41,7 +41,6 @@ const sectionWrapper = `{
 export const PAGE_QUERY = `query {
   introSection: introSectionCollection(limit: 1) {
     items {
-      title
       sectionWrapper ${sectionWrapper}
       heroImage {
         url
@@ -57,10 +56,21 @@ export const PAGE_QUERY = `query {
       }
       statsListCollection {
         items {
-            quantity
-            text
-          }
+          quantity
+          text
         }
       }
     }
-  }`;
+  }
+  skillsSection: sectionSkillsCollection(limit: 1) {
+    items {
+      sectionWrapper ${sectionWrapper}
+      skillsListCollection {
+        items {
+          percentage
+          label
+        }
+      }
+    }
+  }
+}`;

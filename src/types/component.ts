@@ -14,3 +14,8 @@ export type StatslistItemType = {
   quantity: string;
   text: string;
 };
+
+export type SkillsListItemType = {
+  percentage: number;
+  label: string;
+}

@@ -1,4 +1,4 @@
-import { PageDataType, SidebarDataType } from '@/types/data';
+import { IntroSectionDataType, SkillsSectionDataType, PageDataType, SidebarDataType } from '@/types/data';
 
 export const transformSidebarData = (graphqlData: any): SidebarDataType => {
   if (!graphqlData?.sidebarCollection?.items?.length) {
@@ -30,18 +30,14 @@ export const transformSidebarData = (graphqlData: any): SidebarDataType => {
   };
 };
 
-export const transformPageData = (graphqlData: any): PageDataType => {
-  const introSection = graphqlData.introSection.items[0];
-
-  // Introduction Section
-  const introduction = {
+const transformIntroSectionData = (introSection: any): IntroSectionDataType => {
+  return {
     ...{
       category: introSection.sectionWrapper?.category || '',
       heading: introSection.sectionWrapper?.heading || '',
       body: introSection.sectionWrapper?.body || '',
       categoryIcon: introSection.sectionWrapper?.categoryIcon?.type || '',
     },
-    title: introSection.title,
     heroImage: {
       src: introSection.heroImage?.url,
       alt: introSection.heroImage?.title || '',
@@ -58,7 +54,30 @@ export const transformPageData = (graphqlData: any): PageDataType => {
         icon: item.icon?.type || '',
       })
     ),
-  };
+  }
+}
 
-  return { introduction };
+const transformSkillsSectionData = (skillsSection: any): SkillsSectionDataType => {
+  return {
+    ...{
+      category: skillsSection.sectionWrapper?.category || '',
+      heading: skillsSection.sectionWrapper?.heading || '',
+      body: skillsSection.sectionWrapper?.body || '',
+      categoryIcon: skillsSection.sectionWrapper?.categoryIcon?.type || '',
+    },
+    skillsList: (skillsSection.skillsListCollection?.items || []).map(
+      (item: any) => ({
+        percentage: item.percentage,
+        label: item.label,
+      })
+    ),
+  };
+}
+
+
+export const transformPageData = (graphqlData: any): PageDataType => {
+  return { 
+    introduction: transformIntroSectionData(graphqlData.introSection.items[0]), 
+    skills: transformSkillsSectionData(graphqlData.skillsSection.items[0]), 
+  };
 };
