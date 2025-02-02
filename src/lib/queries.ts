@@ -96,5 +96,22 @@ export const PAGE_QUERY = `query {
         }
       }
     }
+  },
+  portfolioSection: sectionPortfolioCollection(limit: 1) {
+    items {
+      sectionWrapper ${sectionWrapper}
+      projectsListCollection {
+        items {
+          heading
+          description
+          imagesCollection {
+            items {
+              title
+              url
+            }
+          }
+        }
+      }
+    }
   }
 }`;

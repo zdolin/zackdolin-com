@@ -1,6 +1,7 @@
 import {
   IntroSectionDataType,
   PageDataType,
+  PortfolioSectionDataType,
   ResumeSectionDataType,
   SidebarDataType,
   SkillsSectionDataType,
@@ -36,14 +37,18 @@ export const transformSidebarData = (graphqlData: any): SidebarDataType => {
   };
 };
 
+const getSectionWrapperData = (section: any): any => {
+  return {
+    category: section.sectionWrapper?.category || '',
+    heading: section.sectionWrapper?.heading || '',
+    body: section.sectionWrapper?.body || '',
+    categoryIcon: section.sectionWrapper?.categoryIcon?.type || '',
+  };
+};
+
 const transformIntroSectionData = (introSection: any): IntroSectionDataType => {
   return {
-    ...{
-      category: introSection.sectionWrapper?.category || '',
-      heading: introSection.sectionWrapper?.heading || '',
-      body: introSection.sectionWrapper?.body || '',
-      categoryIcon: introSection.sectionWrapper?.categoryIcon?.type || '',
-    },
+    ...getSectionWrapperData(introSection),
     heroImage: {
       src: introSection.heroImage?.url,
       alt: introSection.heroImage?.title || '',
@@ -67,12 +72,7 @@ const transformSkillsSectionData = (
   skillsSection: any
 ): SkillsSectionDataType => {
   return {
-    ...{
-      category: skillsSection.sectionWrapper?.category || '',
-      heading: skillsSection.sectionWrapper?.heading || '',
-      body: skillsSection.sectionWrapper?.body || '',
-      categoryIcon: skillsSection.sectionWrapper?.categoryIcon?.type || '',
-    },
+    ...getSectionWrapperData(skillsSection),
     skillsList: (skillsSection.skillsListCollection?.items || []).map(
       (item: any) => ({
         percentage: item.percentage,
@@ -86,12 +86,7 @@ const transformResumeSectionData = (
   resumeSection: any
 ): ResumeSectionDataType => {
   return {
-    ...{
-      category: resumeSection.sectionWrapper?.category || '',
-      heading: resumeSection.sectionWrapper?.heading || '',
-      body: resumeSection.sectionWrapper?.body || '',
-      categoryIcon: resumeSection.sectionWrapper?.categoryIcon?.type || '',
-    },
+    ...getSectionWrapperData(resumeSection),
     heading2: resumeSection.heading2,
     body2: resumeSection.body2,
     experienceList: (resumeSection.experienceListCollection?.items || []).map(
@@ -114,10 +109,31 @@ const transformResumeSectionData = (
   };
 };
 
+const transformPortfolioSectionData = (
+  portfolioSection: any
+): PortfolioSectionDataType => {
+  return {
+    ...getSectionWrapperData(portfolioSection),
+    projectsList: (portfolioSection.projectsListCollection?.items || []).map(
+      (item: any) => ({
+        heading: item.heading,
+        description: item.description,
+        image: {
+          src: item.imagesCollection.items[0].url,
+          alt: item.imagesCollection.items[0].title,
+        },
+      })
+    ),
+  };
+};
+
 export const transformPageData = (graphqlData: any): PageDataType => {
   return {
     introduction: transformIntroSectionData(graphqlData.introSection.items[0]),
     skills: transformSkillsSectionData(graphqlData.skillsSection.items[0]),
     resume: transformResumeSectionData(graphqlData.resumeSection.items[0]),
+    portfolio: transformPortfolioSectionData(
+      graphqlData.portfolioSection.items[0]
+    ),
   };
 };

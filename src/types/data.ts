@@ -4,6 +4,7 @@ import {
   EducationItemType,
   ExperienceItemType,
   NavigationItemType,
+  PortfolioItemType,
   SkillItemType,
   StatsItemType,
 } from './component';
@@ -43,8 +44,13 @@ export type ResumeSectionDataType = {
   educationList: EducationItemType[];
 } & SectionWrapperType;
 
+export type PortfolioSectionDataType = {
+  projectsList: PortfolioItemType[];
+} & SectionWrapperType;
+
 export type PageDataType = {
   introduction: IntroSectionDataType;
   skills: SkillsSectionDataType;
   resume: ResumeSectionDataType;
+  portfolio: PortfolioSectionDataType;
 };

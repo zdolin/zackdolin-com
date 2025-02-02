@@ -3,9 +3,10 @@ import Card from '@/components/molecules/Card';
 import HeadingWithBody from '@/components/molecules/HeadingWithBody';
 import SectionWrapper from '@/components/molecules/SectionWrapper';
 import { EducationItemType, ExperienceItemType } from '@/types/component';
+import { ResumeSectionDataType } from '@/types/data';
 
 export interface ResumeSectionProps {
-  data: any;
+  data: ResumeSectionDataType;
 }
 
 const ResumeSection = ({ data }: ResumeSectionProps) => (

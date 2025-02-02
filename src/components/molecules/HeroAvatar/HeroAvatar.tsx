@@ -44,7 +44,6 @@ const HeroAvatar = ({
         className="left-0 top-0 h-auto w-full"
         src={image.src}
         alt={image.alt}
-        layout="responsive"
         width={image.width ?? 600}
         height={image.height ?? 750}
       />

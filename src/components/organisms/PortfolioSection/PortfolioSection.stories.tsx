@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ProjectsSection from './ProjectsSection';
+import PortfolioSection from './PortfolioSection';
 
-const meta: Meta<typeof ProjectsSection> = {
-  title: 'organisms/ProjectsSection',
-  component: ProjectsSection,
+const meta: Meta<typeof PortfolioSection> = {
+  title: 'organisms/PortfolioSection',
+  component: PortfolioSection,
   tags: ['autodocs'],
   parameters: {
     backgrounds: {
@@ -14,7 +14,7 @@ const meta: Meta<typeof ProjectsSection> = {
 
 export default meta;
 
-type Story = StoryObj<typeof ProjectsSection>;
+type Story = StoryObj<typeof PortfolioSection>;
 
 export const Default: Story = {
   args: {},

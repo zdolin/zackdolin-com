@@ -2,10 +2,11 @@ import Button from '@/components/atoms/Button';
 import { iconMap } from '@/components/atoms/Icon';
 import RadialChart from '@/components/molecules/RadialChart';
 import SectionWrapper from '@/components/molecules/SectionWrapper';
+import { SkillsSectionDataType } from '@/types/data';
 import clsx from 'clsx';
 
 export interface SkillsSectionProps {
-  data: any;
+  data: SkillsSectionDataType;
 }
 
 interface SkillItemType {

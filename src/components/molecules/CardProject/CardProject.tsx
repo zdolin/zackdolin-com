@@ -19,9 +19,8 @@ const CardProject = ({ image, heading, description }: ProjectCardProps) => (
       className="h-auto w-full rounded-2xl"
       src={image.src}
       alt={image.alt}
-      layout="responsive"
-      width={3}
-      height={2}
+      width={720}
+      height={480}
     />
     <Heading
       className="text-primary pb-3 pt-6 !text-2xl md:pb-2 md:text-base lg:pb-4 lg:pt-8 lg:text-2xl"

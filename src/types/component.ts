@@ -1,4 +1,5 @@
 import { iconMap } from '@/components/atoms/Icon';
+import { ImageProps } from 'next/image';
 
 export type NavigationItemType = {
   icon: keyof typeof iconMap;
@@ -30,3 +31,9 @@ export type EducationItemType = {
 export type ExperienceItemType = {
   company: string;
 } & EducationItemType;
+
+export type PortfolioItemType = {
+  heading: string;
+  description: string;
+  image: ImageProps;
+};
