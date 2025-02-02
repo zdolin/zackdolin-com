@@ -12,7 +12,7 @@ const config: Config = {
     extend: {
       colors: {
         blue: {
-          '950': '#000f18',
+          '950': '#02111A',
         },
         sky: {
           '50': '#f0f7fc',
