@@ -13,9 +13,9 @@ import {
 
 type SectionWrapperType = {
   category: string;
+  categoryIcon: string;
   heading: string;
   body: string;
-  categoryIcon: string;
 };
 
 export type SidebarDataType = {

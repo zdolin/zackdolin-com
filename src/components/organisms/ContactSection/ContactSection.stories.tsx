@@ -1,3 +1,4 @@
+import mockData from '@/app/data/mock.json';
 import type { Meta, StoryObj } from '@storybook/react';
 import ContactSection from './ContactSection';
 
@@ -17,5 +18,7 @@ export default meta;
 type Story = StoryObj<typeof ContactSection>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    data: mockData.sections.contact,
+  },
 };

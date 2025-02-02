@@ -88,7 +88,7 @@
       "categoryIcon": "skills",
       "heading": "Explore my skills",
       "body": "Crafting scalable solutions, fostering collaboration, and delivering seamless digital experiences.",
-      "skillslist": [
+      "skillsList": [
         {
           "percentage": 96,
           "label": "React.js"
