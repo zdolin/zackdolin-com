@@ -6,10 +6,12 @@ import Input from '@/components/atoms/Input';
 import Textarea from '@/components/atoms/Textarea';
 import InfoItem from '@/components/molecules/InfoItem';
 import SectionWrapper from '@/components/molecules/SectionWrapper';
+import { InfoItemType } from '@/types/component';
+import { ContactSectionDataType } from '@/types/data';
 import clsx from 'clsx';
 
 export interface ContactSectionProps {
-  data: any;
+  data: ContactSectionDataType;
 }
 
 const ContactSection = ({ data }: ContactSectionProps) => (
@@ -22,7 +24,7 @@ const ContactSection = ({ data }: ContactSectionProps) => (
   >
     <div className="flex flex-col xl:flex-row xl:justify-between">
       <div className="mb-8 flex grow flex-col justify-between rounded-2xl border border-gray-300 px-8 py-2 dark:border-gray-800 md:flex-row md:px-4 md:py-8 lg:px-12 xl:mb-0 xl:mr-8 xl:flex-col xl:px-8">
-        {data.infoList.map((item: any, index: number) => (
+        {data.infoList.map((item: InfoItemType, index: number) => (
           <InfoItem
             className={clsx(
               '[&:not(:last-child)]:border-b',
@@ -32,7 +34,7 @@ const ContactSection = ({ data }: ContactSectionProps) => (
             )}
             key={index}
             {...item}
-            iconType={item.icon}
+            icon={item.icon as keyof typeof iconMap}
             index={index}
           />
         ))}

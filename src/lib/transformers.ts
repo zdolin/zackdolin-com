@@ -6,6 +6,7 @@ import {
   SidebarDataType,
   SkillsSectionDataType,
   TestimonalsSectionDataType,
+  ContactSectionDataType
 } from '@/types/data';
 
 export const transformSidebarData = (graphqlData: any): SidebarDataType => {
@@ -148,6 +149,21 @@ const transformTestimonialsSectionData = (
   };
 };
 
+const transformContactSectionData = (
+  contactSection: any
+): ContactSectionDataType => {
+  return {
+    ...getSectionWrapperData(contactSection),
+    infoList: (contactSection.infoListCollection?.items || []).map(
+      (item: any) => ({
+        heading: item.heading,
+        text: item.text,
+        icon: item.icon?.type || '',
+      })
+    ),
+  };
+};
+
 export const transformPageData = (graphqlData: any): PageDataType => {
   return {
     introduction: transformIntroSectionData(graphqlData.introSection.items[0]),
@@ -159,5 +175,6 @@ export const transformPageData = (graphqlData: any): PageDataType => {
     testimonials: transformTestimonialsSectionData(
       graphqlData.testimonialsSection.items[0]
     ),
+    contact: transformContactSectionData(graphqlData.contactSection.items[0]),
   };
 };

@@ -131,4 +131,18 @@ export const PAGE_QUERY = `query {
       }
     }
   }
+  contactSection: sectionContactCollection(limit: 1) {
+    items {
+      sectionWrapper ${sectionWrapper}
+      infoListCollection {
+        items {
+          icon {
+            type
+          }
+          heading
+          text
+        }
+      }
+    }
+  }
 }`;

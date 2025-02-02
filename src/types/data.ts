@@ -8,6 +8,7 @@ import {
   SkillItemType,
   StatsItemType,
   TestimonialItemType,
+  InfoItemType,
 } from './component';
 
 type SectionWrapperType = {
@@ -53,10 +54,15 @@ export type TestimonalsSectionDataType = {
   testimonialList: TestimonialItemType[];
 } & SectionWrapperType;
 
+export type ContactSectionDataType = {
+  infoList: InfoItemType[];
+} & SectionWrapperType;
+
 export type PageDataType = {
   introduction: IntroSectionDataType;
   skills: SkillsSectionDataType;
   resume: ResumeSectionDataType;
   portfolio: PortfolioSectionDataType;
   testimonials: TestimonalsSectionDataType;
+  contact: ContactSectionDataType;
 };

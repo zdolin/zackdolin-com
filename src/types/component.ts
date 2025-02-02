@@ -45,3 +45,10 @@ export type TestimonialItemType = {
   date: string;
   image: ImageProps;
 };
+
+export type InfoItemType = {
+  heading: string;
+  text: string;
+  icon: string;
+};
+

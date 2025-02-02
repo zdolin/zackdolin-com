@@ -1,4 +1,3 @@
-import tempData from '@/app/data/mock.json';
 import ContactSection from '@/components/organisms/ContactSection';
 import IntroSection from '@/components/organisms/IntroSection';
 import PortfolioSection from '@/components/organisms/PortfolioSection';
@@ -17,8 +16,7 @@ const getPageData = cache(async (): Promise<PageDataType> => {
 });
 
 export default async function Home() {
-  const { contact } = tempData.sections;
-  const { introduction, skills, resume, portfolio, testimonials } =
+  const { introduction, skills, resume, portfolio, testimonials, contact } =
     await getPageData();
 
   return (

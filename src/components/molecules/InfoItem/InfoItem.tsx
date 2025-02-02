@@ -4,13 +4,14 @@ import { iconMap } from '@/components/atoms/Icon';
 import clsx from 'clsx';
 
 export interface InfoItemProps {
-  iconType: keyof typeof iconMap;
+  icon: keyof typeof iconMap;
   heading: string;
   text: string;
   className?: string;
+  index: number;
 }
 
-const InfoItem = ({ iconType, heading, text, className }: InfoItemProps) => (
+const InfoItem = ({ icon, heading, text, className }: InfoItemProps) => (
   <div
     className={clsx(
       'flex flex-row gap-4 md:flex-col md:items-center xl:flex-row xl:items-start',
@@ -19,7 +20,7 @@ const InfoItem = ({ iconType, heading, text, className }: InfoItemProps) => (
   >
     <CircleIcon
       className="h-[2.625rem] w-[2.625rem] p-[0.813rem] md:h-12 md:w-12 md:p-[0.875rem]"
-      type={iconType}
+      type={icon}
     />
     <div className="flex flex-col">
       <Heading className="md:text-center xl:text-left" level={2}>
