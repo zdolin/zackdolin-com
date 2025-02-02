@@ -17,8 +17,9 @@ const getPageData = cache(async (): Promise<PageDataType> => {
 });
 
 export default async function Home() {
-  const { testimonials, contact } = tempData.sections;
-  const { introduction, skills, resume, portfolio } = await getPageData();
+  const { contact } = tempData.sections;
+  const { introduction, skills, resume, portfolio, testimonials } =
+    await getPageData();
 
   return (
     <>

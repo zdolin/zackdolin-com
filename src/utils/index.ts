@@ -10,6 +10,8 @@ export const timeAgo = (isoDate: string): string => {
     return 'today';
   } else if (diffDays === 1) {
     return '1 day ago';
+  } else if (diffDays > 60) {
+    return `${Math.floor(diffDays / 30)} months ago`;
   } else {
     return `${diffDays} days ago`;
   }

@@ -4,6 +4,7 @@ import Button from '@/components/atoms/Button';
 import Icon, { iconMap } from '@/components/atoms/Icon';
 import CardTestimonial from '@/components/molecules/CardTestimonial';
 import SectionWrapper from '@/components/molecules/SectionWrapper';
+import { TestimonialItemType } from '@/types/component';
 import clsx from 'clsx';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useCallback, useEffect, useState } from 'react';
@@ -54,24 +55,20 @@ const TestimonialsSection = ({ data }: TestimonialsSectionProps) => {
       <div className="relative">
         {/* Embla Carousel */}
         <div ref={emblaRef} className="embla overflow-hidden">
-          <div
-            className={clsx(
-              'embla__container flex',
-              'gap-4', // Adjust spacing between slides
-              'lg:-mx-12' // Adds peek effect on larger screens
+          <div className={clsx('embla__container flex', 'gap-4', 'lg:-mx-12')}>
+            {data.testimonialList.map(
+              (testimonial: TestimonialItemType, index: number) => (
+                <div
+                  className={clsx(
+                    'embla__slide flex-[0_0_100%]',
+                    'lg:flex-[0_0_calc(100%-96px)]'
+                  )}
+                  key={index}
+                >
+                  <CardTestimonial {...testimonial} />
+                </div>
+              )
             )}
-          >
-            {data.testimonialList.map((testimonial: any, index: number) => (
-              <div
-                className={clsx(
-                  'embla__slide flex-[0_0_100%]', // Full width for mobile
-                  'lg:flex-[0_0_calc(100%-96px)]' // Peek on desktop (adjust -96px for more/less peek)
-                )}
-                key={index}
-              >
-                <CardTestimonial {...testimonial} />
-              </div>
-            ))}
           </div>
         </div>
 

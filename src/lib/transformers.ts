@@ -5,6 +5,7 @@ import {
   ResumeSectionDataType,
   SidebarDataType,
   SkillsSectionDataType,
+  TestimonalsSectionDataType,
 } from '@/types/data';
 
 export const transformSidebarData = (graphqlData: any): SidebarDataType => {
@@ -127,6 +128,26 @@ const transformPortfolioSectionData = (
   };
 };
 
+const transformTestimonialsSectionData = (
+  testimonalsSection: any
+): TestimonalsSectionDataType => {
+  return {
+    ...getSectionWrapperData(testimonalsSection),
+    testimonialList: (
+      testimonalsSection.testimonialListCollection?.items || []
+    ).map((item: any) => ({
+      quote: item.quote,
+      author: item.author,
+      authorTitle: item.authorTitle,
+      date: item.date,
+      image: {
+        src: item.image?.url,
+        alt: item.image?.alt || item.author || '',
+      },
+    })),
+  };
+};
+
 export const transformPageData = (graphqlData: any): PageDataType => {
   return {
     introduction: transformIntroSectionData(graphqlData.introSection.items[0]),
@@ -134,6 +155,9 @@ export const transformPageData = (graphqlData: any): PageDataType => {
     resume: transformResumeSectionData(graphqlData.resumeSection.items[0]),
     portfolio: transformPortfolioSectionData(
       graphqlData.portfolioSection.items[0]
+    ),
+    testimonials: transformTestimonialsSectionData(
+      graphqlData.testimonialsSection.items[0]
     ),
   };
 };

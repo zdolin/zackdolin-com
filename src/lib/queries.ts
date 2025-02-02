@@ -114,4 +114,21 @@ export const PAGE_QUERY = `query {
       }
     }
   }
+  testimonialsSection: sectionTestimonialsCollection(limit: 1) {
+    items {
+      sectionWrapper ${sectionWrapper}
+      testimonialListCollection {
+        items {
+          quote
+          author
+          authorTitle
+          date
+          image {
+            url
+            title
+          }
+        }
+      }
+    }
+  }
 }`;

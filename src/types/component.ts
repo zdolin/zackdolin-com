@@ -37,3 +37,11 @@ export type PortfolioItemType = {
   description: string;
   image: ImageProps;
 };
+
+export type TestimonialItemType = {
+  quote: string;
+  author: string;
+  authorTitle: string;
+  date: string;
+  image: ImageProps;
+};

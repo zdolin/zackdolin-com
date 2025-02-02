@@ -1,14 +1,14 @@
 import RatingSVG from '@/assets/images/rating.svg';
 import { timeAgo } from '@/utils';
 import clsx from 'clsx';
-import Image from 'next/image';
+import Image, { ImageProps } from 'next/image';
 
 export interface CardTestimonialProps {
   quote: string;
   author: string;
   authorTitle: string;
   date: string;
-  avatarSrc: string;
+  image: ImageProps;
   className?: string;
 }
 
@@ -17,7 +17,7 @@ const CardTestimonial = ({
   author,
   authorTitle,
   date,
-  avatarSrc,
+  image,
   className = '',
 }: CardTestimonialProps) => (
   <div
@@ -33,8 +33,8 @@ const CardTestimonial = ({
         <div className="flex gap-5">
           <Image
             className="mt-1 h-12 w-12 rounded-full"
-            src={avatarSrc}
-            alt={author}
+            src={image.src}
+            alt={image.alt}
             width={48}
             height={48}
           />
