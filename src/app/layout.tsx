@@ -41,7 +41,10 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={clsx('antialiased', GeneralSans.variable)}>
+    <html
+      lang="en"
+      className={clsx('antialiased', GeneralSans.variable, 'dark')}
+    >
       <body className="surface-primary relative flex min-h-screen flex-col">
         {/* Header */}
         <Header />
