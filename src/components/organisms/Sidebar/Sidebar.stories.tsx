@@ -1,4 +1,4 @@
-import tempData from '@/app/data/mock-data.json';
+import tempData from '@/app/data/mock.json';
 import { iconMap } from '@/components/atoms/Icon';
 import type { Meta, StoryObj } from '@storybook/react';
 import Sidebar from './Sidebar';

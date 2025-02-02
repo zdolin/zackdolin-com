@@ -1,4 +1,4 @@
-import tempData from '@/app/data/mock-data.json';
+import tempData from '@/app/data/mock.json';
 import ContactSection from '@/components/organisms/ContactSection';
 import IntroSection from '@/components/organisms/IntroSection';
 import PortfolioSection from '@/components/organisms/PortfolioSection';
