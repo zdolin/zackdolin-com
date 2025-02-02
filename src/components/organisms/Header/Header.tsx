@@ -2,6 +2,7 @@
 
 import ZLogo from '@/assets/images/z-logo.svg';
 import Button from '@/components/atoms/Button/Button';
+import DarkModeToggle from '@/components/atoms/DarkModeToggle';
 import { Dialog, DialogPanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
@@ -16,7 +17,7 @@ const navigation: NavigationItem[] = [
   { name: 'Home', href: '#' },
   { name: 'Skills', href: '#' },
   { name: 'Resume', href: '#' },
-  { name: 'Portfolio', href: '#' },
+  { name: 'Projects', href: '#' },
   { name: 'Testimonials', href: '#' },
 ];
 
@@ -36,7 +37,7 @@ export default function Header({ className = '' }: HeaderProps) {
         <div className="flex md:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Zack Dolin</span>
-            <ZLogo className="absolute top-0 m-3 h-[3.75rem] w-auto" alt="" />
+            <ZLogo className="absolute top-0 my-3 h-[3.75rem] w-auto" alt="" />
           </a>
         </div>
         <div className="hidden gap-x-6 md:flex lg:gap-x-12">
@@ -50,8 +51,9 @@ export default function Header({ className = '' }: HeaderProps) {
             </a>
           ))}
         </div>
-        <div className="flex flex-1 items-center justify-end gap-x-6">
+        <div className="flex flex-1 items-center justify-end gap-x-3 md:min-w-64 md:gap-x-4 lg:min-w-72">
           <Button>Contact me</Button>
+          <DarkModeToggle />
         </div>
         <div className="flex md:hidden">
           <button

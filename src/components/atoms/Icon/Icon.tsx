@@ -3,6 +3,8 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
   HomeIcon,
+  MoonIcon,
+  SunIcon,
 } from '@heroicons/react/24/solid';
 import clsx from 'clsx';
 import React from 'react';
@@ -26,9 +28,11 @@ export const iconMap = {
   contact: ContactIcon,
   email: EmailIcon,
   home: HomeIcon,
+  moon: MoonIcon,
   resume: ResumeIcon,
   phone: PhoneIcon,
   skills: SkillsIcon,
+  sun: SunIcon,
   portfolio: PortfolioIcon,
   testimonials: TestimonialsIcon,
 };
