@@ -1,4 +1,4 @@
-import tempData from '@/app/data/mock.json';
+import mockData from '@/app/data/mock.json';
 import { iconMap } from '@/components/atoms/Icon';
 import type { Meta, StoryObj } from '@storybook/react';
 import Sidebar from './Sidebar';
@@ -20,8 +20,8 @@ type Story = StoryObj<typeof Sidebar>;
 
 export const Default: Story = {
   args: {
-    ...tempData.sidebar,
-    navigationList: tempData.sidebar.navigationList.map((item: any) => ({
+    ...mockData.sidebar,
+    navigationList: mockData.sidebar.navigationList.map((item: any) => ({
       ...item,
       icon: item.icon as keyof typeof iconMap,
     })),

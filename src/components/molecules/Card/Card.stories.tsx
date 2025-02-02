@@ -1,4 +1,4 @@
-import tempData from '@/app/data/mock.json';
+import mockData from '@/app/data/mock.json';
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 import Card from './Card';
 
@@ -18,12 +18,12 @@ export default meta;
 type Story = StoryObj<typeof Card>;
 
 export const SingleCard: Story = {
-  args: tempData.sections.resume.experienceList[0],
+  args: mockData.sections.resume.experienceList[0],
 };
 
 const ListStory: StoryFn<typeof Card> = () => (
   <>
-    {tempData.sections.resume.experienceList.map((item: any, index: number) => (
+    {mockData.sections.resume.experienceList.map((item: any, index: number) => (
       <Card className="mb-4" key={index} {...item} index={index} />
     ))}
   </>

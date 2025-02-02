@@ -1,4 +1,4 @@
-import tempData from '@/app/data/mock.json';
+import mockData from '@/app/data/mock.json';
 import HeroAvatar from '@/components/molecules/HeroAvatar/HeroAvatar';
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -19,6 +19,6 @@ type Story = StoryObj<typeof HeroAvatar>;
 
 export const Default: Story = {
   args: {
-    image: tempData.sidebar.image,
+    image: mockData.sidebar.image,
   },
 };

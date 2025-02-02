@@ -1,4 +1,4 @@
-import tempData from '@/app/data/mock.json';
+import mockData from '@/app/data/mock.json';
 import type { Meta, StoryObj } from '@storybook/react';
 import CardProject from './CardProject';
 
@@ -19,6 +19,6 @@ type Story = StoryObj<typeof CardProject>;
 
 export const Default: Story = {
   args: {
-    ...tempData.sections.portfolio.projectsList[0],
+    ...mockData.sections.portfolio.projectsList[0],
   },
 };
