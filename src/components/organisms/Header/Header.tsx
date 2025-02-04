@@ -3,7 +3,12 @@
 import ZLogo from '@/assets/images/z-logo.svg';
 import Button from '@/components/atoms/Button/Button';
 import DarkModeToggle from '@/components/atoms/DarkModeToggle';
-import { Dialog, DialogPanel, Transition } from '@headlessui/react';
+import {
+  Dialog,
+  DialogPanel,
+  Transition,
+  TransitionChild,
+} from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { Fragment, useState } from 'react';
@@ -40,7 +45,7 @@ export default function Header({ className = '' }: HeaderProps) {
             <ZLogo className="absolute top-0 my-3 h-[3.75rem] w-auto" alt="" />
           </a>
         </div>
-        <div className="hidden gap-x-6 md:flex lg:gap-x-12">
+        <div className="hidden gap-x-6 md:flex lg:mr-8 lg:gap-x-12">
           {navigation.map((item) => (
             <a
               key={item.name}
@@ -52,7 +57,7 @@ export default function Header({ className = '' }: HeaderProps) {
           ))}
         </div>
         <div className="flex flex-1 items-center justify-end gap-x-3 md:min-w-64 md:gap-x-4 lg:min-w-72">
-          <Button>Contact me</Button>
+          <Button className="hidden md:flex">Contact me</Button>
           <DarkModeToggle />
         </div>
         <div className="relative z-50 flex md:hidden">
@@ -65,9 +70,9 @@ export default function Header({ className = '' }: HeaderProps) {
               {mobileMenuOpen ? 'Close main menu' : 'Open main menu'}
             </span>
             {mobileMenuOpen ? (
-              <XMarkIcon aria-hidden="true" className="h-6 w-6" />
+              <XMarkIcon aria-hidden="true" className="h-8 w-8" />
             ) : (
-              <Bars3Icon aria-hidden="true" className="h-6 w-6" />
+              <Bars3Icon aria-hidden="true" className="h-8 w-8" />
             )}
           </button>
         </div>
@@ -84,7 +89,7 @@ export default function Header({ className = '' }: HeaderProps) {
             aria-hidden="true"
           />
           <div className="fixed inset-0 flex justify-end">
-            <Transition.Child
+            <TransitionChild
               as={Fragment}
               enter="transition ease-out duration-300 transform"
               enterFrom="translate-x-full"
@@ -101,16 +106,20 @@ export default function Header({ className = '' }: HeaderProps) {
                         <a
                           key={item.name}
                           href={item.href}
-                          className="-mx-3 block rounded-lg px-3 py-3 text-base font-normal text-black hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800"
+                          className={clsx(
+                            '-mx-3 block px-4 py-3 text-lg font-normal',
+                            'text-black dark:text-white'
+                          )}
                         >
                           {item.name}
                         </a>
                       ))}
                     </div>
+                    <Button className="border-none">Contact me</Button>
                   </div>
                 </div>
               </DialogPanel>
-            </Transition.Child>
+            </TransitionChild>
           </div>
         </Dialog>
       </Transition.Root>
