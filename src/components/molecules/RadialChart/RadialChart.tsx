@@ -49,7 +49,7 @@ const RadialChart = ({
   return (
     <div className={clsx('flex w-full flex-col items-center', className)}>
       <div
-        className="relative flex items-center justify-center"
+        className="relative flex scale-75 items-center justify-center sm:scale-100"
         style={{
           width: size,
           height: size,
@@ -86,7 +86,7 @@ const RadialChart = ({
           {displayValue}%
         </div>
       </div>
-      <p className="text-primary mt-4 text-base font-medium md:text-lg 2xl:text-2xl">
+      <p className="text-primary text-base font-medium sm:mt-4 md:text-lg 2xl:text-2xl">
         {label}
       </p>
     </div>
