@@ -5,7 +5,7 @@ import React from 'react';
 import ButtonArrow from '../ButtonArrow';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center font-semibold uppercase rounded-full transition focus:outline-none focus:ring-2 focus:ring-offset-2',
+  'border-none inline-flex items-center justify-center font-semibold uppercase rounded-full transition focus:outline-none focus:ring-2 focus:ring-offset-2',
   {
     variants: {
       intent: {
@@ -15,7 +15,7 @@ const buttonVariants = cva(
           'bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300 focus:ring-gray-400',
       },
       size: {
-        default: 'py-2 px-5 lg:py-3 lg:px-6 text-sm lg:text-base',
+        default: 'px-5 py-3 lg:px-6 text-sm lg:text-base',
       },
     },
     defaultVariants: {
