@@ -23,7 +23,12 @@ const ContactSection = ({ data }: ContactSectionProps) => (
     body={data.body}
   >
     <div className="flex flex-col xl:flex-row xl:justify-between">
-      <div className="mb-8 flex grow flex-col justify-between rounded-2xl border border-gray-300 px-8 py-2 dark:border-gray-800 md:flex-row md:px-4 md:py-8 lg:px-12 xl:mb-0 xl:mr-8 xl:flex-col xl:px-8">
+      <div
+        className={clsx(
+          'mb-8 flex grow flex-col justify-between rounded-2xl sm:px-8 md:flex-row md:px-4 md:py-8 lg:px-12 xl:mb-0 xl:mr-8 xl:flex-col xl:px-8',
+          'border-gray-300 py-2 dark:border-gray-800 sm:border'
+        )}
+      >
         {data.infoList.map((item: InfoItemType, index: number) => (
           <InfoItem
             className={clsx(
@@ -39,7 +44,7 @@ const ContactSection = ({ data }: ContactSectionProps) => (
           />
         ))}
       </div>
-      <div className="rounded-2xl border border-gray-300 p-8 dark:border-gray-800">
+      <div className="rounded-2xl border-gray-300 dark:border-gray-800 sm:border sm:p-8">
         <form
           className="space-y-6"
           onSubmit={(e) => {
