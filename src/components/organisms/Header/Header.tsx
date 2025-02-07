@@ -56,9 +56,9 @@ export default function Header({ className = '' }: HeaderProps) {
             </a>
           ))}
         </div>
-        <div className="flex flex-1 items-center justify-end gap-x-3 md:min-w-64 md:gap-x-4 lg:min-w-72">
+        <div className="flex min-h-10 flex-1 items-center justify-end gap-x-3 md:min-w-64 md:gap-x-4 lg:min-w-72">
           <Button className="hidden md:flex">Contact me</Button>
-          <DarkModeToggle />
+          {!mobileMenuOpen && <DarkModeToggle />}
         </div>
         <div className="relative z-50 flex md:hidden">
           <button
@@ -99,15 +99,15 @@ export default function Header({ className = '' }: HeaderProps) {
               leaveTo="translate-x-full"
             >
               <DialogPanel className="surface-primary fixed bottom-0 right-0 top-16 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-                <div className="mt-8 flow-root">
-                  <div className="-my-6 divide-y divide-gray-500/10 dark:divide-gray-400">
-                    <div className="space-y-2 py-6">
+                <div className="flow-root">
+                  <div className="-my-2">
+                    <div className="divide-y divide-black/20 py-6 dark:divide-blue-900">
                       {navigation.map((item) => (
                         <a
                           key={item.name}
                           href={item.href}
                           className={clsx(
-                            '-mx-3 block px-4 py-3 text-lg font-normal',
+                            '-mx-3 block px-4 py-6 text-lg font-normal',
                             'text-black dark:text-white'
                           )}
                         >
@@ -115,7 +115,7 @@ export default function Header({ className = '' }: HeaderProps) {
                         </a>
                       ))}
                     </div>
-                    <Button className="border-none">Contact me</Button>
+                    <Button className="my-2 border-none">Contact me</Button>
                   </div>
                 </div>
               </DialogPanel>

@@ -13,6 +13,7 @@ const config: Config = {
       colors: {
         blue: {
           '950': '#02111A',
+          '900': '#222e35',
         },
         sky: {
           '50': '#f0f7fc',
