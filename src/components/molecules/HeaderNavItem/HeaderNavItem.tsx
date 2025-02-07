@@ -19,14 +19,14 @@ const HeaderNavItem = ({ text, href }: HeaderNavItemProps) => (
       className={clsx(
         'absolute bottom-px left-0 -mt-px h-[2px] w-full bg-white',
         'transform transition-all duration-300 ease-out-quart',
-        'scale-x-0 group-hover:scale-x-100 group-hover:bg-sky-600'
+        'scale-x-0 group-hover:scale-x-100 group-hover:bg-sky-500'
       )}
     />
     <span
       className={clsx(
         'inline-block',
         'transform transition-all duration-300 ease-out-quart',
-        'group-hover:translate-y-2 group-hover:text-sky-600'
+        'group-hover:translate-y-1 group-hover:text-sky-500'
       )}
     >
       {text}
