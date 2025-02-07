@@ -3,6 +3,7 @@
 import ZLogo from '@/assets/images/z-logo.svg';
 import Button from '@/components/atoms/Button/Button';
 import DarkModeToggle from '@/components/atoms/DarkModeToggle';
+import HeaderNavItem from '@/components/molecules/HeaderNavItem';
 import {
   Dialog,
   DialogPanel,
@@ -47,16 +48,7 @@ export default function Header({ className = '' }: HeaderProps) {
         </div>
         <div className="hidden md:flex lg:mr-8">
           {navigation.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className={clsx(
-                'text-primary text-sm font-normal lg:text-lg',
-                'px-3 py-6 lg:px-5 xl:px-6'
-              )}
-            >
-              {item.name}
-            </a>
+            <HeaderNavItem key={item.name} text={item.name} href={item.href} />
           ))}
         </div>
         <div className="flex min-h-10 flex-1 items-center justify-end gap-x-3 md:min-w-64 md:gap-x-4 lg:min-w-72">
