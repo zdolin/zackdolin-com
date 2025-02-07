@@ -37,7 +37,7 @@ export default function Header({ className = '' }: HeaderProps) {
     <header className={clsx('surface-primary z-50 shadow-custom', className)}>
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-screen-2xl items-center justify-between gap-x-6 p-6 lg:px-8"
+        className="mx-auto flex max-w-screen-2xl items-center justify-between gap-x-6 px-6 lg:px-8"
       >
         <div className="flex md:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
@@ -45,12 +45,15 @@ export default function Header({ className = '' }: HeaderProps) {
             <ZLogo className="absolute top-0 my-3 h-[3.75rem] w-auto" alt="" />
           </a>
         </div>
-        <div className="hidden gap-x-6 md:flex lg:mr-8 lg:gap-x-12">
+        <div className="hidden md:flex lg:mr-8">
           {navigation.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-primary text-sm font-normal lg:text-lg"
+              className={clsx(
+                'text-primary text-sm font-normal lg:text-lg',
+                'px-3 py-6 lg:px-5 xl:px-6'
+              )}
             >
               {item.name}
             </a>
@@ -60,7 +63,7 @@ export default function Header({ className = '' }: HeaderProps) {
           <Button className="hidden md:flex">Contact me</Button>
           {!mobileMenuOpen && <DarkModeToggle />}
         </div>
-        <div className="relative z-50 flex md:hidden">
+        <div className="relative z-50 flex py-6 md:hidden">
           <button
             type="button"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
