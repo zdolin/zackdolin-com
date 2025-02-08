@@ -47,10 +47,40 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <HeadlessButton
       as={Component}
-      className={clsx(buttonVariants({ intent, size }), className)}
+      className={clsx(
+        buttonVariants({ intent, size }),
+        className,
+        'group overflow-hidden',
+        !hideArrow &&
+          'transform transition-transform duration-300 ease-out-quart hover:scale-x-[0.93]'
+      )}
       {...props}
     >
-      {children} {!hideArrow ? <ButtonArrow className="ml-4" /> : null}
+      <span
+        className={clsx(
+          'ease-out-back transform transition-transform duration-500',
+          !hideArrow && 'group-hover:-translate-y-16'
+        )}
+      >
+        {children}
+      </span>
+      <span
+        aria-hidden="true"
+        className={clsx(
+          'ease-out-back absolute -translate-x-5 translate-y-16 transform transition-transform duration-300',
+          !hideArrow && 'group-hover:translate-y-0'
+        )}
+      >
+        {children}
+      </span>{' '}
+      {!hideArrow ? (
+        <ButtonArrow
+          className={clsx(
+            'ml-4',
+            'ease-out-back transform transition-transform duration-500 group-hover:scale-[1.8]'
+          )}
+        />
+      ) : null}
     </HeadlessButton>
   );
 };
