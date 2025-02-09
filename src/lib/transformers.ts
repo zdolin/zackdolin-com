@@ -61,7 +61,7 @@ const transformIntroSectionData = (introSection: any): IntroSectionDataType => {
         text: item.text,
       })
     ),
-    checklist: (introSection.checklistCollection?.items || []).map(
+    checklist: (introSection.checkListCollection?.items || []).map(
       (item: any) => ({
         text: item.text,
         icon: item.icon?.type || '',
@@ -165,6 +165,7 @@ const transformContactSectionData = (
 };
 
 export const transformPageData = (graphqlData: any): PageDataType => {
+  console.log(transformIntroSectionData(graphqlData.introSection.items[0]))
   return {
     introduction: transformIntroSectionData(graphqlData.introSection.items[0]),
     skills: transformSkillsSectionData(graphqlData.skillsSection.items[0]),
