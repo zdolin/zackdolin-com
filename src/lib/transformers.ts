@@ -165,7 +165,6 @@ const transformContactSectionData = (
 };
 
 export const transformPageData = (graphqlData: any): PageDataType => {
-  console.log(transformIntroSectionData(graphqlData.introSection.items[0]))
   return {
     introduction: transformIntroSectionData(graphqlData.introSection.items[0]),
     skills: transformSkillsSectionData(graphqlData.skillsSection.items[0]),
