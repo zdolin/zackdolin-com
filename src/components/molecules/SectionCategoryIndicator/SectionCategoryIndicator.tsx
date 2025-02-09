@@ -3,6 +3,7 @@
 import CircleIcon from '@/components/atoms/CircleIcon';
 import { iconMap } from '@/components/atoms/Icon';
 import Label from '@/components/atoms/Label';
+import { EASING_QUINTIC } from '@/constants/easing';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 
@@ -41,7 +42,7 @@ const SectionCategoryIndicator = ({
           whileInView={{ opacity: 1, transform: 'translateX(0px)' }}
           transition={{
             duration: 0.5,
-            ease: quinticEasing,
+            ease: EASING_QUINTIC,
             delay: 0.2,
           }}
           viewport={{ once: true }}
@@ -55,7 +56,7 @@ const SectionCategoryIndicator = ({
       whileInView={{ scaleX: 1 }}
       transition={{
         duration: 0.4,
-        ease: quinticEasing,
+        ease: EASING_QUINTIC,
         delay: 0.45,
       }}
       viewport={{ once: true }}
