@@ -8,7 +8,7 @@ interface GlitchTextOptions {
 
 const useGlitchText = (
   text: string,
-  { duration = 600, steps = 20, start = false }: GlitchTextOptions = {}
+  { duration = 650, steps = 20, start = false }: GlitchTextOptions = {}
 ): string => {
   const [displayText, setDisplayText] = useState<string>(text);
 
@@ -19,7 +19,7 @@ const useGlitchText = (
       new Set(text.split('').filter((ch) => /[a-zA-Z]/.test(ch)))
     );
 
-    const glitchSpecialChars = '♦_';
+    const glitchSpecialChars = '♦__';
     
     const getRandomChar = () => {
       if (lettersFromText.length && Math.random() < 0.3) {
