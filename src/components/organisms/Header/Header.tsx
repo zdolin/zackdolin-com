@@ -4,6 +4,7 @@ import ZLogo from '@/assets/images/z-logo.svg';
 import Button from '@/components/atoms/Button/Button';
 import DarkModeToggle from '@/components/atoms/DarkModeToggle';
 import HeaderNavItem from '@/components/molecules/HeaderNavItem';
+import { EASING_QUINTIC } from '@/constants/easing';
 import {
   Dialog,
   DialogPanel,
@@ -12,6 +13,7 @@ import {
 } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import { Fragment, useState } from 'react';
 
 interface NavigationItem {
@@ -35,7 +37,12 @@ export default function Header({ className = '' }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 
   return (
-    <header className={clsx('surface-primary z-50 shadow-custom', className)}>
+    <motion.header
+      className={clsx('surface-primary z-50 shadow-custom', className)}
+      initial={{ transform: 'translateY(-100%)' }}
+      animate={{ transform: 'translateY(0)' }}
+      transition={{ duration: 0.5, ease: EASING_QUINTIC }}
+    >
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-screen-2xl items-center justify-between gap-x-6 px-6 lg:px-8"
@@ -118,6 +125,6 @@ export default function Header({ className = '' }: HeaderProps) {
           </div>
         </Dialog>
       </Transition.Root>
-    </header>
+    </motion.header>
   );
 }
