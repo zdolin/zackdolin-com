@@ -53,21 +53,25 @@ const HeadingWithBody = ({
         <motion.span
           initial={{ opacity: 0, filter: 'blur(10px)' }}
           whileInView={{ opacity: 1, filter: 'blur(0px)' }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           onViewportEnter={() => setAnimate(true)}
         >
           {animatedHeading}
         </motion.span>
       </Heading>
-      <p
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: isVertical ? 0.35 : 0.25 }}
+        viewport={{ once: true }}
         className={clsx(
           'text-secondary w-full text-center text-sm md:text-left lg:text-lg',
           isVertical ? 'mt-5' : 'mt-5 md:mt-0 md:w-3/5 md:pl-6'
         )}
       >
         {body}
-      </p>
+      </motion.p>
     </div>
   );
 };
