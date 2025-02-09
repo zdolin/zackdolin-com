@@ -11,7 +11,6 @@ export interface HeadingWithBodyProps {
   body: string;
   isVertical?: boolean;
   className?: string;
-  headingClass?: string;
 }
 
 const HeadingWithBody = ({
@@ -19,7 +18,6 @@ const HeadingWithBody = ({
   body,
   isVertical = false,
   className = '',
-  headingClass = '',
 }: HeadingWithBodyProps) => {
   const [animate, setAnimate] = useState<boolean>(false);
   const animatedHeading = useGlitchText(heading, {
@@ -29,16 +27,27 @@ const HeadingWithBody = ({
   return (
     <div
       className={clsx(
-        'mb-2 mt-5 flex flex-col md:mt-3 lg:my-4',
+        'relative mb-2 mt-5 flex flex-col md:mt-3 lg:my-4',
         !isVertical ? 'md:flex-row' : 'md:w-1/2',
         className
       )}
     >
+      {/* "Ghost" heading - for height purposes */}
+      <Heading
+        aria-hidden="true"
+        className={clsx(
+          'w-full text-center opacity-0 md:text-left',
+          !isVertical && 'md:w-3/5'
+        )}
+      >
+        {heading}
+      </Heading>
+
+      {/* Visual heading */}
       <Heading
         className={clsx(
-          'w-full text-center md:text-left',
-          !isVertical && 'md:w-3/5',
-          headingClass
+          'absolute w-full text-center md:text-left',
+          !isVertical && 'md:w-3/5'
         )}
       >
         <motion.span

@@ -23,7 +23,6 @@ const SectionWrapper = ({
   heading,
   body,
   className = '',
-  headingClass = '',
   isVertical = false,
   heroImage,
   children,
@@ -43,7 +42,6 @@ const SectionWrapper = ({
           heading={heading}
           body={body}
           isVertical={isVertical}
-          headingClass={headingClass}
         />
         {heroImage && (
           <>
