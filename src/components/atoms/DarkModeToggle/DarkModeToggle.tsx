@@ -20,6 +20,7 @@ const DarkModeToggle = () => {
       checked={enabled}
       onChange={setEnabled}
       className={clsx(
+        'group',
         'h-9 w-16 lg:h-12 lg:w-20',
         'relative inline-flex items-center rounded-full shadow-md',
         'bg-white transition-colors duration-300'
@@ -29,14 +30,17 @@ const DarkModeToggle = () => {
       <span
         className={clsx(
           'absolute inset-0 rounded-full transition-colors duration-300',
-          'bg-sky-600'
+          'bg-sky-600 ease-out-quart group-hover:bg-sky-500'
         )}
       />
       <span
         className={clsx(
           'relative z-10 rounded-full bg-yellow-400 transition-transform duration-200 ease-in-out',
           'ml-1 inline-flex h-7 w-7 items-center justify-center lg:h-10 lg:w-10',
-          enabled ? 'translate-x-[28px] lg:translate-x-[32px]' : 'translate-x-0'
+          enabled
+            ? 'translate-x-[28px] lg:translate-x-[32px]'
+            : 'translate-x-0',
+          'transition-scale ease-out-back duration-300 group-hover:scale-[0.85]'
         )}
       >
         <Icon className="fill-sky-600" type={enabled ? 'sun' : 'moon'} />
