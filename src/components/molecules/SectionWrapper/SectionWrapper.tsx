@@ -11,6 +11,7 @@ export interface SectionWrapperProps {
   heading: string;
   body: string;
   className?: string;
+  headingClass?: string;
   isVertical?: boolean;
   children?: React.ReactNode;
   heroImage?: ImageProps;
@@ -22,6 +23,7 @@ const SectionWrapper = ({
   heading,
   body,
   className = '',
+  headingClass = '',
   isVertical = false,
   heroImage,
   children,
@@ -41,6 +43,7 @@ const SectionWrapper = ({
           heading={heading}
           body={body}
           isVertical={isVertical}
+          headingClass={headingClass}
         />
         {heroImage && (
           <>
