@@ -37,10 +37,8 @@ const DarkModeToggle = () => {
         className={clsx(
           'relative z-10 rounded-full bg-yellow-400 transition-transform duration-200 ease-in-out',
           'ml-1 inline-flex h-7 w-7 items-center justify-center lg:h-10 lg:w-10',
-          enabled
-            ? 'translate-x-[28px] lg:translate-x-[32px]'
-            : 'translate-x-0',
-          'transition-scale ease-out-back duration-300 group-hover:scale-[0.85]'
+          enabled ? 'translate-x-[1.75rem] lg:translate-x-8' : 'translate-x-0',
+          'transition-scale ease-out-back duration-300 group-hover:scale-[0.75]'
         )}
       >
         <Icon className="fill-sky-600" type={enabled ? 'sun' : 'moon'} />
