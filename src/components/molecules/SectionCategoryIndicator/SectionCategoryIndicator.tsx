@@ -23,7 +23,7 @@ const SectionCategoryIndicator = ({
       initial={{ opacity: 0, scale: 0.1 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4, ease: 'backOut' }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: '-200px' }}
     >
       <CircleIcon type={iconType} />
     </motion.div>
@@ -43,7 +43,7 @@ const SectionCategoryIndicator = ({
             ease: EASE_OUT_QUINT,
             delay: 0.2,
           }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-200px' }}
         >
           {category}
         </motion.span>
@@ -57,7 +57,7 @@ const SectionCategoryIndicator = ({
         ease: EASE_OUT_QUINT,
         delay: 0.45,
       }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: '-200px' }}
       className="ml-3 w-12 border border-sky-600"
     />
   </div>

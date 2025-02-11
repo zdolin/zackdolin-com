@@ -69,7 +69,7 @@ const Button: React.FC<ButtonProps> = ({
         ease: 'backOut',
         delay: animationDelay,
       }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: '-200px' }}
     >
       <HeadlessButton
         as={Component}

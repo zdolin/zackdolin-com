@@ -1,8 +1,11 @@
+'use client';
+
 import { iconMap } from '@/components/atoms/Icon';
 import HeadingWithBody from '@/components/molecules/HeadingWithBody';
 import HeroAvatar from '@/components/molecules/HeroAvatar';
 import SectionCategoryIndicator from '@/components/molecules/SectionCategoryIndicator';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import { ImageProps } from 'next/image';
 
 export interface SectionWrapperProps {
@@ -27,9 +30,16 @@ const SectionWrapper = ({
   heroImage,
   children,
 }: SectionWrapperProps) => (
-  <section
+  <motion.section
     id={category.toLowerCase()}
     className={clsx('surface-primary w-full rounded-3xl px-8 py-10', className)}
+    initial={{ opacity: 0, scale: 0.8 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    transition={{
+      duration: 0.5,
+      ease: 'backOut',
+    }}
+    viewport={{ once: true, margin: '-200px' }}
   >
     <div className="flex w-full flex-col items-center md:items-start">
       <SectionCategoryIndicator
@@ -66,7 +76,7 @@ const SectionWrapper = ({
     </div>
 
     {children && <div className="mt-4">{children}</div>}
-  </section>
+  </motion.section>
 );
 
 export default SectionWrapper;

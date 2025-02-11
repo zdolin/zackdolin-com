@@ -37,7 +37,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
               ease: 'backOut',
               delay: 0.3 + 0.2 * index,
             }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-200px' }}
           >
             <CircleIcon
               className="h-6 w-6 p-1"
@@ -54,7 +54,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
               ease: EASE_OUT_QUINT,
               delay: 0.5 + 0.2 * index,
             }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-200px' }}
           >
             {item.text}
           </motion.span>
