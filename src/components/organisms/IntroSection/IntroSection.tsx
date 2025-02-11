@@ -37,7 +37,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
               ease: 'backOut',
               delay: 0.3 + 0.2 * index,
             }}
-            viewport={{ once: true, margin: '-200px' }}
+            viewport={{ once: true, margin: '0px 0px -10% 0px' }}
           >
             <CircleIcon
               className="h-6 w-6 p-1"
@@ -54,19 +54,27 @@ const IntroSection = ({ data }: IntroSectionProps) => (
               ease: EASE_OUT_QUINT,
               delay: 0.5 + 0.2 * index,
             }}
-            viewport={{ once: true, margin: '-200px' }}
+            viewport={{ once: true, margin: '0px 0px -10% 0px' }}
           >
             {item.text}
           </motion.span>
         </li>
       ))}
     </ul>
-    <Button className="w-full md:w-auto" animationDelay={0.7}>
+    <Button className="w-full md:w-auto" animationDelay={0.8}>
       Hire me
     </Button>
     <ul className="mt-8 flex flex-wrap justify-center gap-6 text-center lg:gap-8">
       {data.statsList.map((stat: StatsItemType, index: number) => (
-        <li
+        <motion.li
+          initial={{ opacity: 0, transform: 'translateY(-100%)' }}
+          whileInView={{ opacity: 1, transform: 'translateY(0px)' }}
+          transition={{
+            duration: 0.4,
+            ease: 'backOut',
+            delay: 0.65 + 0.1 * index,
+          }}
+          viewport={{ once: true, margin: '0px 0px -10% 0px' }}
           key={index}
           className={clsx(
             'flex flex-col items-start lg:flex-row',
@@ -75,13 +83,33 @@ const IntroSection = ({ data }: IntroSectionProps) => (
               : ''
           )}
         >
-          <span className="text-primary text-left text-4xl font-medium md:text-[2.625rem] xl:text-6xl">
+          <motion.span
+            className="text-primary text-left text-4xl font-medium md:text-[2.625rem] xl:text-6xl"
+            initial={{ opacity: 0, scale: 0.2 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.4,
+              ease: 'backOut',
+              delay: 0.7 + 0.1 * index,
+            }}
+            viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+          >
             {stat.quantity}
-          </span>
-          <span className="text-secondary mt-2 max-w-24 text-left text-base lg:ml-4 lg:mt-0 xl:text-lg">
+          </motion.span>
+          <motion.span
+            className="text-secondary mt-2 max-w-24 text-left text-base lg:ml-4 lg:mt-0 xl:text-lg"
+            initial={{ opacity: 0, transform: 'translateY(-100%)' }}
+            whileInView={{ opacity: 1, transform: 'translateY(0px)' }}
+            transition={{
+              duration: 0.4,
+              ease: 'backOut',
+              delay: 0.75 + 0.1 * index,
+            }}
+            viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+          >
             {stat.text}
-          </span>
-        </li>
+          </motion.span>
+        </motion.li>
       ))}
     </ul>
   </SectionWrapper>

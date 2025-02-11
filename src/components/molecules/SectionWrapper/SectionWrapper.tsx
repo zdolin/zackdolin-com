@@ -33,13 +33,13 @@ const SectionWrapper = ({
   <motion.section
     id={category.toLowerCase()}
     className={clsx('surface-primary w-full rounded-3xl px-8 py-10', className)}
-    initial={{ opacity: 0, scale: 0.8 }}
+    initial={{ opacity: 0, scale: 0.85 }}
     whileInView={{ opacity: 1, scale: 1 }}
     transition={{
-      duration: 0.5,
+      duration: 0.45,
       ease: 'backOut',
     }}
-    viewport={{ once: true, margin: '-200px' }}
+    viewport={{ once: true, margin: '-180px' }}
   >
     <div className="flex w-full flex-col items-center md:items-start">
       <SectionCategoryIndicator

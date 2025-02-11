@@ -41,7 +41,7 @@ export default function Header({ className = '' }: HeaderProps) {
       className={clsx('surface-primary z-50 shadow-custom', className)}
       initial={{ transform: 'translateY(-100%)' }}
       animate={{ transform: 'translateY(0)' }}
-      transition={{ duration: 0.5, ease: EASE_OUT_QUINT }}
+      transition={{ duration: 0.45, ease: EASE_OUT_QUINT }}
     >
       <nav
         aria-label="Global"
