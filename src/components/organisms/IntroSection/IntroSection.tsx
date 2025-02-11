@@ -1,10 +1,14 @@
+'use client';
+
 import Button from '@/components/atoms/Button';
 import CircleIcon from '@/components/atoms/CircleIcon';
 import { iconMap } from '@/components/atoms/Icon';
 import SectionWrapper from '@/components/molecules/SectionWrapper';
+import { EASE_OUT_QUINT } from '@/constants/easing';
 import { ChecklistItemType, StatsItemType } from '@/types/component';
 import { IntroSectionDataType } from '@/types/data';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 
 export interface IntroSectionProps {
   data: IntroSectionDataType;
@@ -22,21 +26,44 @@ const IntroSection = ({ data }: IntroSectionProps) => (
   >
     <ul className="mb-8 mt-8 flex w-full space-x-8 md:mt-0">
       {data.checklist.map((item: ChecklistItemType, index: number) => (
-        <li key={index} className="flex">
-          <span aria-hidden="true">
+        <li key={index} className="flex overflow-hidden">
+          <motion.span
+            className="z-20"
+            aria-hidden="true"
+            initial={{ opacity: 0, scale: 0.1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.5,
+              ease: 'backOut',
+              delay: 0.3 + 0.2 * index,
+            }}
+            viewport={{ once: true }}
+          >
             <CircleIcon
               className="h-6 w-6 p-1"
               type={item.icon as keyof typeof iconMap}
               aria-hidden="true"
             />
-          </span>
-          <span className="md:text-md text-primary ml-3 text-lg lg:text-lg">
+          </motion.span>
+          <motion.span
+            className="md:text-md text-primary z-10 ml-3 text-lg lg:text-lg"
+            initial={{ opacity: 0, transform: 'translateX(-100%)' }}
+            whileInView={{ opacity: 1, transform: 'translateX(0px)' }}
+            transition={{
+              duration: 0.4,
+              ease: EASE_OUT_QUINT,
+              delay: 0.5 + 0.2 * index,
+            }}
+            viewport={{ once: true }}
+          >
             {item.text}
-          </span>
+          </motion.span>
         </li>
       ))}
     </ul>
-    <Button className="w-full md:w-auto">Hire me</Button>
+    <Button className="w-full md:w-auto" animationDelay={0.7}>
+      Hire me
+    </Button>
     <ul className="mt-8 flex flex-wrap justify-center gap-6 text-center lg:gap-8">
       {data.statsList.map((stat: StatsItemType, index: number) => (
         <li

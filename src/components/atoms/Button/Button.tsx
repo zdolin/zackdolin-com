@@ -1,8 +1,11 @@
+'use client';
+
+import ButtonArrow from '@/components/atoms/ButtonArrow';
 import { Button as HeadlessButton } from '@headlessui/react';
 import { cva, VariantProps } from 'class-variance-authority';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import React from 'react';
-import ButtonArrow from '../ButtonArrow';
 
 const buttonVariants = cva(
   'border-none inline-flex items-center justify-center font-semibold uppercase rounded-full transition focus:outline-none focus:ring-2 focus:ring-offset-2',
@@ -31,6 +34,8 @@ export interface ButtonProps
   asChild?: boolean; // Allows rendering as a different element if needed
   className?: string;
   hideArrow?: boolean;
+  animationDelay?: number;
+  suppressAnimation?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -40,48 +45,70 @@ const Button: React.FC<ButtonProps> = ({
   asChild = false,
   className = '',
   hideArrow = false,
+  animationDelay = 0,
+  suppressAnimation = false,
   ...props
 }) => {
   const Component = asChild ? 'span' : 'button';
 
   return (
-    <HeadlessButton
-      as={Component}
-      className={clsx(
-        buttonVariants({ intent, size }),
-        className,
-        'group overflow-hidden',
-        !hideArrow &&
-          'transform transition-transform duration-300 ease-out-quart hover:scale-x-[0.93]'
-      )}
-      {...props}
+    <motion.span
+      className="inline-block"
+      initial={
+        !hideArrow && !suppressAnimation
+          ? { opacity: 0, scale: 1.5 }
+          : { opacity: 1, scale: 1 }
+      }
+      whileInView={
+        !hideArrow && !suppressAnimation
+          ? { opacity: 1, scale: 1 }
+          : { opacity: 1, scale: 1 }
+      }
+      transition={{
+        duration: 0.4,
+        ease: 'backOut',
+        delay: animationDelay,
+      }}
+      viewport={{ once: true }}
     >
-      <span
+      <HeadlessButton
+        as={Component}
         className={clsx(
-          'ease-out-back transform transition-transform duration-500',
-          !hideArrow && 'group-hover:-translate-y-16'
+          buttonVariants({ intent, size }),
+          className,
+          'group overflow-hidden',
+          !hideArrow &&
+            'transform transition-transform duration-300 ease-out-quart hover:scale-x-[0.93]'
         )}
+        {...props}
       >
-        {children}
-      </span>
-      <span
-        aria-hidden="true"
-        className={clsx(
-          'ease-out-back absolute -translate-x-5 translate-y-16 transform transition-transform duration-500',
-          !hideArrow && 'group-hover:translate-y-0'
-        )}
-      >
-        {children}
-      </span>{' '}
-      {!hideArrow ? (
-        <ButtonArrow
+        <span
           className={clsx(
-            'ml-4',
-            'ease-out-back transform transition-transform duration-500 group-hover:translate-x-1 group-hover:scale-[1.8]'
+            'transform transition-transform duration-500 ease-out-back',
+            !hideArrow && 'group-hover:-translate-y-16'
           )}
-        />
-      ) : null}
-    </HeadlessButton>
+        >
+          {children}
+        </span>
+        <span
+          aria-hidden="true"
+          className={clsx(
+            'absolute -translate-x-5 translate-y-16 transform transition-transform duration-500 ease-out-back',
+            !hideArrow && 'group-hover:translate-y-0'
+          )}
+        >
+          {children}
+        </span>{' '}
+        {!hideArrow ? (
+          <ButtonArrow
+            className={clsx(
+              'ml-4',
+              'transform transition-transform duration-500 ease-out-back group-hover:translate-x-1 group-hover:scale-[1.8]'
+            )}
+          />
+        ) : null}
+      </HeadlessButton>
+    </motion.span>
   );
 };
 export default Button;

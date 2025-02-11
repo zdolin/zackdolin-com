@@ -66,7 +66,7 @@ const HeadingWithBody = ({
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
           duration: 0.5,
-          delay: isVertical ? 0.4 : 0.3,
+          delay: isVertical ? 0.4 : 0.25,
           ease: EASE_OUT_QUART,
         }}
         viewport={{ once: true }}

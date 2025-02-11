@@ -4,7 +4,7 @@ import ZLogo from '@/assets/images/z-logo.svg';
 import Button from '@/components/atoms/Button/Button';
 import DarkModeToggle from '@/components/atoms/DarkModeToggle';
 import HeaderNavItem from '@/components/molecules/HeaderNavItem';
-import { EASING_QUINTIC } from '@/constants/easing';
+import { EASE_OUT_QUINT } from '@/constants/easing';
 import {
   Dialog,
   DialogPanel,
@@ -41,7 +41,7 @@ export default function Header({ className = '' }: HeaderProps) {
       className={clsx('surface-primary z-50 shadow-custom', className)}
       initial={{ transform: 'translateY(-100%)' }}
       animate={{ transform: 'translateY(0)' }}
-      transition={{ duration: 0.5, ease: EASING_QUINTIC }}
+      transition={{ duration: 0.5, ease: EASE_OUT_QUINT }}
     >
       <nav
         aria-label="Global"
@@ -59,7 +59,9 @@ export default function Header({ className = '' }: HeaderProps) {
           ))}
         </div>
         <div className="flex min-h-10 flex-1 items-center justify-end gap-x-3 md:min-w-64 md:gap-x-4 lg:min-w-72">
-          <Button className="hidden md:flex">Contact me</Button>
+          <Button className="hidden md:flex" suppressAnimation>
+            Contact me
+          </Button>
           {!mobileMenuOpen && <DarkModeToggle />}
         </div>
         <div className="relative z-50 flex py-6 md:hidden">
