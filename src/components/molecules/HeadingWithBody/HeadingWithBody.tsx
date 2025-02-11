@@ -1,6 +1,7 @@
 'use client';
 
 import Heading from '@/components/atoms/Heading';
+import { EASE_OUT_QUART } from '@/constants/easing';
 import useGlitchText from '@/hooks/useGlitchText';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
@@ -61,9 +62,13 @@ const HeadingWithBody = ({
         </motion.span>
       </Heading>
       <motion.p
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 22 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: isVertical ? 0.35 : 0.25 }}
+        transition={{
+          duration: 0.5,
+          delay: isVertical ? 0.4 : 0.3,
+          ease: EASE_OUT_QUART,
+        }}
         viewport={{ once: true }}
         className={clsx(
           'text-secondary w-full text-center text-sm md:text-left lg:text-lg',
