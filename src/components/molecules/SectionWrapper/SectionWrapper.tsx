@@ -63,6 +63,8 @@ const SectionWrapper = ({
                 'outline-dashed outline-[0.75px] outline-offset-[0.75rem] outline-yellow-300 dark:outline-yellow-800'
               )}
               imageClass="-mt-10"
+              overlayClass="border-[1.5rem] border-transparent"
+              isAnimationEnhanced={true}
               image={heroImage}
             />
             <SectionCategoryIndicator
