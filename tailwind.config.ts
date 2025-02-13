@@ -25,7 +25,7 @@ const config: Config = {
           '300': '#FFE47D', // hero circle color
           '400': '#FFC901', // circle color
           '800': '#826700', // hero circle color dark
-          '950': '#0f0c00',
+          '950': '#1a1605',
         },
         neutral: {
           '500': '#6C6C6C',
