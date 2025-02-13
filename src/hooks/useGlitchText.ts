@@ -8,7 +8,7 @@ interface GlitchTextOptions {
 
 const useGlitchText = (
   text: string,
-  { duration = 725, steps = 20, start = false }: GlitchTextOptions = {}
+  { duration = 800, steps = 20, start = false }: GlitchTextOptions = {}
 ): string => {
   const [displayText, setDisplayText] = useState<string>(text);
 
