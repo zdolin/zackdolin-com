@@ -55,7 +55,7 @@ const HeadingWithBody = ({
           initial={{ opacity: 0, filter: 'blur(10px)' }}
           whileInView={{ opacity: 1, filter: 'blur(0px)' }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+          viewport={{ once: true, margin: '0px 0px -18% 0px' }}
           onViewportEnter={() => setAnimate(true)}
         >
           {animatedHeading}
@@ -69,7 +69,7 @@ const HeadingWithBody = ({
           delay: isVertical ? 0.4 : 0.2,
           ease: EASE_OUT_QUART,
         }}
-        viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+        viewport={{ once: true, margin: '0px 0px -18% 0px' }}
         className={clsx(
           'text-secondary w-full text-center text-sm md:text-left lg:text-lg',
           isVertical ? 'mt-5' : 'mt-5 md:mt-0 md:w-3/5 md:pl-6'

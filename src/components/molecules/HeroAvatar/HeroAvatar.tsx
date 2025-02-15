@@ -39,7 +39,7 @@ const HeroAvatar = ({
         type: 'spring',
         stiffness: 70,
       }}
-      viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+      viewport={{ once: true, margin: '0px 0px -18% 0px' }}
     >
       {/* Masked image */}
       <motion.div

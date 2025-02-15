@@ -39,7 +39,7 @@ const SectionWrapper = ({
       duration: 0.45,
       ease: 'backOut',
     }}
-    viewport={{ once: true, margin: '-180px' }}
+    viewport={{ once: true, margin: '0px 0px -5% 0px' }}
   >
     <div className="flex w-full flex-col items-center md:items-start">
       <SectionCategoryIndicator

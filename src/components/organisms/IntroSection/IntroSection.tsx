@@ -37,7 +37,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
               ease: 'backOut',
               delay: 0.3 + 0.2 * index,
             }}
-            viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+            viewport={{ once: true, margin: '0px 0px -18% 0px' }}
           >
             <CircleIcon
               className="h-6 w-6 p-1"
@@ -54,7 +54,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
               ease: EASE_OUT_QUINT,
               delay: 0.5 + 0.2 * index,
             }}
-            viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+            viewport={{ once: true, margin: '0px 0px -18% 0px' }}
           >
             {item.text}
           </motion.span>
@@ -74,7 +74,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
             ease: 'backOut',
             delay: 0.65 + 0.1 * index,
           }}
-          viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+          viewport={{ once: true, margin: '0px 0px -18% 0px' }}
           key={index}
           className={clsx(
             'flex flex-col items-start lg:flex-row',
@@ -92,7 +92,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
               ease: 'backOut',
               delay: 0.7 + 0.1 * index,
             }}
-            viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+            viewport={{ once: true, margin: '0px 0px -18% 0px' }}
           >
             {stat.quantity}
           </motion.span>
@@ -105,7 +105,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
               ease: 'backOut',
               delay: 0.75 + 0.1 * index,
             }}
-            viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+            viewport={{ once: true, margin: '0px 0px -18% 0px' }}
           >
             {stat.text}
           </motion.span>
