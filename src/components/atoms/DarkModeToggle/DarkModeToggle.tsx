@@ -4,14 +4,20 @@ import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 
 const DarkModeToggle = () => {
-  const [enabled, setEnabled] = useState(false);
+  const [enabled, setEnabled] = useState(() => {
+    const storedTheme = localStorage.getItem('theme');
+    return storedTheme === 'light' ? true : false;
+  });
 
   useEffect(() => {
     const htmlEl = document.documentElement;
+
     if (enabled) {
       htmlEl.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     } else {
       htmlEl.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
     }
   }, [enabled]);
 
@@ -38,7 +44,7 @@ const DarkModeToggle = () => {
           'relative z-10 rounded-full bg-yellow-400 transition-transform duration-200 ease-in-out',
           'ml-1 inline-flex h-7 w-7 items-center justify-center lg:h-10 lg:w-10',
           enabled ? 'translate-x-[1.75rem] lg:translate-x-8' : 'translate-x-0',
-          'transition-scale ease-out-back duration-300 group-hover:scale-[0.75]'
+          'transition-scale duration-300 ease-out-back group-hover:scale-[0.75]'
         )}
       >
         <Icon className="fill-sky-600" type={enabled ? 'sun' : 'moon'} />
