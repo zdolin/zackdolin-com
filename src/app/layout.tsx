@@ -45,6 +45,27 @@ export default async function RootLayout({
       lang="en"
       className={clsx('antialiased', GeneralSans.variable, 'dark')}
     >
+      <head>
+        {/* Theme detection script */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                try {
+                  const theme = document.cookie.split('; ').find(row => row.startsWith('theme='))?.split('=')[1];
+                  if (theme === 'light') {
+                    document.documentElement.classList.remove('dark');
+                  } else {
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch (e) {
+                  document.documentElement.classList.add('dark');
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className="surface-primary relative flex min-h-screen flex-col">
         {/* Header */}
         <Header />

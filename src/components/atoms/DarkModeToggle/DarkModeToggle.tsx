@@ -1,23 +1,25 @@
 import Icon from '@/components/atoms/Icon';
 import { Switch } from '@headlessui/react';
 import clsx from 'clsx';
+import Cookies from 'js-cookie';
 import { useEffect, useState } from 'react';
 
 const DarkModeToggle = () => {
   const [enabled, setEnabled] = useState(() => {
-    const storedTheme = localStorage.getItem('theme');
-    return storedTheme === 'light' ? true : false;
+    // Initialize state from cookie; default to dark if not set
+    return Cookies.get('theme') === 'light';
   });
 
+  // Apply theme when `enabled` changes
   useEffect(() => {
     const htmlEl = document.documentElement;
 
     if (enabled) {
       htmlEl.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
+      Cookies.set('theme', 'light', { expires: 365, sameSite: 'Strict' });
     } else {
       htmlEl.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
+      Cookies.set('theme', 'dark', { expires: 365, sameSite: 'Strict' });
     }
   }, [enabled]);
 
