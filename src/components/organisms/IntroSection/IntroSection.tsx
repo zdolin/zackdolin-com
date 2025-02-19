@@ -98,12 +98,12 @@ const IntroSection = ({ data }: IntroSectionProps) => (
           </motion.span>
           <motion.span
             className="text-secondary mt-2 max-w-24 text-left text-base lg:ml-4 lg:mt-0 xl:text-lg"
-            initial={{ opacity: 0, transform: 'translateY(-100%)' }}
-            whileInView={{ opacity: 1, transform: 'translateY(0px)' }}
+            initial={{ opacity: 0, y: '-100%' }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{
               duration: 0.4,
               ease: 'backOut',
-              delay: 0.75 + 0.1 * index,
+              delay: 0.7 + 0.1 * index,
             }}
             viewport={{ once: true, margin: '0px 0px -18% 0px' }}
           >

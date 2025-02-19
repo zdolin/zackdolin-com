@@ -39,8 +39,8 @@ export default function Header({ className = '' }: HeaderProps) {
   return (
     <motion.header
       className={clsx('surface-primary z-50 shadow-custom', className)}
-      initial={{ transform: 'translateY(-100%)' }}
-      animate={{ transform: 'translateY(0)' }}
+      initial={{ y: '-100%' }}
+      animate={{ y: 0 }}
       transition={{ duration: 0.45, ease: EASE_OUT_QUINT }}
     >
       <nav
