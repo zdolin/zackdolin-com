@@ -1,8 +1,12 @@
+'use client';
+
 import { iconMap } from '@/components/atoms/Icon';
 import CardProject from '@/components/molecules/CardProject';
 import SectionWrapper from '@/components/molecules/SectionWrapper';
+import { EASE_OUT_QUINT } from '@/constants/easing';
 import { PortfolioItemType } from '@/types/component';
 import { PortfolioSectionDataType } from '@/types/data';
+import { motion } from 'framer-motion';
 
 export interface PortfolioSectionProps {
   data: PortfolioSectionDataType;
@@ -18,7 +22,29 @@ const PortfolioSection = ({ data }: PortfolioSectionProps) => (
   >
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
       {data.projectsList.map((card: PortfolioItemType, index: number) => (
-        <CardProject key={`project-card-${index}`} {...card} />
+        <motion.div
+          key={`project-card-${index}`}
+          initial={{
+            opacity: 0,
+            x: Math.random() * 500,
+            y: -500,
+            rotate: Math.random() * 45 - 90,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            y: 0,
+            rotate: 0,
+          }}
+          transition={{
+            duration: 0.3,
+            ease: EASE_OUT_QUINT,
+            delay: 0.3 * index,
+          }}
+          viewport={{ once: true, margin: '0px 0px -18% 0px' }}
+        >
+          <CardProject {...card} />
+        </motion.div>
       ))}
     </div>
   </SectionWrapper>
