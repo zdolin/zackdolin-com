@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer utilities {
+
+  span {
+    @apply tracking-wide;
+  }
+
   .card-base {
     @apply flex items-center justify-between rounded-2xl;
   }
