@@ -8,6 +8,7 @@ import gqlClient from '@/lib/contentful/gqlClient';
 import { PAGE_QUERY } from '@/lib/queries';
 import { transformPageData } from '@/lib/transformers';
 import { PageDataType } from '@/types/data';
+import clsx from 'clsx';
 import { cache } from 'react';
 
 const getPageData = cache(async (): Promise<PageDataType> => {
@@ -27,6 +28,14 @@ export default async function Home() {
       <PortfolioSection data={portfolio} />
       <TestimonialsSection data={testimonials} />
       <ContactSection data={contact} />
+      <div
+        className={clsx(
+          'text-primary flex w-full items-center justify-center',
+          'text-base sm:text-sm lg:text-lg'
+        )}
+      >
+        © {new Date().getFullYear()} Zack Dolin. All rights reserved.
+      </div>
     </>
   );
 }
