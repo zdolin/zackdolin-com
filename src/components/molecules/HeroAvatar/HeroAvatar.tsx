@@ -33,11 +33,11 @@ const HeroAvatar = ({
       initial={
         isAnimationEnhanced ? { scale: 0.5, outlineOffset: '-20px' } : {}
       }
-      whileInView={{ scale: 1, outlineOffset: '0.75rem' }}
+      whileInView={{ scale: 1, outlineOffset: '1rem' }}
       transition={{
         duration: 0.5,
         type: 'spring',
-        stiffness: 70,
+        stiffness: 77,
       }}
       viewport={{ once: true, margin: '0px 0px -18% 0px' }}
     >
