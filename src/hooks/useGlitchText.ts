@@ -19,7 +19,7 @@ const useGlitchText = (
       new Set(text.split('').filter((ch) => /[a-zA-Z]/.test(ch)))
     );
 
-    const glitchSpecialChars = '❚_';
+    const glitchSpecialChars = '♦_';
     
     const getRandomChar = () => {
       if (lettersFromText.length && Math.random() < 0.3) {
