@@ -26,22 +26,26 @@ const PortfolioSection = ({ data }: PortfolioSectionProps) => (
           key={`project-card-${index}`}
           initial={{
             opacity: 0,
-            x: Math.random() * 500,
-            y: -500,
-            rotate: Math.random() * 45 - 90,
+            x:
+              Math.random() *
+              (typeof window !== 'undefined' ? window.innerWidth / 4 : 200),
+            y: Math.floor(Math.random() * (-250 + 500 + 1)) - 500,
+            rotate: Math.random() * 15 - 30,
+            filter: 'blur(10px)',
           }}
           whileInView={{
             opacity: 1,
             x: 0,
             y: 0,
             rotate: 0,
+            filter: 'blur(0px)',
           }}
           transition={{
-            duration: 0.3,
+            duration: 0.35,
             ease: EASE_OUT_QUINT,
-            delay: 0.3 * index,
+            delay: 0.2 * index,
           }}
-          viewport={{ once: true, margin: '0px 0px -18% 0px' }}
+          viewport={{ once: true, margin: '0px 0px -50% 0px' }}
         >
           <CardProject {...card} />
         </motion.div>
