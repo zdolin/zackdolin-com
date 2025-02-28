@@ -62,7 +62,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
       ))}
     </ul>
     <Button className="w-full md:w-auto" animationDelay={0.8}>
-      Hire me
+      Download CV
     </Button>
     <ul className="mt-8 flex flex-wrap justify-center gap-6 text-center lg:gap-8">
       {data.statsList.map((stat: StatsItemType, index: number) => (
