@@ -11,7 +11,7 @@ export function Label({ className, level = 1, ...props }: LabelProps) {
     <Element
       {...props}
       className={clsx(
-        'text-sm font-semibold uppercase text-sky-600 md:text-xs lg:text-base',
+        'text-sm font-semibold uppercase tracking-wide text-sky-600 md:text-xs lg:text-base',
         className
       )}
     />

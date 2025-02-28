@@ -26,7 +26,12 @@ const Card = ({
     )}
   >
     <div className="md:pr-4">
-      <h3 className="text-primary text-center text-base font-medium md:text-left md:text-lg md:font-semibold lg:text-2xl">
+      <h3
+        className={clsx(
+          'text-primary text-center text-base font-medium tracking-wide md:font-semibold',
+          'md:text-left md:text-lg lg:text-2xl'
+        )}
+      >
         {title} {company && `· ${company}`}
       </h3>
       <p className="text-secondary text-center text-base md:text-left md:text-sm lg:text-lg">

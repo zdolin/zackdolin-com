@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 
 const buttonVariants = cva(
-  'border-none inline-flex items-center justify-center font-semibold uppercase rounded-full transition focus:outline-none focus:ring-2 focus:ring-offset-2',
+  'border-none inline-flex items-center justify-center font-semibold uppercase rounded-full transition focus:outline-none focus:ring-2 focus:ring-offset-2 tracking-wider',
   {
     variants: {
       intent: {

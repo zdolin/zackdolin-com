@@ -35,7 +35,7 @@ const SectionCategoryIndicator = ({
       {/* Visual heading */}
       <Label className="absolute ml-3">
         <motion.span
-          className="inline-block"
+          className="inline-block tracking-wide"
           initial={{ opacity: 0, transform: 'translateX(-100%)' }}
           whileInView={{ opacity: 1, transform: 'translateX(0px)' }}
           transition={{
