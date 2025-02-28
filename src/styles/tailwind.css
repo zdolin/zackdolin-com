@@ -36,4 +36,8 @@
   :root {
     --radius: 0.5rem;
   }
+
+  p, a, button {
+    letter-spacing: 0.015em;
+  }
 }
