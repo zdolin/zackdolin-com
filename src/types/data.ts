@@ -66,3 +66,8 @@ export type PageDataType = {
   testimonials: TestimonalsSectionDataType;
   contact: ContactSectionDataType;
 };
+
+export type SectionType = {
+  name: string;
+  href: string;
+}

@@ -1,10 +1,13 @@
 'use client';
 
+import { sections } from '@/app/data/config';
 import ZLogo from '@/assets/images/z-logo.svg';
 import Button from '@/components/atoms/Button/Button';
 import DarkModeToggle from '@/components/atoms/DarkModeToggle';
 import HeaderNavItem from '@/components/molecules/HeaderNavItem';
 import { EASE_OUT_QUINT } from '@/constants/easing';
+import { useActiveSection } from '@/hooks/useActiveSection';
+import { SectionType } from '@/types/data';
 import {
   Dialog,
   DialogPanel,
@@ -16,29 +19,21 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { Fragment, useState } from 'react';
 
-interface NavigationItem {
-  name: string;
-  href: string;
-}
-
-const navigation: NavigationItem[] = [
-  { name: 'Home', href: '#' },
-  { name: 'Skills', href: '#' },
-  { name: 'Resume', href: '#' },
-  { name: 'Projects', href: '#' },
-  { name: 'Testimonials', href: '#' },
-];
-
 type HeaderProps = {
   className?: string;
 };
 
 export default function Header({ className = '' }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+  const activeSection = useActiveSection();
 
   return (
     <motion.header
-      className={clsx('surface-primary z-50 shadow-custom', className)}
+      className={clsx(
+        'sticky top-0',
+        'surface-primary z-50 shadow-custom',
+        className
+      )}
       initial={{ y: '-100%' }}
       animate={{ y: 0 }}
       transition={{ duration: 0.45, ease: EASE_OUT_QUINT }}
@@ -54,8 +49,13 @@ export default function Header({ className = '' }: HeaderProps) {
           </a>
         </div>
         <div className="hidden md:flex lg:mr-8">
-          {navigation.map((item) => (
-            <HeaderNavItem key={item.name} text={item.name} href={item.href} />
+          {sections.map((item: SectionType) => (
+            <HeaderNavItem
+              key={item.name}
+              text={item.name}
+              href={item.href}
+              isActive={activeSection === item.href.slice(1)}
+            />
           ))}
         </div>
         <div className="flex min-h-10 flex-1 items-center justify-end gap-x-3 md:min-w-64 md:gap-x-4 lg:min-w-72">
@@ -106,7 +106,7 @@ export default function Header({ className = '' }: HeaderProps) {
                 <div className="flow-root">
                   <div className="-my-2">
                     <div className="divide-y divide-black/20 py-6 dark:divide-blue-900">
-                      {navigation.map((item) => (
+                      {sections.map((item: SectionType) => (
                         <a
                           key={item.name}
                           href={item.href}
