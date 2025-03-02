@@ -1,5 +1,6 @@
 import {
   ArrowRightCircleIcon,
+  ChatBubbleLeftEllipsisIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
   HomeIcon,
@@ -17,7 +18,6 @@ import PhoneIcon from '@/assets/icons/phone.svg';
 import PortfolioIcon from '@/assets/icons/portfolio.svg';
 import ResumeIcon from '@/assets/icons/resume.svg';
 import SkillsIcon from '@/assets/icons/skills.svg';
-import TestimonialsIcon from '@/assets/icons/testimonial.svg';
 
 export const iconMap = {
   address: AddressIcon,
@@ -34,7 +34,7 @@ export const iconMap = {
   skills: SkillsIcon,
   sun: SunIcon,
   portfolio: PortfolioIcon,
-  testimonials: TestimonialsIcon,
+  testimonials: ChatBubbleLeftEllipsisIcon,
 };
 
 interface IconProps {
