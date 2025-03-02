@@ -1,5 +1,6 @@
 import {
   ArrowRightCircleIcon,
+  ArrowUpRightIcon,
   ChatBubbleLeftEllipsisIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -21,7 +22,8 @@ import SkillsIcon from '@/assets/icons/skills.svg';
 
 export const iconMap = {
   address: AddressIcon,
-  arrowRightCircleIcon: ArrowRightCircleIcon,
+  arrowRightCircle: ArrowRightCircleIcon,
+  arrowUpRight: ArrowUpRightIcon,
   chevronLeft: ChevronLeftIcon,
   chevronRight: ChevronRightIcon,
   checkmark: CheckmarkIcon,
