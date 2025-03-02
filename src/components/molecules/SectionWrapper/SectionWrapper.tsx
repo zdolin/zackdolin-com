@@ -34,7 +34,7 @@ const SectionWrapper = ({
     id={category.toLowerCase()}
     className={clsx(
       'surface-primary w-full rounded-3xl',
-      'scroll-mt-20 px-8 py-10',
+      'scroll-mt-12 px-8 py-10',
       className
     )}
     initial={{ opacity: 0, scale: 0.85 }}

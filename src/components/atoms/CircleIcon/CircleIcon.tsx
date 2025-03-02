@@ -18,12 +18,31 @@ const CircleIcon = ({
 }: CircleIconProps) => (
   <div
     className={clsx(
-      'flex items-center justify-center rounded-full',
+      'relative',
+      'flex items-center justify-center overflow-hidden rounded-full',
       className,
       bgClass
     )}
   >
-    <Icon type={type} className={clsx(iconClassName, iconFillClass)} />
+    <Icon
+      type={type}
+      className={clsx(
+        iconClassName,
+        iconFillClass,
+        'transition-transform group-hover:-translate-y-[160%]',
+        'duration-300 ease-out-quint'
+      )}
+    />
+
+    <span
+      className={clsx(
+        'absolute translate-y-[160%]',
+        'transition-transform group-hover:translate-y-0',
+        'duration-300 ease-out-quint'
+      )}
+    >
+      <Icon type={type} className={clsx(iconClassName, iconFillClass)} />
+    </span>
   </div>
 );
 
