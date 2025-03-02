@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {sections} from "@/app/data/config";
+import {navigationList} from "@/app/data/config";
 
 export const useActiveSection = (): string => {
   const [activeSection, setActiveSection] = useState<string>("");
@@ -12,7 +12,7 @@ export const useActiveSection = (): string => {
     };
 
     const observers: IntersectionObserver[] = [];
-    const sectionIds = sections.map((section) => section.href.slice(1));
+    const sectionIds = navigationList.map((section) => section.href.slice(1));
 
     sectionIds.forEach((id) => {
       const section = document.getElementById(id);

@@ -1,32 +1,33 @@
 'use client';
 
 import CircleIcon from '@/components/atoms/CircleIcon';
+import { useActiveSection } from '@/hooks/useActiveSection';
 import { NavigationItemType } from '@/types/component';
-import { useState } from 'react';
 
 export interface MiniNavProps {
   navigationList: NavigationItemType[];
 }
 
 const MiniNav = ({ navigationList }: MiniNavProps) => {
-  const [currentNavigationItemType, setCurrentNavigationItemType] =
-    useState<NavigationItemType>(navigationList[0]);
+  const activeSection = useActiveSection();
   return (
     <nav className="mt-8 flex w-full list-none space-x-4 rounded-full p-4 shadow-custom">
       {navigationList.map((item) => (
         <li key={item.text}>
-          <button onClick={() => setCurrentNavigationItemType(item)}>
+          <a href={item.href}>
             <CircleIcon
               className="h-12 w-12 p-3"
               bgClass={
-                currentNavigationItemType === item ? undefined : 'bg-blue-50'
+                activeSection === item.href.slice(1) ? undefined : 'bg-blue-50'
               }
               iconFillClass={
-                currentNavigationItemType === item ? undefined : 'fill-sky-600'
+                activeSection === item.href.slice(1)
+                  ? undefined
+                  : 'fill-sky-600'
               }
               type={item.icon}
             />
-          </button>
+          </a>
         </li>
       ))}
     </nav>

@@ -1,13 +1,13 @@
 'use client';
 
-import { sections } from '@/app/data/config';
+import { navigationList } from '@/app/data/config';
 import ZLogo from '@/assets/images/z-logo.svg';
 import Button from '@/components/atoms/Button/Button';
 import DarkModeToggle from '@/components/atoms/DarkModeToggle';
 import HeaderNavItem from '@/components/molecules/HeaderNavItem';
 import { EASE_OUT_QUINT } from '@/constants/easing';
 import { useActiveSection } from '@/hooks/useActiveSection';
-import { SectionType } from '@/types/data';
+import { NavigationItemType } from '@/types/component';
 import {
   Dialog,
   DialogPanel,
@@ -49,10 +49,10 @@ export default function Header({ className = '' }: HeaderProps) {
           </a>
         </div>
         <div className="hidden md:flex lg:mr-8">
-          {sections.map((item: SectionType) => (
+          {navigationList.map((item: NavigationItemType) => (
             <HeaderNavItem
-              key={item.name}
-              text={item.name}
+              key={item.text}
+              text={item.text}
               href={item.href}
               isActive={activeSection === item.href.slice(1)}
             />
@@ -106,16 +106,16 @@ export default function Header({ className = '' }: HeaderProps) {
                 <div className="flow-root">
                   <div className="-my-2">
                     <div className="divide-y divide-black/20 py-6 dark:divide-blue-900">
-                      {sections.map((item: SectionType) => (
+                      {navigationList.map((item: NavigationItemType) => (
                         <a
-                          key={item.name}
+                          key={item.text}
                           href={item.href}
                           className={clsx(
                             '-mx-3 block px-4 py-6 text-lg font-normal',
                             'text-black dark:text-white'
                           )}
                         >
-                          {item.name}
+                          {item.text}
                         </a>
                       ))}
                     </div>

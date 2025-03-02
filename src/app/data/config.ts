@@ -1,9 +1,9 @@
-import { SectionType } from "@/types/data";
+import { NavigationItemType } from "@/types/component";
 
-export const sections: SectionType[] = [
-  { name: 'Home', href: '#introduction' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Resume', href: '#resume' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Testimonials', href: '#testimonials' },
+export const navigationList: NavigationItemType[] = [
+  { text: 'Home', href: '#introduction', icon: 'home' },
+  { text: 'Skills', href: '#skills', icon: 'skills' },
+  { text: 'Resume', href: '#resume', icon: 'resume' },
+  { text: 'Projects', href: '#projects', icon: 'portfolio' },
+  { text: 'Testimonials', href: '#testimonials', icon: 'testimonials' },
 ];

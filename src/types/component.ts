@@ -4,6 +4,7 @@ import { ImageProps } from 'next/image';
 export type NavigationItemType = {
   icon: keyof typeof iconMap;
   text: string;
+  href: string;
 };
 
 export type ChecklistItemType = {

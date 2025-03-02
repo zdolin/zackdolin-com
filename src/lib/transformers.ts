@@ -8,6 +8,7 @@ import {
   TestimonalsSectionDataType,
   ContactSectionDataType
 } from '@/types/data';
+import { navigationList } from '@/app/data/config';
 
 export const transformSidebarData = (graphqlData: any): SidebarDataType => {
   if (!graphqlData?.sidebarCollection?.items?.length) {
@@ -29,13 +30,7 @@ export const transformSidebarData = (graphqlData: any): SidebarDataType => {
         text: detail.value,
       })
     ),
-    navigationList: (sidebar.miniNavListCollection?.items || []).map(
-      (navItem: any) => ({
-        id: navItem.id,
-        icon: navItem.icon?.type,
-        text: navItem.text,
-      })
-    ),
+    navigationList,
   };
 };
 

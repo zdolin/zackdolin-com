@@ -32,7 +32,11 @@ const SectionWrapper = ({
 }: SectionWrapperProps) => (
   <motion.section
     id={category.toLowerCase()}
-    className={clsx('surface-primary w-full rounded-3xl px-8 py-10', className)}
+    className={clsx(
+      'surface-primary w-full rounded-3xl',
+      'scroll-mt-20 px-8 py-10',
+      className
+    )}
     initial={{ opacity: 0, scale: 0.85 }}
     whileInView={{ opacity: 1, scale: 1 }}
     transition={{
