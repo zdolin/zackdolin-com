@@ -39,7 +39,7 @@ const SkillsSection = ({ data }: SkillsSectionProps) => (
       ))}
     </div>
     <div className="mt-10 flex justify-center xl:mt-12">
-      <Button>View all skills</Button>
+      <Button>View My Resume</Button>
     </div>
   </SectionWrapper>
 );
