@@ -116,12 +116,17 @@ export default function Header({ className = '' }: HeaderProps) {
                             '-mx-3 block px-4 py-6 text-lg font-normal',
                             'text-black dark:text-white'
                           )}
+                          onClick={() => setMobileMenuOpen(false)}
                         >
                           {item.text}
                         </a>
                       ))}
                     </div>
-                    <Button asChild className="my-2 border-none">
+                    <Button
+                      onClick={() => setMobileMenuOpen(false)}
+                      asChild
+                      className="my-2 border-none"
+                    >
                       <a className="py-3" href="#contact">
                         Contact me
                       </a>
