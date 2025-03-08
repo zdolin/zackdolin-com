@@ -3,14 +3,13 @@
 import { iconMap } from '@/components/atoms/Icon';
 import CardProject from '@/components/molecules/CardProject';
 import SectionWrapper from '@/components/molecules/SectionWrapper';
-import Drawer from '@/components/organisms/Drawer';
-import Modal from '@/components/organisms/Modal';
+import ModalOrDrawer from '@/components/organisms/ModalOrDrawer';
 import ProjectDetail from '@/components/organisms/ProjectDetail';
 import { EASE_OUT_QUINT } from '@/constants/easing';
 import { PortfolioItemType } from '@/types/component';
 import { PortfolioSectionDataType } from '@/types/data';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export interface PortfolioSectionProps {
   data: PortfolioSectionDataType;
@@ -20,16 +19,6 @@ const PortfolioSection = ({ data }: PortfolioSectionProps) => {
   const [selectedProject, setSelectedProject] =
     useState<PortfolioItemType | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const updateScreenSize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    updateScreenSize();
-    window.addEventListener('resize', updateScreenSize);
-    return () => window.removeEventListener('resize', updateScreenSize);
-  }, []);
 
   const handleCardClick = (project: PortfolioItemType) => {
     setSelectedProject(project);
@@ -62,12 +51,7 @@ const PortfolioSection = ({ data }: PortfolioSectionProps) => {
                 y: 400,
                 rotate: Math.random() * 30 - 60,
               }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-                y: 0,
-                rotate: 0,
-              }}
+              whileInView={{ opacity: 1, x: 0, y: 0, rotate: 0 }}
               transition={{
                 duration: 0.5,
                 ease: EASE_OUT_QUINT,
@@ -81,23 +65,13 @@ const PortfolioSection = ({ data }: PortfolioSectionProps) => {
         </div>
       </SectionWrapper>
 
-      {isMobile ? (
-        <Drawer
-          open={isModalOpen}
-          onClose={handleCloseModal}
-          title={selectedProject?.description}
-        >
-          {selectedProject && <ProjectDetail project={selectedProject} />}
-        </Drawer>
-      ) : (
-        <Modal
-          open={isModalOpen}
-          onClose={handleCloseModal}
-          title={selectedProject?.description}
-        >
-          {selectedProject && <ProjectDetail project={selectedProject} />}
-        </Modal>
-      )}
+      <ModalOrDrawer
+        open={isModalOpen}
+        onClose={handleCloseModal}
+        title={selectedProject?.description}
+      >
+        {selectedProject && <ProjectDetail project={selectedProject} />}
+      </ModalOrDrawer>
     </>
   );
 };

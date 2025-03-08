@@ -44,7 +44,7 @@ const Drawer: React.FC<DrawerProps> = ({ open, onClose, title, children }) => {
             <div
               className={clsx(
                 'w-full max-w-lg rounded-t-lg bg-white shadow-xl dark:bg-gray-900',
-                'p-6 sm:p-8'
+                'p-8 sm:p-10'
               )}
             >
               <div className="flex justify-end">
