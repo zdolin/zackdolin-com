@@ -59,8 +59,10 @@ export default function Header({ className = '' }: HeaderProps) {
           ))}
         </div>
         <div className="flex min-h-10 flex-1 items-center justify-end gap-x-3 md:min-w-64 md:gap-x-4 lg:min-w-72">
-          <Button className="hidden md:flex" suppressAnimation>
-            Contact me
+          <Button asChild className="hidden md:flex" suppressAnimation>
+            <a className="py-3" href="#contact">
+              Contact me
+            </a>
           </Button>
           {!mobileMenuOpen && <DarkModeToggle />}
         </div>
@@ -119,7 +121,11 @@ export default function Header({ className = '' }: HeaderProps) {
                         </a>
                       ))}
                     </div>
-                    <Button className="my-2 border-none">Contact me</Button>
+                    <Button asChild className="my-2 border-none">
+                      <a className="py-3" href="#contact">
+                        Contact me
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </DialogPanel>

@@ -55,7 +55,11 @@ const Sidebar = async ({ className, hideNavigation = false }: SidebarProps) => {
           </li>
         ))}
       </ul>
-      <Button className="w-full">Send Message</Button>
+      <Button asChild className="w-full">
+        <a className="py-3" href="#contact">
+          Send Message
+        </a>
+      </Button>
       <div>
         {!hideNavigation && <MiniNav navigationList={navigationList} />}
       </div>
