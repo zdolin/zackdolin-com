@@ -109,15 +109,23 @@ const transformResumeSectionData = (
 const transformPortfolioSectionData = (
   portfolioSection: any
 ): PortfolioSectionDataType => {
+  console.log(JSON.stringify(portfolioSection.projectsListCollection?.items, null, 2));
   return {
     ...getSectionWrapperData(portfolioSection),
     projectsList: (portfolioSection.projectsListCollection?.items || []).map(
       (item: any) => ({
         heading: item.heading,
+        url: item.url || undefined,
+        client: item.client || undefined,
+        blurb: item.blurb,
         description: item.description,
         image: {
-          src: item.imagesCollection.items[0].url,
-          alt: item.imagesCollection.items[0].title,
+          src: item.image.url,
+          alt: item.image.title,
+        },
+        thumb: {
+          src: item.thumb.url,
+          alt: item.thumb.title,
         },
       })
     ),

@@ -104,11 +104,16 @@ export const PAGE_QUERY = `query {
         items {
           heading
           description
-          imagesCollection {
-            items {
-              title
-              url
-            }
+          blurb
+          client
+          url
+          image {
+            title
+            url
+          }
+          thumb {
+            title
+            url
           }
         }
       }

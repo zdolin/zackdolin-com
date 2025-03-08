@@ -35,8 +35,12 @@ export type ExperienceItemType = {
 
 export type PortfolioItemType = {
   heading: string;
+  blurb: string;
   description: string;
   image: ImageProps;
+  thumb: ImageProps;
+  client?: string;
+  url?: string;
 };
 
 export type TestimonialItemType = {
