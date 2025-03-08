@@ -53,7 +53,7 @@ const CardProject = ({
     </div>
     <Heading
       className={clsx(
-        'text-primary pb-3 pt-6 !text-2xl md:pb-2 md:text-base lg:pb-4 lg:pt-8 lg:text-2xl',
+        'text-primary pb-3 pt-6 !text-2xl md:pb-2 md:text-base lg:pt-8 lg:text-2xl',
         'dark:group-hover:text-white'
       )}
       level={2}

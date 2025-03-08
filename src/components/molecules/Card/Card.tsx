@@ -28,8 +28,8 @@ const Card = ({
     <div className="md:pr-4">
       <h3
         className={clsx(
-          'text-primary text-center text-base font-medium tracking-wide md:font-semibold',
-          'md:text-left md:text-lg lg:text-2xl'
+          'text-primary text-center font-medium tracking-wide md:font-semibold',
+          'text-base md:text-left md:text-lg lg:text-2xl'
         )}
       >
         {title} {company && `· ${company}`}

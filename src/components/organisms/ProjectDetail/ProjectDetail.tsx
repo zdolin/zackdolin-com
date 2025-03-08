@@ -1,6 +1,7 @@
 'use client';
 
 import { PortfolioItemType } from '@/types/component';
+import clsx from 'clsx';
 import Image, { ImageProps } from 'next/image';
 
 export interface ProjectDetailProps {
@@ -32,7 +33,17 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
       ) : (
         <RenderImage image={project.image} />
       )}
-      <p className="text-primary mb-2">{project.description}</p>
+      <h3
+        className={clsx(
+          'text-primary mb-2 font-medium tracking-wide md:font-semibold',
+          'text-base md:text-lg lg:text-xl'
+        )}
+      >
+        {project.heading}
+      </h3>
+      <p className="text-secondary mb-3 text-base md:text-sm lg:text-lg">
+        {project.description}
+      </p>
       {project.client && (
         <p className="text-primary mb-2">Client: {project.client}</p>
       )}

@@ -109,7 +109,6 @@ const transformResumeSectionData = (
 const transformPortfolioSectionData = (
   portfolioSection: any
 ): PortfolioSectionDataType => {
-  console.log(JSON.stringify(portfolioSection.projectsListCollection?.items, null, 2));
   return {
     ...getSectionWrapperData(portfolioSection),
     projectsList: (portfolioSection.projectsListCollection?.items || []).map(
