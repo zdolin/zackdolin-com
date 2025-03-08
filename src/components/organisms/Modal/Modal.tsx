@@ -5,6 +5,7 @@ import {
   TransitionChild,
 } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/solid';
+import clsx from 'clsx';
 import React, { Fragment } from 'react';
 
 type ModalProps = {
@@ -32,7 +33,10 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, title, children }) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Dialog.Panel className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+            <div
+              onClick={onClose}
+              className="fixed inset-0 bg-white opacity-75 transition-opacity dark:bg-blue-900"
+            />
           </TransitionChild>
 
           {/* Trick to center the modal contents */}
@@ -52,7 +56,13 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, title, children }) => {
             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <div className="bg-surface-primary inline-block transform overflow-hidden rounded-lg px-4 pb-4 pt-5 text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-6xl sm:p-6 sm:align-middle">
+            <div
+              className={clsx(
+                'surface-secondary inline-block transform overflow-hidden rounded-lg text-left align-bottom shadow-xl transition-all sm:align-middle',
+                'w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl',
+                'p-8 sm:my-8 sm:p-10 md:p-12 lg:p-16'
+              )}
+            >
               <div className="absolute right-0 top-0 pr-4 pt-4">
                 <button
                   type="button"
@@ -66,7 +76,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, title, children }) => {
               {title && (
                 <DialogTitle
                   as="h3"
-                  className="text-lg font-medium leading-6 text-gray-900"
+                  className="sr-only text-lg font-medium leading-6 text-gray-900"
                 >
                   {title}
                 </DialogTitle>

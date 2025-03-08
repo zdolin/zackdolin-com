@@ -18,9 +18,16 @@ export interface PortfolioSectionProps {
 const PortfolioSection = ({ data }: PortfolioSectionProps) => {
   const [selectedProject, setSelectedProject] =
     useState<PortfolioItemType | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleCardClick = (project: PortfolioItemType) => {
     setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedProject(null), 300); // Delay clearing the project selection
   };
 
   return (
@@ -64,8 +71,8 @@ const PortfolioSection = ({ data }: PortfolioSectionProps) => {
       </SectionWrapper>
 
       <Modal
-        open={!!selectedProject}
-        onClose={() => setSelectedProject(null)}
+        open={isModalOpen}
+        onClose={handleCloseModal}
         title={selectedProject?.description}
       >
         {selectedProject && <ProjectDetail project={selectedProject} />}
