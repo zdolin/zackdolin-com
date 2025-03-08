@@ -41,7 +41,7 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
       >
         {project.heading}
       </h3>
-      <p className="text-secondary mb-3 text-base md:text-sm lg:text-lg">
+      <p className="text-secondary mb-3 w-11/12 text-base md:text-sm lg:text-lg">
         {project.description}
       </p>
       {project.client && (
