@@ -3,13 +3,14 @@
 import { iconMap } from '@/components/atoms/Icon';
 import CardProject from '@/components/molecules/CardProject';
 import SectionWrapper from '@/components/molecules/SectionWrapper';
+import Drawer from '@/components/organisms/Drawer';
 import Modal from '@/components/organisms/Modal';
 import ProjectDetail from '@/components/organisms/ProjectDetail';
 import { EASE_OUT_QUINT } from '@/constants/easing';
 import { PortfolioItemType } from '@/types/component';
 import { PortfolioSectionDataType } from '@/types/data';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export interface PortfolioSectionProps {
   data: PortfolioSectionDataType;
@@ -19,6 +20,16 @@ const PortfolioSection = ({ data }: PortfolioSectionProps) => {
   const [selectedProject, setSelectedProject] =
     useState<PortfolioItemType | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const updateScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    updateScreenSize();
+    window.addEventListener('resize', updateScreenSize);
+    return () => window.removeEventListener('resize', updateScreenSize);
+  }, []);
 
   const handleCardClick = (project: PortfolioItemType) => {
     setSelectedProject(project);
@@ -27,7 +38,7 @@ const PortfolioSection = ({ data }: PortfolioSectionProps) => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    setTimeout(() => setSelectedProject(null), 300); // Delay clearing the project selection
+    setTimeout(() => setSelectedProject(null), 300);
   };
 
   return (
@@ -70,13 +81,23 @@ const PortfolioSection = ({ data }: PortfolioSectionProps) => {
         </div>
       </SectionWrapper>
 
-      <Modal
-        open={isModalOpen}
-        onClose={handleCloseModal}
-        title={selectedProject?.description}
-      >
-        {selectedProject && <ProjectDetail project={selectedProject} />}
-      </Modal>
+      {isMobile ? (
+        <Drawer
+          open={isModalOpen}
+          onClose={handleCloseModal}
+          title={selectedProject?.description}
+        >
+          {selectedProject && <ProjectDetail project={selectedProject} />}
+        </Drawer>
+      ) : (
+        <Modal
+          open={isModalOpen}
+          onClose={handleCloseModal}
+          title={selectedProject?.description}
+        >
+          {selectedProject && <ProjectDetail project={selectedProject} />}
+        </Modal>
+      )}
     </>
   );
 };
