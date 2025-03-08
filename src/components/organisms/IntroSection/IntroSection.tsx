@@ -61,8 +61,14 @@ const IntroSection = ({ data }: IntroSectionProps) => (
         </li>
       ))}
     </ul>
-    <Button className="w-full md:w-auto" animationDelay={0.8}>
-      Download CV
+    <Button asChild className="w-full md:w-auto" animationDelay={0.8}>
+      <a
+        className="py-3"
+        href="/files/Zack-Dolin_Resume.pdf"
+        download="Zack Dolin - Resume.pdf"
+      >
+        Download CV
+      </a>
     </Button>
     <ul className="mt-8 flex flex-wrap justify-center gap-6 text-center lg:gap-8">
       {data.statsList.map((stat: StatsItemType, index: number) => (

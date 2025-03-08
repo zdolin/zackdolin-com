@@ -39,7 +39,16 @@ const SkillsSection = ({ data }: SkillsSectionProps) => (
       ))}
     </div>
     <div className="mt-10 flex justify-center xl:mt-12">
-      <Button>View My Resume</Button>
+      <Button>
+        <a
+          className="py-3"
+          href="/files/Zack-Dolin_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View My Resume
+        </a>
+      </Button>
     </div>
   </SectionWrapper>
 );
