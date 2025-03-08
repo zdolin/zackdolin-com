@@ -104,8 +104,8 @@ export const PAGE_QUERY = `query {
         items {
           heading
           description
-          blurb
           client
+          blurb
           url
           image {
             title
