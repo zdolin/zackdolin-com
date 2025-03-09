@@ -7,6 +7,7 @@ type ModalOrDrawerProps = {
   onClose: () => void;
   title?: string;
   children: React.ReactNode;
+  className?: string;
 };
 
 const ModalOrDrawer: React.FC<ModalOrDrawerProps> = ({
@@ -14,6 +15,7 @@ const ModalOrDrawer: React.FC<ModalOrDrawerProps> = ({
   onClose,
   title,
   children,
+  className = '',
 }) => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -33,7 +35,12 @@ const ModalOrDrawer: React.FC<ModalOrDrawerProps> = ({
           {children}
         </Drawer>
       ) : (
-        <Modal open={open} onClose={onClose} title={title}>
+        <Modal
+          open={open}
+          onClose={onClose}
+          title={title}
+          className={className}
+        >
           {children}
         </Modal>
       )}

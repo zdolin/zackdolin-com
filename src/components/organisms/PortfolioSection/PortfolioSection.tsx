@@ -69,6 +69,7 @@ const PortfolioSection = ({ data }: PortfolioSectionProps) => {
         open={isModalOpen}
         onClose={handleCloseModal}
         title={selectedProject?.description}
+        className="w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl"
       >
         {selectedProject && <ProjectDetail project={selectedProject} />}
       </ModalOrDrawer>

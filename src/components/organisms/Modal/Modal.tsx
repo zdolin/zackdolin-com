@@ -13,9 +13,16 @@ type ModalProps = {
   onClose: () => void;
   title?: string;
   children: React.ReactNode;
+  className?: string;
 };
 
-const Modal: React.FC<ModalProps> = ({ open, onClose, title, children }) => {
+const Modal: React.FC<ModalProps> = ({
+  open,
+  onClose,
+  title,
+  children,
+  className = '',
+}) => {
   return (
     <Transition show={open} as={Fragment}>
       <Dialog
@@ -59,8 +66,8 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, title, children }) => {
             <div
               className={clsx(
                 'surface-secondary inline-block transform overflow-hidden rounded-lg text-left align-bottom shadow-xl transition-all sm:align-middle',
-                'w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl',
-                'p-8 sm:my-8 sm:p-10 md:p-10 lg:p-12'
+                'w-full p-8 sm:my-8 sm:p-10 md:p-10 lg:p-12',
+                className
               )}
             >
               <div className="absolute right-0 top-0 pr-4 pt-4">
