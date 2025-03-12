@@ -118,10 +118,12 @@ const transformPortfolioSectionData = (
         client: item.client || undefined,
         blurb: item.blurb,
         description: item.description,
-        image: {
-          src: item.image.url,
-          alt: item.image.title,
-        },
+        images: (item.imagesCollection?.items || []).map(
+          (item: any) => ({
+            src: item.url,
+            alt: item.title,
+          })
+        ),
         thumb: {
           src: item.thumb.url,
           alt: item.thumb.title,

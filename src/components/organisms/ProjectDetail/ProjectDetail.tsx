@@ -28,10 +28,10 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
     <div>
       {project.url ? (
         <a href={project.url} target="_blank" rel="noopener noreferrer">
-          <RenderImage image={project.image} />
+          <RenderImage image={project.images[0]} />
         </a>
       ) : (
-        <RenderImage image={project.image} />
+        <RenderImage image={project.images[0]} />
       )}
       <h3
         className={clsx(

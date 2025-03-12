@@ -30,12 +30,12 @@ export const SIDEBAR_QUERY = `
 `;
 
 const sectionWrapper = `{
+  body
   category
   categoryIcon {
     type
   }
   heading
-  body
 }`;
 
 export const PAGE_QUERY = `query {
@@ -107,9 +107,11 @@ export const PAGE_QUERY = `query {
           client
           blurb
           url
-          image {
-            title
-            url
+          imagesCollection {
+            items {
+              url
+              title
+            }
           }
           thumb {
             title

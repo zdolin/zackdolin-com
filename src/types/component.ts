@@ -37,7 +37,7 @@ export type PortfolioItemType = {
   heading: string;
   blurb: string;
   description: string;
-  image: ImageProps;
+  images: ImageProps[];
   thumb: ImageProps;
   client?: string;
   url?: string;
