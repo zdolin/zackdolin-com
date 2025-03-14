@@ -15,6 +15,7 @@ export interface CarouselProps {
   className?: string;
   autoplay?: boolean;
   autoplayDelay?: number;
+  centeredArrows?: boolean;
 }
 
 const Carousel = ({
@@ -23,6 +24,7 @@ const Carousel = ({
   className,
   autoplay = false,
   autoplayDelay = 3000,
+  centeredArrows = false,
 }: CarouselProps) => {
   // If autoplay is enabled, use the Autoplay plugin with the specified delay:
   const plugins = autoplay ? [Autoplay({ delay: autoplayDelay })] : [];
@@ -74,7 +76,10 @@ const Carousel = ({
 
       {/* Navigation Arrows */}
       <motion.div
-        className="absolute bottom-0 left-0 z-10 -mb-6"
+        className={clsx(
+          'absolute left-0 z-10',
+          centeredArrows ? 'bottom-1/2' : 'bottom-0 -mb-6'
+        )}
         initial={{ opacity: 0, x: '100%' }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.9, ease: EASE_OUT_QUART }}
@@ -84,7 +89,8 @@ const Carousel = ({
           className={clsx(
             'rounded-full !p-3',
             'disabled:cursor-not-allowed disabled:opacity-50',
-            'scale-75 transform lg:scale-90'
+            'scale-75 transform lg:scale-90',
+            centeredArrows && '!shadow-lg'
           )}
           onClick={scrollPrev}
           disabled={!prevBtnEnabled}
@@ -95,7 +101,10 @@ const Carousel = ({
         </Button>
       </motion.div>
       <motion.div
-        className="absolute bottom-0 right-0 z-10 -mb-6"
+        className={clsx(
+          'absolute right-0 z-10',
+          centeredArrows ? 'bottom-1/2' : 'bottom-0 -mb-6'
+        )}
         initial={{ opacity: 0, x: '-100%' }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.9, ease: EASE_OUT_QUART }}
@@ -105,7 +114,8 @@ const Carousel = ({
           className={clsx(
             'rounded-full !p-3',
             'disabled:cursor-not-allowed disabled:opacity-50',
-            'scale-75 transform lg:scale-90'
+            'scale-75 transform lg:scale-90',
+            centeredArrows && '!shadow-lg'
           )}
           onClick={scrollNext}
           disabled={!nextBtnEnabled}

@@ -3,6 +3,7 @@
 import { PortfolioItemType } from '@/types/component';
 import clsx from 'clsx';
 import Image, { ImageProps } from 'next/image';
+import Carousel from '../Carousel';
 
 export interface ProjectDetailProps {
   project: PortfolioItemType;
@@ -16,7 +17,7 @@ const RenderImage = ({ image }: RenderImageProps) => (
   <Image
     src={image.src}
     alt={image.alt}
-    className="text-primary mb-5 h-auto w-full sm:mb-6"
+    className="text-primary h-auto w-full"
     width={0}
     height={0}
     sizes="100vw"
@@ -26,13 +27,25 @@ const RenderImage = ({ image }: RenderImageProps) => (
 const ProjectDetail = ({ project }: ProjectDetailProps) => {
   return (
     <div>
-      {project.url ? (
-        <a href={project.url} target="_blank" rel="noopener noreferrer">
-          <RenderImage image={project.images[0]} />
-        </a>
-      ) : (
-        <RenderImage image={project.images[0]} />
-      )}
+      <Carousel centeredArrows>
+        {project.images.map((image) => (
+          <div
+            key={image.alt}
+            className={clsx(
+              'embla__slide flex-[0_0_100%]',
+              'lg:flex-[0_0_calc(100%-96px)]'
+            )}
+          >
+            {project.url ? (
+              <a href={project.url} target="_blank" rel="noopener noreferrer">
+                <RenderImage image={image} />
+              </a>
+            ) : (
+              <RenderImage image={image} />
+            )}
+          </div>
+        ))}
+      </Carousel>
       <h3
         className={clsx(
           'text-primary mb-2 font-medium tracking-wide md:font-semibold',

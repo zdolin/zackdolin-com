@@ -34,17 +34,14 @@ export const transformSidebarData = (graphqlData: any): SidebarDataType => {
   };
 };
 
-const getSectionWrapperData = (section: any): any => {
-  return {
+const getSectionWrapperData = (section: any): any => ({
     category: section.sectionWrapper?.category || '',
     heading: section.sectionWrapper?.heading || '',
     body: section.sectionWrapper?.body || '',
     categoryIcon: section.sectionWrapper?.categoryIcon?.type || '',
-  };
-};
+  });
 
-const transformIntroSectionData = (introSection: any): IntroSectionDataType => {
-  return {
+const transformIntroSectionData = (introSection: any): IntroSectionDataType => ({
     ...getSectionWrapperData(introSection),
     heroImage: {
       src: introSection.heroImage?.url,
@@ -62,13 +59,11 @@ const transformIntroSectionData = (introSection: any): IntroSectionDataType => {
         icon: item.icon?.type || '',
       })
     ),
-  };
-};
+  });
 
 const transformSkillsSectionData = (
   skillsSection: any
-): SkillsSectionDataType => {
-  return {
+): SkillsSectionDataType => ({
     ...getSectionWrapperData(skillsSection),
     skillsList: (skillsSection.skillsListCollection?.items || []).map(
       (item: any) => ({
@@ -76,13 +71,11 @@ const transformSkillsSectionData = (
         label: item.label,
       })
     ),
-  };
-};
+  });
 
 const transformResumeSectionData = (
   resumeSection: any
-): ResumeSectionDataType => {
-  return {
+): ResumeSectionDataType => ({
     ...getSectionWrapperData(resumeSection),
     heading2: resumeSection.heading2,
     body2: resumeSection.body2,
@@ -103,13 +96,11 @@ const transformResumeSectionData = (
         description: item.description,
       })
     ),
-  };
-};
+  });
 
 const transformPortfolioSectionData = (
   portfolioSection: any
-): PortfolioSectionDataType => {
-  return {
+): PortfolioSectionDataType => ({
     ...getSectionWrapperData(portfolioSection),
     projectsList: (portfolioSection.projectsListCollection?.items || []).map(
       (item: any) => ({
@@ -130,13 +121,11 @@ const transformPortfolioSectionData = (
         },
       })
     ),
-  };
-};
+  });
 
 const transformTestimonialsSectionData = (
   testimonalsSection: any
-): TestimonalsSectionDataType => {
-  return {
+): TestimonalsSectionDataType => ({
     ...getSectionWrapperData(testimonalsSection),
     testimonialList: (
       testimonalsSection.testimonialListCollection?.items || []
@@ -150,13 +139,11 @@ const transformTestimonialsSectionData = (
         alt: item.image?.alt || item.author || '',
       },
     })),
-  };
-};
+  });
 
 const transformContactSectionData = (
   contactSection: any
-): ContactSectionDataType => {
-  return {
+): ContactSectionDataType => ({
     ...getSectionWrapperData(contactSection),
     infoList: (contactSection.infoListCollection?.items || []).map(
       (item: any) => ({
@@ -165,11 +152,9 @@ const transformContactSectionData = (
         icon: item.icon?.type || '',
       })
     ),
-  };
-};
+  });
 
-export const transformPageData = (graphqlData: any): PageDataType => {
-  return {
+export const transformPageData = (graphqlData: any): PageDataType => ({
     introduction: transformIntroSectionData(graphqlData.introSection.items[0]),
     skills: transformSkillsSectionData(graphqlData.skillsSection.items[0]),
     resume: transformResumeSectionData(graphqlData.resumeSection.items[0]),
@@ -180,5 +165,4 @@ export const transformPageData = (graphqlData: any): PageDataType => {
       graphqlData.testimonialsSection.items[0]
     ),
     contact: transformContactSectionData(graphqlData.contactSection.items[0]),
-  };
-};
+  });

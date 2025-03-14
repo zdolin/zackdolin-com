@@ -107,15 +107,15 @@ export const PAGE_QUERY = `query {
           client
           blurb
           url
+          thumb {
+            url
+            title
+          }
           imagesCollection {
             items {
               url
               title
             }
-          }
-          thumb {
-            title
-            url
           }
         }
       }
