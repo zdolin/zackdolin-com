@@ -4,6 +4,7 @@ import Button from '@/components/atoms/Button';
 import Icon from '@/components/atoms/Icon';
 import { EASE_OUT_QUART } from '@/constants/easing';
 import clsx from 'clsx';
+import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
 import { motion } from 'framer-motion';
 import React, { useCallback, useEffect, useState } from 'react';
@@ -12,15 +13,28 @@ export interface CarouselProps {
   children: React.ReactNode;
   options?: any;
   className?: string;
+  autoplay?: boolean;
+  autoplayDelay?: number;
 }
 
-const Carousel = ({ children, options, className }: CarouselProps) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
-    align: 'center',
-    inViewThreshold: 0.1,
-    ...options,
-  });
+const Carousel = ({
+  children,
+  options,
+  className,
+  autoplay = false,
+  autoplayDelay = 3000,
+}: CarouselProps) => {
+  // If autoplay is enabled, use the Autoplay plugin with the provided delay.
+  const plugins = autoplay ? [Autoplay({ delay: autoplayDelay })] : [];
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      align: 'center',
+      inViewThreshold: 0.1,
+      ...options,
+    },
+    plugins
+  );
   const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
   const [prevBtnEnabled, setPrevBtnEnabled] = useState<boolean>(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState<boolean>(false);

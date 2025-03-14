@@ -26,7 +26,7 @@ const TestimonialsSection = ({ data }: TestimonialsSectionProps) => {
       heading={data.heading}
       body={data.body}
     >
-      <Carousel>
+      <Carousel autoplay autoplayDelay={6000}>
         {data.testimonialList.map((testimonial, index) => (
           <div
             key={index}
