@@ -24,7 +24,7 @@ const Carousel = ({
   autoplay = false,
   autoplayDelay = 3000,
 }: CarouselProps) => {
-  // If autoplay is enabled, use the Autoplay plugin with the provided delay.
+  // If autoplay is enabled, use the Autoplay plugin with the specified delay:
   const plugins = autoplay ? [Autoplay({ delay: autoplayDelay })] : [];
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
