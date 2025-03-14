@@ -53,7 +53,9 @@ const Carousel = ({ children, options, className }: CarouselProps) => {
   return (
     <div className={clsx('relative', className)}>
       <div ref={emblaRef} className="embla overflow-hidden">
-        <div className={clsx('embla__container flex gap-4')}>{slides}</div>
+        <div className={clsx('embla__container flex gap-4 lg:-mx-12')}>
+          {slides}
+        </div>
       </div>
 
       {/* Navigation Arrows */}
