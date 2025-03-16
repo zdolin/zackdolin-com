@@ -38,7 +38,7 @@ const HeadingWithBody = ({
         aria-hidden="true"
         className={clsx(
           'w-full text-center opacity-0 md:text-left',
-          !isVertical && 'md:w-3/5'
+          !isVertical && 'md:w-3/5 lg:w-1/2'
         )}
       >
         {heading}
@@ -48,7 +48,7 @@ const HeadingWithBody = ({
       <Heading
         className={clsx(
           'absolute w-full text-center md:text-left',
-          !isVertical && 'md:w-3/5'
+          !isVertical && 'md:w-3/5 lg:w-1/2'
         )}
       >
         <motion.span
