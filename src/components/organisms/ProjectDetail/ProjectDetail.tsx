@@ -27,25 +27,31 @@ const RenderImage = ({ image }: RenderImageProps) => (
 const ProjectDetail = ({ project }: ProjectDetailProps) => {
   return (
     <div>
-      <Carousel centeredArrows>
-        {project.images.map((image) => (
-          <div
-            key={image.alt}
-            className={clsx(
-              'embla__slide flex-[0_0_100%]',
-              'lg:flex-[0_0_calc(100%-96px)]'
-            )}
-          >
-            {project.url ? (
-              <a href={project.url} target="_blank" rel="noopener noreferrer">
+      {project.images.length > 1 ? (
+        <Carousel centeredArrows>
+          {project.images.map((image) => (
+            <div
+              key={image.alt}
+              className={clsx(
+                'embla__slide flex-[0_0_100%]',
+                'lg:flex-[0_0_calc(100%-96px)]'
+              )}
+            >
+              {project.url ? (
+                <a href={project.url} target="_blank" rel="noopener noreferrer">
+                  <RenderImage image={image} />
+                </a>
+              ) : (
                 <RenderImage image={image} />
-              </a>
-            ) : (
-              <RenderImage image={image} />
-            )}
-          </div>
-        ))}
-      </Carousel>
+              )}
+            </div>
+          ))}
+        </Carousel>
+      ) : (
+        <div className="mb-6">
+          <RenderImage image={project.images[0]} />
+        </div>
+      )}
       <h3
         className={clsx(
           'text-primary mb-2 font-medium tracking-wide md:font-semibold',
