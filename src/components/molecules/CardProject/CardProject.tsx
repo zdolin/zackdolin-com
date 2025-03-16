@@ -6,14 +6,14 @@ import Image, { ImageProps } from 'next/image';
 export interface ProjectCardProps {
   thumb: ImageProps;
   heading: string;
-  description: string;
+  blurb: string;
   onClick?: () => void;
 }
 
 const CardProject = ({
   thumb,
   heading,
-  description,
+  blurb,
   onClick = () => {},
 }: ProjectCardProps) => (
   <button
@@ -28,7 +28,7 @@ const CardProject = ({
     <div className="relative flex items-center justify-center">
       <div
         className={clsx(
-          'overflow-hidden rounded-2xl',
+          'relative overflow-hidden rounded-2xl',
           'scale-100 transition-transform duration-500 ease-out-quint group-hover:scale-105'
         )}
       >
@@ -43,13 +43,15 @@ const CardProject = ({
           height={480}
         />
       </div>
-      <ArrowCircle
-        className={clsx(
-          '!absolute',
-          'translate-y-[300px] opacity-0 transition-all duration-300 ease-out-quint',
-          'group-hover:translate-y-0 group-hover:opacity-100'
-        )}
-      />
+      <div className="absolute flex h-full w-full items-center justify-center overflow-hidden rounded-2xl">
+        <ArrowCircle
+          className={clsx(
+            '!absolute',
+            'translate-y-48 opacity-0 transition-all duration-300 ease-out-quint',
+            'group-hover:translate-y-0 group-hover:opacity-100'
+          )}
+        />
+      </div>
     </div>
     <Heading
       className={clsx(
@@ -66,7 +68,7 @@ const CardProject = ({
         'group-hover:text-black dark:group-hover:text-white'
       )}
     >
-      {description}
+      {blurb}
     </p>
   </button>
 );
