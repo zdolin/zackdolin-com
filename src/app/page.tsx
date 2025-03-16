@@ -24,8 +24,8 @@ export default async function Home() {
     <>
       <IntroSection data={introduction} />
       <SkillsSection data={skills} />
-      <ResumeSection data={resume} />
       <PortfolioSection data={portfolio} />
+      <ResumeSection data={resume} />
       <TestimonialsSection data={testimonials} />
       <ContactSection data={contact} />
       <div
