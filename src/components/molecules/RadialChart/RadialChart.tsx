@@ -100,7 +100,7 @@ const RadialChart = ({
           {displayValue}%
         </div>
       </div>
-      <p className="text-primary text-base font-medium sm:mt-4 md:text-lg 2xl:text-2xl">
+      <p className="text-primary text-center text-base font-medium sm:mt-4 md:text-lg 2xl:text-2xl">
         {label}
       </p>
     </motion.div>

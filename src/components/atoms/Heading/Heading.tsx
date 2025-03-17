@@ -8,7 +8,7 @@ type HeadingProps = {
 const headingStyles = cva('text-primary font-semibold tracking-wide', {
   variants: {
     level: {
-      1: 'text-3xl md:text-2xl lg:text-5xl lg:!leading-[3.2rem]',
+      1: 'text-3xl md:text-2xl lg:text-4xl xl:text-5xl lg:leading-[3rem] xl:!leading-[3.2rem]',
       2: 'text-lg',
     },
   },

@@ -38,7 +38,7 @@ const HeadingWithBody = ({
         aria-hidden="true"
         className={clsx(
           'w-full text-center opacity-0 md:text-left',
-          !isVertical && 'md:w-3/5 lg:w-1/2'
+          !isVertical && 'pr-3 md:w-3/5 md:max-w-96 lg:w-1/2 2xl:max-w-none'
         )}
       >
         {heading}
@@ -48,7 +48,7 @@ const HeadingWithBody = ({
       <Heading
         className={clsx(
           'absolute w-full text-center md:text-left',
-          !isVertical && 'md:w-3/5 lg:w-1/2'
+          !isVertical && 'pr-3 md:w-3/5 md:max-w-96 lg:w-1/2 2xl:max-w-none'
         )}
       >
         <motion.span
@@ -72,7 +72,7 @@ const HeadingWithBody = ({
         viewport={{ once: true, margin: '0px 0px -18% 0px' }}
         className={clsx(
           'text-secondary w-full text-center text-sm md:text-left lg:text-lg',
-          isVertical ? 'mt-5' : 'mt-5 md:mt-0 md:w-3/5 md:pl-6'
+          isVertical ? 'mt-5' : 'mt-5 md:mt-0 md:w-3/5 md:pl-7'
         )}
       >
         {body}
