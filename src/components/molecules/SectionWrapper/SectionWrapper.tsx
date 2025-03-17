@@ -64,7 +64,7 @@ const SectionWrapper = ({
               sizeClass="w-[14.125rem] h-[14.125rem] md:w-[11.313rem] md:h-[11.313rem] lg:w-[18.5rem] lg:h-[18.5rem]"
               circleClass={clsx(
                 'border-[1.5rem] border-yellow-50 bg-yellow-300 dark:border-yellow-950 dark:bg-yellow-800',
-                'outline-dashed outline-[0.75px] outline-offset-[0.75rem] outline-yellow-300 dark:outline-yellow-800'
+                'outline-dashed outline-1 outline-offset-[0.75rem] outline-yellow-300 dark:outline-yellow-800'
               )}
               imageClass="-mt-10"
               overlayClass="border-[1.5rem] border-transparent"
