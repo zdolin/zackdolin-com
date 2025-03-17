@@ -15,15 +15,6 @@ export const SIDEBAR_QUERY = `
             value
           }
         }
-        miniNavListCollection {
-          items {
-            id
-            icon {
-              type
-            }
-            text
-          }
-        }
       }
     }
   }
@@ -67,8 +58,8 @@ export const PAGE_QUERY = `query {
       sectionWrapper ${sectionWrapper}
       skillsListCollection {
         items {
-          percentage
           label
+          percentage
         }
       }
     }
