@@ -68,7 +68,7 @@ const SectionWrapper = ({
               )}
               imageClass="-mt-10"
               overlayClass="border-[1.5rem] border-transparent"
-              isAnimationEnhanced={true}
+              isMainAvatar={true}
               image={heroImage}
             />
             <SectionCategoryIndicator
