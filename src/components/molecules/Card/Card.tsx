@@ -21,7 +21,7 @@ const Card = ({
   <div
     className={clsx(
       index && index % 2 === 1 ? 'surface-accent' : 'surface-tertiary',
-      'card-base flex-col-reverse p-4 md:flex-row md:p-6',
+      'card-base flex-col-reverse px-5 py-6 md:flex-row md:px-6 md:py-7',
       className
     )}
   >
@@ -29,7 +29,7 @@ const Card = ({
       <h3
         className={clsx(
           'text-primary text-center font-medium tracking-wide md:font-semibold',
-          'text-base md:text-left md:text-lg lg:text-2xl'
+          'mb-1 text-base md:mb-2 md:text-left md:text-lg lg:text-2xl'
         )}
       >
         {title} {company && `· ${company}`}
