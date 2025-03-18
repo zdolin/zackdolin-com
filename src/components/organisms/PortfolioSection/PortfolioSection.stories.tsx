@@ -1,4 +1,5 @@
 import mockData from '@/app/data/mock.json';
+import { PortfolioSectionDataType } from '@/types/data';
 import type { Meta, StoryObj } from '@storybook/react';
 import PortfolioSection from './PortfolioSection';
 
@@ -19,6 +20,6 @@ type Story = StoryObj<typeof PortfolioSection>;
 
 export const Default: Story = {
   args: {
-    data: mockData.sections.portfolio,
+    data: mockData.sections.portfolio as PortfolioSectionDataType,
   },
 };

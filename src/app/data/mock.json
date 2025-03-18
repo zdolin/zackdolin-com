@@ -184,36 +184,64 @@
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.",
       "projectsList": [
         {
-          "image": {
+          "heading": "Project 1",
+          "blurb": "A short blurb about Project 1.",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "images": [
+            {
+              "src": "/images/temp/portfolio-thumb-temp.jpg",
+              "alt": "Project 1"
+            }
+          ],
+          "thumb": {
             "src": "/images/temp/portfolio-thumb-temp.jpg",
             "alt": "Project 1"
-          },
-          "heading": "Project 1",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }
         },
         {
-          "image": {
+          "heading": "Project 2",
+          "blurb": "A short blurb about Project 2.",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "images": [
+            {
+              "src": "/images/temp/portfolio-thumb-temp.jpg",
+              "alt": "Project 2"
+            }
+          ],
+          "thumb": {
             "src": "/images/temp/portfolio-thumb-temp.jpg",
             "alt": "Project 2"
-          },
-          "heading": "Project 2",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }
         },
         {
-          "image": {
+          "heading": "Project 3",
+          "blurb": "A short blurb about Project 3.",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "images": [
+            {
+              "src": "/images/temp/portfolio-thumb-temp.jpg",
+              "alt": "Project 3"
+            }
+          ],
+          "thumb": {
             "src": "/images/temp/portfolio-thumb-temp.jpg",
             "alt": "Project 3"
-          },
-          "heading": "Project 3",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }
         },
         {
-          "image": {
+          "heading": "Project 4",
+          "blurb": "A short blurb about Project 4.",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "images": [
+            {
+              "src": "/images/temp/portfolio-thumb-temp.jpg",
+              "alt": "Project 4"
+            }
+          ],
+          "thumb": {
             "src": "/images/temp/portfolio-thumb-temp.jpg",
             "alt": "Project 4"
-          },
-          "heading": "Project 4",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }
         }
       ]
     },

@@ -9,7 +9,7 @@ const meta: Meta<typeof InfoItem> = {
   component: InfoItem,
   tags: ['autodocs'],
   argTypes: {
-    iconType: {
+    icon: {
       control: {
         type: 'select',
         options: Object.keys(iconMap),
@@ -28,7 +28,7 @@ export default meta;
 type Story = StoryObj<typeof InfoItem>;
 
 export const Default: Story = {
-  args: { ...mockData.sections.contact.infoList[0], iconType: 'phone' },
+  args: { ...mockData.sections.contact.infoList[0], icon: 'phone' },
 };
 
 const ListStory: StoryFn<typeof InfoItem> = () => (

@@ -1,7 +1,7 @@
 import mockData from '@/app/data/mock.json';
 import { iconMap } from '@/components/atoms/Icon';
 import type { Meta, StoryObj } from '@storybook/react';
-import { graphql } from 'msw';
+import { graphql, HttpResponse } from 'msw';
 import { Suspense } from 'react';
 import Sidebar from './Sidebar';
 
@@ -26,8 +26,10 @@ const meta: Meta<typeof Sidebar> = {
   parameters: {
     msw: {
       handlers: [
-        graphql.query('SidebarQuery', (_, res: any, ctx: any) => {
-          return res(ctx.data(transformedSidebar));
+        graphql.query('SidebarQuery', () => {
+          return HttpResponse.json({
+            data: transformedSidebar,
+          });
         }),
       ],
     },
