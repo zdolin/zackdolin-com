@@ -44,7 +44,12 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
-      className={clsx('antialiased', GeneralSans.variable, 'dark')}
+      className={clsx(
+        'antialiased',
+        'sm:scroll-smooth',
+        GeneralSans.variable,
+        'dark'
+      )}
     >
       <head>
         {/* Theme detection script */}
@@ -81,7 +86,7 @@ export default async function RootLayout({
             <div className="surface-secondary grow">
               <div className="mx-auto max-w-6xl">
                 <Sidebar className="md:hidden" hideNavigation={true} />
-                <div className="p-6">{children}</div>
+                <div className="px-4 py-6 sm:px-6">{children}</div>
               </div>
             </div>
           </main>

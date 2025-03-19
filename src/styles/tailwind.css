@@ -42,10 +42,6 @@
     --radius: 0.5rem;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
-
   p, a {
     letter-spacing: 0.015em;
   }
