@@ -98,4 +98,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Author
 
-[Zack Dolin](https://zack-dolin.com)
+[Zack Dolin](https://zackdolin.com/)
