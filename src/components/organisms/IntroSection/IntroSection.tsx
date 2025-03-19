@@ -26,7 +26,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
   >
     <ul className="mb-8 mt-8 flex w-full space-x-8 md:mt-0">
       {data.checklist.map((item: ChecklistItemType, index: number) => (
-        <li key={index} className="flex overflow-hidden">
+        <li key={index} className="flex w-1/2 overflow-hidden sm:w-auto">
           <motion.span
             className="z-20"
             aria-hidden="true"
