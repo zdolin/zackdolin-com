@@ -3,6 +3,7 @@
 import Heading from '@/components/atoms/Heading';
 import { EASE_OUT_QUART } from '@/constants/easing';
 import useGlitchText from '@/hooks/useGlitchText';
+import { LinkIcon } from '@heroicons/react/24/solid'; // Added heroicons LinkIcon
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
@@ -12,6 +13,7 @@ export interface HeadingWithBodyProps {
   body: string;
   isVertical?: boolean;
   className?: string;
+  showSourceLink?: boolean;
 }
 
 const HeadingWithBody = ({
@@ -19,6 +21,7 @@ const HeadingWithBody = ({
   body,
   isVertical = false,
   className = '',
+  showSourceLink = false,
 }: HeadingWithBodyProps) => {
   const [animate, setAnimate] = useState<boolean>(false);
   const animatedHeading = useGlitchText(heading, {
@@ -76,6 +79,17 @@ const HeadingWithBody = ({
         )}
       >
         {body}
+        {showSourceLink && (
+          <a
+            className="mt-3 inline-flex items-center text-yellow-300"
+            href="https://github.com/zdolin/zackdolin-com"
+            target="_blank"
+            rel="noopener"
+          >
+            <LinkIcon className="mr-1 h-5 w-5" />
+            View the source code for this site on Github.
+          </a>
+        )}
       </motion.p>
     </div>
   );

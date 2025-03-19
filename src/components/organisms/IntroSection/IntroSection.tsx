@@ -23,6 +23,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
     body={data.body}
     isVertical={true}
     heroImage={data.heroImage}
+    showSourceLink={true}
   >
     <ul className="mb-8 mt-8 flex w-full space-x-8 md:mt-0">
       {data.checklist.map((item: ChecklistItemType, index: number) => (

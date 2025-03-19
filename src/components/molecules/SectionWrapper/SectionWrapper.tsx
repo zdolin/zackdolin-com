@@ -18,6 +18,7 @@ export interface SectionWrapperProps {
   isVertical?: boolean;
   children?: React.ReactNode;
   heroImage?: ImageProps;
+  showSourceLink?: boolean;
 }
 
 const SectionWrapper = ({
@@ -29,6 +30,7 @@ const SectionWrapper = ({
   isVertical = false,
   heroImage,
   children,
+  showSourceLink = false,
 }: SectionWrapperProps) => (
   <motion.section
     id={category.toLowerCase()}
@@ -56,6 +58,7 @@ const SectionWrapper = ({
           heading={heading}
           body={body}
           isVertical={isVertical}
+          showSourceLink={showSourceLink}
         />
         {heroImage && (
           <>
