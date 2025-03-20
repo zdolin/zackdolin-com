@@ -128,13 +128,15 @@ const ContactSection = ({ data }: ContactSectionProps) => {
               onChange={handleChange}
               required
             />
-            <Button
-              className="w-full md:w-auto"
-              type="submit"
-              disabled={loading}
-            >
-              {loading ? 'Sending...' : 'Send Message'}
-            </Button>
+            <div className="flex w-full justify-center md:justify-start">
+              <Button
+                className="w-full md:w-auto"
+                type="submit"
+                disabled={loading}
+              >
+                {loading ? 'Sending...' : 'Send Message'}
+              </Button>
+            </div>
           </form>
         </div>
       </div>
