@@ -3,7 +3,7 @@
 import Heading from '@/components/atoms/Heading';
 import { EASE_OUT_QUART } from '@/constants/easing';
 import useGlitchText from '@/hooks/useGlitchText';
-import { LinkIcon } from '@heroicons/react/24/solid'; // Added heroicons LinkIcon
+import { LinkIcon } from '@heroicons/react/24/solid';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
