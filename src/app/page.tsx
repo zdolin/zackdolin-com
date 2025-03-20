@@ -34,7 +34,19 @@ export default async function Home() {
           'text-base sm:text-sm lg:text-lg'
         )}
       >
-        © {new Date().getFullYear()} Zack Dolin. All rights reserved.
+        <div>
+          © {new Date().getFullYear()} Zack Dolin. All rights reserved.
+          <span className="block md:hidden"></span> Check out my music on{' '}
+          <a
+            className="text-sky-500"
+            href="https://scryingglass.bandcamp.com"
+            target="_blank"
+            rel="noopener"
+          >
+            Bandcamp
+          </a>
+          .
+        </div>
       </div>
     </>
   );
