@@ -80,15 +80,18 @@ const HeadingWithBody = ({
       >
         {body}
         {showSourceLink && (
-          <a
-            className="mt-3 inline-flex items-center text-yellow-300"
-            href="https://github.com/zdolin/zackdolin-com"
-            target="_blank"
-            rel="noopener"
-          >
-            <LinkIcon className="mr-1 h-5 w-5" />
-            View the source code for this site on Github.
-          </a>
+          <>
+            <br />
+            <a
+              className="mt-3 inline-flex items-center text-yellow-300"
+              href="https://github.com/zdolin/zackdolin-com"
+              target="_blank"
+              rel="noopener"
+            >
+              <LinkIcon className="mr-1 h-5 w-5" />
+              View the source code for this site on Github.
+            </a>
+          </>
         )}
       </motion.p>
     </div>
