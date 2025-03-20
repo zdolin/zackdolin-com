@@ -12,7 +12,36 @@ export const metadata: Metadata = {
     template: '%s - Zack Dolin',
     default: 'Zack Dolin',
   },
-  description: '',
+  description:
+    'Personal portfolio of Zack Dolin, showcasing projects, experience, and other information.',
+  keywords: ['Zack Dolin', 'portfolio', 'developer', 'projects'],
+  authors: [{ name: 'Zack Dolin', url: 'https://zackdolin.com' }],
+  metadataBase: new URL('https://zackdolin.com'),
+  openGraph: {
+    title: 'Zack Dolin - Portfolio',
+    description: 'Explore my projects, experience, and creative work.',
+    url: 'https://zackdolin.com',
+    siteName: 'Zack Dolin',
+    images: [
+      {
+        url: 'https://zackdolin.com/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Zack Dolin Portfolio',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Zack Dolin - Portfolio',
+    description: 'Explore my projects, experience, and creative work.',
+    images: ['https://zackdolin.com/og-image.jpg'],
+  },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 const GeneralSans = localFont({
