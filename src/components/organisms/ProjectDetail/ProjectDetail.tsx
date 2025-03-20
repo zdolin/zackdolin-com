@@ -18,9 +18,8 @@ const RenderImage = ({ image }: RenderImageProps) => (
     src={image.src}
     alt={image.alt}
     className="text-primary h-auto w-full"
-    width={0}
-    height={0}
-    sizes="100vw"
+    width={1440}
+    height={960}
   />
 );
 
