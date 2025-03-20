@@ -1,4 +1,3 @@
-import Button from '@/components/atoms/Button';
 import Heading from '@/components/atoms/Heading';
 import HeroAvatar from '@/components/molecules/HeroAvatar';
 import MiniNav from '@/components/molecules/MiniNav';
@@ -8,6 +7,7 @@ import { transformSidebarData } from '@/lib/transformers';
 import { SidebarDataType } from '@/types/data';
 import clsx from 'clsx';
 import { cache } from 'react';
+import SidebarButton from './SidebarButton';
 
 export type SidebarProps = {
   className?: string;
@@ -55,11 +55,7 @@ const Sidebar = async ({ className, hideNavigation = false }: SidebarProps) => {
           </li>
         ))}
       </ul>
-      <Button asChild className="w-full">
-        <a className="py-3" href="#contact">
-          Send Message
-        </a>
-      </Button>
+      <SidebarButton />
       <div>
         {!hideNavigation && <MiniNav navigationList={navigationList} />}
       </div>

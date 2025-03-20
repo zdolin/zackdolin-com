@@ -60,13 +60,16 @@ export default function Header({ className = '' }: HeaderProps) {
         </div>
         <div className="flex min-h-10 flex-1 items-center justify-end gap-x-3 md:min-w-64 md:gap-x-4 lg:min-w-72">
           <Button
-            asChild
-            className="hidden min-w-[196px] md:flex"
+            className="hidden min-w-[196px] py-3 md:flex"
             suppressAnimation
+            onClick={() => {
+              const contactSection = document.getElementById('contact');
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
           >
-            <a className="py-3" href="#contact">
-              Contact me
-            </a>
+            Contact me
           </Button>
           {!mobileMenuOpen && <DarkModeToggle />}
         </div>
@@ -127,13 +130,17 @@ export default function Header({ className = '' }: HeaderProps) {
                       ))}
                     </div>
                     <Button
-                      onClick={() => setMobileMenuOpen(false)}
-                      asChild
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                        const contactSection =
+                          document.getElementById('contact');
+                        if (contactSection) {
+                          contactSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
                       className="my-2 border-none"
                     >
-                      <a className="py-3" href="#contact">
-                        Contact me
-                      </a>
+                      Contact me
                     </Button>
                   </div>
                 </div>
