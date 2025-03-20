@@ -63,14 +63,19 @@ const IntroSection = ({ data }: IntroSectionProps) => (
       ))}
     </ul>
     <div className="my-2 flex w-full justify-center md:justify-start">
-      <Button asChild className="w-full md:w-auto" animationDelay={0.8}>
-        <a
-          className="py-3"
-          href="/files/Zack-Dolin_Resume.pdf"
-          download="Zack Dolin - Resume.pdf"
-        >
-          Download CV
-        </a>
+      <Button
+        className="w-full md:w-auto"
+        animationDelay={0.8}
+        onClick={() => {
+          const link = document.createElement('a');
+          link.href = '/files/Zack-Dolin_Resume.pdf';
+          link.download = 'Zack Dolin - Resume.pdf';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }}
+      >
+        Download CV
       </Button>
     </div>
     <ul className="mt-8 flex flex-wrap justify-center gap-6 text-center lg:gap-8">

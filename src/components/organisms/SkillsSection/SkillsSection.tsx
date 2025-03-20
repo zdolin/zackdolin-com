@@ -1,3 +1,5 @@
+'use client';
+
 import Button from '@/components/atoms/Button';
 import { iconMap } from '@/components/atoms/Icon';
 import RadialChart from '@/components/molecules/RadialChart';
@@ -39,15 +41,16 @@ const SkillsSection = ({ data }: SkillsSectionProps) => (
       ))}
     </div>
     <div className="mt-10 flex justify-center xl:mt-12">
-      <Button>
-        <a
-          className="py-3"
-          href="/files/Zack-Dolin_Resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View My Resume
-        </a>
+      <Button
+        onClick={() =>
+          window.open(
+            '/files/Zack-Dolin_Resume.pdf',
+            '_blank',
+            'noopener,noreferrer'
+          )
+        }
+      >
+        View My Resume
       </Button>
     </div>
   </SectionWrapper>
