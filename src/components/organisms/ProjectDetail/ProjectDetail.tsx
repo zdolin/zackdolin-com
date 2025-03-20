@@ -27,12 +27,12 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
   return (
     <div>
       {project.images.length > 1 ? (
-        <Carousel centeredArrows>
+        <Carousel centeredArrows showDots={false}>
           {project.images.map((image) => (
             <div
               key={image.alt}
               className={clsx(
-                'embla__slide flex-[0_0_100%]',
+                'embla__slide mb-6 flex-[0_0_100%]',
                 'lg:flex-[0_0_calc(100%-96px)]'
               )}
             >
