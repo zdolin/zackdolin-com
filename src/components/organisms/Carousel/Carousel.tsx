@@ -16,6 +16,7 @@ export interface CarouselProps {
   autoplay?: boolean;
   autoplayDelay?: number;
   centeredArrows?: boolean;
+  showDots?: boolean;
 }
 
 const Carousel = ({
@@ -25,6 +26,7 @@ const Carousel = ({
   autoplay = false,
   autoplayDelay = 3000,
   centeredArrows = false,
+  showDots = true,
 }: CarouselProps) => {
   // If autoplay is enabled, use the Autoplay plugin with the specified delay:
   const plugins = autoplay ? [Autoplay({ delay: autoplayDelay })] : [];
@@ -77,8 +79,8 @@ const Carousel = ({
       {/* Navigation Arrows */}
       <motion.div
         className={clsx(
-          'absolute left-0 z-10',
-          centeredArrows ? 'bottom-1/2' : 'bottom-0 -mb-6'
+          'absolute left-0 z-10 -mb-6 ml-1',
+          centeredArrows ? 'bottom-1/2' : 'bottom-0'
         )}
         initial={{ opacity: 0, x: '100%' }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -102,8 +104,8 @@ const Carousel = ({
       </motion.div>
       <motion.div
         className={clsx(
-          'absolute right-0 z-10',
-          centeredArrows ? 'bottom-1/2' : 'bottom-0 -mb-6'
+          'absolute right-0 z-10 -mb-6 mr-1',
+          centeredArrows ? 'bottom-1/2' : 'bottom-0'
         )}
         initial={{ opacity: 0, x: '-100%' }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -127,28 +129,30 @@ const Carousel = ({
       </motion.div>
 
       {/* Dots Navigation */}
-      <div className="mt-8 flex justify-center">
-        {slides.map((_, index) => (
-          <motion.button
-            key={index}
-            initial={{ opacity: 0, scaleX: 0.5 }}
-            whileInView={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 0.9, ease: EASE_OUT_QUART }}
-            viewport={{ once: true, margin: '0px 0px -5% 0px' }}
-            className={clsx(
-              'mx-2 h-1 w-12 rounded-full md:h-1.5 md:w-6 lg:mx-3 lg:w-[3.75rem]',
-              currentSlideIndex === index
-                ? 'bg-blue-500'
-                : 'bg-gray-400 dark:bg-gray-600'
-            )}
-            onClick={() => {
-              emblaApi?.scrollTo(index);
-              setCurrentSlideIndex(emblaApi?.selectedScrollSnap() ?? 0);
-            }}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
+      {showDots && (
+        <div className="mt-8 flex justify-center">
+          {slides.map((_, index) => (
+            <motion.button
+              key={index}
+              initial={{ opacity: 0, scaleX: 0.5 }}
+              whileInView={{ opacity: 1, scaleX: 1 }}
+              transition={{ duration: 0.9, ease: EASE_OUT_QUART }}
+              viewport={{ once: true, margin: '0px 0px -5% 0px' }}
+              className={clsx(
+                'mx-2 h-1 w-12 rounded-full md:h-1.5 md:w-6 lg:mx-3 lg:w-[3.75rem]',
+                currentSlideIndex === index
+                  ? 'bg-blue-500'
+                  : 'bg-gray-400 dark:bg-gray-600'
+              )}
+              onClick={() => {
+                emblaApi?.scrollTo(index);
+                setCurrentSlideIndex(emblaApi?.selectedScrollSnap() ?? 0);
+              }}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
