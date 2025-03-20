@@ -36,6 +36,7 @@ export default async function Home() {
       >
         <div>
           © {new Date().getFullYear()} Zack Dolin. All rights reserved.
+          {/*
           <span className="block md:hidden"></span> Check out my music on{' '}
           <a
             className="text-sky-500"
@@ -46,6 +47,7 @@ export default async function Home() {
             Bandcamp
           </a>
           .
+          */}
         </div>
       </div>
     </>
