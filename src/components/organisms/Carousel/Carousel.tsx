@@ -28,8 +28,14 @@ const Carousel = ({
   centeredArrows = false,
   showDots = true,
 }: CarouselProps) => {
-  // If autoplay is enabled, use the Autoplay plugin with the specified delay:
-  const plugins = autoplay ? [Autoplay({ delay: autoplayDelay })] : [];
+  const plugins = autoplay
+    ? [
+        Autoplay({
+          delay: autoplayDelay,
+          stopOnMouseEnter: true,
+        }),
+      ]
+    : [];
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: true,
