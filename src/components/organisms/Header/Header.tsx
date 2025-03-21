@@ -18,6 +18,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { Fragment, useState } from 'react';
+import { Link } from 'react-scroll';
 
 type HeaderProps = {
   className?: string;
@@ -116,9 +117,12 @@ export default function Header({ className = '' }: HeaderProps) {
                   <div className="-my-2">
                     <div className="divide-y divide-black/20 py-6 dark:divide-blue-900">
                       {navigationList.map((item: NavigationItemType) => (
-                        <a
+                        <Link
                           key={item.text}
-                          href={item.href}
+                          to={item.href.replace('#', '')}
+                          smooth={true}
+                          duration={450}
+                          offset={-60}
                           className={clsx(
                             '-mx-3 block px-4 py-6 text-lg font-normal',
                             'text-black dark:text-white'
@@ -126,22 +130,24 @@ export default function Header({ className = '' }: HeaderProps) {
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           {item.text}
-                        </a>
+                        </Link>
                       ))}
                     </div>
-                    <Button
-                      onClick={() => {
-                        setMobileMenuOpen(false);
-                        const contactSection =
-                          document.getElementById('contact');
-                        if (contactSection) {
-                          contactSection.scrollIntoView();
-                        }
-                      }}
-                      className="my-2 border-none"
+                    <Link
+                      to="contact"
+                      smooth={true}
+                      duration={450}
+                      offset={-60}
                     >
-                      Contact me
-                    </Button>
+                      <Button
+                        onClick={() => {
+                          setMobileMenuOpen(false);
+                        }}
+                        className="my-2 border-none"
+                      >
+                        Contact me
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </DialogPanel>
