@@ -44,10 +44,18 @@ export default function Header({ className = '' }: HeaderProps) {
         className="mx-auto flex max-w-screen-2xl items-center justify-between gap-x-6 px-6 lg:px-8"
       >
         <div className="flex md:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <Link
+            href="#"
+            to="introduction"
+            smooth={true}
+            duration={450}
+            offset={-60}
+            className="-m-1.5 p-1.5"
+            onClick={() => setMobileMenuOpen(false)}
+          >
             <span className="sr-only">Zack Dolin</span>
             <ZLogo className="absolute top-0 my-3 h-[3.75rem] w-auto" alt="" />
-          </a>
+          </Link>
         </div>
         <div className="hidden md:flex lg:mr-8">
           {navigationList.map((item: NavigationItemType) => (
