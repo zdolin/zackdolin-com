@@ -114,7 +114,7 @@ export default async function RootLayout({
           <main className="flex flex-1 flex-col overflow-x-hidden lg:min-w-0">
             <div className="surface-secondary grow">
               <div className="mx-auto max-w-6xl">
-                <Sidebar className="md:hidden" hideNavigation={true} />
+                <Sidebar className="md:hidden" isMobile={true} />
                 <div className="px-4 py-6 sm:px-6">{children}</div>
               </div>
             </div>

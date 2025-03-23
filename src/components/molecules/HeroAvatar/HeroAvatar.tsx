@@ -12,6 +12,7 @@ export interface HeroAvatarProps {
   imageClass?: string;
   overlayClass?: string;
   isMainAvatar?: boolean;
+  isMobile?: boolean;
 }
 
 const HeroAvatar = ({
@@ -22,6 +23,7 @@ const HeroAvatar = ({
   className = '',
   overlayClass = '',
   isMainAvatar = false,
+  isMobile = false,
 }: HeroAvatarProps) => {
   const { scrollY } = useScroll();
   const yRange = useTransform(scrollY, [50, 135], [0, 35]);
@@ -34,8 +36,18 @@ const HeroAvatar = ({
           circleClass,
           sizeClass
         )}
-        initial={isMainAvatar ? { scale: 0.5, outlineOffset: '-20px' } : {}}
-        whileInView={{ scale: 1, outlineOffset: '1rem' }}
+        initial={
+          isMainAvatar
+            ? { scale: 0.5, outlineOffset: '-20px' }
+            : isMobile
+              ? { scale: 0.5, opacity: 0 }
+              : {}
+        }
+        whileInView={
+          isMobile
+            ? { scale: 1, opacity: 1 }
+            : { scale: 1, outlineOffset: '1rem' }
+        }
         transition={{
           duration: 0.5,
           type: 'spring',
@@ -46,7 +58,7 @@ const HeroAvatar = ({
         {/* Masked image */}
         <motion.div
           style={!isMainAvatar ? { y: yRange } : {}}
-          initial={isMainAvatar ? { opacity: 0, y: '50%' } : {}}
+          initial={isMainAvatar || isMobile ? { opacity: 0, y: '50%' } : {}}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
             duration: 0.7,

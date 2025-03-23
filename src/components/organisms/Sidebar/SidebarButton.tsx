@@ -1,9 +1,12 @@
 'use client';
 
 import Button from '@/components/atoms/Button';
-import React from 'react';
 
-const SidebarButton: React.FC = () => {
+interface SidebarButtonProps {
+  isMobile?: boolean;
+}
+
+const SidebarButton = ({ isMobile = false }: SidebarButtonProps) => {
   const handleScrollToContact = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
@@ -12,7 +15,11 @@ const SidebarButton: React.FC = () => {
   };
 
   return (
-    <Button className="w-full py-3" onClick={handleScrollToContact}>
+    <Button
+      className="w-full py-3"
+      onClick={handleScrollToContact}
+      animationDelay={isMobile ? 0.6 : 0}
+    >
       Send Message
     </Button>
   );

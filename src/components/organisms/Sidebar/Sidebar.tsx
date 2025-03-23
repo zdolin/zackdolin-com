@@ -1,4 +1,3 @@
-import Heading from '@/components/atoms/Heading';
 import HeroAvatar from '@/components/molecules/HeroAvatar';
 import MiniNav from '@/components/molecules/MiniNav';
 import gqlClient from '@/lib/contentful/gqlClient';
@@ -8,10 +7,11 @@ import { SidebarDataType } from '@/types/data';
 import clsx from 'clsx';
 import { cache } from 'react';
 import SidebarButton from './SidebarButton';
+import SidebarInfo from './SidebarInfo';
 
 export type SidebarProps = {
   className?: string;
-  hideNavigation?: boolean;
+  isMobile?: boolean;
 };
 
 const getSidebarData = cache(async (): Promise<SidebarDataType> => {
@@ -19,7 +19,7 @@ const getSidebarData = cache(async (): Promise<SidebarDataType> => {
   return transformSidebarData(data);
 });
 
-const Sidebar = async ({ className, hideNavigation = false }: SidebarProps) => {
+const Sidebar = async ({ className, isMobile = false }: SidebarProps) => {
   const { image, name, description, detailsList, navigationList } =
     await getSidebarData();
 
@@ -30,35 +30,15 @@ const Sidebar = async ({ className, hideNavigation = false }: SidebarProps) => {
         className
       )}
     >
-      <HeroAvatar image={image} />
-      <Heading
-        className="text-primary pb-3 pt-6 !text-2xl md:pb-2 lg:pb-4 lg:pt-8 lg:text-3xl"
-        level={2}
-      >
-        {name}
-      </Heading>
-      <p className="text-secondary text-center text-sm md:text-xs lg:text-base">
-        {description}
-      </p>
-      <ul className="my-8 w-full">
-        {detailsList.map((item) => (
-          <li
-            className="flex justify-between border-t border-gray-200 py-4 dark:border-gray-700"
-            key={item.label}
-          >
-            <span className="text-primary text-base md:text-sm lg:text-lg">
-              {item.label}
-            </span>
-            <span className="text-primary text-right text-base font-medium md:text-sm lg:text-lg">
-              {item.text}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <SidebarButton />
-      <div>
-        {!hideNavigation && <MiniNav navigationList={navigationList} />}
-      </div>
+      <HeroAvatar isMobile={isMobile} image={image} />
+      <SidebarInfo
+        name={name}
+        description={description}
+        detailsList={detailsList}
+        isMobile={isMobile}
+      />
+      <SidebarButton isMobile={isMobile} />
+      <div>{!isMobile && <MiniNav navigationList={navigationList} />}</div>
     </div>
   );
 };

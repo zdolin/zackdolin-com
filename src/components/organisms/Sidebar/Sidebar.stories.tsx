@@ -47,8 +47,8 @@ export const Default: Story = {
   args: {},
 };
 
-export const HideNavigation: Story = {
+export const Mobile: Story = {
   args: {
-    hideNavigation: true,
+    isMobile: true,
   },
 };
