@@ -34,14 +34,14 @@ const SidebarInfo = ({
         transition={{ duration: 0.7, ease: EASE_OUT_QUINT }}
       >
         <Heading
-          className="text-primary pb-3 pt-6 !text-2xl md:pb-2 lg:pb-4 lg:pt-8 lg:text-3xl"
+          className="pb-3 pt-6 !text-2xl text-text-primary md:pb-2 lg:pb-4 lg:pt-8 lg:text-3xl"
           level={2}
         >
           {name}
         </Heading>
       </HeadingWrapper>
       <Description
-        className="text-secondary text-center text-sm md:text-xs lg:text-base"
+        className="text-center text-sm text-text-secondary md:text-xs lg:text-base"
         initial="hidden"
         animate="visible"
         variants={textVariants}
@@ -63,10 +63,10 @@ const SidebarInfo = ({
               ease: EASE_OUT_QUINT,
             }}
           >
-            <span className="text-primary text-base md:text-sm lg:text-lg">
+            <span className="text-base text-text-primary md:text-sm lg:text-lg">
               {item.label}
             </span>
-            <span className="text-primary text-right text-base font-medium md:text-sm lg:text-lg">
+            <span className="text-right text-base font-medium text-text-primary md:text-sm lg:text-lg">
               {item.text}
             </span>
           </ListItem>

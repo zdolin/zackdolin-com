@@ -147,10 +147,13 @@ const ContactSection = ({ data }: ContactSectionProps) => {
         onClose={() => setModalOpen(false)}
         className="max-w-lg"
       >
-        <Heading level={2} className="text-primary mb-4 text-2xl md:text-3xl">
+        <Heading
+          level={2}
+          className="mb-4 text-2xl text-text-primary md:text-3xl"
+        >
           {modalType === 'success' ? 'Message sent!' : 'There was an error.'}
         </Heading>
-        <p className="text-primary pb-8 text-lg md:pb-2">{modalMessage}</p>
+        <p className="pb-8 text-lg text-text-primary md:pb-2">{modalMessage}</p>
       </ModalOrDrawer>
     </SectionWrapper>
   );

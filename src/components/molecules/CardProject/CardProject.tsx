@@ -55,7 +55,7 @@ const CardProject = ({
     </div>
     <Heading
       className={clsx(
-        'text-primary pb-3 pt-6 !text-2xl md:pb-2 md:text-base lg:pt-8 lg:text-2xl',
+        'pb-3 pt-6 !text-2xl text-text-primary md:pb-2 md:text-base lg:pt-8 lg:text-2xl',
         'dark:group-hover:text-white'
       )}
       level={2}
@@ -64,7 +64,7 @@ const CardProject = ({
     </Heading>
     <p
       className={clsx(
-        'text-secondary text-center text-sm md:text-xs lg:text-lg',
+        'text-center text-sm text-text-secondary md:text-xs lg:text-lg',
         'group-hover:text-black dark:group-hover:text-white'
       )}
     >

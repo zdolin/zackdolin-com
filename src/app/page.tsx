@@ -30,7 +30,7 @@ export default async function Home() {
       <ContactSection data={contact} />
       <div
         className={clsx(
-          'text-primary flex w-full items-center justify-center py-4',
+          'flex w-full items-center justify-center py-4 text-text-primary',
           'text-base sm:text-sm lg:text-lg'
         )}
       >

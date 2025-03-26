@@ -101,7 +101,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className="surface-secondary relative flex min-h-screen flex-col">
+      <body className="relative flex min-h-screen flex-col bg-surface-secondary">
         {/* Header */}
         <Header />
         <div className="z-10 mx-auto flex w-full max-w-screen-2xl flex-1 lg:flex-row">
@@ -112,7 +112,7 @@ export default async function RootLayout({
 
           {/* Content */}
           <main className="flex flex-1 flex-col overflow-x-hidden lg:min-w-0">
-            <div className="surface-secondary grow">
+            <div className="grow bg-surface-secondary">
               <div className="mx-auto max-w-6xl">
                 <Sidebar className="md:hidden" isMobile={true} />
                 <div className="px-4 py-6 sm:px-6">{children}</div>

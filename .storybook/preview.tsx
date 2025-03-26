@@ -23,7 +23,7 @@ const preview: Preview = {
       defaultTheme: 'light',
     }),
     (Story) => (
-      <div className="surface-primary min-h-screen p-6 font-sans antialiased">
+      <div className="min-h-screen bg-surface-primary p-6 font-sans antialiased">
         <Story />
       </div>
     ),

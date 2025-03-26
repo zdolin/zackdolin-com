@@ -17,7 +17,7 @@ const RenderImage = ({ image }: RenderImageProps) => (
   <Image
     src={image.src}
     alt={image.alt}
-    className="text-primary h-auto w-full"
+    className="h-auto w-full text-text-primary"
     width={1440}
     height={960}
   />
@@ -53,24 +53,24 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
       )}
       <h3
         className={clsx(
-          'text-primary mb-2 font-medium tracking-wide md:font-semibold',
+          'mb-2 font-medium tracking-wide text-text-primary md:font-semibold',
           'text-base md:text-lg lg:text-xl'
         )}
       >
         {project.heading}
       </h3>
-      <p className="text-secondary mb-3 w-11/12 text-base md:text-sm lg:text-lg">
+      <p className="mb-3 w-11/12 text-base text-text-secondary md:text-sm lg:text-lg">
         {project.description}
       </p>
       {project.client && (
-        <p className="text-primary mb-2">Client: {project.client}</p>
+        <p className="mb-2 text-text-primary">Client: {project.client}</p>
       )}
       {project.url && (
         <a
           href={project.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-primary text-blue-500 underline"
+          className="text-blue-500 text-text-primary underline"
         >
           Link
         </a>

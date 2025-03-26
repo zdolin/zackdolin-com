@@ -47,7 +47,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
             />
           </motion.span>
           <motion.span
-            className="md:text-md text-primary z-10 ml-3 text-lg lg:text-lg"
+            className="md:text-md z-10 ml-3 text-lg text-text-primary lg:text-lg"
             initial={{ opacity: 0, transform: 'translateX(-100%)' }}
             whileInView={{ opacity: 1, transform: 'translateX(0px)' }}
             transition={{
@@ -98,7 +98,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
           )}
         >
           <motion.span
-            className="text-primary text-left text-4xl font-medium md:text-[2.625rem] xl:text-6xl"
+            className="text-left text-4xl font-medium text-text-primary md:text-[2.625rem] xl:text-6xl"
             initial={{ opacity: 0, scale: 0.2 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{
@@ -111,7 +111,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
             {stat.quantity}
           </motion.span>
           <motion.span
-            className="text-secondary mt-2 max-w-24 text-left text-base lg:ml-4 lg:mt-0 xl:text-lg"
+            className="mt-2 max-w-24 text-left text-base text-text-secondary lg:ml-4 lg:mt-0 xl:text-lg"
             initial={{ opacity: 0, y: '-100%' }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{

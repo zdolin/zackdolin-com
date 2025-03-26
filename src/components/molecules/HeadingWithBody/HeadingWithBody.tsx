@@ -74,7 +74,7 @@ const HeadingWithBody = ({
         }}
         viewport={{ once: true, margin: '0px 0px -18% 0px' }}
         className={clsx(
-          'text-secondary w-full text-center text-sm md:text-left lg:text-lg',
+          'w-full text-center text-sm text-text-secondary md:text-left lg:text-lg',
           isVertical ? 'mt-5' : 'mt-5 md:mt-0 md:w-3/5 md:pl-7'
         )}
       >

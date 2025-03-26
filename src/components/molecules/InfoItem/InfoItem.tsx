@@ -33,7 +33,7 @@ const InfoItem = ({ icon, heading, text, className }: InfoItemProps) => {
         <Heading className="md:text-center xl:text-left" level={2}>
           {heading}
         </Heading>
-        <p className="text-secondary text-base md:text-center md:text-sm xl:text-left xl:text-xl">
+        <p className="text-base text-text-secondary md:text-center md:text-sm xl:text-left xl:text-xl">
           {isEmail ? (
             <Obfuscate email={text} />
           ) : isPhone ? (

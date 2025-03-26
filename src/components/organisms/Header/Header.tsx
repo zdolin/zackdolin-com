@@ -86,7 +86,7 @@ export default function Header({ className = '' }: HeaderProps) {
           <button
             type="button"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
-            className="text-primary -m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-text-primary"
           >
             <span className="sr-only">
               {mobileMenuOpen ? 'Close main menu' : 'Open main menu'}
@@ -120,7 +120,7 @@ export default function Header({ className = '' }: HeaderProps) {
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full"
             >
-              <DialogPanel className="surface-primary fixed bottom-0 right-0 top-16 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+              <DialogPanel className="fixed bottom-0 right-0 top-16 w-full overflow-y-auto bg-surface-primary px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                 <div className="flow-root">
                   <div className="-my-2">
                     <div className="divide-y divide-black/20 py-6 dark:divide-blue-900">

@@ -28,7 +28,7 @@ const CardTestimonial = ({
   >
     <div className="flex flex-col">
       <RatingSVG alt="5 star rating" />
-      <p className="text-primary py-6 text-sm lg:text-lg">{`“${quote}”`}</p>
+      <p className="py-6 text-sm text-text-primary lg:text-lg">{`“${quote}”`}</p>
       <div className="flex w-full flex-row items-center justify-between">
         <div className="flex gap-5">
           <Image
@@ -39,10 +39,12 @@ const CardTestimonial = ({
             height={48}
           />
           <div className="flex flex-col">
-            <p className="text-primary text-lg font-semibold lg:text-2xl">
+            <p className="text-lg font-semibold text-text-primary lg:text-2xl">
               {author}
             </p>
-            <p className="text-secondary text-sm lg:text-lg">{authorTitle}</p>
+            <p className="text-sm text-text-secondary lg:text-lg">
+              {authorTitle}
+            </p>
           </div>
         </div>
         <p className="text-xs md:text-sm lg:text-lg">{timeAgo(date)}</p>

@@ -8,7 +8,7 @@ export interface DesktopSidebarProps {
 
 const DesktopSidebar = ({ children }: DesktopSidebarProps) => (
   <motion.div
-    className="surface-primary hidden md:block md:w-1/3 xl:p-12"
+    className="hidden bg-surface-primary md:block md:w-1/3 xl:p-12"
     initial={{ x: '-100%' }}
     animate={{ x: 0 }}
     transition={{
