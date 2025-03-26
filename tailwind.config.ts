@@ -11,6 +11,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        surface: {
+          primary: 'var(--surface-primary)',
+          secondary: 'var(--surface-secondary)',
+          tertiary: 'var(--surface-tertiary)',
+          quaternary: 'var(--surface-quaternary)',
+          highlight: 'var(--surface-highlight)',
+          accent: 'var(--surface-accent)',
+        },
+        text: {
+          primary: 'var(--text-primary)',
+          secondary: 'var(--text-secondary)',
+        },
+        hero: {
+          circle: 'var(--hero-circle)',
+          'circle-dark': 'var(--hero-circle-dark)',
+        },
         blue: {
           '950': '#02111A',
           '900': '#222e35',

@@ -8,7 +8,7 @@ export interface ArrowCircleProps {
 const ArrowCircle = ({ className = '' }: ArrowCircleProps) => (
   <div
     className={clsx(
-      'relative flex rounded-full bg-sky-600',
+      'relative flex rounded-full bg-surface-button',
       'flex items-center justify-center',
       'h-12 w-12 lg:h-[3.75rem] lg:w-[3.75rem]',
       className
@@ -21,7 +21,7 @@ const ArrowCircle = ({ className = '' }: ArrowCircleProps) => (
         'rounded-full bg-yellow-400'
       )}
     >
-      <Icon type="arrowUpRight" className="fill-sky-600" />
+      <Icon type="arrowUpRight" className="fill-surface-button" />
     </div>
   </div>
 );

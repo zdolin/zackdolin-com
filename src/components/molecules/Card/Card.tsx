@@ -20,7 +20,7 @@ const Card = ({
 }: CardProps) => (
   <div
     className={clsx(
-      index && index % 2 === 1 ? 'surface-accent' : 'surface-tertiary',
+      index && index % 2 === 1 ? 'surface-quaternary' : 'surface-tertiary',
       'card-base flex-col-reverse px-5 py-6 md:flex-row md:px-6 md:py-7',
       className
     )}
