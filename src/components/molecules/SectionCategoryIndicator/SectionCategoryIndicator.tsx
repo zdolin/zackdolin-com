@@ -58,7 +58,7 @@ const SectionCategoryIndicator = ({
         delay: 0.45,
       }}
       viewport={{ once: true, margin: '0px 0px -18% 0px' }}
-      className="ml-3 w-12 border border-sky-600"
+      className="ml-3 w-12 border border-surface-highlight"
     />
   </div>
 );

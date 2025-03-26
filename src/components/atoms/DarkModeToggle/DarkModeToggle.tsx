@@ -38,18 +38,21 @@ const DarkModeToggle = () => {
       <span
         className={clsx(
           'absolute inset-0 rounded-full transition-colors duration-300',
-          'bg-sky-600 ease-out-quart group-hover:bg-sky-500'
+          'bg-surface-highlight ease-out-quart group-hover:bg-button-hover'
         )}
       />
       <span
         className={clsx(
-          'relative z-10 rounded-full bg-yellow-400 transition-transform duration-200 ease-in-out',
+          'relative z-10 rounded-full bg-surface-accent transition-transform duration-200 ease-in-out',
           'ml-1 inline-flex h-7 w-7 items-center justify-center lg:h-10 lg:w-10',
           enabled ? 'translate-x-[1.75rem] lg:translate-x-8' : 'translate-x-0',
           'transition-scale duration-300 ease-out-back group-hover:scale-[0.75]'
         )}
       >
-        <Icon className="fill-sky-600" type={enabled ? 'sun' : 'moon'} />
+        <Icon
+          className="fill-surface-highlight"
+          type={enabled ? 'sun' : 'moon'}
+        />
       </span>
     </Switch>
   );

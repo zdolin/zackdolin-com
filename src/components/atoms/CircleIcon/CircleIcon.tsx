@@ -13,7 +13,7 @@ const CircleIcon = ({
   type,
   className = 'w-6 h-6 lg:w-[1.875rem] lg:h-[1.875rem] p-1.5 lg:p-[0.438rem]',
   iconClassName = '',
-  bgClass = 'bg-sky-600',
+  bgClass = 'bg-surface-highlight',
   iconFillClass = 'fill-white',
 }: CircleIconProps) => (
   <div

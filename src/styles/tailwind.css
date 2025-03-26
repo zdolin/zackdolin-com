@@ -15,6 +15,7 @@
     --button-active: #0369A1;
     --text-primary: #000000;
     --text-secondary: #6C6C6C;
+    --text-input: #09090b;
 }
 
   :root[class~="dark"] {
@@ -24,6 +25,7 @@
     --surface-quaternary: #1a1605;
     --text-primary: #ffffff;
     --text-secondary: #aeaeae;
+    --text-input: #ffffff;
   }
 }
 

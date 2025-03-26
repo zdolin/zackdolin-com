@@ -22,10 +22,12 @@ const config: Config = {
         button: {
           default: 'var(--button-default)',
           hover: 'var(--button-hover)',
+          active: 'var(--button-active)',
         },
         text: {
           primary: 'var(--text-primary)',
           secondary: 'var(--text-secondary)',
+          input: 'var(--text-input)',
         },
         hero: {
           circle: 'var(--hero-circle)',

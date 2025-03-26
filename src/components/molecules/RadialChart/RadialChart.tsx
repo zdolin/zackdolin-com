@@ -79,7 +79,7 @@ const RadialChart = ({
             strokeWidth={strokeWidth}
           />
           <motion.circle
-            className="origin-center -rotate-90 stroke-sky-600"
+            className="origin-center -rotate-90 stroke-surface-highlight"
             cx={size / 2}
             cy={size / 2}
             r={radius}
@@ -92,7 +92,7 @@ const RadialChart = ({
           />
         </svg>
         <div
-          className="absolute font-semibold text-sky-600"
+          className="absolute font-semibold text-surface-highlight"
           style={{
             fontSize: size / 5,
           }}

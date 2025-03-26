@@ -25,7 +25,7 @@ const MiniNav = ({ navigationList }: MiniNavProps) => {
               iconFillClass={
                 activeSection === item.href.slice(1)
                   ? undefined
-                  : 'fill-sky-600 group-hover:fill-white'
+                  : 'fill-surface-highlight group-hover:fill-white'
               }
               type={item.icon}
             />
