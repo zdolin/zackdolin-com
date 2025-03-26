@@ -65,7 +65,7 @@ const Modal: React.FC<ModalProps> = ({
           >
             <div
               className={clsx(
-                'surface-secondary inline-block transform overflow-hidden rounded-lg text-left align-bottom shadow-xl transition-all sm:align-middle',
+                'inline-block transform overflow-hidden rounded-lg bg-surface-secondary text-left align-bottom shadow-xl transition-all sm:align-middle',
                 'w-full p-8 sm:my-8 sm:p-10 md:p-10 lg:p-12',
                 className
               )}

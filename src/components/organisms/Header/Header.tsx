@@ -32,7 +32,7 @@ export default function Header({ className = '' }: HeaderProps) {
     <motion.header
       className={clsx(
         'sticky top-0',
-        'surface-primary z-50 shadow-custom',
+        'z-50 bg-surface-primary shadow-custom',
         className
       )}
       initial={{ y: '-100%' }}

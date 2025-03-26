@@ -26,7 +26,7 @@ const Sidebar = async ({ className, isMobile = false }: SidebarProps) => {
   return (
     <div
       className={clsx(
-        'surface-primary flex flex-col items-center p-10 xl:rounded-2xl xl:pt-0 xl:shadow-custom',
+        'flex flex-col items-center bg-surface-primary p-10 xl:rounded-2xl xl:pt-0 xl:shadow-custom',
         className
       )}
     >

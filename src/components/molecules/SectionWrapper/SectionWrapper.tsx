@@ -35,7 +35,7 @@ const SectionWrapper = ({
   <motion.section
     id={category.toLowerCase()}
     className={clsx(
-      'surface-primary w-full rounded-3xl',
+      'w-full rounded-3xl bg-surface-primary',
       'scroll-mt-12 px-7 py-9 sm:px-8 sm:py-10',
       className
     )}
