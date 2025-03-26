@@ -19,6 +19,10 @@ const config: Config = {
           highlight: 'var(--surface-highlight)',
           accent: 'var(--surface-accent)',
         },
+        button: {
+          default: 'var(--button-default)',
+          hover: 'var(--button-hover)',
+        },
         text: {
           primary: 'var(--text-primary)',
           secondary: 'var(--text-secondary)',

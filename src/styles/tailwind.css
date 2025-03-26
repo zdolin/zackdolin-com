@@ -10,6 +10,9 @@
     --surface-quaternary: #fffcf0;
     --surface-highlight: #007bc7;
     --surface-accent: #FFC901;
+    --button-default: #007bc7;
+    --button-hover: #0EA5E9;
+    --button-active: #0369A1;
     --text-primary: #000000;
     --text-secondary: #6C6C6C;
 }

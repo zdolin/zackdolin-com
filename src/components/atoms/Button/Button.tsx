@@ -13,9 +13,7 @@ const buttonVariants = cva(
     variants: {
       intent: {
         primary:
-          'bg-sky-600 text-white hover:bg-sky-500 active:bg-sky-700 focus:ring-sky-500',
-        secondary:
-          'bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300 focus:ring-gray-400',
+          'bg-button-default text-white hover:bg-button-hover active:bg-button-active focus:ring-button-hover',
       },
       size: {
         default: 'px-5 py-3 lg:px-6 text-sm lg:text-base',
@@ -40,7 +38,7 @@ export interface ButtonProps
 
 const Button: React.FC<ButtonProps> = ({
   children,
-  intent,
+  intent = 'primary',
   size,
   asChild = false,
   className = '',
