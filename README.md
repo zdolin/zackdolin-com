@@ -82,15 +82,15 @@ npm run add-component
 
 ## Technologies Used
 
-- **Next.js** (14.2.22) - React framework for production-grade applications
-- **React** (18.3.1) - JavaScript library for building UI
-- **Tailwind CSS** (3.4.10) - Utility-first CSS framework
-- **Storybook** (8.6.4) - UI component development environment
-- **Framer Motion** (11.5.4) - Animation library for React
-- **Headless UI** (2.1.6) - Accessible UI components
-- **Heroicons** (2.1.3) - Beautiful icons for UI
-- **Contentful** (11.4.4) - CMS integration
-- **GraphQL Request** (7.1.2) - Minimal GraphQL client
+- **Next.js** - React framework for production-grade applications
+- **React** - JavaScript library for building UI
+- **Tailwind CSS** - Utility-first CSS framework
+- **Storybook** - UI component development environment
+- **Framer Motion** - Animation library for React
+- **Headless UI** - Accessible UI components
+- **Heroicons** - Beautiful icons for UI
+- **Contentful** - CMS integration
+- **GraphQL Request** - Minimal GraphQL client
 
 ## License
 
