@@ -26,7 +26,7 @@ const CardTestimonial = ({
       className
     )}
   >
-    <div className="flex flex-col">
+    <div className="flex w-full flex-col">
       <RatingSVG alt="5 star rating" />
       <p className="py-6 text-sm text-text-primary lg:text-lg">{`“${quote}”`}</p>
       <div className="flex w-full flex-row items-center justify-between">
@@ -38,7 +38,7 @@ const CardTestimonial = ({
             width={48}
             height={48}
           />
-          <div className="flex w-full flex-col">
+          <div className="flex flex-col">
             <p className="text-lg font-semibold text-text-primary lg:text-2xl">
               {author}
             </p>
