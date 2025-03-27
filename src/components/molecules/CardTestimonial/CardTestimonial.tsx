@@ -38,7 +38,7 @@ const CardTestimonial = ({
             width={48}
             height={48}
           />
-          <div className="flex flex-col">
+          <div className="flex w-full flex-col">
             <p className="text-lg font-semibold text-text-primary lg:text-2xl">
               {author}
             </p>
@@ -47,7 +47,9 @@ const CardTestimonial = ({
             </p>
           </div>
         </div>
-        <p className="text-xs md:text-sm lg:text-lg">{timeAgo(date)}</p>
+        <p className="text-xs text-text-secondary md:text-sm lg:text-lg">
+          {timeAgo(date)}
+        </p>
       </div>
     </div>
   </div>
