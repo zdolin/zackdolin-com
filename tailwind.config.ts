@@ -22,6 +22,7 @@ const config: Config = {
         },
         border: {
           primary: 'var(--border-primary)',
+          muted: 'var(--border-muted)',
         },
         button: {
           default: 'var(--button-default)',

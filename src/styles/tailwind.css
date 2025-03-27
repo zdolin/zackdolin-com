@@ -12,6 +12,7 @@
     --surface-muted: #9ca3af;
     --surface-accent: #FFC901;
     --border-primary: #dcdcdc;
+    --border-muted: rgb(115 115 115 / 0.4);
     --button-default: #007bc7;
     --button-hover: #0EA5E9;
     --button-active: #0369A1;
@@ -61,7 +62,7 @@
   .card-base {
     @apply flex items-center justify-between rounded-2xl;
   }
-  
+
 }
 
 @layer base {

@@ -52,7 +52,7 @@ const SidebarInfo = ({
       <ul className="my-8 w-full">
         {detailsList.map((item, index) => (
           <ListItem
-            className="flex justify-between border-t border-neutral-500 border-opacity-40 py-4"
+            className="border-border-muted flex justify-between border-t py-4"
             key={item.label}
             initial="hidden"
             animate="visible"
