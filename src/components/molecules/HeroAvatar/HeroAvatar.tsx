@@ -18,7 +18,7 @@ export interface HeroAvatarProps {
 const HeroAvatar = ({
   image,
   sizeClass = 'h-[13.125rem] w-[13.125rem]',
-  circleClass = 'bg-gray-200 dark:bg-gray-700',
+  circleClass = 'bg-hero-secondary',
   imageClass = '',
   className = '',
   overlayClass = '',

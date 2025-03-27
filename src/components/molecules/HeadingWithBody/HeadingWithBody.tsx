@@ -83,7 +83,7 @@ const HeadingWithBody = ({
           <>
             <br />
             <a
-              className="mt-3 inline-flex items-center text-yellow-700 dark:text-yellow-300"
+              className="text-text-accent mt-3 inline-flex items-center"
               href="https://github.com/zdolin/zackdolin-com"
               target="_blank"
               rel="noopener"

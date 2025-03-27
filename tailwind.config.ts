@@ -18,20 +18,32 @@ const config: Config = {
           quaternary: 'var(--surface-quaternary)',
           highlight: 'var(--surface-highlight)',
           accent: 'var(--surface-accent)',
+          muted: 'var(--surface-muted)',
+        },
+        border: {
+          primary: 'var(--border-primary)',
         },
         button: {
           default: 'var(--button-default)',
           hover: 'var(--button-hover)',
           active: 'var(--button-active)',
+          icon: 'var(--button-icon)',
         },
         text: {
           primary: 'var(--text-primary)',
           secondary: 'var(--text-secondary)',
           input: 'var(--text-input)',
+          accent: 'var(--text-accent)',
+        },
+        card: {
+          default: 'var(--card-default)',
+          hover: 'var(--card-hover)',
+          testimonial: 'var(--card-testimonial)',
         },
         hero: {
-          circle: 'var(--hero-circle)',
-          'circle-dark': 'var(--hero-circle-dark)',
+          primary: 'var(--hero-primary)',
+          secondary: 'var(--hero-secondary)',
+          border: 'var(--hero-border)',
         },
         blue: {
           '950': '#02111A',

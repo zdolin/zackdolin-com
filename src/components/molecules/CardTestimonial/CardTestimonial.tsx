@@ -22,7 +22,7 @@ const CardTestimonial = ({
 }: CardTestimonialProps) => (
   <div
     className={clsx(
-      'card-base bg-gray-100 p-6 py-12 dark:bg-gray-900 md:py-6',
+      'card-base bg-card-testimonial p-6 py-12 md:py-6',
       className
     )}
   >

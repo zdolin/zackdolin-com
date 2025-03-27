@@ -19,9 +19,9 @@ const CardProject = ({
   <button
     type="button"
     className={clsx(
-      'group bg-white p-6 dark:bg-gray-900',
+      'group bg-card-default',
       'flex flex-col items-center rounded-2xl shadow-custom-2 md:p-8',
-      'transition-colors duration-500 ease-out-quint hover:bg-sky-50 dark:hover:bg-blue-900'
+      'transition-colors duration-500 ease-out-quint hover:bg-card-hover'
     )}
     onClick={onClick}
   >
@@ -55,8 +55,7 @@ const CardProject = ({
     </div>
     <Heading
       className={clsx(
-        'pb-3 pt-6 !text-2xl text-text-primary md:pb-2 md:text-base lg:pt-8 lg:text-2xl',
-        'dark:group-hover:text-white'
+        'pb-3 pt-6 !text-2xl text-text-primary md:pb-2 md:text-base lg:pt-8 lg:text-2xl'
       )}
       level={2}
     >
@@ -65,7 +64,7 @@ const CardProject = ({
     <p
       className={clsx(
         'text-center text-sm text-text-secondary md:text-xs lg:text-lg',
-        'group-hover:text-black dark:group-hover:text-white'
+        'duration-500 ease-out-quint group-hover:text-text-primary'
       )}
     >
       {blurb}

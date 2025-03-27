@@ -9,13 +9,23 @@
     --surface-tertiary: #f0f7fc;
     --surface-quaternary: #fffcf0;
     --surface-highlight: #007bc7;
+    --surface-muted: #9ca3af;
     --surface-accent: #FFC901;
+    --border-primary: #dcdcdc;
     --button-default: #007bc7;
     --button-hover: #0EA5E9;
     --button-active: #0369A1;
+    --button-icon: #f0f7fc;
     --text-primary: #000000;
     --text-secondary: #6C6C6C;
+    --text-accent: #a16207;
     --text-input: #09090b;
+    --card-default: #ffffff;
+    --card-hover: #f0f7fc;
+    --card-testimonial: #f3f4f6;
+    --hero-primary: #FFE47D;
+    --hero-secondary: #ededed;
+    --hero-border: #fffcf0;
 }
 
   :root[class~="dark"] {
@@ -23,9 +33,18 @@
     --surface-secondary: #02111A;
     --surface-tertiary: #1f1f1f;
     --surface-quaternary: #1a1605;
+    --surface-muted: #4b5563;
     --text-primary: #ffffff;
     --text-secondary: #aeaeae;
+    --text-accent: #ffe47d;
     --text-input: #ffffff;
+    --border-primary: #2b2b2b;
+    --card-default: #101010;
+    --card-hover: #222e35;
+    --card-testimonial: #101010;
+    --hero-primary: #826700;
+    --hero-secondary: #1f1f1f;
+    --hero-border: #1a1605;
   }
 }
 

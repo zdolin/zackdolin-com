@@ -75,7 +75,7 @@ const RadialChart = ({
             cy={size / 2}
             r={radius}
             fill="none"
-            className="stroke-gray-300 dark:stroke-gray-800"
+            className="stroke-border-primary"
             strokeWidth={strokeWidth}
           />
           <motion.circle

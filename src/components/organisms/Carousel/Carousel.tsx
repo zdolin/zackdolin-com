@@ -147,8 +147,8 @@ const Carousel = ({
               className={clsx(
                 'mx-2 h-1 w-8 rounded-full sm:w-12 md:h-1.5 md:w-6 lg:mx-3 lg:w-[3.75rem]',
                 currentSlideIndex === index
-                  ? 'bg-blue-500'
-                  : 'bg-gray-400 dark:bg-gray-600'
+                  ? 'bg-surface-highlight'
+                  : 'bg-surface-muted'
               )}
               onClick={() => {
                 emblaApi?.scrollTo(index);

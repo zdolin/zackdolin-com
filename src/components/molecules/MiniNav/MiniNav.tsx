@@ -20,7 +20,7 @@ const MiniNav = ({ navigationList }: MiniNavProps) => {
               bgClass={
                 activeSection === item.href.slice(1)
                   ? undefined
-                  : 'bg-blue-50 group-hover:bg-sky-500'
+                  : 'bg-button-icon group-hover:bg-button-hover'
               }
               iconFillClass={
                 activeSection === item.href.slice(1)

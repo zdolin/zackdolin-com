@@ -79,7 +79,7 @@ const ContactSection = ({ data }: ContactSectionProps) => {
         <div
           className={clsx(
             'mb-8 flex grow flex-col justify-between rounded-2xl sm:px-8 md:flex-row md:px-4 md:py-8 lg:px-12 xl:mb-0 xl:mr-8 xl:flex-col xl:px-8',
-            'border-gray-300 py-2 dark:border-gray-800 sm:border'
+            'border-border-primary py-2 sm:border'
           )}
         >
           {data.infoList.map((item: InfoItemType, index: number) => (
@@ -87,7 +87,7 @@ const ContactSection = ({ data }: ContactSectionProps) => {
               className={clsx(
                 '[&:not(:last-child)]:border-b',
                 'md:[&:not(:last-child)]:border-b-0 xl:[&:not(:last-child)]:border-b',
-                '[&:not(:last-child)]:border-gray-300 [&:not(:last-child)]:dark:border-gray-800',
+                '[&:not(:last-child)]:border-border-primary',
                 'py-6 md:px-6 md:py-0 xl:px-0 xl:py-6'
               )}
               key={index}
@@ -97,7 +97,7 @@ const ContactSection = ({ data }: ContactSectionProps) => {
             />
           ))}
         </div>
-        <div className="rounded-2xl border-gray-300 dark:border-gray-800 sm:border sm:p-8">
+        <div className="border-border-primary rounded-2xl sm:border sm:p-8">
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <Input
