@@ -70,7 +70,7 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
           href={project.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-500 text-text-primary underline"
+          className="text-text-primary underline"
         >
           Link
         </a>

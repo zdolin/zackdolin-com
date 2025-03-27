@@ -29,6 +29,12 @@ const config: Config = {
           active: 'var(--button-active)',
           icon: 'var(--button-icon)',
         },
+        icon: {
+          button: {
+            default: 'var(--icon-button-default)',
+            hover: 'var(--icon-button-hover)',
+          },
+        },
         text: {
           primary: 'var(--text-primary)',
           secondary: 'var(--text-secondary)',
@@ -44,33 +50,6 @@ const config: Config = {
           primary: 'var(--hero-primary)',
           secondary: 'var(--hero-secondary)',
           border: 'var(--hero-border)',
-        },
-        blue: {
-          '950': '#02111A',
-          '900': '#222e35',
-        },
-        sky: {
-          '50': '#f0f7fc',
-          '100': '#dfeef7',
-          '600': '#007bc7', // button color
-        },
-        yellow: {
-          '50': '#fffcf0',
-          '300': '#FFE47D', // hero circle color
-          '400': '#FFC901', // circle color
-          '800': '#826700', // hero circle color dark
-          '950': '#1a1605',
-        },
-        neutral: {
-          '500': '#6C6C6C',
-        },
-        gray: {
-          '200': '#ededed',
-          '300': '#dcdcdc',
-          '500': '#aeaeae',
-          '700': '#1f1f1f',
-          '800': '#2b2b2b',
-          '900': '#101010',
         },
         zinc: {
           '900': '#1f1f1f',

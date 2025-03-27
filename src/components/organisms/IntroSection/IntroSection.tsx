@@ -93,7 +93,7 @@ const IntroSection = ({ data }: IntroSectionProps) => (
           className={clsx(
             'flex flex-col items-start lg:flex-row',
             index < data.statsList.length - 1
-              ? 'border-r border-neutral-500 border-opacity-25 lg:pr-6'
+              ? 'border-r border-neutral-500 border-opacity-40 lg:pr-6'
               : ''
           )}
         >

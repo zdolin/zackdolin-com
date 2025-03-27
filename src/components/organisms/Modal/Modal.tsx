@@ -73,11 +73,14 @@ const Modal: React.FC<ModalProps> = ({
               <div className="absolute right-0 top-0 pr-4 pt-4">
                 <button
                   type="button"
-                  className="rounded-md text-gray-400 hover:text-gray-500 focus:outline-none"
+                  className="text-icon-button-default hover:text-icon-button-hover group rounded-md focus:outline-none"
                   onClick={onClose}
                 >
                   <span className="sr-only">Close</span>
-                  <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                  <XMarkIcon
+                    className="h-7 w-7 duration-300 ease-out-quart group-hover:scale-125"
+                    aria-hidden="true"
+                  />
                 </button>
               </div>
               {title && (

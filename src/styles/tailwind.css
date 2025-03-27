@@ -26,6 +26,8 @@
     --hero-primary: #FFE47D;
     --hero-secondary: #ededed;
     --hero-border: #fffcf0;
+    --icon-button-default: #1f1f1f;
+    --icon-button-hover: #2b2b2b;
 }
 
   :root[class~="dark"] {
@@ -45,6 +47,8 @@
     --hero-primary: #826700;
     --hero-secondary: #1f1f1f;
     --hero-border: #1a1605;
+    --icon-button-default: #9ca3af;
+    --icon-button-hover: #aeaeae;
   }
 }
 
@@ -57,31 +61,7 @@
   .card-base {
     @apply flex items-center justify-between rounded-2xl;
   }
-
-  /*
-  .surface-primary {
-    @apply bg-white dark:bg-black;
-  }
-
-  .surface-secondary {
-    @apply bg-sky-100 dark:bg-blue-950;
-  }
-
-  .surface-tertiary {
-    @apply bg-blue-50 dark:bg-zinc-900;
-  }
-
-  .surface-quaternary {
-    @apply bg-yellow-50 dark:bg-yellow-950;
-  }
-
-  .text-primary {
-    @apply text-black dark:text-white;
-  }
-
-  .text-secondary {
-    @apply text-neutral-500 dark:text-gray-500;
-  }*/
+  
 }
 
 @layer base {
