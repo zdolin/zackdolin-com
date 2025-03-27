@@ -42,7 +42,7 @@ const Modal: React.FC<ModalProps> = ({
           >
             <div
               onClick={onClose}
-              className="fixed inset-0 bg-white opacity-75 transition-opacity dark:bg-blue-900"
+              className="fixed inset-0 bg-surface-primary opacity-75 transition-opacity"
             />
           </TransitionChild>
 
