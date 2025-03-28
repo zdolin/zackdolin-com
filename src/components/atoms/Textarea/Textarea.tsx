@@ -33,7 +33,7 @@ const Textarea = forwardRef(function Textarea(
           // Basic layout
           'relative block h-full w-full appearance-none rounded-2xl px-[calc(theme(spacing[4])-1px)] py-[calc(theme(spacing[3])-1px)] sm:px-[calc(theme(spacing.4)-1px)] sm:py-[calc(theme(spacing[2])-1px)]',
           // Typography
-          'text-lg text-text-input placeholder:text-zinc-500 dark:placeholder:text-zinc-400',
+          'text-base text-text-input placeholder:text-zinc-500 dark:placeholder:text-zinc-400 md:text-lg',
           // Border
           'border border-zinc-950/10 data-[hover]:border-zinc-950/20 dark:border-white/10 dark:data-[hover]:border-white/20',
           // Background color

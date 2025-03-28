@@ -14,6 +14,7 @@ type ModalProps = {
   title?: string;
   children: React.ReactNode;
   className?: string;
+  type?: 'primary' | 'secondary';
 };
 
 const Modal: React.FC<ModalProps> = ({
@@ -22,6 +23,7 @@ const Modal: React.FC<ModalProps> = ({
   title,
   children,
   className = '',
+  type = 'secondary',
 }) => {
   return (
     <Transition show={open} as={Fragment}>
@@ -65,7 +67,10 @@ const Modal: React.FC<ModalProps> = ({
           >
             <div
               className={clsx(
-                'inline-block transform overflow-hidden rounded-lg bg-surface-secondary text-left align-bottom shadow-xl transition-all sm:align-middle',
+                'inline-block transform overflow-hidden rounded-lg text-left align-bottom shadow-xl transition-all sm:align-middle',
+                type === 'primary'
+                  ? 'bg-surface-primary dark:bg-surface-secondary'
+                  : 'bg-surface-secondary',
                 'w-full p-8 sm:my-8 sm:p-10 md:p-10 lg:p-12',
                 className
               )}
@@ -73,7 +78,7 @@ const Modal: React.FC<ModalProps> = ({
               <div className="absolute right-0 top-0 pr-4 pt-4">
                 <button
                   type="button"
-                  className="text-icon-button-default hover:text-icon-button-hover group rounded-md focus:outline-none"
+                  className="group rounded-md text-icon-button-default hover:text-icon-button-hover focus:outline-none"
                   onClick={onClose}
                 >
                   <span className="sr-only">Close</span>

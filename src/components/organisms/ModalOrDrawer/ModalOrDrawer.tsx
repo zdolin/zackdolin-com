@@ -8,6 +8,7 @@ type ModalOrDrawerProps = {
   title?: string;
   children: React.ReactNode;
   className?: string;
+  type?: 'primary' | 'secondary';
 };
 
 const ModalOrDrawer: React.FC<ModalOrDrawerProps> = ({
@@ -16,6 +17,7 @@ const ModalOrDrawer: React.FC<ModalOrDrawerProps> = ({
   title,
   children,
   className = '',
+  type = 'secondary',
 }) => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -31,7 +33,7 @@ const ModalOrDrawer: React.FC<ModalOrDrawerProps> = ({
   return (
     <Fragment>
       {isMobile ? (
-        <Drawer open={open} onClose={onClose} title={title}>
+        <Drawer open={open} onClose={onClose} title={title} type={type}>
           {children}
         </Drawer>
       ) : (
@@ -40,6 +42,7 @@ const ModalOrDrawer: React.FC<ModalOrDrawerProps> = ({
           onClose={onClose}
           title={title}
           className={className}
+          type={type}
         >
           {children}
         </Modal>

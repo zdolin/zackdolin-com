@@ -8,9 +8,15 @@ type DrawerProps = {
   onClose: () => void;
   title?: string;
   children: React.ReactNode;
+  type?: 'primary' | 'secondary';
 };
 
-const Drawer: React.FC<DrawerProps> = ({ open, onClose, children }) => {
+const Drawer: React.FC<DrawerProps> = ({
+  open,
+  onClose,
+  children,
+  type = 'secondary',
+}) => {
   return (
     <Transition show={open} as={Fragment}>
       <Dialog as="div" className="fixed inset-0 z-50" onClose={onClose}>
@@ -43,8 +49,11 @@ const Drawer: React.FC<DrawerProps> = ({ open, onClose, children }) => {
           >
             <div
               className={clsx(
-                'w-full max-w-lg rounded-t-lg bg-surface-secondary shadow-xl',
-                'px-8 pb-8 pt-4 sm:px-10 sm:pb-10 sm:pt-6'
+                'w-full max-w-lg rounded-t-lg shadow-xl',
+                'px-8 pb-14 pt-5 sm:px-10 sm:pb-10 sm:pt-6',
+                type === 'primary'
+                  ? 'bg-surface-primary shadow-[0_-1px_20px_rgba(0,0,0,0.1)] dark:bg-surface-secondary'
+                  : 'bg-surface-secondary'
               )}
             >
               <div className="flex justify-end">
@@ -55,7 +64,7 @@ const Drawer: React.FC<DrawerProps> = ({ open, onClose, children }) => {
                 >
                   <span className="sr-only">Close</span>
                   <XMarkIcon
-                    className="h-7 w-7 duration-300 ease-out-quart group-hover:scale-125"
+                    className="-mr-3 h-8 w-8 duration-300 ease-out-quart group-hover:scale-125"
                     aria-hidden="true"
                   />
                 </button>
