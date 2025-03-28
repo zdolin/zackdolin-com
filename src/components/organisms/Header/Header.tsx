@@ -70,7 +70,7 @@ export default function Header({ className = '' }: HeaderProps) {
         <div className="flex min-h-10 flex-1 items-center justify-end gap-x-3 md:min-w-64 md:gap-x-4 lg:min-w-72">
           <Button
             className="hidden min-w-[196px] py-3 md:flex"
-            suppressAnimation
+            suppressIntroAnimation
             onClick={() => {
               const contactSection = document.getElementById('contact');
               if (contactSection) {
