@@ -20,7 +20,7 @@ const CardProject = ({
     type="button"
     className={clsx(
       'group bg-card-default',
-      'flex flex-col items-center rounded-2xl shadow-custom-2 md:p-8',
+      'flex flex-col items-center rounded-2xl px-6 pb-8 pt-6 shadow-custom-2 md:p-8',
       'transition-colors duration-500 ease-out-quint hover:bg-card-hover'
     )}
     onClick={onClick}
