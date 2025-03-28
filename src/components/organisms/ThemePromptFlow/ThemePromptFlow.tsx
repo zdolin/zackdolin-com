@@ -1,8 +1,6 @@
 'use client';
 
-import Heading from '@/components/atoms/Heading';
-import Spinner from '@/components/atoms/Spinner';
-import Modal from '@/components/organisms/Modal';
+import LoadingDialog from '@/components/molecules/LoadingDialog/LoadingDialog';
 import ModalOrDrawer from '@/components/organisms/ModalOrDrawer';
 import ThemePrompt from '@/components/organisms/ThemePrompt';
 import { useEffect, useState } from 'react';
@@ -128,24 +126,7 @@ const ThemePromptFlow = () => {
         error={error}
       />
 
-      {/* Loading Modal */}
-      <Modal
-        className="max-w-[690px] self-center"
-        open={dialogState === 'loading'}
-        onClose={() => {}}
-        type="primary"
-        showCloseButton={false}
-      >
-        <div className="flex flex-row space-x-10">
-          <Spinner className="h-14 w-14 self-center" />
-          <div className="-mt-2 flex flex-col space-y-3">
-            <Heading>Applying your theme</Heading>
-            <p className="text-lg leading-[1.875rem] text-text-accent md:text-base lg:text-xl">
-              This may take a few moments
-            </p>
-          </div>
-        </div>
-      </Modal>
+      <LoadingDialog open={dialogState === 'loading'} />
 
       {/* Success Modal/Drawer */}
       <ModalOrDrawer

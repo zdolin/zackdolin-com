@@ -6,7 +6,7 @@ export interface SpinnerProps {
 
 const Spinner = ({ className = '' }: SpinnerProps) => (
   <svg
-    className={clsx('h-5 w-5 animate-spin text-button-icon', className)}
+    className={clsx('h-5 w-5 animate-spin text-text-secondary', className)}
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"

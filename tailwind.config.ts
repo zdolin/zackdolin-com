@@ -10,6 +10,21 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        ellipsis: {
+          '0%': { opacity: '0' },
+          '50%': { opacity: '1' },
+          '100%': { opacity: '0' },
+        },
+      },
+      animation: {
+        float: 'float 1.6s ease-in-out infinite',
+        ellipsis: 'ellipsis 0.9s ease-in-out infinite',
+      },
       colors: {
         surface: {
           primary: 'var(--surface-primary)',
