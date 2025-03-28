@@ -1,8 +1,10 @@
 'use client';
 
+import Heading from '@/components/atoms/Heading';
 import LoadingDialog from '@/components/molecules/LoadingDialog/LoadingDialog';
 import ModalOrDrawer from '@/components/organisms/ModalOrDrawer';
 import ThemePrompt from '@/components/organisms/ThemePrompt';
+import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 
 const THEME_PROMPT_KEY = 'themePromptDismissed';
@@ -12,12 +14,12 @@ type DialogState = 'idle' | 'loading' | 'success' | 'error';
 const ThemePromptFlow = () => {
   const [open, setOpen] = useState(false);
   const [prompt, setPrompt] = useState('');
-  const [dialogState, setDialogState] = useState<DialogState>('loading');
+  const [dialogState, setDialogState] = useState<DialogState>('idle');
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // const timeout = setTimeout(() => setOpen(true), 3000);
-    // return () => clearTimeout(timeout);
+    const timeout = setTimeout(() => setOpen(true), 3000);
+    return () => clearTimeout(timeout);
   }, []);
 
   const handleClose = () => {
@@ -84,7 +86,7 @@ const ThemePromptFlow = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setDialogState('loading');
+    setDialogState('idle');
     setError(null);
 
     try {
@@ -130,29 +132,27 @@ const ThemePromptFlow = () => {
 
       {/* Success Modal/Drawer */}
       <ModalOrDrawer
+        className="w-full sm:w-[31.25rem] md:w-[28.125rem] lg:w-[40.75rem]"
         open={dialogState === 'success'}
         onClose={handleClose}
         type="primary"
       >
-        <div className="flex flex-col items-center justify-center space-y-4">
-          <div className="bg-success/10 rounded-full p-3">
-            <svg
-              className="text-success h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-          </div>
-          <p className="text-center text-lg">Theme applied successfully!</p>
-          <p className="text-center text-sm text-text-secondary">
-            Your new theme is now active
+        <div className="flex flex-col items-center justify-center space-y-4 sm:items-start">
+          <Heading
+            className={clsx(
+              'text-center sm:text-left',
+              'text-[1.5rem] sm:text-3xl md:text-2xl lg:text-4xl xl:text-5xl'
+            )}
+          >
+            Theme applied successfully!
+          </Heading>
+          <p
+            className={clsx(
+              'text-center sm:text-left',
+              'text-lg leading-[1.875rem] text-text-accent md:text-base lg:text-xl'
+            )}
+          >
+            Your new theme is now active. What do you think?
           </p>
         </div>
       </ModalOrDrawer>
