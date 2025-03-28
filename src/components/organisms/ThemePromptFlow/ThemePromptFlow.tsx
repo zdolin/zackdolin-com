@@ -125,7 +125,6 @@ const ThemePromptFlow = () => {
         setPrompt={setPrompt}
         onSubmit={handleSubmit}
         loading={dialogState === 'loading'}
-        error={error}
       />
 
       <LoadingDialog open={dialogState === 'loading'} />

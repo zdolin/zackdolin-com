@@ -4,6 +4,7 @@ import Button from '@/components/atoms/Button';
 import Heading from '@/components/atoms/Heading';
 import Textarea from '@/components/atoms/Textarea';
 import ModalOrDrawer from '@/components/organisms/ModalOrDrawer';
+import clsx from 'clsx';
 import { FormEvent } from 'react';
 
 interface ThemePromptProps {
@@ -13,7 +14,6 @@ interface ThemePromptProps {
   setPrompt: (value: string) => void;
   onSubmit: (e: FormEvent) => Promise<void>;
   loading: boolean;
-  error: string | null;
 }
 
 const ThemePrompt = ({
@@ -23,7 +23,6 @@ const ThemePrompt = ({
   setPrompt,
   onSubmit,
   loading,
-  error,
 }: ThemePromptProps) => {
   return (
     <ModalOrDrawer
@@ -55,23 +54,29 @@ const ThemePrompt = ({
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
         />
-        {error && <p className="text-sm text-red-500">{error}</p>}
-        <div className="flex w-full justify-end space-x-3">
+        <div
+          className={clsx(
+            'flex w-full flex-col-reverse items-center sm:flex-row sm:justify-end sm:space-x-3'
+          )}
+        >
           <Button
+            className="flex items-center justify-between"
+            sizeClassName="w-full sm:w-auto"
             intent="secondary"
             onClick={onClose}
             hideArrow
             suppressIntroAnimation
             type="button"
           >
-            Not now
+            Maybe later
           </Button>
           <Button
-            className="min-w-[12.5rem]"
+            className="flex items-center justify-between"
             type="submit"
             disabled={loading}
             suppressIntroAnimation
             loading={loading}
+            sizeClassName="w-full sm:w-auto my-4 sm:my-0"
           >
             {loading ? 'Applying...' : 'Apply Theme'}
           </Button>
