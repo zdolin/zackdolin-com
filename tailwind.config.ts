@@ -72,6 +72,9 @@ const config: Config = {
         custom: '0 9px 14px rgba(0, 0, 0, 0.03)',
         'custom-2': '0 0 16px 8px rgba(0, 0, 0, 0.03)',
       },
+      transitionDuration: {
+        '400': '400ms',
+      },
       transitionTimingFunction: {
         'in-quad': 'cubic-bezier(0.55, 0.085, 0.68, 0.53)',
         'out-quad': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
