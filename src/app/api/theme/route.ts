@@ -17,7 +17,7 @@ Your job is to output **two cohesive sets of CSS variable values**, one for ligh
 Return strict JSON with two keys: "light" and "dark", each mapping to a full set of CSS custom property values.
 
 ### Important Notes:
-- Use accessible contrast between text and background colors. Assume buttons have white text.
+- Use accessible contrast between ALL text and surface colors. Assume buttons have white text.
 - Colors like --surface-highlight and --hero-primary should persist in personality across both themes, but still look good on light/dark backgrounds.
 - Keep visual consistency between related variables.
 - Do not reuse color values across variables unless explicitly instructed. Each color should serve a distinct visual role.
@@ -46,7 +46,7 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 #### Text
 - --text-primary: Main body text. Must be highly readable on --surface-primary.
 - --text-secondary: Used for subtitles or muted labels.
-- --text-accent: Draws attention to interactive or emphasized text. Should match --surface-accent.
+- --text-accent: Draws attention to interactive or emphasized text. Should match --surface-accent and be readable on all surfaces.
 - --text-input: Text inside form fields (not prominent in the UI yet).
 
 #### Cards
