@@ -5,7 +5,21 @@ import Heading from '@/components/atoms/Heading';
 import Textarea from '@/components/atoms/Textarea';
 import ModalOrDrawer from '@/components/organisms/ModalOrDrawer';
 import clsx from 'clsx';
-import { FormEvent } from 'react';
+import { FormEvent, useMemo } from 'react';
+
+const themeSuggestions = [
+  'Sunset desert tones',
+  'Ocean breeze with coral accents',
+  'Northern lights aurora palette',
+  'Vintage sepia and warm browns',
+  'Cyberpunk neon cityscape',
+  'Autumn maple forest',
+  'Arctic colorscape',
+  'Tropical paradise sunset',
+  'Peanut butter and jelly',
+  'Gingerbread house',
+  'Desert oasis with cacti',
+];
 
 interface ThemePromptProps {
   open: boolean;
@@ -24,6 +38,11 @@ const ThemePrompt = ({
   onSubmit,
   loading,
 }: ThemePromptProps) => {
+  const placeholderText = useMemo(() => {
+    const shuffled = [...themeSuggestions].sort(() => 0.5 - Math.random());
+    return `Try "${shuffled[0]}" or "${shuffled[1]}"`;
+  }, []);
+
   return (
     <ModalOrDrawer
       open={open}
@@ -48,7 +67,7 @@ const ThemePrompt = ({
         </div>
         <Textarea
           rows={3}
-          placeholder='Try "Sunset desert tones" or "Retro synthwave with forest green"'
+          placeholder={placeholderText}
           resizable={false}
           required
           value={prompt}
@@ -74,9 +93,10 @@ const ThemePrompt = ({
             className="flex items-center justify-between"
             type="submit"
             disabled={loading}
-            suppressIntroAnimation
             loading={loading}
             sizeClassName="w-full sm:w-auto my-4 sm:my-0"
+            suppressIntroAnimation
+            noScale
           >
             {loading ? 'Applying...' : 'Apply Theme'}
           </Button>

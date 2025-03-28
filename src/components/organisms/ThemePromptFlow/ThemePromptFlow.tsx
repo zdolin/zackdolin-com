@@ -9,23 +9,24 @@ import { useEffect, useState } from 'react';
 
 const THEME_PROMPT_KEY = 'themePromptDismissed';
 
-type DialogState = 'idle' | 'loading' | 'success' | 'error';
+type DialogState = 'hidden' | 'idle' | 'loading' | 'success' | 'error';
 
 const ThemePromptFlow = () => {
-  const [open, setOpen] = useState(false);
   const [prompt, setPrompt] = useState('');
-  const [dialogState, setDialogState] = useState<DialogState>('idle');
+  const [dialogState, setDialogState] = useState<DialogState>('hidden');
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setOpen(true), 3000);
+    //const hasBeenDismissed = localStorage.getItem(THEME_PROMPT_KEY) === 'true';
+    //if (!hasBeenDismissed) {
+    const timeout = setTimeout(() => setDialogState('idle'), 3000);
     return () => clearTimeout(timeout);
+    // }
   }, []);
 
   const handleClose = () => {
-    setOpen(false);
     setError(null);
-    setDialogState('idle');
+    setDialogState('hidden');
     localStorage.setItem(THEME_PROMPT_KEY, 'true');
   };
 
@@ -86,7 +87,8 @@ const ThemePromptFlow = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setDialogState('idle');
+    setDialogState('loading');
+
     setError(null);
 
     try {
@@ -101,9 +103,6 @@ const ThemePromptFlow = () => {
       if (theme?.light && theme?.dark) {
         applyThemeVariables(theme);
         setDialogState('success');
-        setTimeout(() => {
-          handleClose();
-        }, 2000);
       } else {
         setError('Unexpected theme format received');
         setDialogState('error');
@@ -119,7 +118,7 @@ const ThemePromptFlow = () => {
   return (
     <>
       <ThemePrompt
-        open={open}
+        open={dialogState === 'idle'}
         onClose={handleClose}
         prompt={prompt}
         setPrompt={setPrompt}
