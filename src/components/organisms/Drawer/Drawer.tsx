@@ -34,10 +34,10 @@ const Drawer: React.FC<DrawerProps> = ({ open, onClose, children }) => {
         <div className="fixed inset-x-0 bottom-0 flex justify-center">
           <TransitionChild
             as={Fragment}
-            enter="transform transition ease-out duration-300"
+            enter="transform transition ease-out-quint duration-500"
             enterFrom="translate-y-full"
             enterTo="translate-y-0"
-            leave="transform transition ease-in duration-200"
+            leave="transform transition ease-in duration-300"
             leaveFrom="translate-y-0"
             leaveTo="translate-y-full"
           >
@@ -50,7 +50,7 @@ const Drawer: React.FC<DrawerProps> = ({ open, onClose, children }) => {
               <div className="flex justify-end">
                 <button
                   type="button"
-                  className="text-icon-button-default hover:text-icon-button-hover group rounded-md focus:outline-none"
+                  className="group rounded-md text-icon-button-default hover:text-icon-button-hover focus:outline-none"
                   onClick={onClose}
                 >
                   <span className="sr-only">Close</span>
