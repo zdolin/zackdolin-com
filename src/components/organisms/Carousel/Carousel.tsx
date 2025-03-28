@@ -104,6 +104,7 @@ const Carousel = ({
           disabled={!prevBtnEnabled}
           aria-label="Previous"
           hideArrow
+          suppressRolloverAnimation
         >
           <Icon type="chevronLeft" />
         </Button>
@@ -129,6 +130,7 @@ const Carousel = ({
           disabled={!nextBtnEnabled}
           aria-label="Next"
           hideArrow
+          suppressRolloverAnimation
         >
           <Icon type="chevronRight" />
         </Button>
