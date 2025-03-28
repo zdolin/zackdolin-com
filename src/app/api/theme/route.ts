@@ -25,12 +25,12 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 ### Semantic Roles & Guidelines:
 
 #### Surface Layers
-- --surface-primary: Main page background.
-- --surface-secondary: Alternate section background.
+- --surface-primary: Main page background, should convey the theme's personality.
+- --surface-secondary: Alternate section background, should convey the theme's personality.
 - --surface-tertiary: Passive background (used in alternating cards).
 - --surface-quaternary: Alternate to tertiary; also used for muted sections.
-- --surface-highlight: Main accent color (blue in default); used in badges, icons, and buttons. Should pop and persist across light/dark modes.
-- --surface-accent: An accent color. Should pop and complement --surface-highlight, and persist across light/dark modes.
+- --surface-highlight: Main accent color (blue in default); used in badges, icons, and buttons. Should pop against --surface-primary and persist across light/dark modes.
+- --surface-accent: An accent color. Should pop and provide sufficient contrast to --surface-highlight, and persist across light/dark modes.
 - --surface-muted: Used for neutral elements like subtle backgrounds or dividers.
 
 #### Borders
