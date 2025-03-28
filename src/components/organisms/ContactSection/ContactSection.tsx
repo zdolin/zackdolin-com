@@ -58,7 +58,7 @@ const ContactSection = ({ data }: ContactSectionProps) => {
       }
     } catch (err: any) {
       setModalMessage(
-        'Hmm, something went wrong. If the issue persists, email me at: hello@zackdolin.com.'
+        'If the issue persists, email me at: hello@zackdolin.com.'
       );
       setModalType('error');
     } finally {
@@ -97,7 +97,7 @@ const ContactSection = ({ data }: ContactSectionProps) => {
             />
           ))}
         </div>
-        <div className="border-border-primary rounded-2xl sm:border sm:p-8">
+        <div className="rounded-2xl border-border-primary sm:border sm:p-8">
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <Input
@@ -151,7 +151,9 @@ const ContactSection = ({ data }: ContactSectionProps) => {
           level={2}
           className="mb-4 text-2xl text-text-primary md:text-3xl"
         >
-          {modalType === 'success' ? 'Message sent!' : 'There was an error.'}
+          {modalType === 'success'
+            ? 'Message sent!'
+            : 'Hmm, there was an error.'}
         </Heading>
         <p className="pb-8 text-lg text-text-primary md:pb-2">{modalMessage}</p>
       </ModalOrDrawer>

@@ -2,6 +2,7 @@
 
 import Heading from '@/components/atoms/Heading';
 import LoadingDialog from '@/components/molecules/LoadingDialog/LoadingDialog';
+import Modal from '@/components/organisms/Modal';
 import ModalOrDrawer from '@/components/organisms/ModalOrDrawer';
 import ThemePrompt from '@/components/organisms/ThemePrompt';
 import clsx from 'clsx';
@@ -14,7 +15,6 @@ type DialogState = 'hidden' | 'idle' | 'loading' | 'success' | 'error';
 const ThemePromptFlow = () => {
   const [prompt, setPrompt] = useState('');
   const [dialogState, setDialogState] = useState<DialogState>('hidden');
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     //const hasBeenDismissed = localStorage.getItem(THEME_PROMPT_KEY) === 'true';
@@ -25,7 +25,6 @@ const ThemePromptFlow = () => {
   }, []);
 
   const handleClose = () => {
-    setError(null);
     setDialogState('hidden');
     localStorage.setItem(THEME_PROMPT_KEY, 'true');
   };
@@ -89,8 +88,6 @@ const ThemePromptFlow = () => {
     e.preventDefault();
     setDialogState('loading');
 
-    setError(null);
-
     try {
       const res = await fetch('/api/theme', {
         method: 'POST',
@@ -104,12 +101,10 @@ const ThemePromptFlow = () => {
         applyThemeVariables(theme);
         setDialogState('success');
       } else {
-        setError('Unexpected theme format received');
         setDialogState('error');
         console.error('Unexpected theme format:', theme);
       }
     } catch (err) {
-      setError('Failed to apply theme. Please try again.');
       setDialogState('error');
       console.error('Failed to fetch or apply theme:', err);
     }
@@ -156,33 +151,26 @@ const ThemePromptFlow = () => {
       </ModalOrDrawer>
 
       {/* Error Modal/Drawer */}
-      <ModalOrDrawer
+      <Modal
+        className="w-full self-center sm:w-[31.25rem] md:w-[28.125rem] lg:w-[40rem]"
         open={dialogState === 'error'}
         onClose={handleClose}
         type="primary"
       >
         <div className="flex flex-col items-center justify-center space-y-4">
-          <div className="bg-error/10 rounded-full p-3">
-            <svg
-              className="text-error h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </div>
-          <p className="text-center text-lg">Failed to apply theme</p>
-          <p className="text-center text-sm text-text-secondary">
-            {error || 'An unexpected error occurred'}
+          <Heading className="mb-4 text-text-primary">
+            Hmm, there was an error.
+          </Heading>
+          <p
+            className={clsx(
+              'text-center text-lg leading-[1.875rem] text-text-accent md:text-base lg:text-xl'
+            )}
+          >
+            Occassionally, the AI will fail to generate a theme. If this
+            happens, try again in a minute or two.
           </p>
         </div>
-      </ModalOrDrawer>
+      </Modal>
     </>
   );
 };
