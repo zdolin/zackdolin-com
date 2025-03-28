@@ -7,15 +7,15 @@ export interface ButtonArrowProps {
 const ButtonArrow = ({ className }: ButtonArrowProps) => (
   <div
     className={clsx(
-      'relative flex h-[18px] w-[18px] scale-110 transform items-center justify-center',
+      'relative flex h-[20px] w-[20px] scale-110 transform items-center justify-center',
       className
     )}
   >
     <svg
       fill="none"
-      height="18"
-      viewBox="0 0 18 18"
-      width="18"
+      height="20"
+      viewBox="0 0 20 20"
+      width="20"
       xmlns="http://www.w3.org/2000/svg"
     >
       <clipPath id="a">

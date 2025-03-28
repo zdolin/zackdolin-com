@@ -14,11 +14,11 @@ const buttonVariants = cva(
     variants: {
       intent: {
         primary:
-          'bg-button-default text-white hover:bg-button-hover active:bg-button-active focus:ring-button-hover',
+          'bg-button-default text-white md:hover:bg-button-hover active:bg-button-active focus:ring-button-hover',
         secondary: 'bg-surface-muted text-white',
       },
       size: {
-        default: 'px-5 py-3 lg:px-6 text-sm lg:text-base',
+        default: 'px-5 py-3 lg:px-6 text-base sm:text-sm lg:text-base',
       },
     },
     defaultVariants: {
@@ -33,6 +33,7 @@ export interface ButtonProps
     VariantProps<typeof buttonVariants> {
   asChild?: boolean; // Allows rendering as a different element if needed
   className?: string;
+  sizeClassName?: string;
   hideArrow?: boolean;
   animationDelay?: number;
   suppressIntroAnimation?: boolean;
@@ -46,6 +47,7 @@ const Button: React.FC<ButtonProps> = ({
   size,
   asChild = false,
   className = '',
+  sizeClassName = '',
   hideArrow = false,
   animationDelay = 0,
   suppressIntroAnimation = false,
@@ -57,7 +59,7 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <motion.span
-      className="inline-block"
+      className={clsx('inline-block', sizeClassName)}
       initial={
         !suppressIntroAnimation
           ? { opacity: 0, scale: 1.5 }
@@ -76,16 +78,16 @@ const Button: React.FC<ButtonProps> = ({
         className={clsx(
           buttonVariants({ intent, size }),
           className,
-          'group overflow-hidden',
+          'group w-full overflow-hidden',
           !suppressRolloverAnimation &&
-            'transform transition-transform duration-300 ease-out-quart hover:scale-x-[0.93]'
+            'transform transition-transform duration-300 ease-out-quart md:hover:scale-x-[0.93]'
         )}
         {...props}
       >
         <span
           className={clsx(
             'transform transition-transform duration-500 ease-out-back',
-            !suppressRolloverAnimation && 'group-hover:-translate-y-16'
+            !suppressRolloverAnimation && 'md:group-hover:-translate-y-16'
           )}
         >
           {children}
@@ -94,7 +96,7 @@ const Button: React.FC<ButtonProps> = ({
           aria-hidden="true"
           className={clsx(
             'absolute translate-y-16 transform transition-transform duration-500 ease-out-back',
-            !suppressRolloverAnimation && 'group-hover:translate-y-0',
+            !suppressRolloverAnimation && 'md:group-hover:translate-y-0',
             !hideArrow && '-translate-x-5'
           )}
         >
@@ -107,7 +109,7 @@ const Button: React.FC<ButtonProps> = ({
             <ButtonArrow
               className={clsx(
                 'ml-4',
-                'transform transition-transform duration-500 ease-out-back group-hover:translate-x-1 group-hover:scale-[1.8]'
+                'transform transition-transform duration-500 ease-out-back group-hover:scale-[1.8] md:group-hover:translate-x-1'
               )}
             />
           )

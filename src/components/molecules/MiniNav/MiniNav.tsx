@@ -16,7 +16,7 @@ const MiniNav = ({ navigationList }: MiniNavProps) => {
         <li key={item.text}>
           <a className="group" href={item.href}>
             <CircleIcon
-              className="h-12 w-12 p-3"
+              className="h-12 w-12 p-3 md:h-10 md:w-10 md:p-[0.7rem] lg:h-12 lg:w-12"
               bgClass={
                 activeSection === item.href.slice(1)
                   ? undefined

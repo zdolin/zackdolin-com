@@ -16,7 +16,7 @@ const SidebarButton = ({ isMobile = false }: SidebarButtonProps) => {
 
   return (
     <Button
-      className="w-full py-3"
+      className="w-full min-w-[12.5rem] py-3"
       onClick={handleScrollToContact}
       animationDelay={isMobile ? 0.6 : 0}
     >
