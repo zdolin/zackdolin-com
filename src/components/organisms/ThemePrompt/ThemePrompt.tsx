@@ -95,8 +95,6 @@ const ThemePrompt = () => {
 
       const theme = await res.json();
 
-      console.log('theme', JSON.stringify(theme, null, 2));
-
       if (theme?.light && theme?.dark) {
         applyThemeVariables(theme);
         handleClose();
@@ -150,8 +148,14 @@ const ThemePrompt = () => {
           >
             Not now
           </Button>
-          <Button type="submit" disabled={loading} suppressIntroAnimation>
-            {loading ? 'Applying Theme...' : 'Apply Theme'}
+          <Button
+            className="min-w-[12.5rem]"
+            type="submit"
+            disabled={loading}
+            suppressIntroAnimation
+            loading={loading}
+          >
+            {loading ? 'Applying...' : 'Apply Theme'}
           </Button>
         </div>
       </form>
