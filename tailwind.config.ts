@@ -22,7 +22,7 @@ const config: Config = {
         },
       },
       animation: {
-        float: 'float 1.6s ease-in-out infinite',
+        float: 'float 1.6s ease-in-out infinite 0.7s',
         ellipsis: 'ellipsis 0.9s ease-in-out infinite',
       },
       colors: {
