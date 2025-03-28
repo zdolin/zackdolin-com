@@ -1,24 +1,31 @@
 'use client';
 
+import Heading from '@/components/atoms/Heading';
+import Spinner from '@/components/atoms/Spinner';
+import Modal from '@/components/organisms/Modal';
+import ModalOrDrawer from '@/components/organisms/ModalOrDrawer';
+import ThemePrompt from '@/components/organisms/ThemePrompt';
 import { useEffect, useState } from 'react';
-import ThemePrompt from '../ThemePrompt/ThemePrompt';
 
 const THEME_PROMPT_KEY = 'themePromptDismissed';
+
+type DialogState = 'idle' | 'loading' | 'success' | 'error';
 
 const ThemePromptFlow = () => {
   const [open, setOpen] = useState(false);
   const [prompt, setPrompt] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [dialogState, setDialogState] = useState<DialogState>('loading');
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setOpen(true), 3000);
-    return () => clearTimeout(timeout);
+    // const timeout = setTimeout(() => setOpen(true), 3000);
+    // return () => clearTimeout(timeout);
   }, []);
 
   const handleClose = () => {
     setOpen(false);
     setError(null);
+    setDialogState('idle');
     localStorage.setItem(THEME_PROMPT_KEY, 'true');
   };
 
@@ -79,7 +86,7 @@ const ThemePromptFlow = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
+    setDialogState('loading');
     setError(null);
 
     try {
@@ -93,29 +100,111 @@ const ThemePromptFlow = () => {
 
       if (theme?.light && theme?.dark) {
         applyThemeVariables(theme);
-        handleClose();
+        setDialogState('success');
+        setTimeout(() => {
+          handleClose();
+        }, 2000);
       } else {
         setError('Unexpected theme format received');
+        setDialogState('error');
         console.error('Unexpected theme format:', theme);
       }
     } catch (err) {
       setError('Failed to apply theme. Please try again.');
+      setDialogState('error');
       console.error('Failed to fetch or apply theme:', err);
-    } finally {
-      setLoading(false);
     }
   };
 
   return (
-    <ThemePrompt
-      open={open}
-      onClose={handleClose}
-      prompt={prompt}
-      setPrompt={setPrompt}
-      onSubmit={handleSubmit}
-      loading={loading}
-      error={error}
-    />
+    <>
+      <ThemePrompt
+        open={open}
+        onClose={handleClose}
+        prompt={prompt}
+        setPrompt={setPrompt}
+        onSubmit={handleSubmit}
+        loading={dialogState === 'loading'}
+        error={error}
+      />
+
+      {/* Loading Modal */}
+      <Modal
+        className="max-w-[690px] self-center"
+        open={dialogState === 'loading'}
+        onClose={() => {}}
+        type="primary"
+        showCloseButton={false}
+      >
+        <div className="flex flex-row space-x-10">
+          <Spinner className="h-14 w-14 self-center" />
+          <div className="-mt-2 flex flex-col space-y-3">
+            <Heading>Applying your theme</Heading>
+            <p className="text-lg leading-[1.875rem] text-text-accent md:text-base lg:text-xl">
+              This may take a few moments
+            </p>
+          </div>
+        </div>
+      </Modal>
+
+      {/* Success Modal/Drawer */}
+      <ModalOrDrawer
+        open={dialogState === 'success'}
+        onClose={handleClose}
+        type="primary"
+      >
+        <div className="flex flex-col items-center justify-center space-y-4">
+          <div className="bg-success/10 rounded-full p-3">
+            <svg
+              className="text-success h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+          </div>
+          <p className="text-center text-lg">Theme applied successfully!</p>
+          <p className="text-center text-sm text-text-secondary">
+            Your new theme is now active
+          </p>
+        </div>
+      </ModalOrDrawer>
+
+      {/* Error Modal/Drawer */}
+      <ModalOrDrawer
+        open={dialogState === 'error'}
+        onClose={handleClose}
+        type="primary"
+      >
+        <div className="flex flex-col items-center justify-center space-y-4">
+          <div className="bg-error/10 rounded-full p-3">
+            <svg
+              className="text-error h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </div>
+          <p className="text-center text-lg">Failed to apply theme</p>
+          <p className="text-center text-sm text-text-secondary">
+            {error || 'An unexpected error occurred'}
+          </p>
+        </div>
+      </ModalOrDrawer>
+    </>
   );
 };
 

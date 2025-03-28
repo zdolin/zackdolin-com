@@ -1,1 +1,1 @@
-export { default as ThemePrompt } from './ThemePrompt';
+export { default } from './ThemePrompt';

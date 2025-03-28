@@ -15,6 +15,7 @@ type ModalProps = {
   children: React.ReactNode;
   className?: string;
   type?: 'primary' | 'secondary';
+  showCloseButton?: boolean;
 };
 
 const Modal: React.FC<ModalProps> = ({
@@ -24,6 +25,7 @@ const Modal: React.FC<ModalProps> = ({
   children,
   className = '',
   type = 'secondary',
+  showCloseButton = true,
 }) => {
   return (
     <Transition show={open} as={Fragment}>
@@ -75,19 +77,21 @@ const Modal: React.FC<ModalProps> = ({
                 className
               )}
             >
-              <div className="absolute right-0 top-0 pr-4 pt-4">
-                <button
-                  type="button"
-                  className="group rounded-md text-icon-button-default hover:text-icon-button-hover focus:outline-none"
-                  onClick={onClose}
-                >
-                  <span className="sr-only">Close</span>
-                  <XMarkIcon
-                    className="h-7 w-7 duration-300 ease-out-quart group-hover:scale-125"
-                    aria-hidden="true"
-                  />
-                </button>
-              </div>
+              {showCloseButton && (
+                <div className="absolute right-0 top-0 pr-4 pt-4">
+                  <button
+                    type="button"
+                    className="group rounded-md text-icon-button-default hover:text-icon-button-hover focus:outline-none"
+                    onClick={onClose}
+                  >
+                    <span className="sr-only">Close</span>
+                    <XMarkIcon
+                      className="h-7 w-7 duration-300 ease-out-quart group-hover:scale-125"
+                      aria-hidden="true"
+                    />
+                  </button>
+                </div>
+              )}
               {title && (
                 <DialogTitle
                   as="h3"
