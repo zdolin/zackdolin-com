@@ -16,7 +16,7 @@ const LoadingDialog = ({
 }: LoadingDialogProps) => {
   return (
     <Modal
-      className="animate-float self-center sm:w-[31.25rem] md:w-[28.125rem] lg:w-[40.75rem]"
+      className="animate-float w-full self-center sm:w-[31.25rem] md:w-[28.125rem] lg:w-[40.75rem]"
       open={open}
       onClose={() => {}}
       type="primary"
