@@ -147,7 +147,7 @@ const Carousel = ({
               transition={{ duration: 0.9, ease: EASE_OUT_QUART }}
               viewport={{ once: true, margin: '0px 0px -5% 0px' }}
               className={clsx(
-                'mx-2 h-1 w-8 rounded-full sm:w-12 md:h-1.5 md:w-6 lg:mx-3 lg:w-[3.75rem]',
+                'mx-1.5 h-1 w-6 rounded-full sm:w-10 md:h-1.5 lg:mx-[0.625rem] lg:w-12',
                 currentSlideIndex === index
                   ? 'bg-surface-highlight'
                   : 'bg-surface-muted'
