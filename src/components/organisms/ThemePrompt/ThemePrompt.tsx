@@ -4,121 +4,38 @@ import Button from '@/components/atoms/Button';
 import Heading from '@/components/atoms/Heading';
 import Textarea from '@/components/atoms/Textarea';
 import ModalOrDrawer from '@/components/organisms/ModalOrDrawer';
-import { useEffect, useState } from 'react';
+import { FormEvent } from 'react';
 
-const THEME_PROMPT_KEY = 'themePromptDismissed';
+interface ThemePromptProps {
+  open: boolean;
+  onClose: () => void;
+  prompt: string;
+  setPrompt: (value: string) => void;
+  onSubmit: (e: FormEvent) => Promise<void>;
+  loading: boolean;
+  error: string | null;
+}
 
-const ThemePrompt = () => {
-  const [open, setOpen] = useState(false);
-  const [prompt, setPrompt] = useState('');
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    // Uncomment this if you want to persist dismissal
-    // const dismissed = localStorage.getItem(THEME_PROMPT_KEY);
-    // if (!dismissed) {
-    const timeout = setTimeout(() => setOpen(true), 3000);
-    return () => clearTimeout(timeout);
-    // }
-  }, []);
-
-  const handleClose = () => {
-    setOpen(false);
-    localStorage.setItem(THEME_PROMPT_KEY, 'true');
-  };
-
-  const applyThemeVariables = (
-    theme: Record<string, Record<string, string>>
-  ) => {
-    const root = document.documentElement;
-
-    // Remove existing custom properties
-    Object.keys(theme.light).forEach((key) => {
-      root.style.removeProperty(key);
-    });
-
-    // Create or update light theme style
-    const lightStyleId = 'dynamic-light-theme';
-    let lightStyle = document.getElementById(
-      lightStyleId
-    ) as HTMLStyleElement | null;
-
-    if (!lightStyle) {
-      lightStyle = document.createElement('style');
-      lightStyle.id = lightStyleId;
-      document.head.appendChild(lightStyle);
-    }
-
-    const lightCSS = Object.entries(theme.light || {})
-      .map(([key, value]) => `  ${key}: ${value};`)
-      .join('\n');
-
-    lightStyle.innerHTML = `
-      :root {
-        ${lightCSS}
-      }
-    `;
-
-    // Create or update dark theme style
-    const darkStyleId = 'dynamic-dark-theme';
-    let darkStyle = document.getElementById(
-      darkStyleId
-    ) as HTMLStyleElement | null;
-
-    if (!darkStyle) {
-      darkStyle = document.createElement('style');
-      darkStyle.id = darkStyleId;
-      document.head.appendChild(darkStyle);
-    }
-
-    const darkCSS = Object.entries(theme.dark || {})
-      .map(([key, value]) => `  ${key}: ${value};`)
-      .join('\n');
-
-    darkStyle.innerHTML = `
-      :root[class~="dark"] {
-        ${darkCSS}
-      }
-    `;
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      const res = await fetch('/api/theme', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ themeDescription: prompt }),
-      });
-
-      const theme = await res.json();
-
-      if (theme?.light && theme?.dark) {
-        applyThemeVariables(theme);
-        handleClose();
-      } else {
-        console.error('Unexpected theme format:', theme);
-      }
-    } catch (err) {
-      console.error('Failed to fetch or apply theme:', err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
+const ThemePrompt = ({
+  open,
+  onClose,
+  prompt,
+  setPrompt,
+  onSubmit,
+  loading,
+  error,
+}: ThemePromptProps) => {
   return (
     <ModalOrDrawer
       open={open}
-      onClose={handleClose}
-      title="Customize the Vibe"
+      onClose={onClose}
+      title="Customize this site"
       className="w-full md:max-w-2xl lg:max-w-4xl"
       type="primary"
     >
       <form
         className="space-y-8 pt-1 text-sm text-text-primary md:p-4 lg:space-y-9"
-        onSubmit={handleSubmit}
+        onSubmit={onSubmit}
       >
         <div className="space-y-4">
           <Heading>
@@ -138,10 +55,11 @@ const ThemePrompt = () => {
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
         />
+        {error && <p className="text-sm text-red-500">{error}</p>}
         <div className="flex w-full justify-end space-x-3">
           <Button
             intent="secondary"
-            onClick={handleClose}
+            onClick={onClose}
             hideArrow
             suppressIntroAnimation
             type="button"
