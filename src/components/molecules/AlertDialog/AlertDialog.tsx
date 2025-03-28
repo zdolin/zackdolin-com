@@ -22,7 +22,9 @@ const AlertDialog = ({
       onClose={onClose}
     >
       <div className="flex flex-col items-center justify-center space-y-4">
-        <Heading className="text-text-primary lg:mb-2">{title}</Heading>
+        <Heading className="text-center text-text-primary lg:mb-2">
+          {title}
+        </Heading>
         <p
           className={clsx(
             'text-center text-lg leading-[1.875rem] text-text-accent md:text-base lg:text-xl'
