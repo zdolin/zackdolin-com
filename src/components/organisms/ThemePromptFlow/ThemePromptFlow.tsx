@@ -1,8 +1,8 @@
 'use client';
 
 import Heading from '@/components/atoms/Heading';
+import AlertDialog from '@/components/molecules/AlertDialog';
 import LoadingDialog from '@/components/molecules/LoadingDialog/LoadingDialog';
-import Modal from '@/components/organisms/Modal';
 import ModalOrDrawer from '@/components/organisms/ModalOrDrawer';
 import ThemePrompt from '@/components/organisms/ThemePrompt';
 import clsx from 'clsx';
@@ -150,27 +150,13 @@ const ThemePromptFlow = () => {
         </div>
       </ModalOrDrawer>
 
-      {/* Error Modal/Drawer */}
-      <Modal
-        className="w-full self-center sm:w-[31.25rem] md:w-[28.125rem] lg:w-[40rem]"
+      {/* Error Dialog */}
+      <AlertDialog
         open={dialogState === 'error'}
         onClose={handleClose}
-        type="primary"
-      >
-        <div className="flex flex-col items-center justify-center space-y-4">
-          <Heading className="mb-4 text-text-primary">
-            Hmm, there was an error.
-          </Heading>
-          <p
-            className={clsx(
-              'text-center text-lg leading-[1.875rem] text-text-accent md:text-base lg:text-xl'
-            )}
-          >
-            Occassionally, the AI will fail to generate a theme. If this
-            happens, try again in a minute or two.
-          </p>
-        </div>
-      </Modal>
+        title="Hmm, there was an error."
+        description="Occassionally, the AI will fail to generate a theme. If this happens, try again in a minute or two."
+      />
     </>
   );
 };

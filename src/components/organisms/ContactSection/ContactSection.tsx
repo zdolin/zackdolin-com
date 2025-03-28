@@ -1,13 +1,12 @@
 'use client';
 
 import Button from '@/components/atoms/Button';
-import Heading from '@/components/atoms/Heading';
 import { iconMap } from '@/components/atoms/Icon';
 import Input from '@/components/atoms/Input';
 import Textarea from '@/components/atoms/Textarea';
+import AlertDialog from '@/components/molecules/AlertDialog';
 import InfoItem from '@/components/molecules/InfoItem';
 import SectionWrapper from '@/components/molecules/SectionWrapper';
-import ModalOrDrawer from '@/components/organisms/ModalOrDrawer';
 import { InfoItemType } from '@/types/component';
 import { ContactSectionDataType } from '@/types/data';
 import clsx from 'clsx';
@@ -49,7 +48,7 @@ const ContactSection = ({ data }: ContactSectionProps) => {
       const data = await res.json();
       if (res.ok) {
         setModalMessage(
-          'Thanks for reaching out! I will get back to you within 24 hours.'
+          'Hi there - thanks for reaching out! I will get back to you within 24 hours.'
         );
         setModalType('success');
         setFormData({ name: '', email: '', message: '' }); // Reset form
@@ -142,21 +141,14 @@ const ContactSection = ({ data }: ContactSectionProps) => {
       </div>
 
       {/* Modal for Success/Error Messages */}
-      <ModalOrDrawer
+      <AlertDialog
         open={modalOpen}
         onClose={() => setModalOpen(false)}
-        className="max-w-lg"
-      >
-        <Heading
-          level={2}
-          className="mb-4 text-2xl text-text-primary md:text-3xl"
-        >
-          {modalType === 'success'
-            ? 'Message sent!'
-            : 'Hmm, there was an error.'}
-        </Heading>
-        <p className="pb-8 text-lg text-text-primary md:pb-2">{modalMessage}</p>
-      </ModalOrDrawer>
+        title={
+          modalType === 'success' ? 'Message sent!' : 'Hmm, there was an error.'
+        }
+        description={modalMessage}
+      />
     </SectionWrapper>
   );
 };
