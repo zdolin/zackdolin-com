@@ -118,15 +118,15 @@ const ThemePrompt = () => {
       className="w-full md:max-w-2xl lg:max-w-4xl"
     >
       <form
-        className="space-y-7 p-4 text-sm text-text-primary lg:space-y-9"
+        className="space-y-6 p-4 text-sm text-text-primary lg:space-y-9"
         onSubmit={handleSubmit}
       >
-        <div className="space-y-2 lg:space-y-4">
+        <div className="space-y-3 lg:space-y-4">
           <Heading>
             Retheme this site with a prompt! 🎨
             <br />
           </Heading>
-          <p className="text-sm text-text-accent md:text-base lg:text-xl">
+          <p className="text-base text-text-accent lg:text-xl">
             Describe a look or feel, and the site will adapt its color palette
             to match.
           </p>
@@ -144,11 +144,12 @@ const ThemePrompt = () => {
             intent="secondary"
             onClick={handleClose}
             hideArrow
+            suppressIntroAnimation
             type="button"
           >
             Not now
           </Button>
-          <Button type="submit" disabled={loading}>
+          <Button type="submit" disabled={loading} suppressIntroAnimation>
             {loading ? 'Applying Theme...' : 'Apply Theme'}
           </Button>
         </div>
