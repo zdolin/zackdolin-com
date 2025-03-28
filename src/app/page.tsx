@@ -4,6 +4,7 @@ import PortfolioSection from '@/components/organisms/PortfolioSection';
 import ResumeSection from '@/components/organisms/ResumeSection';
 import SkillsSection from '@/components/organisms/SkillsSection';
 import TestimonialsSection from '@/components/organisms/TestimonialsSection';
+import ThemePrompt from '@/components/organisms/ThemePrompt';
 import gqlClient from '@/lib/contentful/gqlClient';
 import { PAGE_QUERY } from '@/lib/queries';
 import { transformPageData } from '@/lib/transformers';
@@ -22,6 +23,7 @@ export default async function Home() {
 
   return (
     <>
+      <ThemePrompt />
       <IntroSection data={introduction} />
       <SkillsSection data={skills} />
       <PortfolioSection data={portfolio} />
