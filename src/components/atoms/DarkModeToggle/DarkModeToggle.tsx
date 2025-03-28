@@ -5,15 +5,16 @@ import Cookies from 'js-cookie';
 import { useEffect, useState } from 'react';
 
 const DarkModeToggle = () => {
-  const [enabled, setEnabled] = useState(() => {
-    // Initialize state from cookie; default to dark if not set
-    return Cookies.get('theme') === 'light';
-  });
+  const [enabled, setEnabled] = useState<boolean | null>(null);
 
-  // Apply theme when `enabled` changes
   useEffect(() => {
-    const htmlEl = document.documentElement;
+    const themeCookie = Cookies.get('theme');
+    setEnabled(themeCookie === 'light');
+  }, []);
 
+  useEffect(() => {
+    if (enabled === null) return; // Ensure that effect logic only runs after initialization
+    const htmlEl = document.documentElement;
     if (enabled) {
       htmlEl.classList.remove('dark');
       Cookies.set('theme', 'light', { expires: 365, sameSite: 'Strict' });
@@ -22,6 +23,8 @@ const DarkModeToggle = () => {
       Cookies.set('theme', 'dark', { expires: 365, sameSite: 'Strict' });
     }
   }, [enabled]);
+
+  if (enabled === null) return null;
 
   return (
     <Switch
