@@ -32,7 +32,7 @@ const DarkModeToggle = () => {
       onChange={setEnabled}
       className={clsx(
         'group',
-        'h-9 w-16 lg:h-12 lg:w-20',
+        'h-10 min-w-16 lg:h-12 lg:w-20',
         'relative inline-flex items-center rounded-full shadow-md',
         'bg-white transition-colors duration-300'
       )}
@@ -47,8 +47,10 @@ const DarkModeToggle = () => {
       <span
         className={clsx(
           'relative z-10 rounded-full bg-surface-accent transition-transform duration-200 ease-in-out',
-          'ml-1 inline-flex h-7 w-7 items-center justify-center lg:h-10 lg:w-10',
-          enabled ? 'translate-x-[1.75rem] lg:translate-x-8' : 'translate-x-0',
+          'ml-1 inline-flex h-7 w-7 items-center justify-center lg:h-9 lg:w-9',
+          enabled
+            ? 'translate-x-[1.75rem] lg:translate-x-7 xl:translate-x-8'
+            : 'translate-x-0',
           'transition-scale duration-300 ease-out-back group-hover:scale-[0.75]'
         )}
       >
