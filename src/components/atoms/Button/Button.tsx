@@ -38,6 +38,7 @@ export interface ButtonProps
   animationDelay?: number;
   suppressIntroAnimation?: boolean;
   suppressRolloverAnimation?: boolean;
+  noScale?: boolean;
   loading?: boolean;
 }
 
@@ -52,6 +53,7 @@ const Button: React.FC<ButtonProps> = ({
   animationDelay = 0,
   suppressIntroAnimation = false,
   suppressRolloverAnimation = false,
+  noScale = false,
   loading = false,
   ...props
 }) => {
@@ -97,7 +99,7 @@ const Button: React.FC<ButtonProps> = ({
           className={clsx(
             'absolute translate-y-16 transform transition-transform duration-500 ease-out-back',
             !suppressRolloverAnimation && 'md:group-hover:translate-y-0',
-            !hideArrow && '-translate-x-5'
+            !hideArrow && !noScale && '-translate-x-5'
           )}
         >
           {children}
