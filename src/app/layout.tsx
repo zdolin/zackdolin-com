@@ -132,6 +132,7 @@ export default async function RootLayout({
             `,
           }}
         />
+        <meta name="mobile-web-app-capable" content="yes" />
       </head>
       <body className="relative flex min-h-screen flex-col bg-surface-secondary">
         {/* Header */}
