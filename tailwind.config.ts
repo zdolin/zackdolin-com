@@ -32,6 +32,7 @@ const config: Config = {
           tertiary: 'var(--surface-tertiary)',
           quaternary: 'var(--surface-quaternary)',
           highlight: 'var(--surface-highlight)',
+          symbol: 'var(--surface-symbol)',
           accent: 'var(--surface-accent)',
           muted: 'var(--surface-muted)',
         },

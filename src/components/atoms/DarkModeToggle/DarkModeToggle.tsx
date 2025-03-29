@@ -54,10 +54,7 @@ const DarkModeToggle = () => {
           'transition-scale duration-300 ease-out-back group-hover:scale-[0.75]'
         )}
       >
-        <Icon
-          className="fill-surface-highlight"
-          type={enabled ? 'sun' : 'moon'}
-        />
+        <Icon className="fill-surface-symbol" type={enabled ? 'sun' : 'moon'} />
       </span>
     </Switch>
   );
