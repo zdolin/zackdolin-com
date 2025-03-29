@@ -129,26 +129,27 @@ const ThemePromptFlow = () => {
         onClose={handleClose}
         type="primary"
       >
-        <div className="flex flex-col items-center justify-center space-y-4 sm:items-start">
+        <div className="flex flex-col items-center justify-center space-y-4">
           <Heading
             className={clsx(
-              'text-center sm:text-left',
-              'text-[1.5rem] sm:text-3xl md:text-2xl lg:text-4xl xl:text-5xl'
+              'text-center',
+              'text-[1.938rem] sm:text-3xl md:text-2xl lg:text-4xl xl:text-5xl'
             )}
           >
             Theme applied successfully!
           </Heading>
           <p
             className={clsx(
-              'text-center sm:text-left',
+              'text-center',
               'text-lg leading-[1.875rem] text-text-accent md:text-base lg:text-xl'
             )}
           >
-            Your new theme is now active. What do you think?
+            Your new theme is now active. What do you think? Try switching
+            between light and dark modes!
           </p>
           <div
             className={clsx(
-              'flex w-full flex-col-reverse items-center sm:flex-row sm:justify-end sm:space-x-3'
+              'flex w-full flex-col-reverse items-center pt-2 sm:flex-row sm:justify-end sm:space-x-3 sm:pt-4 lg:pt-7'
             )}
           >
             <Button
