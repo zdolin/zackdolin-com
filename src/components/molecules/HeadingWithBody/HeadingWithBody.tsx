@@ -83,12 +83,12 @@ const HeadingWithBody = ({
           <>
             <br />
             <a
-              className="text-text-accent mt-3 inline-flex items-center"
+              className="mt-3 inline-flex items-center text-text-accent"
               href="https://github.com/zdolin/zackdolin-com"
               target="_blank"
               rel="noopener"
             >
-              <LinkIcon className="mr-1 h-5 w-5" />
+              <LinkIcon className="mr-2 h-5 w-5" />
               View the source code for this site on Github.
             </a>
           </>
