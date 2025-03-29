@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     default: 'Zack Dolin',
   },
   description:
-    'Personal portfolio of Zack Dolin, showcasing projects, experience, and other information.',
+    'The personal website of Zack Dolin, featuring selected projects, work experience, and creative pursuits.',
   keywords: ['Zack Dolin', 'portfolio', 'developer', 'projects'],
   authors: [{ name: 'Zack Dolin', url: 'https://zackdolin.com' }],
   metadataBase: new URL('https://zackdolin.com'),
@@ -41,6 +41,38 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Zack Dolin',
+  },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  applicationName: 'Zack Dolin',
+  referrer: 'origin-when-cross-origin',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'OyoGTFBkv3x3fpGetQxc1b3mFcVi6S8nNuiHSpL2_j4',
+  },
+  alternates: {
+    canonical: 'https://zackdolin.com',
   },
 };
 
