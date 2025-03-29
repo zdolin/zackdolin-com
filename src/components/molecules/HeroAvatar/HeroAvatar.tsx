@@ -73,6 +73,7 @@ const HeroAvatar = ({
             alt={image.alt}
             width={image.width ?? 600}
             height={image.height ?? 750}
+            priority
           />
         </motion.div>
       </motion.div>
@@ -99,6 +100,7 @@ const HeroAvatar = ({
             alt={image.alt}
             width={image.width ?? 600}
             height={image.height ?? 750}
+            priority
           />
         </motion.div>
       )}
