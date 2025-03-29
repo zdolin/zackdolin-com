@@ -54,11 +54,11 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 #### Cards
 - --card-default: Background for standard content cards (work experience).
 - --card-hover: Slight visual lift on hover.
-- --card-testimonial: Background for testimonial-specific cards.
+- --card-testimonial: Background for testimonial-specific cards. MUST be a different color from --surface-accent and --surface-primary.
 
 #### Hero Section
 - --hero-primary: Background inside circular avatar frame. Should echo --surface-accent for continuity.
-- --hero-secondary: Background of the outer hero container. Must **not match** --surface-primary. Needs to be a different color from --hero-primary.
+- --hero-secondary: Background of the outer hero container. Must **not match** --surface-primary. MUST be a different color from --hero-primary.
 - --hero-border: Outline around the avatar image. Complementary to --hero-primary but not as bright.
 
 #### Iconography
