@@ -29,7 +29,12 @@ const CardTestimonial = ({
     <div className="flex w-full flex-col">
       <RatingSVG alt="5 star rating" />
       <p className="py-6 text-sm text-text-primary lg:text-lg">{`“${quote}”`}</p>
-      <div className="flex w-full flex-row items-center justify-between">
+      <div
+        className={clsx(
+          'flex w-full flex-col sm:flex-row',
+          'items-center justify-between'
+        )}
+      >
         <div className="flex gap-5">
           <Image
             className="mt-1 h-12 w-12 rounded-full"
@@ -47,7 +52,7 @@ const CardTestimonial = ({
             </p>
           </div>
         </div>
-        <p className="text-xs text-text-secondary md:text-sm lg:text-lg">
+        <p className="mt-3 text-xs text-text-secondary md:text-sm lg:text-lg">
           {timeAgo(date)}
         </p>
       </div>
