@@ -35,7 +35,7 @@ const CardTestimonial = ({
           'items-center justify-between'
         )}
       >
-        <div className="flex gap-5">
+        <div className="flex w-full gap-5 sm:w-auto">
           <Image
             className="mt-1 h-12 w-12 rounded-full"
             src={image.src}
