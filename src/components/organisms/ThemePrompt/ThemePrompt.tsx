@@ -21,6 +21,13 @@ const themeSuggestions = [
   'Gingerbread house',
   'Desert oasis with cacti',
   'A lush jurassic rainforest',
+  'Orange dreamscicle',
+  '1980s vaporwave Miami',
+  'Pop art candy explosion',
+  'Muted Polaroid nostalgia',
+  'Moss green with glacial blue',
+  'Mint and dark chocolate',
+  'Lilac and sky blue',
 ];
 
 interface ThemePromptProps {
