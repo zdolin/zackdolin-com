@@ -10,7 +10,6 @@ import { FormEvent, useMemo } from 'react';
 const themeSuggestions = [
   'Sunset desert tones',
   'Ocean breeze with coral accents',
-  'Northern lights aurora palette',
   'Vintage sepia and warm browns',
   'Cyberpunk neon cityscape',
   'Autumn maple forest',
@@ -18,7 +17,7 @@ const themeSuggestions = [
   'Tropical paradise sunset',
   'Peanut butter and jelly',
   'Gingerbread house',
-  'Desert oasis with cacti',
+  'Desert oasis with lush cacti',
 ];
 
 interface ThemePromptProps {
@@ -53,7 +52,10 @@ const ThemePrompt = ({
     >
       <form
         className="space-y-8 pt-1 text-sm text-text-primary md:p-4 lg:space-y-9"
-        onSubmit={onSubmit}
+        onSubmit={(e) => {
+          onSubmit(e);
+          setPrompt('');
+        }}
       >
         <div className="space-y-4">
           <Heading>
@@ -81,11 +83,11 @@ const ThemePrompt = ({
           <Button
             className="flex items-center justify-between"
             sizeClassName="w-full sm:w-auto"
+            type="button"
             intent="secondary"
             onClick={onClose}
             hideArrow
             suppressIntroAnimation
-            type="button"
           >
             Maybe later
           </Button>
