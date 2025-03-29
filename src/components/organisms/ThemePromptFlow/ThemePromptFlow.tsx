@@ -7,9 +7,8 @@ import LoadingDialog from '@/components/molecules/LoadingDialog/LoadingDialog';
 import ModalOrDrawer from '@/components/organisms/ModalOrDrawer';
 import ThemePrompt from '@/components/organisms/ThemePrompt';
 import clsx from 'clsx';
+import Cookies from 'js-cookie';
 import { useEffect, useState } from 'react';
-
-const THEME_PROMPT_KEY = 'themePromptDismissed';
 
 type DialogState = 'hidden' | 'idle' | 'loading' | 'success' | 'error';
 
@@ -18,16 +17,15 @@ const ThemePromptFlow = () => {
   const [dialogState, setDialogState] = useState<DialogState>('hidden');
 
   useEffect(() => {
-    //const hasBeenDismissed = localStorage.getItem(THEME_PROMPT_KEY) === 'true';
-    //if (!hasBeenDismissed) {
-    const timeout = setTimeout(() => setDialogState('idle'), 3000);
-    return () => clearTimeout(timeout);
-    // }
+    const hasBeenDismissed = Cookies.get('hideThemePrompt') === 'true';
+    if (!hasBeenDismissed) {
+      const timeout = setTimeout(() => setDialogState('idle'), 3000);
+      return () => clearTimeout(timeout);
+    }
   }, []);
 
   const handleClose = () => {
     setDialogState('hidden');
-    localStorage.setItem(THEME_PROMPT_KEY, 'true');
   };
 
   const applyThemeVariables = (
@@ -158,15 +156,13 @@ const ThemePromptFlow = () => {
               onClick={() => setDialogState('idle')}
               intent="secondary"
               suppressIntroAnimation
-              noScale
             >
               Try again
             </Button>
             <Button
-              sizeClassName="w-full sm:w-auto my-4 sm:my-0"
+              sizeClassName="w-full sm:w-auto my-5 sm:my-0"
               onClick={() => setDialogState('hidden')}
               suppressIntroAnimation
-              noScale
             >
               I like it!
             </Button>

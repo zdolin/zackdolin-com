@@ -1,10 +1,12 @@
 'use client';
 
 import Button from '@/components/atoms/Button';
+import Checkbox from '@/components/atoms/Checkbox';
 import Heading from '@/components/atoms/Heading';
 import Input from '@/components/atoms/Input';
 import ModalOrDrawer from '@/components/organisms/ModalOrDrawer';
 import clsx from 'clsx';
+import Cookies from 'js-cookie';
 import { FormEvent, useEffect, useMemo, useState } from 'react';
 
 const themeSuggestions = [
@@ -39,6 +41,7 @@ const ThemePrompt = ({
   loading,
 }: ThemePromptProps) => {
   const [isMobile, setIsMobile] = useState(false);
+  const [dontShowAgain, setDontShowAgain] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -50,6 +53,13 @@ const ThemePrompt = ({
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  const handleClose = () => {
+    if (dontShowAgain) {
+      Cookies.set('hideThemePrompt', 'true', { expires: 365 }); // Cookie expires in 1 year
+    }
+    onClose();
+  };
 
   const placeholderText = useMemo(() => {
     const shuffled = [...themeSuggestions].sort(() => 0.5 - Math.random());
@@ -92,29 +102,55 @@ const ThemePrompt = ({
         />
         <div
           className={clsx(
-            'flex w-full flex-col-reverse items-center sm:flex-row sm:justify-end sm:space-x-3'
+            'flex w-full flex-col items-center space-y-4 md:space-y-0',
+            'md:flex-row md:justify-between md:space-x-3'
           )}
         >
-          <Button
-            sizeClassName="w-full sm:w-auto"
-            type="button"
-            intent="secondary"
-            onClick={onClose}
-            hideArrow
-            suppressIntroAnimation
+          <div
+            className={clsx(
+              'order-2 flex w-full flex-col-reverse items-center md:w-auto md:flex-row',
+              'space-y-4 md:space-x-3 md:space-y-0'
+            )}
           >
-            Maybe later
-          </Button>
-          <Button
-            type="submit"
-            disabled={loading}
-            loading={loading}
-            sizeClassName="w-full sm:w-auto my-4 sm:my-0"
-            suppressIntroAnimation
-            noScale
+            <Button
+              sizeClassName="w-full md:w-auto"
+              type="button"
+              intent="secondary"
+              onClick={handleClose}
+              hideArrow
+              suppressIntroAnimation
+            >
+              Maybe later
+            </Button>
+            <Button
+              type="submit"
+              disabled={loading}
+              loading={loading}
+              sizeClassName="w-full md:w-auto pb-5 md:pb-0"
+              suppressIntroAnimation
+            >
+              {loading ? 'Applying...' : 'Apply Theme'}
+            </Button>
+          </div>
+          <div
+            className={clsx(
+              'order-2 flex w-full items-center justify-center md:order-1 md:w-auto md:justify-start'
+            )}
           >
-            {loading ? 'Applying...' : 'Apply Theme'}
-          </Button>
+            <button
+              type="button"
+              role="checkbox"
+              aria-checked={dontShowAgain}
+              onClick={() => setDontShowAgain(!dontShowAgain)}
+              className={clsx(
+                'flex cursor-pointer items-center text-base text-text-accent hover:text-text-primary',
+                'space-x-3 pt-4 md:pt-0'
+              )}
+            >
+              <Checkbox checked={dontShowAgain} onChange={setDontShowAgain} />
+              <span>Don't show again</span>
+            </button>
+          </div>
         </div>
       </form>
     </ModalOrDrawer>
