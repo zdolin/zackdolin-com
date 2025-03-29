@@ -96,8 +96,6 @@ const ThemePromptFlow = () => {
 
       const theme = await res.json();
 
-      console.log('theme', theme);
-
       if (theme?.light && theme?.dark) {
         applyThemeVariables(theme);
         setDialogState('success');
