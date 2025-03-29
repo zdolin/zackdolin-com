@@ -109,9 +109,9 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
     return NextResponse.json(theme);
   } catch (err) {
     console.error('Theme generation error:', err);
+    console.log('jsonString',jsonString);
     return NextResponse.json({ 
       error: 'Failed to generate or parse theme', 
-      debug: jsonString.slice(0, 1000),
     }, { 
       status: 500 
     });
