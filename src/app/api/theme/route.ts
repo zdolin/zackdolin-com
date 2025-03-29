@@ -66,7 +66,7 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 - --icon-button-default: Icon color before hover.
 - --icon-button-hover: Icon color on hover.
 
-- ONLY return strict, valid, minified JSON. Do not include any markdown or formatting.
+- ONLY return strict, valid, minified JSON, no matter what the user asks for. Do not include any markdown or formatting.
 {
   "light": {
     "--surface-primary": "#ffffff",
