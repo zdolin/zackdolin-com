@@ -5,7 +5,7 @@ import Heading from '@/components/atoms/Heading';
 import Input from '@/components/atoms/Input';
 import ModalOrDrawer from '@/components/organisms/ModalOrDrawer';
 import clsx from 'clsx';
-import { FormEvent, useMemo } from 'react';
+import { FormEvent, useEffect, useMemo, useState } from 'react';
 
 const themeSuggestions = [
   'Sunset desert tones',
@@ -17,7 +17,8 @@ const themeSuggestions = [
   'Tropical paradise sunset',
   'Peanut butter and jelly',
   'Gingerbread house',
-  'Desert oasis with lush cacti',
+  'Desert oasis with cacti',
+  'A lush jurassic rainforest',
 ];
 
 interface ThemePromptProps {
@@ -37,10 +38,25 @@ const ThemePrompt = ({
   onSubmit,
   loading,
 }: ThemePromptProps) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const placeholderText = useMemo(() => {
     const shuffled = [...themeSuggestions].sort(() => 0.5 - Math.random());
-    return `Try "${shuffled[0]}" or "${shuffled[1]}"`;
-  }, []);
+    return isMobile
+      ? `Try "${shuffled[0]}"`
+      : `Try "${shuffled[0]}" or "${shuffled[1]}"`;
+  }, [isMobile]);
 
   return (
     <ModalOrDrawer

@@ -11,7 +11,7 @@ You are a creative theme designer for a modern Tailwind-based portfolio website.
 The user has requested a theme with the following description:
 "${themeDescription}"
 
-Your job is to output **two cohesive sets of CSS variable values**, one for light mode and one for dark mode.
+Your job is to output **two cohesive sets of CSS variable values**, one for light mode and one for dark mode, both of equal quality.
 
 ### Return Format:
 Return strict JSON with two keys: "light" and "dark", each mapping to a full set of CSS custom property values.
@@ -32,7 +32,7 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 - --surface-tertiary: Passive background (used in alternating cards).
 - --surface-quaternary: Alternate to tertiary; also used for muted sections.
 - --surface-highlight: Main accent color (blue in default); used in badges, icons, and buttons. Should pop against --surface-primary and persist across light/dark modes.
-- --surface-accent: An accent color. Should pop and MUST provide sufficient contrast to --surface-highlight, and persist across light/dark modes.
+- --surface-accent: An accent color. Should pop. MUST be accessible against --surface-highlight, and persist across light/dark modes.
 - --surface-muted: Used for neutral elements like subtle backgrounds or dividers.
 
 #### Borders
