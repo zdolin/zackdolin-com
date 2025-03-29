@@ -2,7 +2,7 @@
 
 import Button from '@/components/atoms/Button';
 import Heading from '@/components/atoms/Heading';
-import Textarea from '@/components/atoms/Textarea';
+import Input from '@/components/atoms/Input';
 import ModalOrDrawer from '@/components/organisms/ModalOrDrawer';
 import clsx from 'clsx';
 import { FormEvent, useMemo } from 'react';
@@ -67,13 +67,12 @@ const ThemePrompt = ({
             to match.
           </p>
         </div>
-        <Textarea
-          rows={3}
+        <Input
           placeholder={placeholderText}
-          resizable={false}
           required
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
+          maxLength={100}
         />
         <div
           className={clsx(
