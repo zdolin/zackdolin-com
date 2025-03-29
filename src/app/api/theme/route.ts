@@ -100,7 +100,6 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
   const jsonString = jsonMatch ? jsonMatch[1].trim() : message.trim();
 
   try {
-    console.log('jsonString',jsonString);
     const theme = JSON.parse(jsonString);
 
     if (!theme.light || !theme.dark) {
@@ -110,6 +109,6 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
     return NextResponse.json(theme);
   } catch (err) {
     console.error('Theme generation error:', err);
-    return NextResponse.json({ error: 'Failed to generate or parse theme.' }, { status: 500 });
+    return NextResponse.json({ error: `Failed to generate or parse theme. ${jsonString}` }, { status: 500 });
   }
 }
