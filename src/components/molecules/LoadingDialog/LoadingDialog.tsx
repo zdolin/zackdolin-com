@@ -24,14 +24,14 @@ const LoadingDialog = ({
     >
       <div
         className={clsx(
-          'flex flex-col space-x-7 py-4 sm:flex-row lg:space-x-9',
-          'space-y-7 sm:space-y-0'
+          'flex flex-col space-x-7 py-4 pb-8 sm:flex-row md:pb-0 lg:space-x-9',
+          'space-y-6 sm:space-y-0'
         )}
       >
         <Spinner
           className={clsx(
             'self-center sm:-mt-2',
-            'h-14 w-14 sm:h-[2.625rem] sm:w-[2.625rem] md:h-10 md:w-10 lg:h-12 lg:w-12 xl:h-14 xl:w-14'
+            'h-[2.75rem] w-[2.75rem] sm:h-[2.625rem] sm:w-[2.625rem] md:h-10 md:w-10 lg:h-12 lg:w-12 xl:h-14 xl:w-14'
           )}
         />
         <div className="!mx-0 flex flex-col space-y-2 sm:!mx-auto sm:space-y-3">
