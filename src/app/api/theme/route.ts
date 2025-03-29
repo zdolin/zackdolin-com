@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-export const runtime = 'edge'; // Optional: faster cold starts on Vercel
-
 export async function POST(req: NextRequest) {
   const { themeDescription } = await req.json();
 
