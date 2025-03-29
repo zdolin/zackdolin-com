@@ -85,7 +85,8 @@ const ThemePrompt = ({
       >
         <div className="space-y-4">
           <Heading className="text-[1.938rem] md:text-2xl lg:text-4xl xl:text-5xl">
-            Retheme this site with a prompt! &#127912;
+            Retheme this site with a prompt!
+            <span className="ml-3 xl:ml-4">&#127912;</span>
             <br />
           </Heading>
           <p className="text-lg leading-[1.875rem] text-text-accent md:text-base lg:text-xl">
