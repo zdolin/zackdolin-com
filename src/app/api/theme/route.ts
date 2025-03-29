@@ -17,10 +17,12 @@ Your job is to output **two cohesive sets of CSS variable values**, one for ligh
 Return strict JSON with two keys: "light" and "dark", each mapping to a full set of CSS custom property values.
 
 ### Important Notes:
-- Use accessible contrast between ALL text and surface colors. Assume buttons have white text.
+- ALWAYS use accessible contrast between ALL text and surface colors. Assume buttons have white text.
+- ALWAYS use accessible contrast between ALL icons and surface colors,
 - Colors like --surface-highlight and --hero-primary should persist in personality across both themes, but still look good on light/dark backgrounds.
 - Keep visual consistency between related variables.
 - Do not reuse color values across variables unless explicitly instructed. Each color should serve a distinct visual role.
+- If the prompt includes a color, use it. If the prompt does not include a color, make up a color that fits the idea.
 
 ### Semantic Roles & Guidelines:
 
@@ -30,7 +32,7 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 - --surface-tertiary: Passive background (used in alternating cards).
 - --surface-quaternary: Alternate to tertiary; also used for muted sections.
 - --surface-highlight: Main accent color (blue in default); used in badges, icons, and buttons. Should pop against --surface-primary and persist across light/dark modes.
-- --surface-accent: An accent color. Should pop and provide sufficient contrast to --surface-highlight, and persist across light/dark modes.
+- --surface-accent: An accent color. Should pop and MUST provide sufficient contrast to --surface-highlight, and persist across light/dark modes.
 - --surface-muted: Used for neutral elements like subtle backgrounds or dividers.
 
 #### Borders
@@ -50,20 +52,20 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 - --text-input: Text inside form fields (not prominent in the UI yet).
 
 #### Cards
-- --card-default: Background for standard content cards (e.g. work experience).
+- --card-default: Background for standard content cards (work experience).
 - --card-hover: Slight visual lift on hover.
 - --card-testimonial: Background for testimonial-specific cards.
 
 #### Hero Section
 - --hero-primary: Background inside circular avatar frame. Should echo --surface-accent for continuity.
-- --hero-secondary: Background of the outer hero container. Must **not match** --surface-primary. Should provide contrast, and echo --hero-primary or --surface-accent subtly.
+- --hero-secondary: Background of the outer hero container. Must **not match** --surface-primary. Needs to be a different color from --hero-primary.
 - --hero-border: Outline around the avatar image. Complementary to --hero-primary but not as bright.
 
 #### Iconography
 - --icon-button-default: Icon color before hover.
 - --icon-button-hover: Icon color on hover.
 
-Only return strict, minified JSON like:
+ONLY return strict, minified JSON like:
 {
   "light": {
     "--surface-primary": "#ffffff",
