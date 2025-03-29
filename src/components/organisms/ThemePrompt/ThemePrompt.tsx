@@ -11,8 +11,8 @@ import { FormEvent, useEffect, useMemo, useState } from 'react';
 
 const themeSuggestions = [
   'Sunset desert tones',
-  'Ocean breeze with coral accents',
-  'Vintage sepia and warm browns',
+  'Reef with coral accents',
+  'Vintage sepiatone',
   'Cyberpunk neon cityscape',
   'Autumn maple forest',
   'Arctic colorscape',
@@ -25,9 +25,9 @@ const themeSuggestions = [
   '1980s vaporwave Miami',
   'Pop art candy explosion',
   'Muted Polaroid nostalgia',
-  'Moss green with glacial blue',
   'Mint and dark chocolate',
   'Lilac and sky blue',
+  'Green machine',
 ];
 
 interface ThemePromptProps {
