@@ -148,7 +148,7 @@ const ThemePrompt = ({
               )}
             >
               <Checkbox checked={dontShowAgain} onChange={setDontShowAgain} />
-              <span>Don't show again</span>
+              <span>Don&apos;t show again</span>
             </button>
           </div>
         </div>
