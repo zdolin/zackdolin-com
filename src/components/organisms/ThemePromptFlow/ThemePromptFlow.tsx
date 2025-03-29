@@ -1,5 +1,6 @@
 'use client';
 
+import Button from '@/components/atoms/Button';
 import Heading from '@/components/atoms/Heading';
 import AlertDialog from '@/components/molecules/AlertDialog';
 import LoadingDialog from '@/components/molecules/LoadingDialog/LoadingDialog';
@@ -147,6 +148,30 @@ const ThemePromptFlow = () => {
           >
             Your new theme is now active. What do you think?
           </p>
+          <div
+            className={clsx(
+              'flex w-full flex-col-reverse items-center sm:flex-row sm:justify-end sm:space-x-3'
+            )}
+          >
+            <Button
+              className="flex items-center justify-between"
+              sizeClassName="w-full sm:w-auto"
+              onClick={() => setDialogState('idle')}
+              suppressIntroAnimation
+              noScale
+            >
+              Try again
+            </Button>
+            <Button
+              className="flex items-center justify-between"
+              sizeClassName="w-full sm:w-auto my-4 sm:my-0"
+              onClick={() => setDialogState('hidden')}
+              suppressIntroAnimation
+              noScale
+            >
+              I like it!
+            </Button>
+          </div>
         </div>
       </ModalOrDrawer>
 
