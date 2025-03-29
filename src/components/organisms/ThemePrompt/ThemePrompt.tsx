@@ -117,10 +117,19 @@ const ThemePrompt = ({
         >
           <div
             className={clsx(
-              'order-2 flex w-full flex-col-reverse items-center md:w-auto md:flex-row',
+              'order-2 flex w-full flex-col items-center md:w-auto md:flex-row',
               'space-y-4 md:space-x-3 md:space-y-0'
             )}
           >
+            <Button
+              type="submit"
+              disabled={loading}
+              loading={loading}
+              sizeClassName="w-full md:w-auto"
+              suppressIntroAnimation
+            >
+              {loading ? 'Applying...' : 'Apply Theme'}
+            </Button>
             <Button
               sizeClassName="w-full md:w-auto"
               type="button"
@@ -130,15 +139,6 @@ const ThemePrompt = ({
               suppressIntroAnimation
             >
               Maybe later
-            </Button>
-            <Button
-              type="submit"
-              disabled={loading}
-              loading={loading}
-              sizeClassName="w-full md:w-auto pb-5 md:pb-0"
-              suppressIntroAnimation
-            >
-              {loading ? 'Applying...' : 'Apply Theme'}
             </Button>
           </div>
           <div

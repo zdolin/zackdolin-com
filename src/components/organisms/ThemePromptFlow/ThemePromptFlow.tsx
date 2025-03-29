@@ -1,12 +1,9 @@
 'use client';
 
-import Button from '@/components/atoms/Button';
-import Heading from '@/components/atoms/Heading';
 import AlertDialog from '@/components/molecules/AlertDialog';
+import ConfirmationDialog from '@/components/molecules/ConfirmationDialog';
 import LoadingDialog from '@/components/molecules/LoadingDialog/LoadingDialog';
-import ModalOrDrawer from '@/components/organisms/ModalOrDrawer';
 import ThemePrompt from '@/components/organisms/ThemePrompt';
-import clsx from 'clsx';
 import Cookies from 'js-cookie';
 import { useEffect, useState } from 'react';
 
@@ -120,58 +117,23 @@ const ThemePromptFlow = () => {
         loading={dialogState === 'loading'}
       />
 
+      {/* Loading Modal */}
       <LoadingDialog open={dialogState === 'loading'} />
 
       {/* Success Modal/Drawer */}
-      <ModalOrDrawer
-        className="w-full sm:w-[31.25rem] md:w-[28.125rem] lg:w-[40.75rem]"
+      <ConfirmationDialog
         open={dialogState === 'success'}
-        onClose={handleClose}
-        type="primary"
-      >
-        <div className="flex flex-col items-center justify-center space-y-4">
-          <Heading
-            className={clsx(
-              'text-center',
-              'text-[1.938rem] sm:text-3xl md:text-2xl lg:text-4xl xl:text-5xl'
-            )}
-          >
-            Theme applied successfully!
-          </Heading>
-          <p
-            className={clsx(
-              'text-center',
-              'text-lg leading-[1.875rem] text-text-accent md:text-base lg:text-xl'
-            )}
-          >
-            Your new theme is now active. What do you think? Try switching
-            between light and dark modes!
-          </p>
-          <div
-            className={clsx(
-              'flex w-full flex-col-reverse items-center pt-2 sm:flex-row sm:justify-end sm:space-x-3 sm:pt-4 lg:pt-7'
-            )}
-          >
-            <Button
-              sizeClassName="w-full sm:w-auto"
-              onClick={() => setDialogState('idle')}
-              intent="secondary"
-              suppressIntroAnimation
-            >
-              Try again
-            </Button>
-            <Button
-              sizeClassName="w-full sm:w-auto my-5 sm:my-0"
-              onClick={() => setDialogState('hidden')}
-              suppressIntroAnimation
-            >
-              I like it!
-            </Button>
-          </div>
-        </div>
-      </ModalOrDrawer>
+        handleClose={handleClose}
+        handleAccept={() => setDialogState('idle')}
+        handleReject={() => setDialogState('hidden')}
+        heading="Theme applied successfully!"
+        body="Your new theme is now active. What do you think? Try switching
+            between light and dark modes!"
+        acceptText="Try again"
+        rejectText="I like it!"
+      />
 
-      {/* Error Dialog */}
+      {/* Error Modal */}
       <AlertDialog
         open={dialogState === 'error'}
         onClose={handleClose}
