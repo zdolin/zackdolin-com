@@ -17,7 +17,7 @@ const themeSuggestions = [
   'Autumn maple forest',
   'Arctic colorscape',
   'Tropical paradise sunset',
-  'Peanut butter and jelly',
+  'Peanut butter and bananas',
   'Gingerbread house',
   'Desert oasis with cacti',
   'A lush jurassic rainforest',
