@@ -90,8 +90,8 @@ const ThemePrompt = ({
             <br />
           </Heading>
           <p className="text-lg leading-[1.875rem] text-text-accent md:text-base lg:text-xl">
-            Describe a look or feel, and the site will adapt its color palette
-            to match.
+            Describe a color scheme, and the site will adapt its palette to
+            match.
           </p>
         </div>
         <Input
