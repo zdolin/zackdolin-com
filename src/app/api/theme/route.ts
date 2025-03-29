@@ -23,7 +23,6 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 - Keep visual consistency between related variables.
 - Do not reuse color values across variables unless explicitly instructed. Each color should serve a distinct visual role.
 - If the prompt includes a color, use it. If the prompt does not include a color, make up a color that fits the idea.
-- ONLY OUTPUT JSON. Do not include any explanation or extra characters.
 
 ### Semantic Roles & Guidelines:
 
@@ -55,7 +54,7 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 #### Cards
 - --card-default: Background for standard content cards (work experience).
 - --card-hover: Slight visual lift on hover.
-- --card-testimonial: Background for testimonial-specific cards. MUST be a different color from --surface-accent and --surface-primary.
+- --card-testimonial: Subtle background for testimonial-specific cards. MUST be a different color from --surface-accent and --surface-primary.
 
 #### Hero Section
 - --hero-primary: Background inside circular avatar frame. Should echo --surface-accent for continuity.
@@ -66,7 +65,7 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 - --icon-button-default: Icon color before hover.
 - --icon-button-hover: Icon color on hover.
 
-ONLY return strict, minified JSON like:
+- ONLY return strict, valid, minified JSON. Do not include any markdown or formatting.
 {
   "light": {
     "--surface-primary": "#ffffff",
@@ -86,17 +85,21 @@ ONLY return strict, minified JSON like:
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: 'gpt-4o-mini',
+      model: 'gpt-3.5-turbo-1106',
       messages: [{ role: 'user', content: prompt }],
       temperature: 0.8,
     }),
   });
 
   const data = await response.json();
-  const message = data.choices?.[0]?.message?.content;
+
+  const message = data.choices?.[0]?.message?.content || '';
+  const jsonMatch = message.match(/```json\s*([\s\S]*?)```/);
+  
+  const jsonString = jsonMatch ? jsonMatch[1].trim() : message.trim();
 
   try {
-    const theme = JSON.parse(message || '{}');
+    const theme = JSON.parse(jsonString);
 
     if (!theme.light || !theme.dark) {
       throw new Error('Missing light/dark themes in response.');
