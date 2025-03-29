@@ -157,6 +157,7 @@ const ThemePromptFlow = () => {
               className="flex items-center justify-between"
               sizeClassName="w-full sm:w-auto"
               onClick={() => setDialogState('idle')}
+              intent="secondary"
               suppressIntroAnimation
               noScale
             >
