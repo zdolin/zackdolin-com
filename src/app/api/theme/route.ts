@@ -100,6 +100,7 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
   const jsonString = jsonMatch ? jsonMatch[1].trim() : message.trim();
 
   try {
+    console.log('jsonString',jsonString);
     const theme = JSON.parse(jsonString);
 
     if (!theme.light || !theme.dark) {
