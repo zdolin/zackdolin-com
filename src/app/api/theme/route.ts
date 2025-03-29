@@ -85,7 +85,7 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: 'gpt-3.5-turbo-1106',
+      model: 'gpt-4o-mini',
       messages: [{ role: 'user', content: prompt }],
       temperature: 0.8,
     }),
