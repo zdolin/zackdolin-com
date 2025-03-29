@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-export const runtime = 'nodejs';
+export const maxDuration = 30;
 
 export async function POST(req: NextRequest) {
   const { themeDescription } = await req.json();
@@ -110,8 +110,7 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
   } catch (err) {
     console.error('Theme generation error:', err);
     return NextResponse.json({ 
-      error: 'Failed to generate or parse theme', 
-      debug: jsonString.slice(0, 1000),
+      error: 'Failed to generate or parse theme',
     }, { 
       status: 500 
     });
