@@ -16,7 +16,7 @@ const HeaderNavItem = ({
     className={clsx(
       'group relative',
       'text-sm font-normal text-text-primary lg:text-lg',
-      'px-3 py-6 lg:px-5 xl:px-6'
+      'px-3 py-6 md:px-2 lg:px-5 xl:px-6'
     )}
     aria-label={text}
   >

@@ -57,7 +57,7 @@ export default function Header({ className = '' }: HeaderProps) {
             <ZLogo className="absolute top-0 my-3 h-[3.75rem] w-auto" alt="" />
           </Link>
         </div>
-        <div className="hidden md:flex lg:mr-8">
+        <div className="mr-4 hidden md:flex lg:mr-8">
           {navigationList.map((item: NavigationItemType) => (
             <HeaderNavItem
               key={item.text}
