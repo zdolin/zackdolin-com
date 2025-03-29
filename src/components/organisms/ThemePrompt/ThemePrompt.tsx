@@ -100,7 +100,7 @@ const ThemePrompt = ({
           required
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
-          maxLength={100}
+          maxLength={80}
         />
         <div
           className={clsx(
