@@ -96,7 +96,6 @@ const ThemePrompt = ({
           )}
         >
           <Button
-            className="flex items-center justify-between"
             sizeClassName="w-full sm:w-auto"
             type="button"
             intent="secondary"
@@ -107,7 +106,6 @@ const ThemePrompt = ({
             Maybe later
           </Button>
           <Button
-            className="flex items-center justify-between"
             type="submit"
             disabled={loading}
             loading={loading}

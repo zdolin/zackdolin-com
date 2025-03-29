@@ -154,7 +154,6 @@ const ThemePromptFlow = () => {
             )}
           >
             <Button
-              className="flex items-center justify-between"
               sizeClassName="w-full sm:w-auto"
               onClick={() => setDialogState('idle')}
               intent="secondary"
@@ -164,7 +163,6 @@ const ThemePromptFlow = () => {
               Try again
             </Button>
             <Button
-              className="flex items-center justify-between"
               sizeClassName="w-full sm:w-auto my-4 sm:my-0"
               onClick={() => setDialogState('hidden')}
               suppressIntroAnimation

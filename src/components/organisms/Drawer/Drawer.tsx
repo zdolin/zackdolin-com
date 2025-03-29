@@ -50,7 +50,7 @@ const Drawer: React.FC<DrawerProps> = ({
             <div
               className={clsx(
                 'w-full max-w-lg rounded-t-lg shadow-xl',
-                'px-8 pb-14 pt-5 sm:px-10 sm:pb-10 sm:pt-6',
+                'px-10 pb-14 pt-5 sm:px-10 sm:pb-10 sm:pt-6',
                 type === 'primary'
                   ? 'bg-surface-primary shadow-[0_-1px_20px_rgba(0,0,0,0.1)] dark:bg-surface-secondary'
                   : 'bg-surface-secondary'
