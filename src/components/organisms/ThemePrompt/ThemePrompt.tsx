@@ -94,6 +94,7 @@ const ThemePrompt = ({
           </p>
         </div>
         <Input
+          autoComplete="off"
           placeholder={placeholderText}
           required
           value={prompt}
