@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+export const runtime = 'nodejs';
+
 export async function POST(req: NextRequest) {
   const { themeDescription } = await req.json();
 
@@ -21,6 +23,7 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 - Keep visual consistency between related variables.
 - Do not reuse color values across variables unless explicitly instructed. Each color should serve a distinct visual role.
 - If the prompt includes a color, use it. If the prompt does not include a color, make up a color that fits the idea.
+- ONLY OUTPUT JSON. Do not include any explanation or extra characters.
 
 ### Semantic Roles & Guidelines:
 
