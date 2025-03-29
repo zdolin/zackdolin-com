@@ -49,7 +49,7 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 #### Text
 - --text-primary: Main body text. Must be highly readable on --surface-primary.
 - --text-secondary: Used for subtitles or muted labels.
-- --text-accent: Draws attention to interactive or emphasized text. Should match --surface-accent and be readable on all surfaces.
+- --text-accent: Draws attention to interactive or emphasized text. MUST pop against all surfaces.
 - --text-input: Text inside form fields (not prominent in the UI yet).
 
 #### Cards
