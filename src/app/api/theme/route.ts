@@ -31,9 +31,9 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 - --surface-secondary: Alternate section background, should convey the theme's personality.
 - --surface-tertiary: Passive background (used in alternating cards).
 - --surface-quaternary: Alternate to tertiary; also used for muted sections.
-- --surface-highlight: Main accent color used in badges, icons, and buttons. Should pop against --surface-primary and persist across light/dark modes.
+- --surface-highlight: Main accent color used in badges, icons, and buttons. Should pop against --surface-primary and persist across light/dark modes. MUST be readable against white text.
 - --surface-accent: An accent color. Should pop. MUST be accessible against --surface-highlight, and persist across light/dark modes.
-- --surface-muted: Used for secondary elements but can still stand out. Must be legible with white text.
+- --surface-muted: Used for secondary elements but should still have color. Must be legible with white text.
 - --surface-symbol: A light color that appears on inner symbol shapes. Must persist across light/dark modes.
 
 #### Borders
@@ -41,7 +41,7 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 - --border-muted: Low-contrast dividers or outlines.
 
 #### Buttons
-- --button-default: Main call-to-action button color. Should match --surface-highlight.
+- --button-default: Main call-to-action button color. Should match --surface-highlight and MUST be readable against white text.
 - --button-hover: Slightly altered tone of --button-default.
 - --button-active: Stronger variation of hover.
 - --button-icon: A light color used for round icon buttons.
