@@ -85,7 +85,7 @@ const ThemePrompt = ({
       >
         <div className="space-y-4">
           <Heading>
-            Retheme this site with a prompt! 🎨
+            Retheme this site with a prompt! &#127912;
             <br />
           </Heading>
           <p className="text-lg leading-[1.875rem] text-text-accent md:text-base lg:text-xl">
