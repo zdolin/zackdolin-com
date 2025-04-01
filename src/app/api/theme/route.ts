@@ -32,9 +32,9 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 - --surface-tertiary: Passive background (used in alternating cards).
 - --surface-quaternary: Alternate to tertiary; also used for muted sections.
 - --surface-highlight: Main accent color used in badges, icons, and buttons. Should pop against --surface-primary and persist across light/dark modes. MUST be readable against white text.
-- --surface-accent: An accent color. Should pop. MUST be accessible against --surface-highlight, and persist across light/dark modes.
+- --surface-accent: An accent color. Should pop. MUST have contrast against --surface-highlight, and persist across light/dark modes.
 - --surface-muted: Used for secondary elements but should still have color. Must be legible with white text.
-- --surface-symbol: A light color that appears on inner symbol shapes. Must persist across light/dark modes.
+- --surface-symbol: A light color that appears on inner symbol shapes. MUST have contrast against --surface-accent. Must persist across light/dark modes.
 
 #### Borders
 - --border-primary: Default border color for card edges or containers.
