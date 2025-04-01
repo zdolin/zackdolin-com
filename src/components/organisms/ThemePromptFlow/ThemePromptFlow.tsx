@@ -5,6 +5,7 @@ import ConfirmationDialog from '@/components/molecules/ConfirmationDialog';
 import LoadingDialog from '@/components/molecules/LoadingDialog';
 import ThemePrompt from '@/components/organisms/ThemePrompt';
 import { ThemePromptFlowDataType } from '@/types/data';
+import { applyThemeVariables } from '@/utils';
 import Cookies from 'js-cookie';
 import { useEffect, useState } from 'react';
 
@@ -28,61 +29,6 @@ const ThemePromptFlow = ({ data }: ThemePromptFlowProps) => {
 
   const handleClose = () => {
     setDialogState('hidden');
-  };
-
-  const applyThemeVariables = (
-    theme: Record<string, Record<string, string>>
-  ) => {
-    const root = document.documentElement;
-
-    // Remove existing custom properties
-    Object.keys(theme.light).forEach((key) => {
-      root.style.removeProperty(key);
-    });
-
-    // Create or update light theme style
-    const lightStyleId = 'dynamic-light-theme';
-    let lightStyle = document.getElementById(
-      lightStyleId
-    ) as HTMLStyleElement | null;
-
-    if (!lightStyle) {
-      lightStyle = document.createElement('style');
-      lightStyle.id = lightStyleId;
-      document.head.appendChild(lightStyle);
-    }
-
-    const lightCSS = Object.entries(theme.light || {})
-      .map(([key, value]) => `  ${key}: ${value};`)
-      .join('\n');
-
-    lightStyle.innerHTML = `
-      :root {
-        ${lightCSS}
-      }
-    `;
-
-    // Create or update dark theme style
-    const darkStyleId = 'dynamic-dark-theme';
-    let darkStyle = document.getElementById(
-      darkStyleId
-    ) as HTMLStyleElement | null;
-
-    if (!darkStyle) {
-      darkStyle = document.createElement('style');
-      darkStyle.id = darkStyleId;
-      document.head.appendChild(darkStyle);
-    }
-
-    const darkCSS = Object.entries(theme.dark || {})
-      .map(([key, value]) => `  ${key}: ${value};`)
-      .join('\n');
-
-    darkStyle.innerHTML = `
-      :root[class~="dark"] {
-        ${darkCSS}
-      }
-    `;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
