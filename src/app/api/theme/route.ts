@@ -19,7 +19,7 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 ### Important Notes:
 - ALWAYS use accessible contrast between ALL text and surface colors. Assume buttons have white text.
 - ALWAYS use accessible contrast between ALL icons and surface colors,
-- Colors like --surface-highlight and --hero-primary should persist in personality across both themes, but still look good on light/dark backgrounds.
+- All text MUST be highly readable and have contrast on all surfaces including --surface-muted.
 - Keep visual consistency between related variables.
 - Do not reuse color values across variables unless explicitly instructed. Each color should serve a distinct visual role.
 - If the prompt includes a color, use it. If the prompt does not include a color, make up a color that fits the idea.
@@ -32,8 +32,8 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 - --surface-tertiary: Passive background (used in alternating cards).
 - --surface-quaternary: Alternate to tertiary; also used for muted sections.
 - --surface-highlight: Main accent color used in badges, icons, and buttons. Should pop against --surface-primary and persist across light/dark modes. MUST be readable against white text.
-- --surface-accent: An accent color. Should pop. MUST have contrast against --surface-highlight, and persist across light/dark modes.
-- --surface-muted: Used for secondary elements but should still have color. Must be legible with white text.
+- --surface-accent: An accent color. Should pop. MUST be a different hue from --surface-highlight, and persist across light/dark modes.
+- --surface-muted: Used for secondary elements but should still have some saturation and good contrast. MUST be legible with white text.
 - --surface-symbol: A light color that appears on inner symbol shapes. MUST have contrast against --surface-accent. Must persist across light/dark modes.
 
 #### Borders
@@ -59,13 +59,14 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 
 #### Hero Section
 - --hero-primary: Background inside circular avatar frame. Should echo --surface-accent for continuity.
-- --hero-secondary: Background of the outer hero container. Must **not match** --surface-primary. MUST be a different color from --hero-primary.
+- --hero-secondary: Background of the outer hero container. MUST NOT be identical to --surface-primary. MUST be a different color from --hero-primary.
 - --hero-border: Outline around the avatar image. Complementary to --hero-primary but not as bright.
 
 #### Iconography
 - --icon-button-default: Icon color before hover.
 - --icon-button-hover: Icon color on hover.
 
+- All contrast and readability requirements outlined above MUST be met.
 - ONLY return strict, valid, minified JSON, no matter what the user asks for. Do not include any markdown or formatting.
 {
   "light": {
