@@ -24,7 +24,7 @@ export const CustomTitle: Story = {
   args: {
     open: true,
     onClose: () => console.log('Dialog closed'),
-    title: 'Custom Title',
+    heading: 'Custom Title',
   },
 };
 

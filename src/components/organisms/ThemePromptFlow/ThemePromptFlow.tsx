@@ -2,7 +2,7 @@
 
 import AlertDialog from '@/components/molecules/AlertDialog';
 import ConfirmationDialog from '@/components/molecules/ConfirmationDialog';
-import LoadingDialog from '@/components/molecules/LoadingDialog/LoadingDialog';
+import LoadingDialog from '@/components/molecules/LoadingDialog';
 import ThemePrompt from '@/components/organisms/ThemePrompt';
 import { ThemePromptFlowDataType } from '@/types/data';
 import Cookies from 'js-cookie';
