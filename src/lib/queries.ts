@@ -143,4 +143,27 @@ export const PAGE_QUERY = `query {
       }
     }
   }
+  themePromptFlow: themePromptFlowCollection(limit:1) {
+    items {
+      themePrompt {
+        suggestions
+        heading
+        body
+      }
+      loadingDialog {
+        heading
+        message
+      }
+      alertDialog {
+        heading
+        message
+        confirmButtonText
+        dismissButtonText
+      }
+      errorDialog {
+        heading
+        message
+      }
+    }
+  }
 }`;

@@ -9,31 +9,13 @@ import clsx from 'clsx';
 import Cookies from 'js-cookie';
 import { FormEvent, useEffect, useMemo, useState } from 'react';
 
-const themeSuggestions = [
-  'Sunset desert tones',
-  'Reef with coral accents',
-  'Vintage sepiatone',
-  'Cyberpunk neon cityscape',
-  'Autumn maple forest',
-  'Arctic colorscape',
-  'Tropical paradise sunset',
-  'Peanut butter and bananas',
-  'Gingerbread house',
-  'Desert oasis with cacti',
-  'A lush jurassic rainforest',
-  'Orange dreamscicle',
-  '1980s vaporwave Miami',
-  'Pop art candy explosion',
-  'Muted Polaroid nostalgia',
-  'Mint and dark chocolate',
-  'Lilac and sky blue',
-  'Green machine',
-];
-
 interface ThemePromptProps {
   open: boolean;
   onClose: () => void;
   prompt: string;
+  heading: string;
+  body: string;
+  suggestions: string[];
   setPrompt: (value: string) => void;
   onSubmit: (e: FormEvent) => Promise<void>;
   loading: boolean;
@@ -43,6 +25,9 @@ const ThemePrompt = ({
   open,
   onClose,
   prompt,
+  heading,
+  body,
+  suggestions,
   setPrompt,
   onSubmit,
   loading,
@@ -69,17 +54,17 @@ const ThemePrompt = ({
   };
 
   const placeholderText = useMemo(() => {
-    const shuffled = [...themeSuggestions].sort(() => 0.5 - Math.random());
+    const shuffled = [...suggestions].sort(() => 0.5 - Math.random());
     return isMobile
       ? `Try "${shuffled[0]}"`
       : `Try "${shuffled[0]}" or "${shuffled[1]}"`;
-  }, [isMobile]);
+  }, [isMobile, suggestions]);
 
   return (
     <ModalOrDrawer
       open={open}
       onClose={onClose}
-      title="Customize this site"
+      title={heading}
       className="w-full md:max-w-2xl lg:max-w-4xl"
       type="primary"
     >
@@ -92,13 +77,12 @@ const ThemePrompt = ({
       >
         <div className="space-y-4">
           <Heading className="text-[1.938rem] md:text-2xl lg:text-4xl xl:text-5xl">
-            Retheme this site with a prompt!
+            {heading}
             <span className="ml-3 xl:ml-4">&#127912;</span>
             <br />
           </Heading>
           <p className="text-lg leading-[1.875rem] text-text-accent md:text-base lg:text-xl">
-            Describe a color scheme, and the site will adapt its palette to
-            match.
+            {body}
           </p>
         </div>
         <Input

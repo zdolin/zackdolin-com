@@ -5,15 +5,15 @@ import clsx from 'clsx';
 interface AlertDialogProps {
   open: boolean;
   onClose: () => void;
-  title?: string;
+  heading?: string;
   description?: string;
 }
 
 const AlertDialog = ({
   open,
   onClose,
-  title = 'Hmm, there was an error.',
-  description = 'Occassionally, the AI will fail to generate a theme. If this happens, try again in a minute or two.',
+  heading,
+  description,
 }: AlertDialogProps) => {
   return (
     <Modal
@@ -21,9 +21,9 @@ const AlertDialog = ({
       open={open}
       onClose={onClose}
     >
-      <div className="flex flex-col items-center justify-center space-y-4">
+      <div className="mb-4 flex flex-col items-center justify-center space-y-4">
         <Heading className="text-center text-text-primary lg:mb-2">
-          {title}
+          {heading}
         </Heading>
         <p
           className={clsx(

@@ -29,6 +29,33 @@ export type SidebarDataType = {
   navigationList: NavigationItemType[];
 };
 
+export type ThemePromptType = {
+  suggestions: string[];
+  heading: string;
+  body: string;
+};
+
+export type DialogType = {
+  heading: string;
+  message: string;
+  confirmButtonText?: string;
+  dismissButtonText?: string;
+};
+
+export type AlertDialogItemType = {
+  heading: string;
+  message: string;
+  confirmButtonText: string;
+  dismissButtonText: string;
+};
+export type ThemePromptFlowDataType = {
+  themePrompt: ThemePromptType;
+  loadingDialog: DialogType;
+  alertDialog: DialogType;
+  errorDialog: DialogType;
+};
+
+
 export type IntroSectionDataType = {
   heroImage: ImageProps;
   statsList: StatsItemType[];
@@ -65,4 +92,5 @@ export type PageDataType = {
   portfolio: PortfolioSectionDataType;
   testimonials: TestimonalsSectionDataType;
   contact: ContactSectionDataType;
+  themePromptFlow: ThemePromptFlowDataType;
 };

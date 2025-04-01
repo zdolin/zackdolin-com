@@ -6,7 +6,8 @@ import {
   SidebarDataType,
   SkillsSectionDataType,
   TestimonalsSectionDataType,
-  ContactSectionDataType
+  ContactSectionDataType,
+  ThemePromptFlowDataType
 } from '@/types/data';
 import { navigationList } from '@/app/data/config';
 
@@ -154,6 +155,19 @@ const transformContactSectionData = (
     ),
   });
 
+  const transformThemePromptFlowData = (
+    themePromptFlow: any
+  ): ThemePromptFlowDataType => ({
+    themePrompt: {  
+      suggestions: themePromptFlow.themePrompt.suggestions,
+      heading: themePromptFlow.themePrompt.heading,
+      body: themePromptFlow.themePrompt.body,
+    },
+    loadingDialog: themePromptFlow.loadingDialog,
+    alertDialog: themePromptFlow.alertDialog,
+    errorDialog: themePromptFlow.errorDialog,
+  });
+
 export const transformPageData = (graphqlData: any): PageDataType => ({
     introduction: transformIntroSectionData(graphqlData.introSection.items[0]),
     skills: transformSkillsSectionData(graphqlData.skillsSection.items[0]),
@@ -165,4 +179,7 @@ export const transformPageData = (graphqlData: any): PageDataType => ({
       graphqlData.testimonialsSection.items[0]
     ),
     contact: transformContactSectionData(graphqlData.contactSection.items[0]),
+    themePromptFlow: transformThemePromptFlowData(
+      graphqlData.themePromptFlow.items[0]
+    ),
   });

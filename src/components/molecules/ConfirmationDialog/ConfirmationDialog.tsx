@@ -13,8 +13,8 @@ export interface ConfirmationDialogProps {
   handleReject: () => void;
   heading: string;
   body: string;
-  acceptText: string;
-  rejectText: string;
+  confirmText: string;
+  dismissText: string;
 }
 
 const ConfirmationDialog = ({
@@ -24,8 +24,8 @@ const ConfirmationDialog = ({
   handleReject,
   heading,
   body,
-  acceptText,
-  rejectText,
+  confirmText,
+  dismissText,
 }: ConfirmationDialogProps) => (
   <ModalOrDrawer
     className="w-full sm:w-[31.25rem] md:w-[28.125rem] lg:w-[40.75rem]"
@@ -33,7 +33,7 @@ const ConfirmationDialog = ({
     onClose={handleClose}
     type="primary"
   >
-    <div className="flex flex-col items-center justify-center space-y-4">
+    <div className="mb-4 flex flex-col items-center justify-center space-y-4">
       <Heading
         className={clsx(
           'text-center',
@@ -60,7 +60,7 @@ const ConfirmationDialog = ({
           onClick={handleReject}
           suppressIntroAnimation
         >
-          {rejectText}
+          {dismissText}
         </Button>
         <Button
           sizeClassName="w-full sm:w-auto"
@@ -68,7 +68,7 @@ const ConfirmationDialog = ({
           onClick={handleAccept}
           suppressIntroAnimation
         >
-          {acceptText}
+          {confirmText}
         </Button>
       </div>
     </div>

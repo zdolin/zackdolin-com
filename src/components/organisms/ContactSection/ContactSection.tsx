@@ -144,7 +144,7 @@ const ContactSection = ({ data }: ContactSectionProps) => {
       <AlertDialog
         open={modalOpen}
         onClose={() => setModalOpen(false)}
-        title={
+        heading={
           modalType === 'success' ? 'Message sent!' : 'Hmm, there was an error.'
         }
         description={modalMessage}

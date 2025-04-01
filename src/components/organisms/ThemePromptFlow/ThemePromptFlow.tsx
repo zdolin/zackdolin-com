@@ -4,12 +4,17 @@ import AlertDialog from '@/components/molecules/AlertDialog';
 import ConfirmationDialog from '@/components/molecules/ConfirmationDialog';
 import LoadingDialog from '@/components/molecules/LoadingDialog/LoadingDialog';
 import ThemePrompt from '@/components/organisms/ThemePrompt';
+import { ThemePromptFlowDataType } from '@/types/data';
 import Cookies from 'js-cookie';
 import { useEffect, useState } from 'react';
 
 type DialogState = 'hidden' | 'idle' | 'loading' | 'success' | 'error';
 
-const ThemePromptFlow = () => {
+export interface ThemePromptFlowProps {
+  data: ThemePromptFlowDataType;
+}
+
+const ThemePromptFlow = ({ data }: ThemePromptFlowProps) => {
   const [prompt, setPrompt] = useState('');
   const [dialogState, setDialogState] = useState<DialogState>('hidden');
 
@@ -115,10 +120,17 @@ const ThemePromptFlow = () => {
         setPrompt={setPrompt}
         onSubmit={handleSubmit}
         loading={dialogState === 'loading'}
+        heading={data.themePrompt.heading}
+        body={data.themePrompt.body}
+        suggestions={data.themePrompt.suggestions}
       />
 
       {/* Loading Modal */}
-      <LoadingDialog open={dialogState === 'loading'} />
+      <LoadingDialog
+        open={dialogState === 'loading'}
+        heading={data.loadingDialog.heading}
+        message={data.loadingDialog.message}
+      />
 
       {/* Success Modal/Drawer */}
       <ConfirmationDialog
@@ -126,19 +138,18 @@ const ThemePromptFlow = () => {
         handleClose={handleClose}
         handleAccept={() => setDialogState('idle')}
         handleReject={() => setDialogState('hidden')}
-        heading="Theme applied successfully!"
-        body="Your new theme is now active. What do you think? Try switching
-            between light and dark modes!"
-        acceptText="Try again"
-        rejectText="I like it!"
+        heading={data.alertDialog.heading}
+        body={data.alertDialog.message}
+        confirmText={data.alertDialog.confirmButtonText ?? 'Try again'}
+        dismissText={data.alertDialog.dismissButtonText ?? 'I like it!'}
       />
 
       {/* Error Modal */}
       <AlertDialog
         open={dialogState === 'error'}
         onClose={handleClose}
-        title="Hmm, there was an error."
-        description="Occassionally, the AI will fail to generate a theme. If this happens, try again in a minute or two."
+        heading={data.errorDialog.heading}
+        description={data.errorDialog.message}
       />
     </>
   );

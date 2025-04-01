@@ -18,12 +18,19 @@ const getPageData = cache(async (): Promise<PageDataType> => {
 });
 
 export default async function Home() {
-  const { introduction, skills, resume, portfolio, testimonials, contact } =
-    await getPageData();
+  const {
+    introduction,
+    skills,
+    resume,
+    portfolio,
+    testimonials,
+    contact,
+    themePromptFlow,
+  } = await getPageData();
 
   return (
     <>
-      <ThemePromptFlow />
+      <ThemePromptFlow data={themePromptFlow} />
       <IntroSection data={introduction} />
       <SkillsSection data={skills} />
       <PortfolioSection data={portfolio} />

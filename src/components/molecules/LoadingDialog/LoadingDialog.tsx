@@ -5,18 +5,14 @@ import clsx from 'clsx';
 
 interface LoadingDialogProps {
   open: boolean;
-  title?: string;
-  message?: string;
+  heading: string;
+  message: string;
 }
 
-const LoadingDialog = ({
-  open,
-  title = 'Applying your theme',
-  message = 'This may take a few moments',
-}: LoadingDialogProps) => {
+const LoadingDialog = ({ open, heading, message }: LoadingDialogProps) => {
   return (
     <Modal
-      className="animate-float w-full self-center sm:w-[31.25rem] md:w-[28.125rem] lg:w-[40.75rem]"
+      className="w-full animate-float self-center sm:w-[31.25rem] md:w-[28.125rem] lg:w-[40.75rem]"
       open={open}
       onClose={() => {}}
       type="primary"
@@ -24,8 +20,9 @@ const LoadingDialog = ({
     >
       <div
         className={clsx(
-          'flex flex-col space-x-7 py-4 pb-8 sm:flex-row md:pb-0 lg:space-x-9',
-          'space-y-6 sm:space-y-0'
+          'flex flex-col space-x-7 sm:flex-row md:pb-0 lg:space-x-9',
+          'space-y-6 sm:space-y-0',
+          'py-4 pb-6 pt-4 md:pb-8'
         )}
       >
         <Spinner
@@ -41,7 +38,7 @@ const LoadingDialog = ({
               'text-[1.5rem] sm:text-3xl md:text-2xl lg:text-4xl xl:text-5xl'
             )}
           >
-            {title}
+            {heading}
           </Heading>
           <p
             className={clsx(
