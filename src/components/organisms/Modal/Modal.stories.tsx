@@ -19,7 +19,21 @@ type Story = StoryObj<typeof Modal>;
 
 const ModalWithState = (args: any) => {
   const [open, setOpen] = useState(true);
-  return <Modal {...args} open={open} onClose={() => setOpen(false)} />;
+  return (
+    <Modal
+      {...args}
+      open={open}
+      onClose={() => setOpen(false)}
+      className="sm:w-full sm:max-w-lg sm:align-middle"
+    >
+      <h2 className="mb-4 text-xl font-bold text-text-primary">
+        Modal Content
+      </h2>
+      <p className="text-text-primary">
+        This is an example of the Modal component.
+      </p>
+    </Modal>
+  );
 };
 
 export const Default: Story = {

@@ -9,8 +9,8 @@ export interface ConfirmationDialogProps {
    */
   open: boolean;
   handleClose: () => void;
-  handleAccept: () => void;
-  handleReject: () => void;
+  handleConfirm: () => void;
+  handleDismiss: () => void;
   heading: string;
   body: string;
   confirmText: string;
@@ -20,8 +20,8 @@ export interface ConfirmationDialogProps {
 const ConfirmationDialog = ({
   open,
   handleClose,
-  handleAccept,
-  handleReject,
+  handleConfirm,
+  handleDismiss,
   heading,
   body,
   confirmText,
@@ -57,7 +57,7 @@ const ConfirmationDialog = ({
       >
         <Button
           sizeClassName="w-full sm:w-auto my-5 sm:my-0"
-          onClick={handleReject}
+          onClick={handleDismiss}
           suppressIntroAnimation
         >
           {dismissText}
@@ -65,7 +65,7 @@ const ConfirmationDialog = ({
         <Button
           sizeClassName="w-full sm:w-auto"
           intent="secondary"
-          onClick={handleAccept}
+          onClick={handleConfirm}
           suppressIntroAnimation
         >
           {confirmText}

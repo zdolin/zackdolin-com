@@ -82,8 +82,8 @@ const ThemePromptFlow = ({ data }: ThemePromptFlowProps) => {
       <ConfirmationDialog
         open={dialogState === 'success'}
         handleClose={handleClose}
-        handleAccept={() => setDialogState('idle')}
-        handleReject={() => setDialogState('hidden')}
+        handleConfirm={() => setDialogState('idle')}
+        handleDismiss={() => setDialogState('hidden')}
         heading={data.alertDialog.heading}
         body={data.alertDialog.message}
         confirmText={data.alertDialog.confirmButtonText ?? 'Try again'}

@@ -20,10 +20,11 @@ export const Default: Story = {
   args: {
     open: true,
     handleClose: () => {},
-    handleAccept: () => {},
-    handleReject: () => {},
+    handleConfirm: () => {},
+    handleDismiss: () => {},
     heading: 'Confirmation Dialog',
     body: 'This is a confirmation dialog',
-    confirmText: 'Confirm',
+    confirmText: 'Option 2',
+    dismissText: 'Option 1',
   },
 };
