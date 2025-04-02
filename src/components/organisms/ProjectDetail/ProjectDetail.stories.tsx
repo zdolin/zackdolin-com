@@ -1,3 +1,4 @@
+import mockData from '@/app/data/mock.json';
 import type { Meta, StoryObj } from '@storybook/react';
 import ProjectDetail from './ProjectDetail';
 
@@ -17,5 +18,7 @@ export default meta;
 type Story = StoryObj<typeof ProjectDetail>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    project: mockData.sections.portfolio.projectsList[0],
+  },
 };
