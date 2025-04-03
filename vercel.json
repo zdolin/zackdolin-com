@@ -3,10 +3,8 @@
   "outputDirectory": ".next",
   "rewrites": [
     { "source": "/storybook", "destination": "/storybook/index.html" },
-    { "source": "/storybook/:path*", "destination": "/storybook/:path*" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/$1" }
+    { "source": "/storybook/:path*", "destination": "/storybook/:path*" },
+    { "source": "/(.*)", "destination": "/$1" }
   ],
   "builds": [
     { "src": "package.json", "use": "@vercel/next" },
