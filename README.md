@@ -4,8 +4,9 @@
 
 This is the codebase for my personal website, built with Next.js, Storybook, and Tailwind CSS. The site is designed to be modern, fast, and easy to maintain.
 
-The website can be viewed at [https://www.zackdolin.com/](https://www.zackdolin.com/)
-The Storybook instance can be viewed at [https://www.zackdolin.com/storybook](https://www.zackdolin.com/storybook)
+### Live URLs
+- Website: [https://www.zackdolin.com/](https://www.zackdolin.com/)
+- Storybook: [https://www.zackdolin.com/storybook](https://www.zackdolin.com/storybook)
 
 ## Getting Started
 
