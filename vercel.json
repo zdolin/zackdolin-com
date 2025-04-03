@@ -1,0 +1,8 @@
+{
+  "buildCommand": "npm run build && npm run build-storybook",
+  "outputDirectory": ".next",
+  "routes": [
+    { "src": "/storybook/(.*)", "dest": "/storybook/$1" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+} 
