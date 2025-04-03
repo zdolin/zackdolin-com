@@ -88,10 +88,11 @@ npm run add-component
 
 - **Next.js** - React framework for production-grade applications
 - **React** - JavaScript library for building UI
+- **OpenAI API** - AI-powered theme generation
 - **Tailwind CSS** - Utility-first CSS framework
 - **Storybook** - UI component development environment
 - **Framer Motion** - Animation library for React
-- **Headless UI** - Accessible UI components
+- **Tailwind UI** - Accessible UI components
 - **Heroicons** - Beautiful icons for UI
 - **Contentful** - CMS integration
 - **GraphQL Request** - Minimal GraphQL client
