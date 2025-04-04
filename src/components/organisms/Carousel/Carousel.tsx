@@ -72,10 +72,24 @@ const Carousel = ({
     setCurrentSlideIndex(emblaApi?.selectedScrollSnap() ?? 0);
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === 'ArrowLeft') {
+      scrollPrev();
+    } else if (event.key === 'ArrowRight') {
+      scrollNext();
+    }
+  };
+
   const slides = React.Children.toArray(children);
 
   return (
-    <div className={clsx('relative', className)}>
+    <div
+      className={clsx('relative', className)}
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
+      role="region"
+      aria-label="Image carousel"
+    >
       <div ref={emblaRef} className="embla overflow-hidden">
         <div className={clsx('embla__container flex gap-4 lg:-mx-12')}>
           {slides}
