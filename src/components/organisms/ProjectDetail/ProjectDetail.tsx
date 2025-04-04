@@ -1,8 +1,10 @@
 'use client';
 
+import Spinner from '@/components/atoms/Spinner';
 import { PortfolioItemType } from '@/types/component';
 import clsx from 'clsx';
 import Image, { ImageProps } from 'next/image';
+import { useState } from 'react';
 import Carousel from '../Carousel';
 
 export interface ProjectDetailProps {
@@ -13,15 +15,30 @@ interface RenderImageProps {
   image: ImageProps;
 }
 
-const RenderImage = ({ image }: RenderImageProps) => (
-  <Image
-    src={image.src}
-    alt={image.alt}
-    className="h-auto w-full text-text-primary"
-    width={1440}
-    height={960}
-  />
-);
+const RenderImage = ({ image }: RenderImageProps) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  return (
+    <div className="relative">
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Spinner className="h-12 w-12" />
+        </div>
+      )}
+      <Image
+        src={image.src}
+        alt={image.alt}
+        className={clsx(
+          'h-auto w-full text-text-primary',
+          isLoading ? 'opacity-0' : 'opacity-100'
+        )}
+        width={1440}
+        height={960}
+        onLoadingComplete={() => setIsLoading(false)}
+      />
+    </div>
+  );
+};
 
 const ProjectDetail = ({ project }: ProjectDetailProps) => {
   return (
