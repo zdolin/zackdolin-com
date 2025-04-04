@@ -44,7 +44,7 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 - --button-default: Main call-to-action button color. Should match --surface-highlight and MUST be readable against white text!
 - --button-hover: Slightly altered tone of --button-default.
 - --button-active: Stronger variation of hover.
-- --button-icon: A light color used for round icon buttons.
+- --button-icon: A light color used for round icon buttons. MUST not match --surface-primary.
 
 #### Text
 - --text-primary: Main body text. Must be highly readable on --surface-primary.
