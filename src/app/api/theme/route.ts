@@ -41,7 +41,7 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 - --border-muted: Low-contrast dividers or outlines.
 
 #### Buttons
-- --button-default: Main call-to-action button color. Should match --surface-highlight and MUST be readable against white text.
+- --button-default: Main call-to-action button color. Should match --surface-highlight and MUST be readable against white text!
 - --button-hover: Slightly altered tone of --button-default.
 - --button-active: Stronger variation of hover.
 - --button-icon: A light color used for round icon buttons.
@@ -59,7 +59,7 @@ Return strict JSON with two keys: "light" and "dark", each mapping to a full set
 
 #### Hero Section
 - --hero-primary: Background inside circular avatar frame. Should echo --surface-accent for continuity.
-- --hero-secondary: Background of the outer hero container. MUST NOT be identical to --surface-primary. MUST be a different color from --hero-primary.
+- --hero-secondary: Background of the outer hero container. MUST NOT MATCH --surface-primary OR --hero-primary!
 - --hero-border: Outline around the avatar image. Complementary to --hero-primary but not as bright.
 
 #### Iconography
