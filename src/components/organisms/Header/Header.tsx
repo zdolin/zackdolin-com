@@ -123,7 +123,7 @@ export default function Header({ className = '' }: HeaderProps) {
               <DialogPanel className="fixed bottom-0 right-0 top-16 w-full overflow-y-auto bg-surface-primary px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                 <div className="flow-root">
                   <div className="-my-2">
-                    <div className="divide-y divide-black/20 py-6 dark:divide-blue-900">
+                    <div className="divide-surface-primary/30 divide-y py-6 dark:divide-surface-tertiary">
                       {navigationList.map((item: NavigationItemType) => (
                         <Link
                           key={item.text}
