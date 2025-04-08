@@ -56,14 +56,14 @@ const ConfirmationDialog = ({
         )}
       >
         <Button
-          sizeClassName="w-full sm:w-auto my-5 sm:my-0"
+          sizeClassName="w-full my-5 md:my-0 md:w-auto md:min-w-[11rem]"
           onClick={handleDismiss}
           suppressIntroAnimation
         >
           {dismissText}
         </Button>
         <Button
-          sizeClassName="w-full sm:w-auto"
+          sizeClassName="w-full md:w-auto md:min-w-[11rem]"
           intent="secondary"
           onClick={handleConfirm}
           suppressIntroAnimation

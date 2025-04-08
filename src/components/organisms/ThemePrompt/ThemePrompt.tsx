@@ -109,13 +109,13 @@ const ThemePrompt = ({
               type="submit"
               disabled={loading}
               loading={loading}
-              sizeClassName="w-full md:w-auto"
+              sizeClassName="w-full md:w-auto lg:min-w-[12.5rem]"
               suppressIntroAnimation
             >
               {loading ? 'Applying...' : 'Apply Theme'}
             </Button>
             <Button
-              sizeClassName="w-full md:w-auto"
+              sizeClassName="w-full md:w-auto lg:min-w-[12.5rem]"
               type="button"
               intent="secondary"
               onClick={handleClose}
